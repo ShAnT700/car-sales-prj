@@ -1,0 +1,133 @@
+{
+  "project_name": "NextRides.com",
+  "design_philosophy": {
+    "name": "Automotive Zen",
+    "core_values": ["Trust", "Clarity", "Premium Efficiency"],
+    "visual_style": "Swiss High-Contrast meets Organic Trust",
+    "theme_mode": "light"
+  },
+  "typography": {
+    "font_family": {
+      "headings": "Manrope, sans-serif",
+      "body": "Public Sans, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "scale": {
+      "h1": "text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]",
+      "h2": "text-4xl md:text-5xl font-semibold tracking-tight",
+      "h3": "text-2xl md:text-3xl font-semibold tracking-tight",
+      "body_lg": "text-lg leading-relaxed text-slate-600",
+      "body_base": "text-base leading-relaxed text-slate-600",
+      "caption": "text-sm font-medium tracking-wide text-slate-500 uppercase"
+    },
+    "imports": [
+      "@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Public+Sans:wght@300;400;500;600&display=swap');"
+    ]
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "DEFAULT": "#0f172a",
+        "foreground": "#ffffff"
+      },
+      "secondary": {
+        "DEFAULT": "#f1f5f9",
+        "foreground": "#0f172a"
+      },
+      "accent": {
+        "DEFAULT": "#059669",
+        "foreground": "#ffffff",
+        "description": "The 'Signal Emerald' for the Sell Car button and success states"
+      },
+      "background": "#ffffff",
+      "surface": "#f8fafc",
+      "border": "#e2e8f0",
+      "muted": "#64748b"
+    },
+    "usage_rules": {
+      "sell_button": "bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-600/20",
+      "price_tag": "text-emerald-700 font-bold bg-emerald-50 px-3 py-1 rounded-full",
+      "error": "text-rose-600 bg-rose-50 border-rose-200"
+    }
+  },
+  "layout": {
+    "spacing_system": {
+      "container_padding": "px-6 md:px-12 lg:px-24",
+      "section_gap": "py-24 md:py-32",
+      "card_padding": "p-6"
+    },
+    "grid_strategies": {
+      "listing_grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8",
+      "bento_hero": "grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 auto-rows-[minmax(180px,auto)]"
+    },
+    "border_radius": {
+      "buttons": "rounded-full",
+      "cards": "rounded-xl",
+      "inputs": "rounded-lg"
+    }
+  },
+  "components": {
+    "header": {
+      "style": "sticky top-0 z-50 w-full border-b border-slate-100 bg-white/80 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60",
+      "logo": "font-manrope font-black text-2xl tracking-tighter italic",
+      "nav_links": "text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+    },
+    "buttons": {
+      "primary": "h-11 px-8 rounded-full bg-slate-900 text-white hover:bg-slate-800 transition-all hover:scale-[1.02] active:scale-[0.98]",
+      "sell_car": "h-11 px-8 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-700 shadow-lg shadow-emerald-600/20 transition-all hover:-translate-y-0.5",
+      "outline": "h-11 px-8 rounded-full border border-slate-200 bg-transparent hover:bg-slate-50 text-slate-900"
+    },
+    "cards": {
+      "listing_card": "group relative overflow-hidden rounded-xl border border-slate-100 bg-white transition-all hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1",
+      "image_aspect": "aspect-[4/3] object-cover w-full bg-slate-100"
+    },
+    "inputs": {
+      "style": "h-12 rounded-lg border-slate-200 bg-slate-50 px-4 text-base focus:border-slate-900 focus:ring-0 transition-all placeholder:text-slate-400"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.unsplash.com/photo-1552300878-295b1871e1b4?auto=format&fit=crop&q=80",
+      "placeholders": [
+        "https://images.unsplash.com/photo-1569781195838-3889284b65a9?auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1561910973-f1398a1745fb?auto=format&fit=crop&q=80",
+        "https://images.pexels.com/photos/5949262/pexels-photo-5949262.jpeg?auto=compress&cs=tinysrgb&w=800"
+      ],
+      "happy_user": "https://images.pexels.com/photos/7144213/pexels-photo-7144213.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "icons": {
+      "library": "lucide-react",
+      "brands": "react-icons/si"
+    }
+  },
+  "motion": {
+    "library": "framer-motion",
+    "transitions": {
+      "default": { "type": "spring", "stiffness": 400, "damping": 30 },
+      "hover": { "duration": 0.2, "ease": "easeOut" }
+    },
+    "page_load": {
+      "initial": { "opacity": 0, "y": 20 },
+      "animate": { "opacity": 1, "y": 0 },
+      "exit": { "opacity": 0, "y": -20 }
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. INSTALLATION: Run 'npm install framer-motion react-icons clsx tailwind-merge' immediately.",
+    "2. FONT SETUP: Add the Google Fonts import to index.css immediately.",
+    "3. TAILWIND: Update tailwind.config.js to extend the font family with Manrope and Public Sans.",
+    "4. HEADER: Implement the 'Oval' logo by wrapping the text 'NextRides' in a border-2 border-slate-900 rounded-[50%] px-4 py-1.",
+    "5. SELL BUTTON: The 'Sell Car' button MUST be Green (emerald-600) as per user request. Do not change this.",
+    "6. CARDS: Ensure car cards display: Photo (top), Make/Model (bold), Price (emerald), Mileage (slate-500).",
+    "7. SEARCH: The Quick Search bar should be a floating element overlapping the bottom of the hero image, or a distinct section immediately following it.",
+    "8. FORMS: Use Shadcn UI components for all inputs but style them with 'bg-slate-50' and 'border-slate-200' to match the guidelines.",
+    "9. DATA-TESTID: Add data-testid attributes to all interactive elements (buttons, inputs, cards)."
+  ],
+  "universal_guidelines": [
+    "Avoid gradients for backgrounds. Use solid colors or subtle noise textures.",
+    "Use 2x more padding than you think is necessary.",
+    "Never use pure black (#000000). Use Slate-900 (#0f172a) instead.",
+    "Images must have 'object-cover' to prevent stretching.",
+    "All prices should be formatted with commas (e.g., $45,000)."
+  ]
+}
