@@ -1,22 +1,49 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import { API } from "../App";
+import { toast } from "sonner";
+import { useAuth, API } from "../App";
 import { Dialog, DialogContent } from "../components/ui/dialog";
 import { 
   ArrowLeft, Phone, MapPin, Gauge, Calendar, 
   Car, Hash, FileText, ChevronLeft, ChevronRight,
-  Loader2, X, ZoomIn
+  Loader2, X, ZoomIn, MessageSquare
 } from "lucide-react";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 export default function CarDetailPage() {
   const { id } = useParams();
+  const { user, token } = useAuth();
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentImage, setCurrentImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [showMessageForm, setShowMessageForm] = useState(false);
+  const [messageText, setMessageText] = useState("");
+  const [sendingMessage, setSendingMessage] = useState(false);
+
+  const sendMessage = async () => {
+    if (!messageText.trim() || !user) return;
+    
+    setSendingMessage(true);
+    try {
+      await axios.post(`${API}/messages`, {
+        listing_id: car.id,
+        receiver_id: car.user_id,
+        message: messageText.trim()
+      }, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      toast.success("Message sent to seller!");
+      setMessageText("");
+      setShowMessageForm(false);
+    } catch (err) {
+      toast.error("Failed to send message");
+    } finally {
+      setSendingMessage(false);
+    }
+  };
 
   useEffect(() => {
     fetchCar();
