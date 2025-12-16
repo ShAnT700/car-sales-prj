@@ -8,6 +8,9 @@ import HomePage from "./pages/HomePage";
 import CarDetailPage from "./pages/CarDetailPage";
 import MyListingsPage from "./pages/MyListingsPage";
 import CreateListingPage from "./pages/CreateListingPage";
+import FavoritesPage from "./pages/FavoritesPage";
+import SavedSearchesPage from "./pages/SavedSearchesPage";
+import MessagesPage from "./pages/MessagesPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 export const API = `${BACKEND_URL}/api`;
@@ -72,6 +75,9 @@ function App() {
             <Route path="/my-listings" element={<MyListingsPage />} />
             <Route path="/create-listing" element={<CreateListingPage />} />
             <Route path="/edit-listing/:id" element={<CreateListingPage />} />
+            <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="/saved-searches" element={<SavedSearchesPage />} />
+            <Route path="/messages" element={<MessagesPage />} />
           </Routes>
         </BrowserRouter>
       </div>
