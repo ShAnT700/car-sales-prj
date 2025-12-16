@@ -15,6 +15,43 @@ const CAR_MAKES = [
   "Tesla", "Toyota", "Volkswagen", "Volvo"
 ];
 
+const CAR_MODELS = {
+  "Acura": ["MDX", "RDX", "TLX", "ILX", "NSX"],
+  "Audi": ["A3", "A4", "A6", "Q3", "Q5", "Q7", "e-tron"],
+  "BMW": ["3 Series", "5 Series", "7 Series", "X3", "X5", "X7", "M3", "M5"],
+  "Buick": ["Enclave", "Encore", "Envision"],
+  "Cadillac": ["Escalade", "CT5", "XT5", "XT6"],
+  "Chevrolet": ["Silverado", "Tahoe", "Suburban", "Camaro", "Corvette", "Malibu", "Equinox"],
+  "Chrysler": ["300", "Pacifica"],
+  "Dodge": ["Charger", "Challenger", "Durango", "Ram"],
+  "Ferrari": ["488", "F8", "Roma", "SF90", "Portofino"],
+  "Ford": ["F-150", "Mustang", "Explorer", "Escape", "Bronco", "Edge"],
+  "GMC": ["Sierra", "Yukon", "Acadia", "Terrain"],
+  "Honda": ["Accord", "Civic", "CR-V", "Pilot", "HR-V", "Odyssey"],
+  "Hyundai": ["Sonata", "Elantra", "Tucson", "Santa Fe", "Palisade"],
+  "Infiniti": ["Q50", "Q60", "QX50", "QX60", "QX80"],
+  "Jaguar": ["F-Pace", "E-Pace", "XF", "XE", "F-Type"],
+  "Jeep": ["Wrangler", "Grand Cherokee", "Cherokee", "Compass", "Gladiator"],
+  "Kia": ["Telluride", "Sorento", "Sportage", "K5", "Stinger"],
+  "Lamborghini": ["Urus", "Huracan", "Aventador"],
+  "Land Rover": ["Range Rover", "Range Rover Sport", "Defender", "Discovery"],
+  "Lexus": ["ES", "IS", "RX", "NX", "GX", "LX"],
+  "Lincoln": ["Navigator", "Aviator", "Corsair"],
+  "Maserati": ["Ghibli", "Levante", "Quattroporte"],
+  "Mazda": ["CX-5", "CX-9", "Mazda3", "Mazda6", "MX-5"],
+  "Mercedes-Benz": ["C-Class", "E-Class", "S-Class", "GLC", "GLE", "G-Class"],
+  "Mini": ["Cooper", "Countryman", "Clubman"],
+  "Mitsubishi": ["Outlander", "Eclipse Cross", "Mirage"],
+  "Nissan": ["Altima", "Maxima", "Rogue", "Pathfinder", "Murano", "GT-R"],
+  "Porsche": ["911", "Cayenne", "Macan", "Panamera", "Taycan"],
+  "Ram": ["1500", "2500", "3500"],
+  "Subaru": ["Outback", "Forester", "Crosstrek", "Ascent", "WRX"],
+  "Tesla": ["Model 3", "Model Y", "Model S", "Model X", "Cybertruck"],
+  "Toyota": ["Camry", "Corolla", "RAV4", "Highlander", "4Runner", "Tacoma", "Tundra"],
+  "Volkswagen": ["Jetta", "Passat", "Tiguan", "Atlas", "Golf"],
+  "Volvo": ["XC40", "XC60", "XC90", "S60", "V60"]
+};
+
 const DRIVE_TYPES = ["FWD", "RWD", "AWD", "4WD"];
 
 const YEARS = Array.from({ length: 35 }, (_, i) => 2025 - i);
@@ -37,7 +74,7 @@ export default function FiltersModal({ open, onClose }) {
   const handleSearch = () => {
     const params = new URLSearchParams();
     Object.entries(filters).forEach(([key, value]) => {
-      if (value && value !== "all") params.set(key, value);
+      if (value && value !== "all" && value !== "") params.set(key, value);
     });
     navigate(`/?${params.toString()}`);
     onClose();
@@ -73,7 +110,7 @@ export default function FiltersModal({ open, onClose }) {
             <Label>Make</Label>
             <Select 
               value={filters.make} 
-              onValueChange={(v) => setFilters({ ...filters, make: v, model: "" })}
+              onValueChange={(v) => setFilters({ ...filters, make: v, model: "all" })}
             >
               <SelectTrigger data-testid="filter-make" className="h-12 bg-slate-50">
                 <SelectValue placeholder="Any Make" />
@@ -90,13 +127,21 @@ export default function FiltersModal({ open, onClose }) {
           {/* Model */}
           <div className="space-y-2">
             <Label>Model</Label>
-            <Input
-              data-testid="filter-model"
-              placeholder="Any Model"
-              value={filters.model}
-              onChange={(e) => setFilters({ ...filters, model: e.target.value })}
-              className="h-12 bg-slate-50"
-            />
+            <Select 
+              value={filters.model} 
+              onValueChange={(v) => setFilters({ ...filters, model: v })}
+              disabled={!filters.make || filters.make === "all"}
+            >
+              <SelectTrigger data-testid="filter-model" className="h-12 bg-slate-50">
+                <SelectValue placeholder="Any Model" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Any Model</SelectItem>
+                {filters.make && filters.make !== "all" && CAR_MODELS[filters.make]?.map((model) => (
+                  <SelectItem key={model} value={model}>{model}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
           {/* Year Range */}
