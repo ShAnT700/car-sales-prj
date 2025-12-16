@@ -300,17 +300,58 @@ export default function FiltersModal({ open, onClose }) {
           </div>
         </div>
 
-        <div className="flex gap-3 mt-6">
+        {/* Save Search Dialog */}
+        {showSaveDialog && user && (
+          <div className="mt-4 p-4 bg-slate-50 rounded-xl">
+            <Label className="text-sm">Save this search as:</Label>
+            <div className="flex gap-2 mt-2">
+              <Input
+                value={searchName}
+                onChange={(e) => setSearchName(e.target.value)}
+                placeholder="e.g. BMW under $50k"
+                className="flex-1 h-10"
+              />
+              <Button
+                onClick={saveSearch}
+                disabled={saving}
+                className="h-10 px-4 rounded-full bg-blue-600 text-white hover:bg-blue-700"
+              >
+                {saving ? "Saving..." : "Save"}
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={() => setShowSaveDialog(false)}
+                className="h-10"
+              >
+                Cancel
+              </Button>
+            </div>
+          </div>
+        )}
+
+        <div className="flex gap-2 mt-6">
           <Button
             type="button"
             variant="outline"
             data-testid="filter-clear-btn"
             onClick={handleClear}
-            className="flex-1 h-12 rounded-full"
+            className="h-12 px-4 rounded-full"
           >
-            <X className="w-4 h-4 mr-2" />
-            Clear
+            <X className="w-4 h-4" />
           </Button>
+          
+          {user && !showSaveDialog && (
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setShowSaveDialog(true)}
+              className="h-12 px-4 rounded-full"
+              title="Save this search"
+            >
+              <Bookmark className="w-4 h-4" />
+            </Button>
+          )}
+          
           <Button
             type="button"
             data-testid="filter-search-btn"
