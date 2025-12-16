@@ -20,7 +20,7 @@ const DISTANCES = [
   { value: "100", label: "100 miles" },
   { value: "250", label: "250 miles" },
   { value: "500", label: "500 miles" },
-  { value: "", label: "Any distance" }
+  { value: "any", label: "Any distance" }
 ];
 
 export default function QuickSearch() {
@@ -34,10 +34,10 @@ export default function QuickSearch() {
 
   const handleSearch = () => {
     const params = new URLSearchParams();
-    if (filters.make) params.set("make", filters.make);
+    if (filters.make && filters.make !== "all") params.set("make", filters.make);
     if (filters.model) params.set("model", filters.model);
     if (filters.zipCode) params.set("zipCode", filters.zipCode);
-    if (filters.distance) params.set("distance", filters.distance);
+    if (filters.distance && filters.distance !== "any") params.set("distance", filters.distance);
     navigate(`/?${params.toString()}`);
   };
 
@@ -60,7 +60,7 @@ export default function QuickSearch() {
             <SelectValue placeholder="Make" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">Any Make</SelectItem>
+            <SelectItem value="all">Any Make</SelectItem>
             {CAR_MAKES.map((make) => (
               <SelectItem key={make} value={make}>{make}</SelectItem>
             ))}

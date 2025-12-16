@@ -37,7 +37,7 @@ export default function FiltersModal({ open, onClose }) {
   const handleSearch = () => {
     const params = new URLSearchParams();
     Object.entries(filters).forEach(([key, value]) => {
-      if (value) params.set(key, value);
+      if (value && value !== "all") params.set(key, value);
     });
     navigate(`/?${params.toString()}`);
     onClose();
@@ -79,7 +79,7 @@ export default function FiltersModal({ open, onClose }) {
                 <SelectValue placeholder="Any Make" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Any Make</SelectItem>
+                <SelectItem value="all">Any Make</SelectItem>
                 {CAR_MAKES.map((make) => (
                   <SelectItem key={make} value={make}>{make}</SelectItem>
                 ))}
@@ -110,7 +110,7 @@ export default function FiltersModal({ open, onClose }) {
                 <SelectValue placeholder="Any" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Any</SelectItem>
+                <SelectItem value="all">Any</SelectItem>
                 {YEARS.map((year) => (
                   <SelectItem key={year} value={String(year)}>{year}</SelectItem>
                 ))}
@@ -128,7 +128,7 @@ export default function FiltersModal({ open, onClose }) {
                 <SelectValue placeholder="Any" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Any</SelectItem>
+                <SelectItem value="all">Any</SelectItem>
                 {YEARS.map((year) => (
                   <SelectItem key={year} value={String(year)}>{year}</SelectItem>
                 ))}
@@ -197,7 +197,7 @@ export default function FiltersModal({ open, onClose }) {
                 <SelectValue placeholder="Any" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Any</SelectItem>
+                <SelectItem value="all">Any</SelectItem>
                 {DRIVE_TYPES.map((type) => (
                   <SelectItem key={type} value={type}>{type}</SelectItem>
                 ))}
