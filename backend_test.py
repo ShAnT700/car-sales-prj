@@ -241,11 +241,13 @@ class NextRidesAPITester:
             self.log_test("Get My Listings", False, "No token available")
             return False
             
+        # The /my-listings endpoint expects authorization as a parameter
         return self.run_test(
             "Get My Listings",
             "GET",
             "my-listings",
-            200
+            200,
+            data={"authorization": f"Bearer {self.token}"}
         )[0]
 
     def test_get_single_listing(self, listing_id):
