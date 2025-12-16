@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, HTTPException, Depends, UploadFile, File, Form, Query
+from fastapi import FastAPI, APIRouter, HTTPException, Depends, UploadFile, File, Form, Query, Header
 from fastapi.staticfiles import StaticFiles
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
@@ -139,6 +139,9 @@ async def require_auth(authorization: str = None):
         raise HTTPException(status_code=401, detail="Invalid token")
     return user
 
+async def get_auth_from_header(authorization: str = Header(None)):
+    return await require_auth(authorization)
+
 # Auth Routes
 @api_router.post("/auth/register", response_model=TokenResponse)
 async def register(user_data: UserCreate):
@@ -188,7 +191,7 @@ async def login(credentials: UserLogin):
     )
 
 @api_router.get("/auth/me", response_model=UserResponse)
-async def get_me(authorization: str = None):
+async def get_me(authorization: str = Header(None)):
     user = await require_auth(authorization)
     return UserResponse(**user)
 
@@ -313,7 +316,7 @@ async def get_listing(listing_id: str):
     return listing
 
 @api_router.get("/my-listings", response_model=List[CarListingResponse])
-async def get_my_listings(authorization: str = None):
+async def get_my_listings(authorization: str = Header(None)):
     user = await require_auth(authorization)
     listings = await db.listings.find({"user_id": user["id"]}, {"_id": 0}).sort("created_at", -1).to_list(100)
     for listing in listings:
@@ -321,7 +324,7 @@ async def get_my_listings(authorization: str = None):
     return listings
 
 @api_router.put("/listings/{listing_id}", response_model=CarListingResponse)
-async def update_listing(listing_id: str, update_data: CarListingUpdate, authorization: str = None):
+async def update_listing(listing_id: str, update_data: CarListingUpdate, authorization: str = Header(None)):
     user = await require_auth(authorization)
     
     listing = await db.listings.find_one({"id": listing_id, "user_id": user["id"]}, {"_id": 0})
@@ -337,7 +340,7 @@ async def update_listing(listing_id: str, update_data: CarListingUpdate, authori
     return updated
 
 @api_router.delete("/listings/{listing_id}")
-async def delete_listing(listing_id: str, authorization: str = None):
+async def delete_listing(listing_id: str, authorization: str = Header(None)):
     user = await require_auth(authorization)
     
     listing = await db.listings.find_one({"id": listing_id, "user_id": user["id"]})
