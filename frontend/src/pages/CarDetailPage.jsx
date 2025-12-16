@@ -1,0 +1,247 @@
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import axios from "axios";
+import { API } from "../App";
+import { Button } from "../components/ui/button";
+import { 
+  ArrowLeft, Phone, MapPin, Gauge, Calendar, 
+  Car, Hash, FileText, ChevronLeft, ChevronRight,
+  Loader2
+} from "lucide-react";
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
+export default function CarDetailPage() {
+  const { id } = useParams();
+  const [car, setCar] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    fetchCar();
+  }, [id]);
+
+  const fetchCar = async () => {
+    try {
+      const res = await axios.get(`${API}/listings/${id}`);
+      setCar(res.data);
+    } catch (err) {
+      console.error("Failed to fetch car:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(price);
+  };
+
+  const formatMileage = (mileage) => {
+    return new Intl.NumberFormat('en-US').format(mileage);
+  };
+
+  const nextImage = () => {
+    if (car?.images?.length > 1) {
+      setCurrentImage((prev) => (prev + 1) % car.images.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (car?.images?.length > 1) {
+      setCurrentImage((prev) => (prev - 1 + car.images.length) % car.images.length);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+        <Loader2 className="w-8 h-8 animate-spin text-slate-400" />
+      </div>
+    );
+  }
+
+  if (!car) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50">
+        <Car className="w-16 h-16 text-slate-300 mb-4" />
+        <h2 className="font-manrope font-bold text-xl text-slate-600">Listing not found</h2>
+        <Link to="/" className="mt-4 text-emerald-600 hover:underline">
+          Back to listings
+        </Link>
+      </div>
+    );
+  }
+
+  const imageUrl = car.images?.[currentImage] 
+    ? `${BACKEND_URL}${car.images[currentImage]}`
+    : "https://images.unsplash.com/photo-1552300878-295b1871e1b4?auto=format&fit=crop&w=1200&q=80";
+
+  return (
+    <div className="min-h-screen bg-slate-50" data-testid="car-detail-page">
+      {/* Back button */}
+      <div className="bg-white border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <Link 
+            to="/"
+            data-testid="back-link"
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to listings
+          </Link>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Image Gallery */}
+          <div className="space-y-4">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100">
+              <img
+                src={imageUrl}
+                alt={`${car.make} ${car.model}`}
+                className="w-full h-full object-cover"
+                data-testid="main-image"
+              />
+              
+              {car.images?.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    data-testid="prev-image-btn"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    data-testid="next-image-btn"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                  
+                  {/* Image counter */}
+                  <div className="absolute bottom-4 right-4 bg-black/60 text-white text-sm px-3 py-1 rounded-full">
+                    {currentImage + 1} / {car.images.length}
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* Thumbnails */}
+            {car.images?.length > 1 && (
+              <div className="flex gap-2 overflow-x-auto pb-2">
+                {car.images.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentImage(idx)}
+                    className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden gallery-thumb border-2 ${
+                      idx === currentImage ? 'border-emerald-600' : 'border-transparent'
+                    }`}
+                  >
+                    <img
+                      src={`${BACKEND_URL}${img}`}
+                      alt={`Thumbnail ${idx + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Details */}
+          <div className="space-y-6">
+            {/* Title & Price */}
+            <div>
+              <h1 className="font-manrope font-bold text-3xl sm:text-4xl text-slate-900">
+                {car.year} {car.make} {car.model}
+              </h1>
+              <div className="mt-4">
+                <span className="inline-block text-emerald-700 font-bold text-3xl bg-emerald-50 px-4 py-2 rounded-full">
+                  {formatPrice(car.price)}
+                </span>
+              </div>
+            </div>
+
+            {/* Key Specs */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-100">
+                <Gauge className="w-5 h-5 text-slate-400" />
+                <div>
+                  <p className="text-sm text-slate-500">Mileage</p>
+                  <p className="font-semibold text-slate-900">{formatMileage(car.mileage)} mi</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-100">
+                <Calendar className="w-5 h-5 text-slate-400" />
+                <div>
+                  <p className="text-sm text-slate-500">Year</p>
+                  <p className="font-semibold text-slate-900">{car.year}</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-100">
+                <Car className="w-5 h-5 text-slate-400" />
+                <div>
+                  <p className="text-sm text-slate-500">Drive Type</p>
+                  <p className="font-semibold text-slate-900">{car.drive_type}</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-100">
+                <Hash className="w-5 h-5 text-slate-400" />
+                <div>
+                  <p className="text-sm text-slate-500">VIN</p>
+                  <p className="font-semibold text-slate-900 text-sm truncate">{car.vin}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-100">
+              <MapPin className="w-5 h-5 text-slate-400" />
+              <div>
+                <p className="text-sm text-slate-500">Location</p>
+                <p className="font-semibold text-slate-900">{car.city}, {car.zip_code}</p>
+              </div>
+            </div>
+
+            {/* Description */}
+            <div className="p-4 bg-white rounded-xl border border-slate-100">
+              <div className="flex items-center gap-2 mb-3">
+                <FileText className="w-5 h-5 text-slate-400" />
+                <h3 className="font-semibold text-slate-900">Description</h3>
+              </div>
+              <p className="text-slate-600 whitespace-pre-wrap">{car.description}</p>
+            </div>
+
+            {/* Contact */}
+            <div className="p-6 bg-slate-900 rounded-2xl text-white">
+              <p className="text-slate-400 text-sm mb-2">Posted by {car.user_name}</p>
+              <a
+                href={`tel:${car.phone}`}
+                data-testid="contact-phone"
+                className="inline-flex items-center gap-3"
+              >
+                <div className="w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-slate-400">Call Seller</p>
+                  <p className="font-semibold text-lg">{car.phone}</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
