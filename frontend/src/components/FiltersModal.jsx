@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "sonner";
+import { useAuth, API } from "../App";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
-import { Search, X } from "lucide-react";
+import { Search, X, Bookmark } from "lucide-react";
 
 const CAR_MAKES = [
   "Acura", "Audi", "BMW", "Buick", "Cadillac", "Chevrolet", "Chrysler", "Dodge",
@@ -57,6 +60,7 @@ const DRIVE_TYPES = ["FWD", "RWD", "AWD", "4WD"];
 const YEARS = Array.from({ length: 35 }, (_, i) => 2025 - i);
 
 export default function FiltersModal({ open, onClose }) {
+  const { user, token } = useAuth();
   const navigate = useNavigate();
   const [filters, setFilters] = useState({
     make: "",
@@ -70,6 +74,9 @@ export default function FiltersModal({ open, onClose }) {
     driveType: "",
     zipCode: ""
   });
+  const [showSaveDialog, setShowSaveDialog] = useState(false);
+  const [searchName, setSearchName] = useState("");
+  const [saving, setSaving] = useState(false);
 
   const handleSearch = () => {
     const params = new URLSearchParams();
@@ -78,6 +85,36 @@ export default function FiltersModal({ open, onClose }) {
     });
     navigate(`/?${params.toString()}`);
     onClose();
+  };
+
+  const saveSearch = async () => {
+    if (!searchName.trim()) {
+      toast.error("Please enter a name for this search");
+      return;
+    }
+    
+    setSaving(true);
+    try {
+      const cleanFilters = {};
+      Object.entries(filters).forEach(([key, value]) => {
+        if (value && value !== "all" && value !== "") cleanFilters[key] = value;
+      });
+      
+      await axios.post(`${API}/saved-searches`, {
+        name: searchName.trim(),
+        filters: cleanFilters
+      }, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      
+      toast.success("Search saved!");
+      setShowSaveDialog(false);
+      setSearchName("");
+    } catch (err) {
+      toast.error("Failed to save search");
+    } finally {
+      setSaving(false);
+    }
   };
 
   const handleClear = () => {
