@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth, API } from "../App";
-import { Search, Menu, X, User, LogOut, Plus } from "lucide-react";
+import { Search, Menu, X, LogOut, Plus } from "lucide-react";
 import { Button } from "./ui/button";
 import AuthModal from "./AuthModal";
 import FiltersModal from "./FiltersModal";
@@ -42,21 +42,23 @@ export default function Header() {
               </div>
             </Link>
 
-            {/* Right side buttons - Desktop */}
-            <div className="hidden sm:flex items-center gap-3">
-              {/* Catalog Button - Gray, same shape */}
+            {/* Right side buttons */}
+            <div className="flex items-center gap-2 sm:gap-3">
+              {/* Find Car Button - Always visible */}
               <Button
-                data-testid="catalog-btn"
+                data-testid="find-car-btn"
                 onClick={() => setShowFilters(true)}
                 variant="outline"
-                className="h-10 px-6 rounded-full bg-slate-100 text-slate-700 font-semibold hover:bg-slate-200 border-0 transition-all"
+                className="h-9 sm:h-10 px-4 sm:px-6 rounded-full bg-slate-100 text-slate-700 font-semibold hover:bg-slate-200 border-0 transition-all text-sm sm:text-base"
               >
-                <Search className="w-4 h-4 mr-2" />
-                Catalog
+                <Search className="w-4 h-4 mr-1 sm:mr-2" />
+                <span className="hidden xs:inline">Find Car</span>
+                <span className="xs:hidden">Find</span>
               </Button>
 
+              {/* Desktop: Sell Car / My Listings */}
               {user ? (
-                <>
+                <div className="hidden sm:flex items-center gap-3">
                   <Button
                     data-testid="my-listings-btn"
                     onClick={() => navigate("/my-listings")}
@@ -72,46 +74,32 @@ export default function Header() {
                   >
                     <LogOut className="w-5 h-5" />
                   </button>
-                </>
+                </div>
               ) : (
                 <Button
                   data-testid="sell-car-btn"
                   onClick={handleSellClick}
-                  className="h-10 px-6 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-700 shadow-lg shadow-emerald-600/20 transition-all hover:-translate-y-0.5 btn-sell"
+                  className="hidden sm:flex h-10 px-6 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-700 shadow-lg shadow-emerald-600/20 transition-all hover:-translate-y-0.5 btn-sell"
                 >
                   Sell Car
                 </Button>
               )}
-            </div>
 
-            {/* Mobile menu button */}
-            <button
-              data-testid="mobile-menu-btn"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="sm:hidden p-2 text-slate-600"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+              {/* Mobile menu button */}
+              <button
+                data-testid="mobile-menu-btn"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="sm:hidden p-2 text-slate-600"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile menu */}
           {mobileMenuOpen && (
             <div className="sm:hidden py-4 border-t border-slate-100">
               <div className="flex flex-col gap-3">
-                {/* Catalog Button - Mobile */}
-                <Button
-                  data-testid="mobile-catalog-btn"
-                  onClick={() => {
-                    setShowFilters(true);
-                    setMobileMenuOpen(false);
-                  }}
-                  variant="outline"
-                  className="mx-4 h-10 rounded-full bg-slate-100 text-slate-700 font-semibold hover:bg-slate-200 border-0"
-                >
-                  <Search className="w-4 h-4 mr-2" />
-                  Catalog
-                </Button>
-                
                 {user ? (
                   <>
                     <Link
