@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { Search } from "lucide-react";
 
@@ -12,6 +11,43 @@ const CAR_MAKES = [
   "Mercedes-Benz", "Mini", "Mitsubishi", "Nissan", "Porsche", "Ram", "Subaru",
   "Tesla", "Toyota", "Volkswagen", "Volvo"
 ];
+
+const CAR_MODELS = {
+  "Acura": ["MDX", "RDX", "TLX", "ILX", "NSX"],
+  "Audi": ["A3", "A4", "A6", "Q3", "Q5", "Q7", "e-tron"],
+  "BMW": ["3 Series", "5 Series", "7 Series", "X3", "X5", "X7", "M3", "M5"],
+  "Buick": ["Enclave", "Encore", "Envision"],
+  "Cadillac": ["Escalade", "CT5", "XT5", "XT6"],
+  "Chevrolet": ["Silverado", "Tahoe", "Suburban", "Camaro", "Corvette", "Malibu", "Equinox"],
+  "Chrysler": ["300", "Pacifica"],
+  "Dodge": ["Charger", "Challenger", "Durango", "Ram"],
+  "Ferrari": ["488", "F8", "Roma", "SF90", "Portofino"],
+  "Ford": ["F-150", "Mustang", "Explorer", "Escape", "Bronco", "Edge"],
+  "GMC": ["Sierra", "Yukon", "Acadia", "Terrain"],
+  "Honda": ["Accord", "Civic", "CR-V", "Pilot", "HR-V", "Odyssey"],
+  "Hyundai": ["Sonata", "Elantra", "Tucson", "Santa Fe", "Palisade"],
+  "Infiniti": ["Q50", "Q60", "QX50", "QX60", "QX80"],
+  "Jaguar": ["F-Pace", "E-Pace", "XF", "XE", "F-Type"],
+  "Jeep": ["Wrangler", "Grand Cherokee", "Cherokee", "Compass", "Gladiator"],
+  "Kia": ["Telluride", "Sorento", "Sportage", "K5", "Stinger"],
+  "Lamborghini": ["Urus", "Huracan", "Aventador"],
+  "Land Rover": ["Range Rover", "Range Rover Sport", "Defender", "Discovery"],
+  "Lexus": ["ES", "IS", "RX", "NX", "GX", "LX"],
+  "Lincoln": ["Navigator", "Aviator", "Corsair"],
+  "Maserati": ["Ghibli", "Levante", "Quattroporte"],
+  "Mazda": ["CX-5", "CX-9", "Mazda3", "Mazda6", "MX-5"],
+  "Mercedes-Benz": ["C-Class", "E-Class", "S-Class", "GLC", "GLE", "G-Class"],
+  "Mini": ["Cooper", "Countryman", "Clubman"],
+  "Mitsubishi": ["Outlander", "Eclipse Cross", "Mirage"],
+  "Nissan": ["Altima", "Maxima", "Rogue", "Pathfinder", "Murano", "GT-R"],
+  "Porsche": ["911", "Cayenne", "Macan", "Panamera", "Taycan"],
+  "Ram": ["1500", "2500", "3500"],
+  "Subaru": ["Outback", "Forester", "Crosstrek", "Ascent", "WRX"],
+  "Tesla": ["Model 3", "Model Y", "Model S", "Model X", "Cybertruck"],
+  "Toyota": ["Camry", "Corolla", "RAV4", "Highlander", "4Runner", "Tacoma", "Tundra"],
+  "Volkswagen": ["Jetta", "Passat", "Tiguan", "Atlas", "Golf"],
+  "Volvo": ["XC40", "XC60", "XC90", "S60", "V60"]
+};
 
 const DISTANCES = [
   { value: "10", label: "10 miles" },
@@ -35,10 +71,14 @@ export default function QuickSearch() {
   const handleSearch = () => {
     const params = new URLSearchParams();
     if (filters.make && filters.make !== "all") params.set("make", filters.make);
-    if (filters.model) params.set("model", filters.model);
+    if (filters.model && filters.model !== "all") params.set("model", filters.model);
     if (filters.zipCode) params.set("zipCode", filters.zipCode);
     if (filters.distance && filters.distance !== "any") params.set("distance", filters.distance);
     navigate(`/?${params.toString()}`);
+  };
+
+  const handleMakeChange = (make) => {
+    setFilters({ ...filters, make, model: "" });
   };
 
   return (
@@ -54,7 +94,7 @@ export default function QuickSearch() {
         {/* Make */}
         <Select 
           value={filters.make} 
-          onValueChange={(v) => setFilters({ ...filters, make: v })}
+          onValueChange={handleMakeChange}
         >
           <SelectTrigger data-testid="quick-make" className="h-12 bg-slate-50 border-slate-200">
             <SelectValue placeholder="Make" />
@@ -68,13 +108,21 @@ export default function QuickSearch() {
         </Select>
 
         {/* Model */}
-        <Input
-          data-testid="quick-model"
-          placeholder="Model"
-          value={filters.model}
-          onChange={(e) => setFilters({ ...filters, model: e.target.value })}
-          className="h-12 bg-slate-50 border-slate-200"
-        />
+        <Select 
+          value={filters.model} 
+          onValueChange={(v) => setFilters({ ...filters, model: v })}
+          disabled={!filters.make || filters.make === "all"}
+        >
+          <SelectTrigger data-testid="quick-model" className="h-12 bg-slate-50 border-slate-200">
+            <SelectValue placeholder="Model" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Any Model</SelectItem>
+            {filters.make && filters.make !== "all" && CAR_MODELS[filters.make]?.map((model) => (
+              <SelectItem key={model} value={model}>{model}</SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
 
         {/* Zip Code */}
         <Input
