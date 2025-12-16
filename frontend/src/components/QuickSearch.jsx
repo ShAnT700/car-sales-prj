@@ -60,7 +60,7 @@ const DISTANCES = [
   { value: "any", label: "Any distance" }
 ];
 
-export default function QuickSearch() {
+export default function QuickSearch({ onSearch }) {
   const navigate = useNavigate();
   const [filters, setFilters] = useState({
     make: "",
@@ -76,6 +76,7 @@ export default function QuickSearch() {
     if (filters.zipCode) params.set("zipCode", filters.zipCode);
     if (filters.distance && filters.distance !== "any") params.set("distance", filters.distance);
     navigate(`/?${params.toString()}`);
+    onSearch?.();
   };
 
   const handleMakeChange = (make) => {
@@ -85,11 +86,8 @@ export default function QuickSearch() {
   return (
     <div 
       data-testid="quick-search"
-      className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 p-6 border border-slate-100"
+      className="bg-white rounded-2xl shadow-lg shadow-slate-200/50 p-4 sm:p-6 border border-slate-100"
     >
-      <h2 className="font-manrope font-bold text-xl text-slate-900 mb-4">
-        Find Your Next Ride
-      </h2>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         {/* Make */}
