@@ -291,11 +291,14 @@ class NextRidesAPITester:
             self.log_test("Delete Listing", False, "No token or listing ID available")
             return False
 
+        # The delete endpoint expects authorization in headers
+        headers = {"Authorization": f"Bearer {self.token}"}
         return self.run_test(
             "Delete Listing",
             "DELETE",
             f"listings/{listing_id}",
-            200
+            200,
+            headers=headers
         )[0]
 
     def test_search_listings(self):
