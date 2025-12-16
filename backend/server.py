@@ -240,7 +240,7 @@ async def create_listing(
         with open(file_path, "wb") as f:
             content = await img.read()
             f.write(content)
-        image_paths.append(f"/uploads/{listing_id}/{filename}")
+        image_paths.append(f"/api/images/{listing_id}/{filename}")
     
     listing_doc = {
         "id": listing_id,
@@ -389,7 +389,7 @@ async def add_images(
         with open(file_path, "wb") as f:
             content = await img.read()
             f.write(content)
-        new_paths.append(f"/uploads/{listing_id}/{filename}")
+        new_paths.append(f"/api/images/{listing_id}/{filename}")
     
     await db.listings.update_one(
         {"id": listing_id},
