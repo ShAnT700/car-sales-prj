@@ -323,9 +323,6 @@ async def get_my_listings(authorization: str = None):
 @api_router.put("/listings/{listing_id}", response_model=CarListingResponse)
 async def update_listing(listing_id: str, update_data: CarListingUpdate, authorization: str = None):
     user = await require_auth(authorization)
-    if not user:
-        from fastapi import Header
-        raise HTTPException(status_code=401, detail="Not authenticated")
     
     listing = await db.listings.find_one({"id": listing_id, "user_id": user["id"]}, {"_id": 0})
     if not listing:
