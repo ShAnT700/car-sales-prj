@@ -147,8 +147,8 @@ export default function HomePage() {
               data-testid="listings-grid"
               className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6"
             >
-              {displayListings.slice(0, window.innerWidth < 640 ? 15 : displayListings.length).map((car) => (
-                <CarCard key={car.id} car={car} compact={window.innerWidth < 640} />
+              {displayListings.slice(0, 15).map((car) => (
+                <CarCard key={car.id} car={car} />
               ))}
             </div>
           )}
