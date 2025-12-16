@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { API } from "../App";
-import { Button } from "../components/ui/button";
+import { Dialog, DialogContent } from "../components/ui/dialog";
 import { 
   ArrowLeft, Phone, MapPin, Gauge, Calendar, 
   Car, Hash, FileText, ChevronLeft, ChevronRight,
-  Loader2
+  Loader2, X, ZoomIn
 } from "lucide-react";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -16,6 +16,7 @@ export default function CarDetailPage() {
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentImage, setCurrentImage] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   useEffect(() => {
     fetchCar();
@@ -44,16 +45,22 @@ export default function CarDetailPage() {
     return new Intl.NumberFormat('en-US').format(mileage);
   };
 
-  const nextImage = () => {
+  const nextImage = (e) => {
+    e?.stopPropagation();
     if (car?.images?.length > 1) {
       setCurrentImage((prev) => (prev + 1) % car.images.length);
     }
   };
 
-  const prevImage = () => {
+  const prevImage = (e) => {
+    e?.stopPropagation();
     if (car?.images?.length > 1) {
       setCurrentImage((prev) => (prev - 1 + car.images.length) % car.images.length);
     }
+  };
+
+  const openLightbox = () => {
+    setLightboxOpen(true);
   };
 
   if (loading) {
@@ -100,13 +107,21 @@ export default function CarDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Image Gallery */}
           <div className="space-y-4">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100">
+            <div 
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 cursor-zoom-in group"
+              onClick={openLightbox}
+            >
               <img
                 src={imageUrl}
                 alt={`${car.make} ${car.model}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 data-testid="main-image"
               />
+              
+              {/* Zoom indicator */}
+              <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <ZoomIn className="w-5 h-5 text-slate-600" />
+              </div>
               
               {car.images?.length > 1 && (
                 <>
@@ -126,7 +141,7 @@ export default function CarDetailPage() {
                   </button>
                   
                   {/* Image counter */}
-                  <div className="absolute bottom-4 right-4 bg-black/60 text-white text-sm px-3 py-1 rounded-full">
+                  <div className="absolute bottom-4 left-4 bg-black/60 text-white text-sm px-3 py-1 rounded-full">
                     {currentImage + 1} / {car.images.length}
                   </div>
                 </>
@@ -242,6 +257,52 @@ export default function CarDetailPage() {
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-0">
+          <div className="relative w-full h-[90vh] flex items-center justify-center">
+            {/* Close button */}
+            <button
+              onClick={() => setLightboxOpen(false)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            {/* Image */}
+            <img
+              src={imageUrl}
+              alt={`${car.make} ${car.model}`}
+              className="max-w-full max-h-full object-contain"
+              data-testid="lightbox-image"
+            />
+            
+            {/* Navigation */}
+            {car.images?.length > 1 && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+                
+                {/* Counter */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 text-white px-4 py-2 rounded-full">
+                  {currentImage + 1} / {car.images.length}
+                </div>
+              </>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
