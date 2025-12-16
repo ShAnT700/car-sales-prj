@@ -410,6 +410,164 @@ async def get_models(make: Optional[str] = None):
     models = await db.listings.distinct("model", query)
     return sorted(set(m.title() for m in models if m))
 
+# ========== FAVORITES ==========
+class FavoriteCreate(BaseModel):
+    listing_id: str
+
+@api_router.post("/favorites")
+async def add_favorite(data: FavoriteCreate, authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    
+    # Check if already favorited
+    existing = await db.favorites.find_one({"user_id": user["id"], "listing_id": data.listing_id})
+    if existing:
+        return {"message": "Already in favorites", "id": existing.get("id")}
+    
+    fav_id = str(uuid.uuid4())
+    await db.favorites.insert_one({
+        "id": fav_id,
+        "user_id": user["id"],
+        "listing_id": data.listing_id,
+        "created_at": datetime.now(timezone.utc).isoformat()
+    })
+    return {"message": "Added to favorites", "id": fav_id}
+
+@api_router.delete("/favorites/{listing_id}")
+async def remove_favorite(listing_id: str, authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    await db.favorites.delete_one({"user_id": user["id"], "listing_id": listing_id})
+    return {"message": "Removed from favorites"}
+
+@api_router.get("/favorites")
+async def get_favorites(authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    favorites = await db.favorites.find({"user_id": user["id"]}, {"_id": 0}).to_list(100)
+    
+    # Get listing details
+    result = []
+    for fav in favorites:
+        listing = await db.listings.find_one({"id": fav["listing_id"]}, {"_id": 0})
+        if listing:
+            listing_user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1})
+            listing["user_name"] = listing_user["name"] if listing_user else "Unknown"
+            listing["favorite_id"] = fav["id"]
+            result.append(listing)
+    return result
+
+@api_router.get("/favorites/ids")
+async def get_favorite_ids(authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    favorites = await db.favorites.find({"user_id": user["id"]}, {"_id": 0, "listing_id": 1}).to_list(100)
+    return [f["listing_id"] for f in favorites]
+
+# ========== SAVED SEARCHES ==========
+class SavedSearchCreate(BaseModel):
+    name: str
+    filters: dict
+
+@api_router.post("/saved-searches")
+async def create_saved_search(data: SavedSearchCreate, authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    
+    search_id = str(uuid.uuid4())
+    await db.saved_searches.insert_one({
+        "id": search_id,
+        "user_id": user["id"],
+        "name": data.name,
+        "filters": data.filters,
+        "created_at": datetime.now(timezone.utc).isoformat()
+    })
+    return {"message": "Search saved", "id": search_id}
+
+@api_router.get("/saved-searches")
+async def get_saved_searches(authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    searches = await db.saved_searches.find({"user_id": user["id"]}, {"_id": 0}).sort("created_at", -1).to_list(50)
+    return searches
+
+@api_router.delete("/saved-searches/{search_id}")
+async def delete_saved_search(search_id: str, authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    await db.saved_searches.delete_one({"id": search_id, "user_id": user["id"]})
+    return {"message": "Search deleted"}
+
+# ========== MESSAGES ==========
+class MessageCreate(BaseModel):
+    listing_id: str
+    receiver_id: str
+    message: str
+
+class MessageResponse(BaseModel):
+    id: str
+    listing_id: str
+    sender_id: str
+    sender_name: str
+    receiver_id: str
+    message: str
+    created_at: str
+    listing_title: Optional[str] = None
+
+@api_router.post("/messages")
+async def send_message(data: MessageCreate, authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    
+    # Verify listing exists
+    listing = await db.listings.find_one({"id": data.listing_id}, {"_id": 0})
+    if not listing:
+        raise HTTPException(status_code=404, detail="Listing not found")
+    
+    msg_id = str(uuid.uuid4())
+    await db.messages.insert_one({
+        "id": msg_id,
+        "listing_id": data.listing_id,
+        "sender_id": user["id"],
+        "receiver_id": data.receiver_id,
+        "message": data.message,
+        "read": False,
+        "created_at": datetime.now(timezone.utc).isoformat()
+    })
+    return {"message": "Message sent", "id": msg_id}
+
+@api_router.get("/messages/inbox")
+async def get_inbox(authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    messages = await db.messages.find({"receiver_id": user["id"]}, {"_id": 0}).sort("created_at", -1).to_list(100)
+    
+    result = []
+    for msg in messages:
+        sender = await db.users.find_one({"id": msg["sender_id"]}, {"_id": 0, "name": 1})
+        listing = await db.listings.find_one({"id": msg["listing_id"]}, {"_id": 0, "make": 1, "model": 1, "year": 1})
+        msg["sender_name"] = sender["name"] if sender else "Unknown"
+        msg["listing_title"] = f"{listing['year']} {listing['make']} {listing['model']}" if listing else "Deleted listing"
+        result.append(msg)
+    return result
+
+@api_router.get("/messages/sent")
+async def get_sent_messages(authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    messages = await db.messages.find({"sender_id": user["id"]}, {"_id": 0}).sort("created_at", -1).to_list(100)
+    
+    result = []
+    for msg in messages:
+        receiver = await db.users.find_one({"id": msg["receiver_id"]}, {"_id": 0, "name": 1})
+        listing = await db.listings.find_one({"id": msg["listing_id"]}, {"_id": 0, "make": 1, "model": 1, "year": 1})
+        msg["receiver_name"] = receiver["name"] if receiver else "Unknown"
+        msg["listing_title"] = f"{listing['year']} {listing['make']} {listing['model']}" if listing else "Deleted listing"
+        result.append(msg)
+    return result
+
+@api_router.get("/messages/unread-count")
+async def get_unread_count(authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    count = await db.messages.count_documents({"receiver_id": user["id"], "read": False})
+    return {"count": count}
+
+@api_router.put("/messages/{message_id}/read")
+async def mark_as_read(message_id: str, authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    await db.messages.update_one({"id": message_id, "receiver_id": user["id"]}, {"$set": {"read": True}})
+    return {"message": "Marked as read"}
+
 @api_router.get("/")
 async def root():
     return {"message": "NextRides API"}
