@@ -274,12 +274,15 @@ class NextRidesAPITester:
             "description": "Updated description - price reduced for quick sale!"
         }
 
+        # The update endpoint expects authorization in headers
+        headers = {"Authorization": f"Bearer {self.token}"}
         return self.run_test(
             "Update Listing",
             "PUT",
             f"listings/{listing_id}",
             200,
-            data=update_data
+            data=update_data,
+            headers=headers
         )[0]
 
     def test_delete_listing(self, listing_id):
