@@ -240,19 +240,61 @@ export default function CarDetailPage() {
             {/* Contact */}
             <div className="p-6 bg-slate-900 rounded-2xl text-white">
               <p className="text-slate-400 text-sm mb-2">Posted by {car.user_name}</p>
-              <a
-                href={`tel:${car.phone}`}
-                data-testid="contact-phone"
-                className="inline-flex items-center gap-3"
-              >
-                <div className="w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center">
-                  <Phone className="w-5 h-5" />
+              <div className="flex items-center gap-4">
+                <a
+                  href={`tel:${car.phone}`}
+                  data-testid="contact-phone"
+                  className="inline-flex items-center gap-3"
+                >
+                  <div className="w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-400">Call Seller</p>
+                    <p className="font-semibold text-lg">{car.phone}</p>
+                  </div>
+                </a>
+              </div>
+              
+              {/* Message Form */}
+              {showMessageForm && (
+                <div className="mt-4 pt-4 border-t border-slate-700">
+                  <textarea
+                    value={messageText}
+                    onChange={(e) => setMessageText(e.target.value)}
+                    placeholder="Write your message to the seller..."
+                    className="w-full h-24 p-3 bg-slate-800 text-white rounded-lg resize-none placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    data-testid="message-textarea"
+                  />
+                  <div className="flex gap-2 mt-2">
+                    <button
+                      onClick={() => setShowMessageForm(false)}
+                      className="flex-1 py-2 px-4 text-sm text-slate-400 hover:text-white transition-colors"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={sendMessage}
+                      disabled={sendingMessage || !messageText.trim()}
+                      className="flex-1 py-2 px-4 bg-emerald-600 text-white text-sm font-semibold rounded-lg hover:bg-emerald-700 disabled:opacity-50 transition-colors"
+                      data-testid="send-message-btn"
+                    >
+                      {sendingMessage ? "Sending..." : "Send Message"}
+                    </button>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm text-slate-400">Call Seller</p>
-                  <p className="font-semibold text-lg">{car.phone}</p>
-                </div>
-              </a>
+              )}
+              
+              {!showMessageForm && user && car.user_id !== user.id && (
+                <button
+                  onClick={() => setShowMessageForm(true)}
+                  className="mt-4 w-full py-3 bg-slate-800 text-white text-sm font-semibold rounded-lg hover:bg-slate-700 transition-colors flex items-center justify-center gap-2"
+                  data-testid="open-message-btn"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  Send Message to Seller
+                </button>
+              )}
             </div>
           </div>
         </div>
