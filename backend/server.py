@@ -34,8 +34,15 @@ UPLOAD_DIR.mkdir(exist_ok=True)
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
-# Mount static files for uploads
-app.mount("/uploads", StaticFiles(directory=str(UPLOAD_DIR)), name="uploads")
+# Serve images via API instead of static mount for cross-origin support
+from fastapi.responses import FileResponse
+
+@api_router.get("/images/{listing_id}/{filename}")
+async def get_image(listing_id: str, filename: str):
+    file_path = UPLOAD_DIR / listing_id / filename
+    if not file_path.exists():
+        raise HTTPException(status_code=404, detail="Image not found")
+    return FileResponse(file_path, media_type="image/jpeg")
 
 # Pydantic Models
 class UserCreate(BaseModel):
