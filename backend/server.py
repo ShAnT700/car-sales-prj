@@ -263,6 +263,7 @@ async def create_listing(
         "vin": vin,
         "description": description,
         "images": image_paths,
+        "clean_title": clean_title_bool,
         "created_at": datetime.now(timezone.utc).isoformat()
     }
     await db.listings.insert_one(listing_doc)
