@@ -1,23 +1,32 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth, API } from "../App";
-import { Search, Menu, X, LogOut, Plus, Heart, Bookmark, Mail } from "lucide-react";
+import { Menu, X, LogOut, Plus, Heart, Mail } from "lucide-react";
 import { Button } from "./ui/button";
 import AuthModal from "./AuthModal";
-import FiltersModal from "./FiltersModal";
 import axios from "axios";
 
-export default function Header() {
+// Custom icons
+const SavedSearchIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M4 6h16M4 10h16M4 14h10" strokeLinecap="round"/>
+    <path d="M17 14l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" stroke="#ef4444"/>
+    <path d="M18 18l1 1 2-2" strokeLinecap="round" strokeLinejoin="round" stroke="#ef4444"/>
+  </svg>
+);
+
+export default function Header({ onOpenSearch }) {
   const { user, token, logout } = useAuth();
   const navigate = useNavigate();
   const [showAuth, setShowAuth] = useState(false);
-  const [showFilters, setShowFilters] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
 
   useEffect(() => {
     if (user && token) {
       fetchUnreadCount();
+      const interval = setInterval(fetchUnreadCount, 30000);
+      return () => clearInterval(interval);
     }
   }, [user, token]);
 
@@ -36,10 +45,6 @@ export default function Header() {
     } else {
       setShowAuth(true);
     }
-  };
-
-  const handleFiltersClose = () => {
-    setShowFilters(false);
   };
 
   return (
@@ -64,64 +69,69 @@ export default function Header() {
             </Link>
 
             {/* Right side buttons */}
-            <div className="flex items-center gap-1.5 sm:gap-3">
-              {/* Find Car Button - Always visible */}
-              <Button
-                data-testid="find-car-btn"
-                onClick={() => setShowFilters(true)}
-                variant="outline"
-                className="h-8 sm:h-10 px-3 sm:px-5 rounded-full bg-slate-100 text-slate-700 font-semibold hover:bg-slate-200 border-0 transition-all text-xs sm:text-sm"
-              >
-                <Search className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                Find
-              </Button>
-
+            <div className="flex items-center gap-1.5 sm:gap-2">
               {user ? (
                 <>
                   {/* Desktop buttons */}
                   <div className="hidden sm:flex items-center gap-2">
-                    {/* Messages */}
+                    {/* Messages - Colorful with red dot */}
                     <Button
                       data-testid="messages-btn"
                       onClick={() => navigate("/messages")}
                       variant="outline"
-                      className="h-10 px-4 rounded-full bg-slate-100 text-slate-700 font-semibold hover:bg-slate-200 border-0 relative"
+                      className="h-10 px-3 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200 hover:from-blue-100 hover:to-purple-100 relative"
                     >
-                      <Mail className="w-4 h-4" />
+                      <Mail className="w-4 h-4 text-blue-600" />
                       {unreadCount > 0 && (
-                        <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
-                          {unreadCount}
+                        <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+                          <span className="w-2 h-2 bg-white rounded-full"></span>
                         </span>
                       )}
                     </Button>
 
-                    {/* Favorites */}
+                    {/* Favorites - Red heart */}
                     <Button
                       data-testid="favorites-btn"
                       onClick={() => navigate("/favorites")}
                       variant="outline"
-                      className="h-10 px-4 rounded-full bg-slate-100 text-slate-700 font-semibold hover:bg-slate-200 border-0"
+                      className="h-10 px-3 rounded-full bg-red-50 border-red-200 hover:bg-red-100"
                     >
-                      <Heart className="w-4 h-4" />
+                      <Heart className="w-4 h-4 text-red-500 fill-red-500" />
                     </Button>
 
-                    {/* Saved Searches */}
+                    {/* Saved Searches - List with hearts */}
                     <Button
                       data-testid="saved-searches-btn"
                       onClick={() => navigate("/saved-searches")}
                       variant="outline"
-                      className="h-10 px-4 rounded-full bg-slate-100 text-slate-700 font-semibold hover:bg-slate-200 border-0"
+                      className="h-10 px-3 rounded-full bg-pink-50 border-pink-200 hover:bg-pink-100"
                     >
-                      <Bookmark className="w-4 h-4" />
+                      <SavedSearchIcon className="w-4 h-4" />
                     </Button>
 
                     {/* My Listings */}
                     <Button
                       data-testid="my-listings-btn"
                       onClick={() => navigate("/my-listings")}
-                      className="h-10 px-5 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-700 shadow-lg shadow-emerald-600/20 transition-all hover:-translate-y-0.5 btn-sell"
+                      className="h-10 px-5 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-700 shadow-lg shadow-emerald-600/20 transition-all hover:-translate-y-0.5"
                     >
                       My Listings
+                    </Button>
+
+                    {/* Profile */}
+                    <Button
+                      data-testid="profile-btn"
+                      onClick={() => navigate("/profile")}
+                      variant="outline"
+                      className="h-10 w-10 p-0 rounded-full bg-slate-100 hover:bg-slate-200"
+                    >
+                      {user.avatar ? (
+                        <img src={user.avatar} alt="" className="w-full h-full rounded-full object-cover" />
+                      ) : (
+                        <span className="text-sm font-bold text-slate-600">
+                          {user.name?.charAt(0).toUpperCase()}
+                        </span>
+                      )}
                     </Button>
 
                     <button
@@ -144,15 +154,13 @@ export default function Header() {
                   </button>
                 </>
               ) : (
-                <>
-                  <Button
-                    data-testid="sell-car-btn"
-                    onClick={handleSellClick}
-                    className="h-8 sm:h-10 px-3 sm:px-5 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-700 shadow-lg shadow-emerald-600/20 transition-all hover:-translate-y-0.5 btn-sell text-xs sm:text-sm"
-                  >
-                    Sell Car
-                  </Button>
-                </>
+                <Button
+                  data-testid="sell-car-btn"
+                  onClick={handleSellClick}
+                  className="h-8 sm:h-10 px-3 sm:px-5 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-700 shadow-lg shadow-emerald-600/20 transition-all hover:-translate-y-0.5 text-xs sm:text-sm"
+                >
+                  Sell Car
+                </Button>
               )}
             </div>
           </div>
@@ -167,13 +175,11 @@ export default function Header() {
                   className="flex items-center justify-between px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"
                 >
                   <div className="flex items-center gap-2">
-                    <Mail className="w-4 h-4" />
+                    <Mail className="w-4 h-4 text-blue-600" />
                     Messages
                   </div>
                   {unreadCount > 0 && (
-                    <span className="w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
-                      {unreadCount}
-                    </span>
+                    <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
                   )}
                 </Link>
                 <Link
@@ -181,7 +187,7 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"
                 >
-                  <Heart className="w-4 h-4" />
+                  <Heart className="w-4 h-4 text-red-500 fill-red-500" />
                   Favorites
                 </Link>
                 <Link
@@ -189,8 +195,18 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"
                 >
-                  <Bookmark className="w-4 h-4" />
+                  <SavedSearchIcon className="w-4 h-4" />
                   Saved Searches
+                </Link>
+                <Link
+                  to="/profile"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"
+                >
+                  <div className="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold">
+                    {user.name?.charAt(0).toUpperCase()}
+                  </div>
+                  Profile
                 </Link>
                 <Link
                   to="/create-listing"
@@ -226,7 +242,6 @@ export default function Header() {
       </header>
 
       <AuthModal open={showAuth} onClose={() => setShowAuth(false)} />
-      <FiltersModal open={showFilters} onClose={handleFiltersClose} />
     </>
   );
 }
