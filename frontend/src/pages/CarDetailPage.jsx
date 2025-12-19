@@ -245,13 +245,27 @@ export default function CarDetailPage() {
 
           {/* Details */}
           <div className="space-y-6">
-            {/* Title & Price */}
+            {/* Title & Price & Favorite */}
             <div>
-              <h1 className="font-manrope font-bold text-3xl sm:text-4xl text-slate-900">
-                {car.year} {car.make} {car.model}
-              </h1>
-              <div className="mt-4">
-                <span className="inline-block text-emerald-700 font-bold text-3xl bg-emerald-50 px-4 py-2 rounded-full">
+              <div className="flex items-start justify-between">
+                <h1 className="font-manrope font-bold text-2xl sm:text-3xl lg:text-4xl text-slate-900">
+                  {car.year} {car.make} {car.model}
+                </h1>
+                {/* Favorite Button */}
+                <Button
+                  onClick={toggleFavorite}
+                  disabled={favoriteLoading}
+                  variant="outline"
+                  className={`h-12 w-12 p-0 rounded-full flex-shrink-0 ${
+                    isFavorite ? 'bg-red-50 border-red-200' : 'bg-slate-50 border-slate-200'
+                  }`}
+                  data-testid="detail-favorite-btn"
+                >
+                  <Heart className={`w-5 h-5 ${isFavorite ? 'text-red-500 fill-red-500' : 'text-slate-400'}`} />
+                </Button>
+              </div>
+              <div className="mt-3">
+                <span className="inline-block text-emerald-700 font-bold text-2xl sm:text-3xl bg-emerald-50 px-4 py-2 rounded-full">
                   {formatPrice(car.price)}
                 </span>
               </div>
