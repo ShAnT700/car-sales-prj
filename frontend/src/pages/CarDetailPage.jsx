@@ -4,10 +4,11 @@ import axios from "axios";
 import { toast } from "sonner";
 import { useAuth, API } from "../App";
 import { Dialog, DialogContent } from "../components/ui/dialog";
+import { Button } from "../components/ui/button";
 import { 
   ArrowLeft, Phone, MapPin, Gauge, Calendar, 
   Car, Hash, FileText, ChevronLeft, ChevronRight,
-  Loader2, X, ZoomIn, MessageSquare
+  Loader2, X, ZoomIn, MessageSquare, Heart, User
 } from "lucide-react";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -22,6 +23,36 @@ export default function CarDetailPage() {
   const [showMessageForm, setShowMessageForm] = useState(false);
   const [messageText, setMessageText] = useState("");
   const [sendingMessage, setSendingMessage] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [favoriteLoading, setFavoriteLoading] = useState(false);
+
+  const toggleFavorite = async () => {
+    if (!user) {
+      toast.error("Please login to add favorites");
+      return;
+    }
+    
+    setFavoriteLoading(true);
+    try {
+      if (isFavorite) {
+        await axios.delete(`${API}/favorites/${car.id}`, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        setIsFavorite(false);
+        toast.success("Removed from favorites");
+      } else {
+        await axios.post(`${API}/favorites`, { listing_id: car.id }, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        setIsFavorite(true);
+        toast.success("Added to favorites!");
+      }
+    } catch (err) {
+      toast.error("Failed to update favorites");
+    } finally {
+      setFavoriteLoading(false);
+    }
+  };
 
   const sendMessage = async () => {
     if (!messageText.trim() || !user) return;
@@ -48,6 +79,21 @@ export default function CarDetailPage() {
   useEffect(() => {
     fetchCar();
   }, [id]);
+
+  useEffect(() => {
+    if (user && token && car) {
+      checkFavorite();
+    }
+  }, [user, token, car]);
+
+  const checkFavorite = async () => {
+    try {
+      const res = await axios.get(`${API}/favorites/ids`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setIsFavorite(res.data.includes(car.id));
+    } catch (e) {}
+  };
 
   const fetchCar = async () => {
     try {
