@@ -79,6 +79,7 @@ class CarListingCreate(BaseModel):
     phone: str
     vin: str
     description: str
+    clean_title: bool = False
 
 class CarListingResponse(BaseModel):
     id: str
@@ -97,6 +98,7 @@ class CarListingResponse(BaseModel):
     images: List[str]
     created_at: str
     user_name: Optional[str] = None
+    clean_title: bool = False
 
 class CarListingUpdate(BaseModel):
     make: Optional[str] = None
@@ -110,6 +112,7 @@ class CarListingUpdate(BaseModel):
     phone: Optional[str] = None
     vin: Optional[str] = None
     description: Optional[str] = None
+    clean_title: Optional[bool] = None
 
 # Helper functions
 def hash_password(password: str) -> str:
