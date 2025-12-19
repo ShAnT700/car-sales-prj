@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "sonner";
@@ -67,19 +67,22 @@ const DISTANCES = [
   { value: "any", label: "Any distance" }
 ];
 
-// Racing Helmet Icon SVG
-const RacingHelmetIcon = ({ className }) => (
+// Car Wheel Icon SVG
+const CarWheelIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2C6.48 2 2 6.48 2 12c0 2.76 1.12 5.26 2.93 7.07L12 12l7.07 7.07C20.88 17.26 22 14.76 22 12c0-5.52-4.48-10-10-10zm0 2c4.41 0 8 3.59 8 8 0 1.85-.63 3.55-1.69 4.9L12 10.59 5.69 16.9C4.63 15.55 4 13.85 4 12c0-4.41 3.59-8 8-8z"/>
-    <path d="M12 6c-3.31 0-6 2.69-6 6 0 1.1.3 2.14.82 3.03L12 9.86l5.18 5.17c.52-.89.82-1.93.82-3.03 0-3.31-2.69-6-6-6z"/>
+    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2"/>
+    <circle cx="12" cy="12" r="3" fill="currentColor"/>
+    <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+    <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" strokeWidth="2"/>
+    <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" strokeWidth="2"/>
+    <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" strokeWidth="2"/>
+    <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" strokeWidth="2"/>
   </svg>
 );
 
 export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
   const { user, token } = useAuth();
   const navigate = useNavigate();
-  const panelRef = useRef(null);
-  const [startY, setStartY] = useState(0);
   
   const [filters, setFilters] = useState({
     make: "",
@@ -98,19 +101,6 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   const [searchName, setSearchName] = useState("");
   const [saving, setSaving] = useState(false);
-
-  // Touch handlers for swipe up to close
-  const handleTouchStart = (e) => {
-    setStartY(e.touches[0].clientY);
-  };
-
-  const handleTouchMove = (e) => {
-    const currentY = e.touches[0].clientY;
-    const diff = startY - currentY;
-    if (diff > 100) {
-      onClose();
-    }
-  };
 
   const handleSearch = () => {
     const params = new URLSearchParams();
@@ -180,27 +170,13 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
       
       {/* Panel */}
       <div 
-        ref={panelRef}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
         className="fixed inset-x-0 bottom-0 z-50 bg-white rounded-t-3xl shadow-2xl max-h-[90vh] overflow-y-auto"
         data-testid="full-search-panel"
       >
-        {/* Hide Filters Button - Always visible */}
-        <div className="sticky top-0 bg-white z-10 px-4 pt-4 pb-2 border-b border-slate-100">
-          <button
-            onClick={onClose}
-            className="w-full flex items-center justify-center gap-2 py-2 text-slate-600 hover:text-slate-900"
-          >
-            <ChevronUp className="w-5 h-5" />
-            <span className="font-medium">Hide Filters</span>
-          </button>
-        </div>
-
         <div className="p-4 sm:p-6">
           {/* Header */}
           <div className="flex items-center gap-3 mb-6">
-            <RacingHelmetIcon className="w-8 h-8 text-red-500" />
+            <CarWheelIcon className="w-8 h-8 text-emerald-500" />
             <h2 className="font-manrope font-bold text-xl sm:text-2xl text-slate-900">
               Let's find new ride!
             </h2>
@@ -399,9 +375,20 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
               </Button>
             )}
             
+            {/* Hide Filters Button - Gray */}
+            <Button
+              onClick={onClose}
+              variant="outline"
+              className="h-12 px-6 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 border-0"
+            >
+              <ChevronUp className="w-4 h-4 mr-2" />
+              Hide Filters
+            </Button>
+            
+            {/* Show Matches Button - Green */}
             <Button
               onClick={handleSearch}
-              className="flex-1 h-12 rounded-full bg-red-500 text-white hover:bg-red-600"
+              className="flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600"
               data-testid="search-btn"
             >
               <Search className="w-4 h-4 mr-2" />
