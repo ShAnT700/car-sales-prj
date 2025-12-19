@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth, API } from "../App";
 import { Menu, X, LogOut, Plus, Heart, Mail } from "lucide-react";
@@ -21,6 +21,8 @@ export default function Header({ onOpenSearch }) {
   const [showAuth, setShowAuth] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
+  const menuRef = useRef(null);
+  const [touchStartY, setTouchStartY] = useState(0);
 
   useEffect(() => {
     if (user && token) {
@@ -29,6 +31,36 @@ export default function Header({ onOpenSearch }) {
       return () => clearInterval(interval);
     }
   }, [user, token]);
+
+  // Close menu on click outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (mobileMenuOpen && menuRef.current && !menuRef.current.contains(event.target)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
+
+  const handleTouchStart = (e) => {
+    setTouchStartY(e.touches[0].clientY);
+  };
+
+  const handleTouchMove = (e) => {
+    const currentY = e.touches[0].clientY;
+    const diff = touchStartY - currentY;
+    // Swipe up to close
+    if (diff > 50) {
+      setMobileMenuOpen(false);
+    }
+  };
 
   const fetchUnreadCount = async () => {
     try {
@@ -165,9 +197,19 @@ export default function Header({ onOpenSearch }) {
             </div>
           </div>
 
-          {/* Mobile menu */}
+          {/* Mobile menu - with swipe and click outside to close */}
           {mobileMenuOpen && user && (
-            <div className="sm:hidden py-3 border-t border-slate-100">
+            <div 
+              ref={menuRef}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              className="sm:hidden py-3 border-t border-slate-100 bg-white"
+            >
+              {/* Swipe indicator */}
+              <div className="flex justify-center mb-2">
+                <div className="w-10 h-1 bg-slate-200 rounded-full"></div>
+              </div>
+              
               <div className="flex flex-col gap-2">
                 <Link
                   to="/messages"
