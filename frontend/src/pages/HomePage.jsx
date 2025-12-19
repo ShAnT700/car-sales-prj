@@ -5,13 +5,18 @@ import { API, useAuth } from "../App";
 import CarCard from "../components/CarCard";
 import FullSearchPanel from "../components/FullSearchPanel";
 import { Button } from "../components/ui/button";
-import { SlidersHorizontal, Car, Loader2, ChevronDown, ChevronUp } from "lucide-react";
+import { SlidersHorizontal, Car, Loader2, ChevronDown } from "lucide-react";
 
-// Racing Helmet Icon
-const RacingHelmetIcon = ({ className }) => (
+// Car Wheel Icon
+const CarWheelIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2C6.48 2 2 6.48 2 12c0 2.76 1.12 5.26 2.93 7.07L12 12l7.07 7.07C20.88 17.26 22 14.76 22 12c0-5.52-4.48-10-10-10zm0 2c4.41 0 8 3.59 8 8 0 1.85-.63 3.55-1.69 4.9L12 10.59 5.69 16.9C4.63 15.55 4 13.85 4 12c0-4.41 3.59-8 8-8z"/>
-    <path d="M12 6c-3.31 0-6 2.69-6 6 0 1.1.3 2.14.82 3.03L12 9.86l5.18 5.17c.52-.89.82-1.93.82-3.03 0-3.31-2.69-6-6-6z"/>
+    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2"/>
+    <circle cx="12" cy="12" r="3" fill="currentColor"/>
+    <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+    <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" strokeWidth="2"/>
+    <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" strokeWidth="2"/>
+    <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" strokeWidth="2"/>
+    <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" strokeWidth="2"/>
   </svg>
 );
 
@@ -21,7 +26,7 @@ export default function HomePage() {
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [hasFilters, setHasFilters] = useState(false);
-  const [searchPanelOpen, setSearchPanelOpen] = useState(false);
+  const [searchPanelOpen, setSearchPanelOpen] = useState(true); // Always open by default
   const [favoriteIds, setFavoriteIds] = useState([]);
   const resultsRef = useRef(null);
 
@@ -85,14 +90,14 @@ export default function HomePage() {
             Good cars are selling here!
           </h1>
 
-          {/* Search Trigger Button */}
+          {/* Search Trigger Button - Light Green */}
           <button
             onClick={() => setSearchPanelOpen(true)}
-            className="w-full max-w-2xl mx-auto flex items-center justify-between p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl border-2 border-red-100 hover:border-red-200 transition-colors"
+            className="w-full max-w-2xl mx-auto flex items-center justify-between p-4 bg-gradient-to-r from-emerald-50 to-green-50 rounded-2xl border-2 border-emerald-100 hover:border-emerald-200 transition-colors"
             data-testid="open-search-btn"
           >
             <div className="flex items-center gap-3">
-              <RacingHelmetIcon className="w-7 h-7 text-red-500" />
+              <CarWheelIcon className="w-7 h-7 text-emerald-500" />
               <span className="font-manrope font-bold text-lg text-slate-900">Let's find new ride!</span>
             </div>
             <ChevronDown className="w-5 h-5 text-slate-500" />
