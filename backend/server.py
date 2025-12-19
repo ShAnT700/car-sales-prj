@@ -219,6 +219,7 @@ async def create_listing(
     phone: str = Form(...),
     vin: str = Form(...),
     description: str = Form(...),
+    clean_title: str = Form("false"),
     images: List[UploadFile] = File(...),
     authorization: str = Form(...)
 ):
@@ -244,6 +245,8 @@ async def create_listing(
             content = await img.read()
             f.write(content)
         image_paths.append(f"/api/images/{listing_id}/{filename}")
+    
+    clean_title_bool = clean_title.lower() == "true"
     
     listing_doc = {
         "id": listing_id,
