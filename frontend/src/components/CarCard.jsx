@@ -7,7 +7,17 @@ import { toast } from "sonner";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
-export default function CarCard({ car, compact = false, isFavorite = false, onFavoriteChange }) {
+// Clean Title Badge
+const CleanTitleBadge = () => (
+  <div 
+    className="w-6 h-6 rounded-full bg-emerald-500 text-white text-[10px] font-bold flex items-center justify-center"
+    title="Clean Title"
+  >
+    CT
+  </div>
+);
+
+export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
   const { user, token } = useAuth();
   const [favorite, setFavorite] = useState(isFavorite);
   const [loading, setLoading] = useState(false);
@@ -85,7 +95,7 @@ export default function CarCard({ car, compact = false, isFavorite = false, onFa
       )}
 
       {/* Image */}
-      <div className={`${compact ? 'aspect-[4/3]' : 'aspect-[4/3]'} overflow-hidden bg-slate-100`}>
+      <div className="aspect-[4/3] overflow-hidden bg-slate-100">
         <img
           src={imageUrl}
           alt={`${car.make} ${car.model}`}
@@ -96,11 +106,14 @@ export default function CarCard({ car, compact = false, isFavorite = false, onFa
 
       {/* Content */}
       <div className="p-2 sm:p-4">
-        {/* Make & Model */}
-        <h3 className="font-manrope font-bold text-slate-900 truncate text-xs sm:text-lg">
-          <span className="sm:hidden">{car.make} {car.model}</span>
-          <span className="hidden sm:inline">{car.year} {car.make} {car.model}</span>
-        </h3>
+        {/* Make & Model with Clean Title badge */}
+        <div className="flex items-center gap-2">
+          <h3 className="font-manrope font-bold text-slate-900 truncate text-xs sm:text-lg flex-1">
+            <span className="sm:hidden">{car.make} {car.model}</span>
+            <span className="hidden sm:inline">{car.year} {car.make} {car.model}</span>
+          </h3>
+          {car.clean_title && <CleanTitleBadge />}
+        </div>
 
         {/* Price */}
         <div className="mt-1 sm:mt-2">
