@@ -11,6 +11,8 @@ import CreateListingPage from "./pages/CreateListingPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import SavedSearchesPage from "./pages/SavedSearchesPage";
 import MessagesPage from "./pages/MessagesPage";
+import ProfilePage from "./pages/ProfilePage";
+import PublicProfilePage from "./pages/PublicProfilePage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 export const API = `${BACKEND_URL}/api`;
@@ -78,6 +80,8 @@ function App() {
             <Route path="/favorites" element={<FavoritesPage />} />
             <Route path="/saved-searches" element={<SavedSearchesPage />} />
             <Route path="/messages" element={<MessagesPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/user/:userId" element={<PublicProfilePage />} />
           </Routes>
         </BrowserRouter>
       </div>
