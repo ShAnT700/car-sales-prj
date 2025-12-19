@@ -572,6 +572,95 @@ async def mark_as_read(message_id: str, authorization: str = Header(None)):
 async def root():
     return {"message": "NextRides API"}
 
+# ========== PROFILE ==========
+class ProfileUpdate(BaseModel):
+    name: Optional[str] = None
+    nickname: Optional[str] = None
+    phone: Optional[str] = None
+    avatar: Optional[str] = None
+    show_favorites: Optional[bool] = None
+    show_saved_searches: Optional[bool] = None
+
+@api_router.get("/profile")
+async def get_profile(authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    profile = await db.users.find_one({"id": user["id"]}, {"_id": 0, "password": 0})
+    return profile
+
+@api_router.put("/profile")
+async def update_profile(data: ProfileUpdate, authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    
+    update_dict = {k: v for k, v in data.model_dump().items() if v is not None}
+    if update_dict:
+        await db.users.update_one({"id": user["id"]}, {"$set": update_dict})
+    
+    updated = await db.users.find_one({"id": user["id"]}, {"_id": 0, "password": 0})
+    return updated
+
+@api_router.post("/profile/avatar")
+async def upload_avatar(avatar: UploadFile = File(...), authorization: str = Form(...)):
+    user = await require_auth(authorization)
+    
+    # Save avatar
+    avatar_dir = UPLOAD_DIR / "avatars"
+    avatar_dir.mkdir(exist_ok=True)
+    
+    ext = avatar.filename.split('.')[-1] if '.' in avatar.filename else 'jpg'
+    filename = f"{user['id']}.{ext}"
+    file_path = avatar_dir / filename
+    
+    with open(file_path, "wb") as f:
+        content = await avatar.read()
+        f.write(content)
+    
+    avatar_url = f"/api/images/avatars/{filename}"
+    await db.users.update_one({"id": user["id"]}, {"$set": {"avatar": avatar_url}})
+    
+    return {"avatar": avatar_url}
+
+@api_router.get("/users/{user_id}/public")
+async def get_public_profile(user_id: str):
+    user = await db.users.find_one({"id": user_id}, {"_id": 0, "password": 0, "email": 0})
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    # Get user's listings
+    listings = await db.listings.find({"user_id": user_id}, {"_id": 0}).sort("created_at", -1).to_list(50)
+    for listing in listings:
+        listing["user_name"] = user.get("nickname") or user.get("name", "Unknown")
+    
+    # Get favorites if allowed
+    favorites = []
+    if user.get("show_favorites", True):
+        fav_docs = await db.favorites.find({"user_id": user_id}, {"_id": 0}).to_list(50)
+        for fav in fav_docs:
+            listing = await db.listings.find_one({"id": fav["listing_id"]}, {"_id": 0})
+            if listing:
+                listing_user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1, "nickname": 1})
+                listing["user_name"] = listing_user.get("nickname") or listing_user.get("name", "Unknown") if listing_user else "Unknown"
+                favorites.append(listing)
+    
+    # Get saved searches if allowed
+    saved_searches = []
+    if user.get("show_saved_searches", False):
+        saved_searches = await db.saved_searches.find({"user_id": user_id}, {"_id": 0}).to_list(50)
+    
+    return {
+        "user": user,
+        "listings": listings,
+        "favorites": favorites,
+        "saved_searches": saved_searches
+    }
+
+# Serve avatar images
+@api_router.get("/images/avatars/{filename}")
+async def get_avatar_image(filename: str):
+    file_path = UPLOAD_DIR / "avatars" / filename
+    if not file_path.exists():
+        raise HTTPException(status_code=404, detail="Avatar not found")
+    return FileResponse(file_path, media_type="image/jpeg")
+
 app.include_router(api_router)
 
 app.add_middleware(
