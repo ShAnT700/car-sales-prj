@@ -326,7 +326,13 @@ export default function CarDetailPage() {
 
             {/* Contact */}
             <div className="p-6 bg-slate-900 rounded-2xl text-white">
-              <p className="text-slate-400 text-sm mb-2">Posted by {car.user_name}</p>
+              <Link 
+                to={`/user/${car.user_id}`}
+                className="flex items-center gap-2 text-slate-400 text-sm mb-3 hover:text-white transition-colors"
+              >
+                <User className="w-4 h-4" />
+                <span>Posted by <span className="text-white font-medium">{car.user_name}</span></span>
+              </Link>
               <div className="flex items-center gap-4">
                 <a
                   href={`tel:${car.phone}`}
