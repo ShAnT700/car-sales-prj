@@ -18,6 +18,8 @@ export default function CarDetailPage() {
   const { user, token } = useAuth();
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [seller, setSeller] = useState(null);
+
   const [currentImage, setCurrentImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [showMessageForm, setShowMessageForm] = useState(false);
@@ -83,6 +85,13 @@ export default function CarDetailPage() {
   useEffect(() => {
     if (user && token && car) {
       checkFavorite();
+
+  useEffect(() => {
+    if (car?.user_id) {
+      fetchSeller(car.user_id);
+    }
+  }, [car?.user_id]);
+
     }
   }, [user, token, car]);
 
@@ -93,6 +102,16 @@ export default function CarDetailPage() {
       });
       setIsFavorite(res.data.includes(car.id));
     } catch (e) {}
+  };
+
+
+  const fetchSeller = async (userId) => {
+    try {
+      const res = await axios.get(`${API}/users/${userId}/public`);
+      setSeller(res.data.user);
+    } catch (err) {
+      console.error("Failed to fetch seller:", err);
+    }
   };
 
   const fetchCar = async () => {
