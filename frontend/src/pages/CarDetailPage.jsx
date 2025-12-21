@@ -355,9 +355,8 @@ export default function CarDetailPage() {
             {/* Contact & Seller */}
             <div className="p-6 bg-slate-900 rounded-2xl text-white space-y-4">
               {/* Seller profile block */}
-              <button
-                type="button"
-                onClick={() => window.location.assign(`/user/${car.user_id}`)}
+              <Link
+                to={`/user/${car.user_id}`}
                 className="w-full flex items-center justify-between gap-3 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors"
               >
                 <div className="flex items-center gap-3">
@@ -380,7 +379,7 @@ export default function CarDetailPage() {
                   </div>
                 </div>
                 <span className="text-xs text-slate-400">View profile</span>
-              </button>
+              </Link>
 
               {/* Call Seller button (separate) */}
               <a
