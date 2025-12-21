@@ -99,5 +99,50 @@
 
 
 #====================================================================================================
+## user_problem_statement: Implement car detail layout (separate Call Seller + seller profile link) and fix avatar upload; verify via UI.
+
+## frontend:
+  - task: "Car detail page layout and CT badge"
+    implemented: true
+    working: false
+    file: "frontend/src/pages/CarDetailPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: false
+        agent: "main"
+        comment: "Implemented separate Call Seller button (tel:), seller info block linking to /user/:id, and CT badge near title. Needs UI verification."
+
+  - task: "Avatar upload from ProfilePage"
+    implemented: true
+    working: false
+    file: "frontend/src/pages/ProfilePage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: false
+        agent: "main"
+        comment: "Updated avatar upload to send file via multipart and rely on FastAPI Form authorization param; must verify with demo user."
+
+## metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: true
+
+## test_plan:
+  current_focus:
+    - "Car detail page layout and CT badge"
+    - "Avatar upload from ProfilePage"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+## agent_communication:
+  - agent: "main"
+    message: "Please log in as demo@example.com/demo1234, open any listing detail, verify CT badge visibility for clean_title listings, check that Call Seller is a separate green tel: button, verify seller info block navigates to public profile, and then open /profile to test avatar upload (pick any small image) and see that it updates without errors."
+
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
