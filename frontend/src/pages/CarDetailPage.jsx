@@ -80,6 +80,7 @@ export default function CarDetailPage() {
 
   useEffect(() => {
     fetchCar();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   useEffect(() => {
