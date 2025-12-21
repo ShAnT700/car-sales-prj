@@ -264,11 +264,18 @@ export default function CarDetailPage() {
           {/* Details */}
           <div className="space-y-6">
             {/* Title & Price & Favorite */}
-            <div>
-              <div className="flex items-start justify-between">
-                <h1 className="font-manrope font-bold text-2xl sm:text-3xl lg:text-4xl text-slate-900">
-                  {car.year} {car.make} {car.model}
-                </h1>
+            <div className="space-y-4">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                  <h1 className="font-manrope font-bold text-2xl sm:text-3xl lg:text-4xl text-slate-900 flex items-center gap-2 flex-wrap">
+                    <span className="truncate">{car.year} {car.make} {car.model}</span>
+                    {car.clean_title && (
+                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-white text-xs font-bold shrink-0">
+                        CT
+                      </span>
+                    )}
+                  </h1>
+                </div>
                 {/* Favorite Button */}
                 <Button
                   onClick={toggleFavorite}
@@ -282,7 +289,7 @@ export default function CarDetailPage() {
                   <Heart className={`w-5 h-5 ${isFavorite ? 'text-red-500 fill-red-500' : 'text-slate-400'}`} />
                 </Button>
               </div>
-              <div className="mt-3">
+              <div className="flex flex-wrap items-center gap-3 justify-between">
                 <span className="inline-block text-emerald-700 font-bold text-2xl sm:text-3xl bg-emerald-50 px-4 py-2 rounded-full">
                   {formatPrice(car.price)}
                 </span>
