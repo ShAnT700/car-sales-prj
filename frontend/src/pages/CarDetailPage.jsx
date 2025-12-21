@@ -102,9 +102,10 @@ export default function CarDetailPage() {
         headers: { Authorization: `Bearer ${token}` }
       });
       setIsFavorite(res.data.includes(car.id));
-    } catch (e) {}
+    } catch (e) {
+      console.error("Failed to check favorite", e);
+    }
   };
-
 
   const fetchSeller = async (userId) => {
     try {
