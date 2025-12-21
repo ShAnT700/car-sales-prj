@@ -89,12 +89,12 @@ export default function ProfilePage() {
 
     const formData = new FormData();
     formData.append("avatar", file);
-    formData.append("authorization", `Bearer ${token}`);
 
     try {
       const res = await axios.post(`${API}/profile/avatar`, formData, {
         headers: { 
-          "Content-Type": "multipart/form-data"
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`
         }
       });
       setProfile(prev => ({ ...prev, avatar: res.data.avatar }));
