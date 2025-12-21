@@ -349,31 +349,46 @@ export default function CarDetailPage() {
               <p className="text-slate-600 whitespace-pre-wrap">{car.description}</p>
             </div>
 
-            {/* Contact */}
-            <div className="p-6 bg-slate-900 rounded-2xl text-white">
-              <Link 
-                to={`/user/${car.user_id}`}
-                className="flex items-center gap-2 text-slate-400 text-sm mb-3 hover:text-white transition-colors"
+            {/* Contact & Seller */}
+            <div className="p-6 bg-slate-900 rounded-2xl text-white space-y-4">
+              {/* Seller profile block */}
+              <button
+                type="button"
+                onClick={() => window.location.assign(`/user/${car.user_id}`)}
+                className="w-full flex items-center justify-between gap-3 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors"
               >
-                <User className="w-4 h-4" />
-                <span>Posted by <span className="text-white font-medium">{car.user_name}</span></span>
-              </Link>
-              <div className="flex items-center gap-4">
-                <a
-                  href={`tel:${car.phone}`}
-                  data-testid="contact-phone"
-                  className="inline-flex items-center gap-3"
-                >
-                  <div className="w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center">
-                    <Phone className="w-5 h-5" />
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center overflow-hidden">
+                    {seller?.avatar ? (
+                      <img
+                        src={seller.avatar.startsWith('/') ? `${BACKEND_URL}${seller.avatar}` : seller.avatar}
+                        alt={seller.nickname || seller.name || 'Seller avatar'}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <User className="w-5 h-5 text-slate-300" />
+                    )}
                   </div>
-                  <div>
-                    <p className="text-sm text-slate-400">Call Seller</p>
-                    <p className="font-semibold text-lg">{car.phone}</p>
+                  <div className="text-left">
+                    <p className="text-xs text-slate-400">Seller</p>
+                    <p className="text-sm font-semibold text-white truncate">
+                      {seller?.nickname || seller?.name || car.user_name || 'Seller'}
+                    </p>
                   </div>
-                </a>
-              </div>
-              
+                </div>
+                <span className="text-xs text-slate-400">View profile</span>
+              </button>
+
+              {/* Call Seller button (separate) */}
+              <a
+                href={`tel:${car.phone}`}
+                data-testid="contact-phone"
+                className="inline-flex items-center justify-center gap-3 w-full h-12 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold transition-colors"
+              >
+                <Phone className="w-5 h-5" />
+                <span>Call Seller</span>
+              </a>
+
               {/* Message Form */}
               {showMessageForm && (
                 <div className="mt-4 pt-4 border-t border-slate-700">
