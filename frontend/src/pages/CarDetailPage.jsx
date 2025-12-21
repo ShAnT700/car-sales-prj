@@ -85,15 +85,14 @@ export default function CarDetailPage() {
   useEffect(() => {
     if (user && token && car) {
       checkFavorite();
+    }
+  }, [user, token, car]);
 
   useEffect(() => {
     if (car?.user_id) {
       fetchSeller(car.user_id);
     }
   }, [car?.user_id]);
-
-    }
-  }, [user, token, car]);
 
   const checkFavorite = async () => {
     try {
