@@ -87,6 +87,7 @@ export default function CarDetailPage() {
     if (user && token && car) {
       checkFavorite();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, token, car]);
 
   useEffect(() => {
