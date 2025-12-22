@@ -114,7 +114,7 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
         {/* Model & Price on one line */}
         <div className="flex items-center justify-between gap-2">
           <h3 className="font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1">
-            {car.model}
+            {car.make} {car.model}
           </h3>
           <span className="inline-block text-emerald-700 font-bold bg-emerald-50 rounded-full text-xs sm:text-sm px-2 py-0.5 whitespace-nowrap">
             {formatPrice(car.price)}
