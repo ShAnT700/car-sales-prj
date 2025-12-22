@@ -155,12 +155,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Full Search Panel */}
-      <FullSearchPanel 
-        isOpen={searchPanelOpen} 
-        onClose={() => setSearchPanelOpen(false)}
-        onSearch={() => {}}
-      />
+      {/* Search panel is now controlled globally by GlobalSearchBar */}
     </div>
   );
 }
