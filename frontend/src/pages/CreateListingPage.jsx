@@ -185,6 +185,7 @@ export default function CreateListingPage() {
         formData.append("phone", form.phone);
         formData.append("vin", form.vin);
         formData.append("description", form.description);
+        formData.append("clean_title", form.clean_title === "yes" ? "true" : "false");
         formData.append("authorization", `Bearer ${token}`);
         
         images.forEach(img => {
