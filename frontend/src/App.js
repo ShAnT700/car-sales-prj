@@ -72,6 +72,7 @@ function App() {
         <Toaster position="top-center" richColors />
         <BrowserRouter>
           <Header />
+          <GlobalSearchBar />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/car/:id" element={<CarDetailPage />} />
