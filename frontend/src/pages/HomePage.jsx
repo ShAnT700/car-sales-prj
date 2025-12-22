@@ -56,7 +56,7 @@ export default function HomePage() {
     setLoading(true);
     try {
       const params = {};
-      const filterKeys = ['make', 'model', 'yearFrom', 'yearTo', 'mileageFrom', 'mileageTo', 'priceFrom', 'priceTo', 'driveType', 'zipCode'];
+      const filterKeys = ['make', 'model', 'yearFrom', 'yearTo', 'mileageFrom', 'mileageTo', 'priceFrom', 'priceTo', 'driveType', 'zipCode', 'cleanTitle'];
       
       filterKeys.forEach(key => {
         const value = searchParams.get(key);
