@@ -86,22 +86,9 @@ export default function HomePage() {
       {/* Hero Section - Compact */}
       <section className="relative bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-          <h1 className="font-manrope font-bold text-xl sm:text-2xl lg:text-3xl text-slate-900 tracking-tight text-center mb-4">
+          <h1 className="font-manrope font-bold text-xl sm:text-2xl lg:text-3xl text-slate-900 tracking-tight text-center">
             Good cars are selling here!
           </h1>
-
-          {/* Search Trigger Button - Light Green */}
-          <button
-            onClick={() => setSearchPanelOpen(true)}
-            className="w-full max-w-2xl mx-auto flex items-center justify-between p-4 bg-gradient-to-r from-emerald-50 to-green-50 rounded-2xl border-2 border-emerald-100 hover:border-emerald-200 transition-colors"
-            data-testid="open-search-btn"
-          >
-            <div className="flex items-center gap-3">
-              <CarWheelIcon className="w-7 h-7 text-emerald-500" />
-              <span className="font-manrope font-bold text-lg text-slate-900">Let's find new ride!</span>
-            </div>
-            <ChevronDown className="w-5 h-5 text-slate-500" />
-          </button>
         </div>
       </section>
 
