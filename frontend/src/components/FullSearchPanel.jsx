@@ -179,7 +179,7 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
           <div className="flex items-center gap-3 mb-6">
             <CarWheelIcon className="w-8 h-8 text-emerald-500" />
             <h2 className="font-manrope font-bold text-xl sm:text-2xl text-slate-900">
-              Let's find new ride!
+              Let&apos;s find new ride!
             </h2>
           </div>
 
