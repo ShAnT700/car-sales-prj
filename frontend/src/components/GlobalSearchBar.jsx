@@ -25,7 +25,7 @@ export default function GlobalSearchBar() {
           <button
             type="button"
             onClick={open ? handleClose : handleOpen}
-            className={`flex-1 h-12 sm:h-14 rounded-full text-sm font-semibold border transition-colors shadow-[0_0_18px_rgba(16,185,129,0.45)] ${
+            className={`flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold border transition-colors shadow-[0_0_24px_rgba(16,185,129,0.7)] ${
               open
                 ? "bg-slate-900 text-white border-emerald-400"
                 : "bg-slate-100 text-slate-800 border-emerald-400 hover:bg-slate-200"
