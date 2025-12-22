@@ -152,7 +152,8 @@ export default function CreateListingPage() {
             phone: form.phone,
             vin: form.vin,
             description: form.description,
-            clean_title: form.clean_title === "yes"
+            clean_title: form.clean_title === "yes",
+            images: existingImages
           },
           {
             headers: { Authorization: `Bearer ${token}` }
