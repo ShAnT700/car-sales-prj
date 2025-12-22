@@ -113,6 +113,7 @@ class CarListingUpdate(BaseModel):
     vin: Optional[str] = None
     description: Optional[str] = None
     clean_title: Optional[bool] = None
+    images: Optional[List[str]] = None
 
 # Helper functions
 def hash_password(password: str) -> str:
