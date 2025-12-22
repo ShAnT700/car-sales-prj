@@ -129,7 +129,7 @@ export default function HomePage() {
               data-testid="listings-grid"
               className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5"
             >
-              {listings.slice(0, 15).map((car) => (
+              {listings.slice(0, 16).map((car) => (
                 <CarCard 
                   key={car.id} 
                   car={car} 
