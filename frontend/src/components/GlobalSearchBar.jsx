@@ -20,7 +20,7 @@ export default function GlobalSearchBar() {
   return (
     <>
       {/* Нижняя панель с кнопками */}
-      <div className="fixed bottom-0 inset-x-0 z-60 flex justify-center pb-3 pointer-events-none">
+      <div className="fixed bottom-0 inset-x-0 z-[60] flex justify-center pb-3 pointer-events-none">
         <div className="max-w-3xl w-full px-4 flex gap-2 pointer-events-auto">
           <button
             type="button"

@@ -68,7 +68,7 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ user, token, login, logout }}>
-      <div className="App min-h-screen bg-white">
+      <div className="App min-h-screen bg-white pb-20">
         <Toaster position="top-center" richColors />
         <BrowserRouter>
           <Header />
