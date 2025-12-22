@@ -171,7 +171,7 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
       
       {/* Panel */}
       <div 
-        className="fixed inset-x-0 bottom-0 z-50 bg-white rounded-t-3xl shadow-2xl max-h-[90vh] overflow-y-auto"
+        className="fixed inset-x-0 bottom-14 sm:bottom-16 z-40 bg-white rounded-t-3xl shadow-2xl max-h-[75vh] overflow-y-auto"
         data-testid="full-search-panel"
       >
         <div className="p-4 sm:p-6">
