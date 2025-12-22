@@ -309,6 +309,8 @@ async def get_listings(
         query["drive_type"] = drive_type
     if zip_code:
         query["zip_code"] = {"$regex": f"^{zip_code[:3]}", "$options": "i"}
+    if clean_title is not None:
+        query["clean_title"] = clean_title
     
     listings = await db.listings.find(query, {"_id": 0}).sort("created_at", -1).skip(skip).limit(limit).to_list(limit)
     
