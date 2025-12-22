@@ -190,7 +190,7 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
               <SelectTrigger data-testid="filter-make" className="h-12 bg-slate-50">
                 <SelectValue placeholder="Make" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="z-[80]">
                 <SelectItem value="all">Any Make</SelectItem>
                 {CAR_MAKES.map((make) => (
                   <SelectItem key={make} value={make}>{make}</SelectItem>
@@ -207,7 +207,7 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
               <SelectTrigger data-testid="filter-model" className="h-12 bg-slate-50">
                 <SelectValue placeholder="Model" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="z-[80]">
                 <SelectItem value="all">Any Model</SelectItem>
                 {filters.make && filters.make !== "all" && CAR_MODELS[filters.make]?.map((model) => (
                   <SelectItem key={model} value={model}>{model}</SelectItem>
@@ -232,7 +232,7 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
               <SelectTrigger data-testid="filter-distance" className="h-12 bg-slate-50">
                 <SelectValue placeholder="Distance" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="z-[80]">
                 {DISTANCES.map((d) => (
                   <SelectItem key={d.value} value={d.value}>{d.label}</SelectItem>
                 ))}
@@ -250,7 +250,7 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
               <SelectTrigger className="h-12 bg-slate-50">
                 <SelectValue placeholder="Year From" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="z-[80]">
                 <SelectItem value="all">Any</SelectItem>
                 {YEARS.map((year) => (
                   <SelectItem key={year} value={String(year)}>{year}</SelectItem>
@@ -265,7 +265,7 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
               <SelectTrigger className="h-12 bg-slate-50">
                 <SelectValue placeholder="Year To" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="z-[80]">
                 <SelectItem value="all">Any</SelectItem>
                 {YEARS.map((year) => (
                   <SelectItem key={year} value={String(year)}>{year}</SelectItem>
@@ -317,7 +317,7 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
               <SelectTrigger className="h-12 bg-slate-50">
                 <SelectValue placeholder="Drive Type" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="z-[80]">
                 <SelectItem value="all">Any</SelectItem>
                 {DRIVE_TYPES.map((type) => (
                   <SelectItem key={type} value={type}>{type}</SelectItem>
@@ -333,7 +333,7 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
               <SelectTrigger className="h-12 bg-slate-50">
                 <SelectValue placeholder="Clean Title" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="z-[80]">
                 <SelectItem value="all">Any</SelectItem>
                 <SelectItem value="true">Clean Title Only</SelectItem>
               </SelectContent>
