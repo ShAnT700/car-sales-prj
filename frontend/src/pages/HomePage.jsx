@@ -104,19 +104,6 @@ export default function HomePage() {
                 </p>
               )}
             </div>
-            
-            {hasFilters && (
-              <Button
-                data-testid="edit-filters-btn"
-                variant="outline"
-                onClick={() => setSearchPanelOpen(true)}
-                className="rounded-full text-sm"
-                size="sm"
-              >
-                <SlidersHorizontal className="w-4 h-4 mr-1" />
-                Edit
-              </Button>
-            )}
           </div>
 
           {/* Listings Grid */}

@@ -369,8 +369,8 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
             </div>
           )}
 
-          {/* Action Buttons (hidden, handled by global bar) */}
-          <div className="flex gap-2 hidden">
+          {/* Action Buttons (hidden visually, used by global bar) */}
+          <div className="flex gap-2 opacity-0 pointer-events-none h-0 overflow-hidden">
             <Button
               variant="outline"
               onClick={handleClear}
