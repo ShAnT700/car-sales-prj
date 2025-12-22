@@ -283,6 +283,7 @@ async def get_listings(
     drive_type: Optional[str] = None,
     zip_code: Optional[str] = None,
     distance: Optional[int] = None,
+    clean_title: Optional[bool] = None,
     limit: int = 50,
     skip: int = 0
 ):
