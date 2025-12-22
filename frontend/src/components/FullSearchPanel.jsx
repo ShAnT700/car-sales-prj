@@ -84,6 +84,8 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
   const { user, token } = useAuth();
   const navigate = useNavigate();
   
+  const [touchStartY, setTouchStartY] = useState(null);
+
   const [filters, setFilters] = useState({
     make: "",
     model: "",
@@ -173,6 +175,15 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
       <div 
         className="fixed inset-x-0 bottom-[72px] sm:bottom-[84px] z-40 bg-white rounded-t-3xl shadow-2xl max-h-[70vh] overflow-y-auto"
         data-testid="full-search-panel"
+        onTouchStart={(e) => setTouchStartY(e.touches[0].clientY)}
+        onTouchMove={(e) => {
+          if (touchStartY === null) return;
+          const diff = e.touches[0].clientY - touchStartY;
+          if (diff > 60) {
+            onClose();
+            setTouchStartY(null);
+          }
+        }}
       >
         <div className="p-4 sm:p-6">
           {/* Header */}
