@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useNavigate, useParams } from "react-rout
 import axios from "axios";
 import { Toaster, toast } from "sonner";
 import Header from "./components/Header";
+import GlobalSearchBar from "./components/GlobalSearchBar";
 import HomePage from "./pages/HomePage";
 import CarDetailPage from "./pages/CarDetailPage";
 import MyListingsPage from "./pages/MyListingsPage";
