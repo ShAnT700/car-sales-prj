@@ -78,43 +78,7 @@ export default function CarDetailPage() {
     }
   };
 
-  useEffect(() => {
-    fetchCar();
-  }, [id]);
-
-  useEffect(() => {
-    if (user && token && car) {
-      checkFavorite();
-    }
-  }, [user, token, car]);
-
-  useEffect(() => {
-    if (car?.user_id) {
-      fetchSeller(car.user_id);
-    }
-  }, [car?.user_id]);
-
-  const checkFavorite = async () => {
-    try {
-      const res = await axios.get(`${API}/favorites/ids`, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      setIsFavorite(res.data.includes(car.id));
-    } catch (e) {
-      console.error("Failed to check favorite", e);
-    }
-  };
-
-  const fetchSeller = async (userId) => {
-    try {
-      const res = await axios.get(`${API}/users/${userId}/public`);
-      setSeller(res.data.user);
-    } catch (err) {
-      console.error("Failed to fetch seller:", err);
-    }
-  };
-
-  const fetchCar = async () => {
+  const fetchCar = useCallback(async () => {
     try {
       const res = await axios.get(`${API}/listings/${id}`);
       setCar(res.data);
@@ -123,7 +87,44 @@ export default function CarDetailPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
+
+  const checkFavorite = useCallback(async () => {
+    if (!car || !token) return;
+    try {
+      const res = await axios.get(`${API}/favorites/ids`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setIsFavorite(res.data.includes(car.id));
+    } catch (e) {
+      console.error("Failed to check favorite", e);
+    }
+  }, [car, token]);
+
+  const fetchSeller = useCallback(async (userId) => {
+    try {
+      const res = await axios.get(`${API}/users/${userId}/public`);
+      setSeller(res.data.user);
+    } catch (err) {
+      console.error("Failed to fetch seller:", err);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchCar();
+  }, [fetchCar]);
+
+  useEffect(() => {
+    if (user && token && car) {
+      checkFavorite();
+    }
+  }, [user, token, car, checkFavorite]);
+
+  useEffect(() => {
+    if (car?.user_id) {
+      fetchSeller(car.user_id);
+    }
+  }, [car?.user_id, fetchSeller]);
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-US', {
