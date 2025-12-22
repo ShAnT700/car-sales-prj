@@ -324,6 +324,20 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
                 ))}
               </SelectContent>
             </Select>
+
+            {/* Clean Title */}
+            <Select 
+              value={filters.cleanTitle} 
+              onValueChange={(v) => setFilters({ ...filters, cleanTitle: v })}
+            >
+              <SelectTrigger className="h-12 bg-slate-50">
+                <SelectValue placeholder="Clean Title" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Any</SelectItem>
+                <SelectItem value="true">Clean Title Only</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           {/* Save Search Dialog */}
