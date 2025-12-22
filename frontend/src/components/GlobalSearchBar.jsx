@@ -20,15 +20,15 @@ export default function GlobalSearchBar() {
   return (
     <>
       {/* Нижняя панель с кнопками */}
-      <div className="fixed bottom-0 inset-x-0 z-40 flex justify-center pb-3 pointer-events-none">
+      <div className="fixed bottom-0 inset-x-0 z-60 flex justify-center pb-3 pointer-events-none">
         <div className="max-w-3xl w-full px-4 flex gap-2 pointer-events-auto">
           <button
             type="button"
             onClick={open ? handleClose : handleOpen}
-            className={`flex-1 h-10 sm:h-11 rounded-full text-sm font-semibold border transition-colors ${
+            className={`flex-1 h-12 sm:h-14 rounded-full text-sm font-semibold border transition-colors shadow-[0_0_18px_rgba(16,185,129,0.45)] ${
               open
-                ? "bg-slate-900 text-white border-slate-900"
-                : "bg-slate-100 text-slate-800 border-slate-300 hover:bg-slate-200"
+                ? "bg-slate-900 text-white border-emerald-400"
+                : "bg-slate-100 text-slate-800 border-emerald-400 hover:bg-slate-200"
             }`}
           >
             {open ? "Hide Search!" : "Go Search!"}
