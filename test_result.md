@@ -139,9 +139,7 @@
   run_ui: true
 
 ## test_plan:
-  current_focus:
-    - "Car detail page layout and CT badge"
-    - "Avatar upload from ProfilePage"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -149,6 +147,8 @@
 ## agent_communication:
   - agent: "main"
     message: "Please log in as demo@example.com/demo1234, open any listing detail, verify CT badge visibility for clean_title listings, check that Call Seller is a separate green tel: button, verify seller info block navigates to public profile, and then open /profile to test avatar upload (pick any small image) and see that it updates without errors."
+  - agent: "testing"
+    message: "✅ TESTING COMPLETE: Both tasks tested successfully. Car detail page layout working correctly with separate Call Seller button (green, tel: link), seller profile navigation to /user/:id working, gallery and favorites functional. Avatar upload working without errors and persists after reload. Fixed React hooks compilation errors during testing. Demo user created for testing (demo@example.com/demo1234)."
 
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
