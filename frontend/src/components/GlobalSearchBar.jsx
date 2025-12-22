@@ -22,6 +22,8 @@ export default function GlobalSearchBar() {
       {/* Нижняя панель с кнопками */}
       <div className="fixed bottom-0 inset-x-0 z-[60] flex justify-center pb-3 pointer-events-none">
         <div className="max-w-3xl w-full px-4 flex gap-2 pointer-events-auto">
+          {/* Metallic base under buttons */}
+          <div className="absolute inset-x-6 bottom-1 h-16 rounded-full bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 shadow-[0_8px_16px_rgba(15,23,42,0.35)] border border-slate-400/70 blur-[0.5px]" />
           <button
             type="button"
             onClick={open ? handleClose : handleOpen}
