@@ -3,9 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { API, useAuth } from "../App";
 import CarCard from "../components/CarCard";
-import FullSearchPanel from "../components/FullSearchPanel";
-import { Button } from "../components/ui/button";
-import { SlidersHorizontal, Car, Loader2, ChevronDown } from "lucide-react";
+import { Car, Loader2 } from "lucide-react";
 
 // Car Wheel Icon
 const CarWheelIcon = ({ className }) => (
@@ -26,7 +24,6 @@ export default function HomePage() {
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [hasFilters, setHasFilters] = useState(false);
-  const [searchPanelOpen, setSearchPanelOpen] = useState(true); // Always open by default
   const [favoriteIds, setFavoriteIds] = useState([]);
   const resultsRef = useRef(null);
 
