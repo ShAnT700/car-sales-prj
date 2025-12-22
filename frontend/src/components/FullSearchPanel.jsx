@@ -119,7 +119,7 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
     setFilters({
       make: "", model: "", zipCode: "", distance: "",
       yearFrom: "", yearTo: "", mileageFrom: "", mileageTo: "",
-      priceFrom: "", priceTo: "", driveType: ""
+      priceFrom: "", priceTo: "", driveType: "", cleanTitle: ""
     });
   };
 
