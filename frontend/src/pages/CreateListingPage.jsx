@@ -44,7 +44,8 @@ export default function CreateListingPage() {
     zip_code: "",
     phone: user?.phone || "",
     vin: "",
-    description: ""
+    description: "",
+    clean_title: "no"
   });
 
   const isEditing = !!id;
@@ -82,7 +83,8 @@ export default function CreateListingPage() {
         zip_code: car.zip_code,
         phone: car.phone,
         vin: car.vin,
-        description: car.description
+        description: car.description,
+        clean_title: car.clean_title ? "yes" : "no"
       });
       setExistingImages(car.images || []);
     } catch (err) {
