@@ -42,7 +42,7 @@ export default function GlobalSearchBar() {
                   panel.click();
                 }
               }}
-              className="flex-1 h-10 sm:h-11 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md"
+              className="flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md"
             >
               Show Matches
             </button>
