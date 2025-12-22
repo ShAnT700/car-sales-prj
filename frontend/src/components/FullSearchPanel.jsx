@@ -95,7 +95,8 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
     mileageTo: "",
     priceFrom: "",
     priceTo: "",
-    driveType: ""
+    driveType: "",
+    cleanTitle: ""
   });
 
   const [showSaveDialog, setShowSaveDialog] = useState(false);
