@@ -102,6 +102,24 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
         />
+
+        {/* Seller avatar circle */}
+        <Link
+          to={`/user/${car.user_id}`}
+          onClick={(e) => e.stopPropagation()}
+          className="absolute top-2 left-2 w-9 h-9 rounded-full border-2 border-white shadow-md overflow-hidden bg-slate-200 flex items-center justify-center hover:scale-105 transition-transform z-10"
+        >
+          {car.user_avatar ? (
+            <img
+              src={car.user_avatar.startsWith('/') ? `${BACKEND_URL}${car.user_avatar}` : car.user_avatar}
+              alt={car.user_name || 'Seller avatar'}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <User className="w-4 h-4 text-slate-500" />
+          )}
+        </Link>
+
         {car.clean_title && (
           <div className="absolute bottom-2 right-2">
             <CleanTitleBadge />
