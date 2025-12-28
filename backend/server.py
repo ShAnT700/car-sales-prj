@@ -98,6 +98,7 @@ class CarListingResponse(BaseModel):
     images: List[str]
     created_at: str
     user_name: Optional[str] = None
+    user_avatar: Optional[str] = None
     clean_title: bool = False
 
 class CarListingUpdate(BaseModel):
@@ -315,10 +316,11 @@ async def get_listings(
     
     listings = await db.listings.find(query, {"_id": 0}).sort("created_at", -1).skip(skip).limit(limit).to_list(limit)
     
-    # Get user names
+    # Attach user info
     for listing in listings:
-        user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1})
+        user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1, "avatar": 1})
         listing["user_name"] = user["name"] if user else "Unknown"
+        listing["user_avatar"] = user.get("avatar") if user else None
     
     return listings
 
