@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, Gauge, Heart } from "lucide-react";
+import { MapPin, Gauge, Heart, User } from "lucide-react";
 import { useAuth, API } from "../App";
 import axios from "axios";
 import { toast } from "sonner";
