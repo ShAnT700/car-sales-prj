@@ -330,8 +330,9 @@ async def get_listing(listing_id: str):
     if not listing:
         raise HTTPException(status_code=404, detail="Listing not found")
     
-    user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1})
+    user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1, "avatar": 1})
     listing["user_name"] = user["name"] if user else "Unknown"
+    listing["user_avatar"] = user.get("avatar") if user else None
     
     return listing
 
