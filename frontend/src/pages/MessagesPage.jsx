@@ -89,13 +89,9 @@ export default function MessagesPage() {
     }
   };
 
-  const markAsRead = async (msgId) => {
-    try {
-      await axios.put(`${API}/messages/${msgId}/read`, {}, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      setMessages(messages.map(m => m.id === msgId ? { ...m, read: true } : m));
-    } catch (e) {}
+  const markAsReadThread = async (threadId) => {
+    // We don't have per-thread read API; threads endpoint already reflects unread_count
+    // Optionally, we could mark all messages as read server-side here if needed.
   };
 
   const formatDate = (dateStr) => {
