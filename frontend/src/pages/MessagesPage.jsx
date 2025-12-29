@@ -35,6 +35,57 @@ export default function MessagesPage() {
       setMessages(res.data);
     } catch (err) {
       toast.error("Failed to load messages");
+  const openConversation = async (msg) => {
+    const otherUserId = activeTab === "inbox" ? msg.sender_id : msg.receiver_id;
+    const listingId = msg.listing_id;
+
+    setActiveConversation({
+      listing_id: listingId,
+      other_user_id: otherUserId,
+      listing_title: msg.listing_title,
+    });
+
+    setConversationLoading(true);
+    try {
+      const res = await axios.get(`${API}/messages/conversation`, {
+        params: { listing_id: listingId, other_user_id: otherUserId },
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setConversationMessages(res.data);
+      setReplyText("");
+    } catch (err) {
+      toast.error("Failed to load conversation");
+    } finally {
+      setConversationLoading(false);
+    }
+  };
+
+  const sendReply = async () => {
+    if (!replyText.trim() || !activeConversation) return;
+
+    try {
+      const payload = {
+        listing_id: activeConversation.listing_id,
+        receiver_id: activeTab === "inbox" ? activeConversation.other_user_id : activeConversation.other_user_id,
+        message: replyText.trim(),
+      };
+
+      await axios.post(`${API}/messages`, payload, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      // reload conversation
+      const res = await axios.get(`${API}/messages/conversation`, {
+        params: { listing_id: activeConversation.listing_id, other_user_id: activeConversation.other_user_id },
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setConversationMessages(res.data);
+      setReplyText("");
+    } catch (err) {
+      toast.error("Failed to send message");
+    }
+  };
+
     } finally {
       setLoading(false);
     }
