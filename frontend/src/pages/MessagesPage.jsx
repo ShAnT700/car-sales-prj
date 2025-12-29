@@ -159,7 +159,7 @@ export default function MessagesPage() {
               </div>
             ) : (
               <div className="bg-white rounded-2xl border border-slate-100 p-4 flex flex-col min-h-[320px]">
-              {activeConversation ? (
+                {activeConversation ? (
                 <>
                   <div className="flex items-center justify-between mb-3 border-b border-slate-100 pb-2">
                     <div>
