@@ -134,9 +134,14 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
           <h3 className="font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1">
             {car.make} {car.model}
           </h3>
-          <span className="inline-block text-emerald-700 font-bold bg-emerald-50 rounded-full text-xs sm:text-sm px-2 py-0.5 whitespace-nowrap">
-            {formatPrice(car.price)}
-          </span>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <span className="inline-block text-emerald-700 font-bold bg-emerald-50 rounded-full text-xs sm:text-sm px-2 py-0.5 whitespace-nowrap">
+              {formatPrice(car.price)}
+            </span>
+            <span className="text-[10px] sm:text-xs text-slate-500 whitespace-nowrap">
+              {car.favorite_count ?? 0} ❤
+            </span>
+          </div>
         </div>
 
         {/* Mileage & City on second line */}
