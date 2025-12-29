@@ -468,9 +468,11 @@ async def get_favorites(authorization: str = Header(None)):
     for fav in favorites:
         listing = await db.listings.find_one({"id": fav["listing_id"]}, {"_id": 0})
         if listing:
-            listing_user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1})
+            listing_user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1, "avatar": 1})
             listing["user_name"] = listing_user["name"] if listing_user else "Unknown"
+            listing["user_avatar"] = listing_user.get("avatar") if listing_user else None
             listing["favorite_id"] = fav["id"]
+            listing["favorite_count"] = await db.favorites.count_documents({"listing_id": listing["id"]})
             result.append(listing)
     return result
 
@@ -574,6 +576,58 @@ async def send_message(data: MessageCreate, authorization: str = Header(None)):
         "created_at": datetime.now(timezone.utc).isoformat()
     })
     return {"message": "Message sent", "id": msg_id}
+
+@api_router.get("/messages/threads")
+async def get_threads(authorization: str = Header(None)):
+    user = await require_auth(authorization)
+
+    messages = await db.messages.find(
+        {"$or": [
+            {"sender_id": user["id"]},
+            {"receiver_id": user["id"]},
+        ]},
+        {"_id": 0}
+    ).sort("created_at", -1).to_list(200)
+
+    threads = {}
+
+    for msg in messages:
+        other_id = msg["receiver_id"] if msg["sender_id"] == user["id"] else msg["sender_id"]
+        key = f"{msg['listing_id']}::{other_id}"
+
+        thread = threads.get(key)
+        if not thread:
+            # fetch user and listing once per thread
+            other_user = await db.users.find_one({"id": other_id}, {"_id": 0, "name": 1, "avatar": 1})
+            listing = await db.listings.find_one({"id": msg["listing_id"]}, {"_id": 0, "make": 1, "model": 1, "year": 1})
+            listing_title = f"{listing['year']} {listing['make']} {listing['model']}" if listing else "Deleted listing"
+
+            thread = {
+                "id": key,
+                "listing_id": msg["listing_id"],
+                "other_user_id": other_id,
+                "other_user_name": other_user["name"] if other_user else "Unknown",
+                "other_user_avatar": other_user.get("avatar") if other_user else None,
+                "listing_title": listing_title,
+                "last_message": msg["message"],
+                "last_created_at": msg["created_at"],
+                "unread_count": 0,
+            }
+            threads[key] = thread
+
+        # update last message if this msg is newer
+        if msg["created_at"] > thread["last_created_at"]:
+            thread["last_message"] = msg["message"]
+            thread["last_created_at"] = msg["created_at"]
+
+        # unread count (only messages to current user and not read)
+        if msg["receiver_id"] == user["id"] and not msg.get("read", False):
+            thread["unread_count"] += 1
+
+    # sort threads by last_created_at desc
+    result = sorted(threads.values(), key=lambda t: t["last_created_at"], reverse=True)
+    return result
+
 
 @api_router.get("/messages/inbox")
 async def get_inbox(authorization: str = Header(None)):
