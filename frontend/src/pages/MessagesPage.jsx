@@ -121,68 +121,44 @@ export default function MessagesPage() {
           <div className="flex items-center justify-center py-20">
             <Loader2 className="w-8 h-8 animate-spin text-slate-400" />
           </div>
-        ) : threads.length === 0 ? (
-          <div className="text-center py-20 bg-white rounded-2xl border border-slate-100">
-            <Mail className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-            <h3 className="font-manrope font-semibold text-xl text-slate-600">
-              No messages yet
-            </h3>
-            <p className="text-slate-500 mt-2">
-              When someone contacts you about your listing, it will appear here
-            </p>
-          </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.5fr)] gap-6">
-            {/* Threads list */}
-            <div className="space-y-3">
-              {threads.map((thread) => (
-                <div
-                  key={thread.id}
-                  onClick={() => openConversation(thread)}
-                  className={`bg-white rounded-xl border p-4 cursor-pointer hover:bg-slate-50 transition-colors ${
-                    thread.unread_count > 0 ? 'border-blue-200 bg-blue-50/50' : 'border-slate-100'
-                  }`}
-                >
-                  <div className="flex items-start justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      {/* Avatar circle (not clickable per требованиям, но с логикой можно легко сделать Link) */}
-                      <div className="w-9 h-9 rounded-full overflow-hidden bg-slate-200 flex items-center justify-center">
-                        {thread.other_user_avatar ? (
-                          <img
-                            src={thread.other_user_avatar.startsWith('/') ? `${API.replace('/api','')}${thread.other_user_avatar}` : thread.other_user_avatar}
-                            alt={thread.other_user_name}
-                            className="w-full h-full object-cover"
-                          />
-                        ) : (
-                          <User className="w-4 h-4 text-slate-500" />
-                        )}
-                      </div>
-                      <div>
-                        <p className="font-semibold text-slate-900 text-sm">
-                          {thread.other_user_name}
-                        </p>
-                        <p className="text-xs text-slate-500 line-clamp-1">
-                          {thread.listing_title}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-end gap-1">
-                      <span className="text-xs text-slate-500">{formatDate(thread.last_created_at)}</span>
-                      {thread.unread_count > 0 && (
-                        <span className="min-w-[18px] px-1 h-5 rounded-full bg-blue-500 text-white text-[10px] flex items-center justify-center">
-                          {thread.unread_count}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  
-                  <p className="text-slate-600 text-sm line-clamp-2">{thread.last_message}</p>
-                </div>
-              ))}
+          <>
+            {/* Dropdown with threads */}
+            <div className="mb-4">
+              <label className="block text-xs font-medium text-slate-500 mb-1">Select chat</label>
+              <select
+                className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm bg-white focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
+                value={activeConversation ? activeConversation.listing_id + '::' + activeConversation.other_user_id : ""}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  const t = threads.find(th => th.id === val);
+                  if (t) openConversation(t);
+                }}
+              >
+                <option value="" disabled>
+                  {threads.length === 0 ? "No chats yet" : "Choose a chat"}
+                </option>
+                {threads.map((thread) => (
+                  <option key={thread.id} value={thread.id}>
+                    {thread.other_user_name}  b7 {thread.listing_title}
+                    {thread.unread_count > 0 ? ` (${thread.unread_count} new)` : ""}
+                  </option>
+                ))}
+              </select>
             </div>
 
-            {/* Conversation panel */}
-            <div className="bg-white rounded-2xl border border-slate-100 p-4 flex flex-col min-h-[320px]">
+            {threads.length === 0 ? (
+              <div className="text-center py-20 bg-white rounded-2xl border border-slate-100">
+                <Mail className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+                <h3 className="font-manrope font-semibold text-xl text-slate-600">
+                  No messages yet
+                </h3>
+                <p className="text-slate-500 mt-2">
+                  When someone contacts you about your listing, it will appear here
+                </p>
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl border border-slate-100 p-4 flex flex-col min-h-[320px]">
               {activeConversation ? (
                 <>
                   <div className="flex items-center justify-between mb-3 border-b border-slate-100 pb-2">
