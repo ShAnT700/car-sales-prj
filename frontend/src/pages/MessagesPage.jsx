@@ -136,41 +136,50 @@ export default function MessagesPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.5fr)] gap-6">
-            {/* Message list */}
+            {/* Threads list */}
             <div className="space-y-3">
-              {messages.map((msg) => (
+              {threads.map((thread) => (
                 <div
-                  key={msg.id}
-                  onClick={() => {
-                    if (activeTab === "inbox" && !msg.read) markAsRead(msg.id);
-                    openConversation(msg);
-                  }}
+                  key={thread.id}
+                  onClick={() => openConversation(thread)}
                   className={`bg-white rounded-xl border p-4 cursor-pointer hover:bg-slate-50 transition-colors ${
-                    !msg.read && activeTab === "inbox" ? 'border-blue-200 bg-blue-50/50' : 'border-slate-100'
+                    thread.unread_count > 0 ? 'border-blue-200 bg-blue-50/50' : 'border-slate-100'
                   }`}
                 >
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-slate-900">
-                        {activeTab === "inbox" ? msg.sender_name : msg.receiver_name}
-                      </span>
-                      {!msg.read && activeTab === "inbox" && (
-                        <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                      {/* Avatar circle (not clickable per требованиям, но с логикой можно легко сделать Link) */}
+                      <div className="w-9 h-9 rounded-full overflow-hidden bg-slate-200 flex items-center justify-center">
+                        {thread.other_user_avatar ? (
+                          <img
+                            src={thread.other_user_avatar.startsWith('/') ? `${API.replace('/api','')}${thread.other_user_avatar}` : thread.other_user_avatar}
+                            alt={thread.other_user_name}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <User className="w-4 h-4 text-slate-500" />
+                        )}
+                      </div>
+                      <div>
+                        <p className="font-semibold text-slate-900 text-sm">
+                          {thread.other_user_name}
+                        </p>
+                        <p className="text-xs text-slate-500 line-clamp-1">
+                          {thread.listing_title}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-end gap-1">
+                      <span className="text-xs text-slate-500">{formatDate(thread.last_created_at)}</span>
+                      {thread.unread_count > 0 && (
+                        <span className="min-w-[18px] px-1 h-5 rounded-full bg-blue-500 text-white text-[10px] flex items-center justify-center">
+                          {thread.unread_count}
+                        </span>
                       )}
                     </div>
-                    <span className="text-sm text-slate-500">{formatDate(msg.created_at)}</span>
                   </div>
                   
-                  <Link 
-                    to={`/car/${msg.listing_id}`}
-                    className="flex items-center gap-1 text-sm text-emerald-600 hover:underline mb-2"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Car className="w-3 h-3" />
-                    {msg.listing_title}
-                  </Link>
-                  
-                  <p className="text-slate-600 text-sm line-clamp-2">{msg.message}</p>
+                  <p className="text-slate-600 text-sm line-clamp-2">{thread.last_message}</p>
                 </div>
               ))}
             </div>
