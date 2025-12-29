@@ -278,21 +278,24 @@ export default function CarDetailPage() {
                     )}
                   </h1>
                 </div>
-                {/* Favorite Button + Count */}
+                {/* Favorite Button + Count (combined) */}
                 <div className="flex flex-col items-center gap-1">
                   <Button
                     onClick={toggleFavorite}
                     disabled={favoriteLoading}
                     variant="outline"
-                    className={`h-12 w-12 p-0 rounded-full flex-shrink-0 ${
-                      isFavorite ? 'bg-red-50 border-red-200' : 'bg-slate-50 border-slate-200'
+                    className={`h-12 w-12 p-0 rounded-full flex-shrink-0 border ${
+                      isFavorite ? 'bg-red-500 border-red-500 text-white shadow-md' : 'bg-white text-slate-400 border-slate-200'
                     }`}
                     data-testid="detail-favorite-btn"
                   >
-                    <Heart className={`w-5 h-5 ${isFavorite ? 'text-red-500 fill-red-500' : 'text-slate-400'}`} />
+                    <Heart className={`w-5 h-5 ${isFavorite ? 'fill-current' : ''}`} />
                   </Button>
                   <span className="text-xs text-slate-500">
-                    {car.favorite_count ?? 0} likes
+                    {(() => {
+                      const count = car.favorite_count ?? 0;
+                      return count >= 1000 ? `${Math.round(count / 100) / 10}K` : count;
+                    })()} likes
                   </span>
                 </div>
               </div>
