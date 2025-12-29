@@ -358,6 +358,37 @@ export default function CreateListingPage() {
             )}
           </div>
 
+          {/* Clean Title */}
+          <div className="bg-white rounded-2xl border border-slate-100 p-6">
+            <h2 className="font-manrope font-semibold text-lg text-slate-900 mb-4">
+              Clean Title
+            </h2>
+            <div className="flex flex-wrap gap-4">
+              <button
+                type="button"
+                onClick={() => setForm({ ...form, clean_title: "yes" })}
+                className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+                  form.clean_title === "yes"
+                    ? "bg-emerald-500 border-emerald-600 text-white"
+                    : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                }`}
+              >
+                Yes
+              </button>
+              <button
+                type="button"
+                onClick={() => setForm({ ...form, clean_title: "no" })}
+                className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+                  form.clean_title === "no"
+                    ? "bg-slate-900 border-slate-900 text-white"
+                    : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                }`}
+              >
+                No
+              </button>
+            </div>
+          </div>
+
           {/* Vehicle Details */}
           <div className="bg-white rounded-2xl border border-slate-100 p-6">
             <h2 className="font-manrope font-semibold text-lg text-slate-900 mb-4">
