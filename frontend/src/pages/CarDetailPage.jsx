@@ -15,6 +15,8 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 export default function CarDetailPage() {
   const { id } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
   const { user, token } = useAuth();
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
