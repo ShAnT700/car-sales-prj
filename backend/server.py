@@ -599,8 +599,9 @@ async def get_threads(authorization: str = Header(None)):
         if not thread:
             # fetch user and listing once per thread
             other_user = await db.users.find_one({"id": other_id}, {"_id": 0, "name": 1, "avatar": 1})
-            listing = await db.listings.find_one({"id": msg["listing_id"]}, {"_id": 0, "make": 1, "model": 1, "year": 1})
+            listing = await db.listings.find_one({"id": msg["listing_id"]}, {"_id": 0, "make": 1, "model": 1, "year": 1, "images": 1})
             listing_title = f"{listing['year']} {listing['make']} {listing['model']}" if listing else "Deleted listing"
+            listing_image = listing["images"][0] if listing and listing.get("images") else None
 
             thread = {
                 "id": key,
@@ -609,6 +610,7 @@ async def get_threads(authorization: str = Header(None)):
                 "other_user_name": other_user["name"] if other_user else "Unknown",
                 "other_user_avatar": other_user.get("avatar") if other_user else None,
                 "listing_title": listing_title,
+                "listing_image": listing_image,
                 "last_message": msg["message"],
                 "last_created_at": msg["created_at"],
                 "unread_count": 0,
