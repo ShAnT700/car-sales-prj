@@ -317,11 +317,12 @@ async def get_listings(
     
     listings = await db.listings.find(query, {"_id": 0}).sort("created_at", -1).skip(skip).limit(limit).to_list(limit)
     
-    # Attach user info
+    # Attach user info and favorite counts
     for listing in listings:
         user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1, "avatar": 1})
         listing["user_name"] = user["name"] if user else "Unknown"
         listing["user_avatar"] = user.get("avatar") if user else None
+        listing["favorite_count"] = await db.favorites.count_documents({"listing_id": listing["id"]})
     
     return listings
 
