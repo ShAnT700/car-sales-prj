@@ -510,8 +510,13 @@ export default function CreateListingPage() {
                   data-testid="listing-zip"
                   placeholder="e.g. 90001"
                   value={form.zip_code}
-                  onChange={(e) => setForm({ ...form, zip_code: e.target.value })}
+                  onChange={(e) => {
+                    const v = e.target.value.slice(0, 5).replace(/[^0-9]/g, "");
+                    setForm({ ...form, zip_code: v });
+                  }}
                   className="h-12 bg-slate-50"
+                  pattern="[0-9]{5}"
+                  maxLength={5}
                   required
                 />
               </div>
