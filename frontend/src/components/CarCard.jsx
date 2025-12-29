@@ -84,13 +84,19 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
         <button
           onClick={toggleFavorite}
           disabled={loading}
-          className={`absolute top-2 right-2 z-10 w-8 h-8 rounded-full flex items-center justify-center transition-all ${
+          className={`absolute top-2 right-2 z-10 w-9 h-9 rounded-full flex flex-col items-center justify-center transition-all border ${
             favorite 
-              ? 'bg-red-500 text-white' 
-              : 'bg-white/80 text-slate-400 hover:text-red-500'
+              ? 'bg-red-500 text-white border-red-500 shadow-md' 
+              : 'bg-white/90 text-slate-400 border-slate-200 hover:text-red-500'
           }`}
         >
           <Heart className={`w-4 h-4 ${favorite ? 'fill-current' : ''}`} />
+          <span className="text-[9px] leading-none mt-0.5">
+            {(() => {
+              const count = car.favorite_count ?? 0;
+              return count >= 1000 ? `${Math.round(count / 100) / 10}K` : count;
+            })()}
+          </span>
         </button>
       )}
 
