@@ -140,7 +140,7 @@ export default function MessagesPage() {
                 </option>
                 {threads.map((thread) => (
                   <option key={thread.id} value={thread.id}>
-                    {thread.other_user_name}  b7 {thread.listing_title}
+                    {thread.other_user_name} · {thread.listing_title}
                     {thread.unread_count > 0 ? ` (${thread.unread_count} new)` : ""}
                   </option>
                 ))}
