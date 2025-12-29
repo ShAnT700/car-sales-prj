@@ -38,14 +38,14 @@ export default function MessagesPage() {
     }
   };
 
-  const openConversation = async (msg) => {
-    const otherUserId = activeTab === "inbox" ? msg.sender_id : msg.receiver_id;
-    const listingId = msg.listing_id;
+  const openConversation = async (thread) => {
+    const otherUserId = thread.other_user_id;
+    const listingId = thread.listing_id;
 
     setActiveConversation({
       listing_id: listingId,
       other_user_id: otherUserId,
-      listing_title: msg.listing_title,
+      listing_title: thread.listing_title,
     });
 
     setConversationLoading(true);
