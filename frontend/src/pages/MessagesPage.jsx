@@ -9,8 +9,7 @@ import { Mail, Loader2, Car, User } from "lucide-react";
 export default function MessagesPage() {
   const { user, token } = useAuth();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("inbox");
-  const [messages, setMessages] = useState([]);
+  const [threads, setThreads] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeConversation, setActiveConversation] = useState(null); // { listing_id, other_user_id, listing_title }
   const [conversationMessages, setConversationMessages] = useState([]);
