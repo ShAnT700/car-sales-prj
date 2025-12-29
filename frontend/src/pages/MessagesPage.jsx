@@ -21,17 +21,16 @@ export default function MessagesPage() {
       navigate("/");
       return;
     }
-    fetchMessages();
-  }, [user, navigate, activeTab]);
+    fetchThreads();
+  }, [user, navigate]);
 
-  const fetchMessages = async () => {
+  const fetchThreads = async () => {
     setLoading(true);
     try {
-      const endpoint = activeTab === "inbox" ? "/messages/inbox" : "/messages/sent";
-      const res = await axios.get(`${API}${endpoint}`, {
+      const res = await axios.get(`${API}/messages/threads`, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      setMessages(res.data);
+      setThreads(res.data);
     } catch (err) {
       toast.error("Failed to load messages");
     } finally {
