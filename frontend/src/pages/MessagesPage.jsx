@@ -161,39 +161,118 @@ export default function MessagesPage() {
             </p>
           </div>
         ) : (
-          <div className="space-y-3">
-            {messages.map((msg) => (
-              <div
-                key={msg.id}
-                onClick={() => activeTab === "inbox" && !msg.read && markAsRead(msg.id)}
-                className={`bg-white rounded-xl border p-4 cursor-pointer hover:bg-slate-50 transition-colors ${
-                  !msg.read && activeTab === "inbox" ? 'border-blue-200 bg-blue-50/50' : 'border-slate-100'
-                }`}
-              >
-                <div className="flex items-start justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="font-semibold text-slate-900">
-                      {activeTab === "inbox" ? msg.sender_name : msg.receiver_name}
-                    </span>
-                    {!msg.read && activeTab === "inbox" && (
-                      <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.5fr)] gap-6">
+            {/* Message list */}
+            <div className="space-y-3">
+              {messages.map((msg) => (
+                <div
+                  key={msg.id}
+                  onClick={() => {
+                    if (activeTab === "inbox" && !msg.read) markAsRead(msg.id);
+                    openConversation(msg);
+                  }}
+                  className={`bg-white rounded-xl border p-4 cursor-pointer hover:bg-slate-50 transition-colors ${
+                    !msg.read && activeTab === "inbox" ? 'border-blue-200 bg-blue-50/50' : 'border-slate-100'
+                  }`}
+                >
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-slate-900">
+                        {activeTab === "inbox" ? msg.sender_name : msg.receiver_name}
+                      </span>
+                      {!msg.read && activeTab === "inbox" && (
+                        <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                      )}
+                    </div>
+                    <span className="text-sm text-slate-500">{formatDate(msg.created_at)}</span>
+                  </div>
+                  
+                  <Link 
+                    to={`/car/${msg.listing_id}`}
+                    className="flex items-center gap-1 text-sm text-emerald-600 hover:underline mb-2"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Car className="w-3 h-3" />
+                    {msg.listing_title}
+                  </Link>
+                  
+                  <p className="text-slate-600 text-sm line-clamp-2">{msg.message}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Conversation panel */}
+            <div className="bg-white rounded-2xl border border-slate-100 p-4 flex flex-col min-h-[320px]">
+              {activeConversation ? (
+                <>
+                  <div className="flex items-center justify-between mb-3 border-b border-slate-100 pb-2">
+                    <div>
+                      <p className="text-xs uppercase tracking-wide text-slate-400">Conversation</p>
+                      <p className="font-manrope font-semibold text-slate-900 text-sm sm:text-base">
+                        {activeConversation.listing_title}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex-1 overflow-y-auto space-y-2 pr-1">
+                    {conversationLoading ? (
+                      <div className="flex items-center justify-center h-full">
+                        <Loader2 className="w-6 h-6 animate-spin text-slate-400" />
+                      </div>
+                    ) : conversationMessages.length === 0 ? (
+                      <p className="text-sm text-slate-500 text-center mt-8">
+                        No messages in this conversation yet.
+                      </p>
+                    ) : (
+                      conversationMessages.map((m) => {
+                        const isMe = m.sender_id === user.id;
+                        return (
+                          <div
+                            key={m.id}
+                            className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}
+                          >
+                            <div
+                              className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm shadow-sm ${
+                                isMe
+                                  ? 'bg-emerald-600 text-white rounded-br-sm'
+                                  : 'bg-slate-100 text-slate-900 rounded-bl-sm'
+                              }`}
+                            >
+                              <p>{m.message}</p>
+                              <p className="mt-1 text-[10px] opacity-70 text-right">
+                                {formatDate(m.created_at)}
+                              </p>
+                            </div>
+                          </div>
+                        );
+                      })
                     )}
                   </div>
-                  <span className="text-sm text-slate-500">{formatDate(msg.created_at)}</span>
+
+                  <div className="mt-3 pt-2 border-t border-slate-100 flex items-center gap-2">
+                    <textarea
+                      value={replyText}
+                      onChange={(e) => setReplyText(e.target.value)}
+                      placeholder="Type your message..."
+                      className="flex-1 text-sm border border-slate-200 rounded-xl px-3 py-2 resize-none focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 max-h-24"
+                      rows={2}
+                    />
+                    <Button
+                      onClick={sendReply}
+                      disabled={!replyText.trim()}
+                      className="rounded-full h-10 px-4 bg-emerald-600 hover:bg-emerald-700 text-sm"
+                    >
+                      Send
+                    </Button>
+                  </div>
+                </>
+              ) : (
+                <div className="flex-1 flex flex-col items-center justify-center text-center text-slate-400 text-sm">
+                  <User className="w-10 h-10 mb-2" />
+                  <p>Select a message to see the full conversation and reply.</p>
                 </div>
-                
-                <Link 
-                  to={`/car/${msg.listing_id}`}
-                  className="flex items-center gap-1 text-sm text-emerald-600 hover:underline mb-2"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <Car className="w-3 h-3" />
-                  {msg.listing_title}
-                </Link>
-                
-                <p className="text-slate-600 text-sm line-clamp-2">{msg.message}</p>
-              </div>
-            ))}
+              )}
+            </div>
           </div>
         )}
       </div>
