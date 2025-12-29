@@ -385,14 +385,21 @@ export default function CreateListingPage() {
 
               <div className="space-y-2">
                 <Label>Model <span className="text-red-500">*</span></Label>
-                <Input
-                  data-testid="listing-model"
-                  placeholder="e.g. Camry"
-                  value={form.model}
-                  onChange={(e) => setForm({ ...form, model: e.target.value })}
-                  className="h-12 bg-slate-50"
+                <Select 
+                  value={form.model} 
+                  onValueChange={(v) => setForm({ ...form, model: v })}
+                  disabled={!form.make}
                   required
-                />
+                >
+                  <SelectTrigger data-testid="listing-model" className="h-12 bg-slate-50">
+                    <SelectValue placeholder={form.make ? "Select Model" : "Select Make first"} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {form.make && CAR_MODELS[form.make]?.map((model) => (
+                      <SelectItem key={model} value={model}>{model}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
 
               <div className="space-y-2">
@@ -481,14 +488,20 @@ export default function CreateListingPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label>City <span className="text-red-500">*</span></Label>
-                <Input
-                  data-testid="listing-city"
-                  placeholder="e.g. Los Angeles"
+                <Select
                   value={form.city}
-                  onChange={(e) => setForm({ ...form, city: e.target.value })}
-                  className="h-12 bg-slate-50"
+                  onValueChange={(v) => setForm({ ...form, city: v })}
                   required
-                />
+                >
+                  <SelectTrigger data-testid="listing-city" className="h-12 bg-slate-50">
+                    <SelectValue placeholder="Select City" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {CITIES.map((city) => (
+                      <SelectItem key={city} value={city}>{city}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
 
               <div className="space-y-2">
