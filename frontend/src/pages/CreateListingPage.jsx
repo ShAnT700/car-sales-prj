@@ -182,8 +182,13 @@ export default function CreateListingPage() {
       return;
     }
     
-    if (form.description.length < 10) {
-      toast.error("Description must be at least 10 characters");
+    if (form.description.length < 30) {
+      toast.error("Description must be at least 30 characters");
+      return;
+    }
+
+    if (form.description.length > 1000) {
+      toast.error("Description cannot exceed 1000 characters");
       return;
     }
 
