@@ -520,6 +520,33 @@ class MessageCreate(BaseModel):
 class MessageResponse(BaseModel):
     id: str
     listing_id: str
+
+@api_router.get("/messages/conversation", response_model=List[dict])
+async def get_conversation(listing_id: str, other_user_id: str, authorization: str = Header(None)):
+    """Return full conversation for a listing between current user and other user."""
+    user = await require_auth(authorization)
+
+    query = {
+        "listing_id": listing_id,
+        "$or": [
+            {"sender_id": user["id"], "receiver_id": other_user_id},
+            {"sender_id": other_user_id, "receiver_id": user["id"]},
+        ],
+    }
+
+    messages = await db.messages.find(query, {"_id": 0}).sort("created_at", 1).to_list(200)
+
+    # enrich with names and basic listing info
+    listing = await db.listings.find_one({"id": listing_id}, {"_id": 0, "make": 1, "model": 1, "year": 1})
+    for msg in messages:
+        sender = await db.users.find_one({"id": msg["sender_id"]}, {"_id": 0, "name": 1})
+        receiver = await db.users.find_one({"id": msg["receiver_id"]}, {"_id": 0, "name": 1})
+        msg["sender_name"] = sender["name"] if sender else "Unknown"
+        msg["receiver_name"] = receiver["name"] if receiver else "Unknown"
+        msg["listing_title"] = f"{listing['year']} {listing['make']} {listing['model']}" if listing else None
+
+    return messages
+
     sender_id: str
     sender_name: str
     receiver_id: str
