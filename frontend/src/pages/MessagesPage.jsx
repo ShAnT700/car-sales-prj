@@ -35,6 +35,11 @@ export default function MessagesPage() {
       setMessages(res.data);
     } catch (err) {
       toast.error("Failed to load messages");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const openConversation = async (msg) => {
     const otherUserId = activeTab === "inbox" ? msg.sender_id : msg.receiver_id;
     const listingId = msg.listing_id;
@@ -66,7 +71,7 @@ export default function MessagesPage() {
     try {
       const payload = {
         listing_id: activeConversation.listing_id,
-        receiver_id: activeTab === "inbox" ? activeConversation.other_user_id : activeConversation.other_user_id,
+        receiver_id: activeConversation.other_user_id,
         message: replyText.trim(),
       };
 
@@ -83,11 +88,6 @@ export default function MessagesPage() {
       setReplyText("");
     } catch (err) {
       toast.error("Failed to send message");
-    }
-  };
-
-    } finally {
-      setLoading(false);
     }
   };
 
