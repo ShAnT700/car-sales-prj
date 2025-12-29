@@ -12,6 +12,10 @@ export default function MessagesPage() {
   const [activeTab, setActiveTab] = useState("inbox");
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [activeConversation, setActiveConversation] = useState(null); // { listing_id, other_user_id, listing_title }
+  const [conversationMessages, setConversationMessages] = useState([]);
+  const [conversationLoading, setConversationLoading] = useState(false);
+  const [replyText, setReplyText] = useState("");
 
   useEffect(() => {
     if (!user) {
