@@ -245,19 +245,31 @@ export default function Header({ onOpenSearch }) {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"
                 >
-                  <div className="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold">
-                    {user.name?.charAt(0).toUpperCase()}
+                  <div className="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center overflow-hidden">
+                    {user.avatar ? (
+                      <img
+                        src={user.avatar}
+                        alt="Avatar"
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-xs font-bold text-slate-600">
+                        {user.name?.charAt(0).toUpperCase()}
+                      </span>
+                    )}
                   </div>
                   Profile
                 </Link>
-                <Link
-                  to="/create-listing"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"
+                <Button
+                  onClick={() => {
+                    navigate("/create-listing");
+                    setMobileMenuOpen(false);
+                  }}
+                  className="mx-4 h-10 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-700 flex items-center justify-center gap-2"
                 >
                   <Plus className="w-4 h-4" />
                   Add Listing
-                </Link>
+                </Button>
                 <Button
                   onClick={() => {
                     navigate("/my-listings");
@@ -267,16 +279,17 @@ export default function Header({ onOpenSearch }) {
                 >
                   My Listings
                 </Button>
-                <button
+                <Button
                   onClick={() => {
                     logout();
                     setMobileMenuOpen(false);
                   }}
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"
+                  variant="outline"
+                  className="mx-4 h-10 rounded-full border-red-500 text-red-600 hover:bg-red-50 font-semibold flex items-center justify-center gap-2"
                 >
                   <LogOut className="w-4 h-4" />
                   Logout
-                </button>
+                </Button>
               </div>
             </div>
           )}
