@@ -123,28 +123,86 @@ export default function MessagesPage() {
           </div>
         ) : (
           <>
-            {/* Dropdown with threads */}
-            <div className="mb-4">
-              <label className="block text-xs font-medium text-slate-500 mb-1">Select chat</label>
-              <select
-                className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm bg-white focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
-                value={activeConversation ? activeConversation.listing_id + '::' + activeConversation.other_user_id : ""}
-                onChange={(e) => {
-                  const val = e.target.value;
-                  const t = threads.find(th => th.id === val);
-                  if (t) openConversation(t);
-                }}
-              >
-                <option value="" disabled>
-                  {threads.length === 0 ? "No chats yet" : "Choose a chat"}
-                </option>
-                {threads.map((thread) => (
-                  <option key={thread.id} value={thread.id}>
-                    {thread.other_user_name} · {thread.listing_title}
-                    {thread.unread_count > 0 ? ` (${thread.unread_count} new)` : ""}
-                  </option>
-                ))}
-              </select>
+            {/* Chat selector menu */}
+            <div className="mb-4 bg-white rounded-2xl border border-slate-100 p-3 shadow-sm">
+              <p className="block text-xs font-medium text-slate-500 mb-2">Select chat</p>
+              {threads.length === 0 ? (
+                <p className="text-sm text-slate-400">No chats yet</p>
+              ) : (
+                <div className="space-y-2 max-h-64 overflow-y-auto">
+                  {threads.map((thread, idx) => {
+                    const selected =
+                      activeConversation &&
+                      activeConversation.listing_id === thread.listing_id &&
+                      activeConversation.other_user_id === thread.other_user_id;
+
+                    const colorClasses = [
+                      'bg-emerald-50/70 border-emerald-100',
+                      'bg-blue-50/70 border-blue-100',
+                      'bg-amber-50/70 border-amber-100',
+                      'bg-pink-50/70 border-pink-100',
+                    ];
+                    const colorClass = colorClasses[idx % colorClasses.length];
+
+                    const imageSrc = thread.listing_image
+                      ? (thread.listing_image.startsWith('http')
+                          ? thread.listing_image
+                          : `${API.replace('/api','')}${thread.listing_image}`)
+                      : null;
+
+                    return (
+                      <button
+                        key={thread.id}
+                        type="button"
+                        onClick={() => openConversation(thread)}
+                        className={`w-full text-left rounded-xl border px-3 py-2 flex items-center gap-3 transition-colors ${
+                          selected ? 'ring-1 ring-emerald-500 shadow-sm bg-white' : colorClass
+                        }`}
+                      >
+                        {/* Avatar */}
+                        <div className="w-9 h-9 rounded-full overflow-hidden bg-slate-200 flex items-center justify-center flex-shrink-0">
+                          {thread.other_user_avatar ? (
+                            <img
+                              src={thread.other_user_avatar.startsWith('/') ? `${API.replace('/api','')}${thread.other_user_avatar}` : thread.other_user_avatar}
+                              alt={thread.other_user_name}
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <User className="w-4 h-4 text-slate-500" />
+                          )}
+                        </div>
+
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between gap-2 mb-0.5">
+                            <p className="font-semibold text-slate-900 text-sm truncate">
+                              {thread.other_user_name}
+                            </p>
+                            {thread.unread_count > 0 && (
+                              <span className="min-w-[18px] px-1 h-5 rounded-full bg-blue-500 text-white text-[10px] flex items-center justify-center flex-shrink-0">
+                                {thread.unread_count}
+                              </span>
+                            )}
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <p className="text-xs text-slate-600 truncate">
+                              {thread.listing_title}
+                            </p>
+                            {imageSrc && (
+                              <div className="w-10 h-7 rounded-md overflow-hidden flex-shrink-0 border border-white/60 shadow-sm">
+                                <img
+                                  src={imageSrc}
+                                  alt={thread.listing_title}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             {threads.length === 0 ? (
