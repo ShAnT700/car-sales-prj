@@ -228,8 +228,9 @@ export default function MessagesPage() {
                   <p>Select a message to see the full conversation and reply.</p>
                 </div>
               )}
-            </div>
-          </div>
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>
