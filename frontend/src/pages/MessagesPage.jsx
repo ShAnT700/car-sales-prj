@@ -117,26 +117,6 @@ export default function MessagesPage() {
           </h1>
         </div>
 
-        {/* Tabs */}
-        <div className="flex gap-2 mb-6">
-          <Button
-            variant={activeTab === "inbox" ? "default" : "outline"}
-            onClick={() => setActiveTab("inbox")}
-            className="rounded-full"
-          >
-            <Inbox className="w-4 h-4 mr-2" />
-            Inbox
-          </Button>
-          <Button
-            variant={activeTab === "sent" ? "default" : "outline"}
-            onClick={() => setActiveTab("sent")}
-            className="rounded-full"
-          >
-            <Send className="w-4 h-4 mr-2" />
-            Sent
-          </Button>
-        </div>
-
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <Loader2 className="w-8 h-8 animate-spin text-slate-400" />
