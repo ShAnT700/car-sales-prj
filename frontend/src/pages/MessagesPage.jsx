@@ -121,7 +121,7 @@ export default function MessagesPage() {
           <div className="flex items-center justify-center py-20">
             <Loader2 className="w-8 h-8 animate-spin text-slate-400" />
           </div>
-        ) : messages.length === 0 ? (
+        ) : threads.length === 0 ? (
           <div className="text-center py-20 bg-white rounded-2xl border border-slate-100">
             <Mail className="w-16 h-16 text-slate-300 mx-auto mb-4" />
             <h3 className="font-manrope font-semibold text-xl text-slate-600">
