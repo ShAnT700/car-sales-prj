@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import { useAuth, API } from "../App";
 import { Button } from "../components/ui/button";
-import { Mail, Loader2, Inbox, Send, Car, User } from "lucide-react";
+import { Mail, Loader2, Car, User } from "lucide-react";
 
 export default function MessagesPage() {
   const { user, token } = useAuth();
