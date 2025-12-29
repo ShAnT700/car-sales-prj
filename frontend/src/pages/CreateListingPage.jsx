@@ -140,11 +140,22 @@ export default function CreateListingPage() {
 
   const handleImageSelect = (e) => {
     const files = Array.from(e.target.files);
-    const newImages = files.map(file => ({
-      file,
-      preview: URL.createObjectURL(file)
-    }));
-    setImages([...images, ...newImages]);
+    const validFiles = [];
+
+    files.forEach(file => {
+      if (file.size > 1024 * 1024) {
+        toast.error(`Image ${file.name} is larger than 1MB`);
+      } else {
+        validFiles.push({
+          file,
+          preview: URL.createObjectURL(file)
+        });
+      }
+    });
+
+    if (validFiles.length === 0) return;
+
+    setImages([...images, ...validFiles]);
   };
 
   const removeImage = (index) => {
