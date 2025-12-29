@@ -187,14 +187,21 @@ export default function CarDetailPage() {
       {/* Back button */}
       <div className="bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link 
-            to="/"
+          <button
+            type="button"
+            onClick={() => {
+              if (window.history.length > 1) {
+                navigate(-1);
+              } else {
+                navigate("/");
+              }
+            }}
             data-testid="back-link"
             className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to listings
-          </Link>
+          </button>
         </div>
       </div>
 
