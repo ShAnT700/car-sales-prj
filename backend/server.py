@@ -99,6 +99,7 @@ class CarListingResponse(BaseModel):
     created_at: str
     user_name: Optional[str] = None
     user_avatar: Optional[str] = None
+    favorite_count: int = 0
     clean_title: bool = False
 
 class CarListingUpdate(BaseModel):
@@ -333,6 +334,10 @@ async def get_listing(listing_id: str):
     user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1, "avatar": 1})
     listing["user_name"] = user["name"] if user else "Unknown"
     listing["user_avatar"] = user.get("avatar") if user else None
+
+    # Favorite count for this listing
+    fav_count = await db.favorites.count_documents({"listing_id": listing_id})
+    listing["favorite_count"] = fav_count
     
     return listing
 
