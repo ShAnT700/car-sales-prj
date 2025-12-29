@@ -595,14 +595,18 @@ export default function CreateListingPage() {
 
             <Textarea
               data-testid="listing-description"
-              placeholder="Describe your vehicle... (minimum 10 characters)"
+              placeholder="Describe your vehicle... (30-1000 characters)"
               value={form.description}
-              onChange={(e) => setForm({ ...form, description: e.target.value })}
+              onChange={(e) => {
+                if (e.target.value.length <= 1000) {
+                  setForm({ ...form, description: e.target.value });
+                }
+              }}
               className="min-h-[150px] bg-slate-50 resize-none"
               required
             />
             <p className="text-sm text-slate-500 mt-2">
-              {form.description.length}/10 characters minimum
+              {form.description.length}/1000 characters
             </p>
           </div>
 
