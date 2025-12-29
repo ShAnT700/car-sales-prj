@@ -128,10 +128,7 @@ export default function MessagesPage() {
               No messages yet
             </h3>
             <p className="text-slate-500 mt-2">
-              {activeTab === "inbox" 
-                ? "When someone contacts you about your listing, it will appear here"
-                : "Messages you send will appear here"
-              }
+              When someone contacts you about your listing, it will appear here
             </p>
           </div>
         ) : (
