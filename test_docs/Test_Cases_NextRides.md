@@ -110,7 +110,7 @@ This document contains detailed test cases derived from the **NextRides.com Test
 ### TC-LIST-01 – Create a Valid Listing (Minimum Requirements)
 
 - **Preconditions**:
-  - User is logged in as seller (e.g., `seller1@test.com`).
+  - User is logged in as seller (`test@test.com / 123456`).
   - Test images (≤ 1 MB each) are available.
 - **Steps**:
   1. Navigate to **My Listings**.
