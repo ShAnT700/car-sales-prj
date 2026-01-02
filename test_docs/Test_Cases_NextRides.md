@@ -52,7 +52,7 @@ This document contains detailed test cases derived from the **NextRides.com Test
 ### TC-AUTH-03 – Login with Valid Credentials
 
 - **Preconditions**:
-  - User account `buyer@test.com / Test1234!` exists.
+  - User account `test@test.com / 123456` exists.
   - User is logged out.
 - **Steps**:
   1. Open the homepage.
@@ -68,7 +68,7 @@ This document contains detailed test cases derived from the **NextRides.com Test
 ### TC-AUTH-04 – Login with Invalid Credentials
 
 - **Preconditions**:
-  - User account `buyer@test.com / Test1234!` exists.
+  - User account `test@test.com / 123456` exists.
 - **Steps**:
   1. Open the homepage.
   2. Open the login modal.
