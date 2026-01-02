@@ -37,7 +37,7 @@ This document contains detailed test cases derived from the **NextRides.com Test
 ### TC-AUTH-02 – Prevent Duplicate Registration
 
 - **Preconditions**:
-  - An account with `buyer@test.com` already exists.
+  - An account with `test@test.com` already exists.
 - **Steps**:
   1. Open the homepage.
   2. Open the auth modal in registration mode.
