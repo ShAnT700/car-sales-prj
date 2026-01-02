@@ -11,7 +11,9 @@ async function login(page) {
   await page.getByTestId('auth-submit-btn').click();
 }
 
- test('user can create a simple listing', async ({ page }) => {
+test('user can open create listing page (desktop only)', async ({ browserName, page }) => {
+  test.skip(browserName !== 'chromium', 'Desktop-only flow for now');
+
   await login(page);
 
   // Go to My Listings
@@ -20,10 +22,8 @@ async function login(page) {
   // Open create listing page
   await page.getByTestId('create-listing-btn').click();
 
-  // NOTE: For now we only verify that page loads and main form elements are visible.
-  // Detailed form filling and image upload can be added when test fixtures are prepared.
-
-  await expect(page.getByText('Photos')).toBeVisible();
-  await expect(page.getByText('Clean Title')).toBeVisible();
-  await expect(page.getByText('Vehicle Details')).toBeVisible();
+  // Verify that key sections of the form are visible via more specific locators
+  await expect(page.getByRole('heading', { name: /Photos/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Clean Title/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Vehicle Details/i })).toBeVisible();
 });

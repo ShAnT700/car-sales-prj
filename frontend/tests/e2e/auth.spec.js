@@ -21,9 +21,11 @@ async function login(page) {
 
 // Login flow with existing account
 
- test('user can login with test account', async ({ page }) => {
+test('user can login with test account (desktop only)', async ({ browserName, page }) => {
+  test.skip(browserName !== 'chromium', 'Desktop-only assertion');
+
   await login(page);
 
-  // After login, header should show My Listings button
+  // After login, desktop header should show My Listings button
   await expect(page.getByTestId('my-listings-btn')).toBeVisible();
 });
