@@ -1,0 +1,48 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - region "Notifications alt+T"
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "NextRides" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e8]: NextRides
+        - button [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+    - button "Go Search!" [ref=e13] [cursor=pointer]
+    - generic [ref=e14]:
+      - heading "Good cars are selling here!" [level=1] [ref=e17]
+      - generic [ref=e19]:
+        - heading "Latest Listings" [level=2] [ref=e22]
+        - link "0 Cadillac XT6 CT Cadillac XT6 $35,000 0 ❤ 15k mi New York" [ref=e24] [cursor=pointer]:
+          - /url: /car/d8122c9e-3124-413a-a230-ef83eec4e62b
+          - button "0" [ref=e25]:
+            - img [ref=e26]
+            - generic [ref=e28]: "0"
+          - generic [ref=e29]:
+            - img "Cadillac XT6" [ref=e30]
+            - link [ref=e31]:
+              - /url: /user/fd27e4a9-f33f-4ff5-9c02-95482cf39209
+              - img [ref=e32]
+            - generic "Clean Title" [ref=e36]: CT
+          - generic [ref=e37]:
+            - generic [ref=e38]:
+              - heading "Cadillac XT6" [level=3] [ref=e39]
+              - generic [ref=e40]:
+                - generic [ref=e41]: $35,000
+                - generic [ref=e42]: 0 ❤
+            - generic [ref=e43]:
+              - generic [ref=e44]:
+                - img [ref=e45]
+                - generic [ref=e48]: 15k mi
+              - generic [ref=e49]:
+                - img [ref=e50]
+                - generic [ref=e53]: New York
+  - link "Made with Emergent" [ref=e54] [cursor=pointer]:
+    - /url: https://app.emergent.sh/?utm_source=emergent-badge
+    - generic [ref=e55]:
+      - img [ref=e56]
+      - paragraph [ref=e57]: Made with Emergent
+```

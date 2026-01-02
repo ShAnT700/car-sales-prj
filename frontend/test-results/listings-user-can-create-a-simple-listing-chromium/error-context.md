@@ -1,0 +1,111 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - region "Notifications alt+T":
+      - list:
+        - listitem [ref=e4]:
+          - img [ref=e6]
+          - generic [ref=e9]: Welcome back!
+    - banner [ref=e10]:
+      - generic [ref=e12]:
+        - link "NextRides" [ref=e13] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e14]: NextRides
+        - generic [ref=e16]:
+          - button [ref=e17] [cursor=pointer]:
+            - img
+          - button [ref=e18] [cursor=pointer]:
+            - img
+          - button [ref=e19] [cursor=pointer]:
+            - img
+          - button "My Listings" [ref=e20] [cursor=pointer]
+          - button "T" [ref=e21] [cursor=pointer]:
+            - generic [ref=e22]: T
+          - button "Logout" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+    - button "Go Search!" [ref=e28] [cursor=pointer]
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - button "Back" [ref=e32] [cursor=pointer]:
+          - img [ref=e33]
+          - text: Back
+        - heading "Create New Listing" [level=1] [ref=e35]
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - heading "Photos *" [level=2] [ref=e38]
+          - paragraph [ref=e39]: Upload at least 3 photos of your vehicle
+          - button "Add Photo" [ref=e41] [cursor=pointer]:
+            - img [ref=e42]
+            - generic [ref=e45]: Add Photo
+          - paragraph [ref=e46]: 3 more photos required
+        - generic [ref=e47]:
+          - heading "Clean Title" [level=2] [ref=e48]
+          - generic [ref=e49]:
+            - button "Yes" [ref=e50] [cursor=pointer]
+            - button "No" [ref=e51] [cursor=pointer]
+        - generic [ref=e52]:
+          - heading "Vehicle Details" [level=2] [ref=e53]
+          - generic [ref=e54]:
+            - generic [ref=e55]:
+              - generic [ref=e56]: Make *
+              - combobox [ref=e57] [cursor=pointer]:
+                - generic: Select Make
+                - img [ref=e58]
+              - combobox [ref=e60]
+            - generic [ref=e61]:
+              - generic [ref=e62]: Model *
+              - combobox [disabled] [ref=e63]:
+                - generic: Select Make first
+                - img [ref=e64]
+              - combobox [disabled] [ref=e66]
+            - generic [ref=e67]:
+              - generic [ref=e68]: Year *
+              - combobox [ref=e69] [cursor=pointer]:
+                - generic: Select Year
+                - img [ref=e70]
+              - combobox [ref=e72]
+            - generic [ref=e73]:
+              - generic [ref=e74]: Drive Type *
+              - combobox [ref=e75] [cursor=pointer]:
+                - generic: Select Drive Type
+                - img [ref=e76]
+              - combobox [ref=e78]
+            - generic [ref=e79]:
+              - generic [ref=e80]: Mileage *
+              - spinbutton [ref=e81]
+            - generic [ref=e82]:
+              - generic [ref=e83]: Price (USD) *
+              - spinbutton [ref=e84]
+            - generic [ref=e85]:
+              - generic [ref=e86]: VIN *
+              - textbox "17-character VIN" [ref=e87]
+        - generic [ref=e88]:
+          - heading "Location & Contact" [level=2] [ref=e89]
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - generic [ref=e92]: City *
+              - combobox [ref=e93] [cursor=pointer]:
+                - generic: Select City
+                - img [ref=e94]
+              - combobox [ref=e96]
+            - generic [ref=e97]:
+              - generic [ref=e98]: Zip Code *
+              - textbox "e.g. 90001" [ref=e99]
+            - generic [ref=e100]:
+              - generic [ref=e101]: Phone Number *
+              - textbox "e.g. +1 234 567 8900" [ref=e102]: "4646554778"
+        - generic [ref=e103]:
+          - heading "Description" [level=2] [ref=e104]
+          - textbox "Describe your vehicle... (30-1000 characters)" [ref=e105]
+          - paragraph [ref=e106]: 0/1000 characters
+        - generic [ref=e107]:
+          - button "Cancel" [ref=e108] [cursor=pointer]
+          - button "Create Listing" [ref=e109] [cursor=pointer]
+  - link "Made with Emergent" [ref=e110] [cursor=pointer]:
+    - /url: https://app.emergent.sh/?utm_source=emergent-badge
+    - generic [ref=e111]:
+      - img [ref=e112]
+      - paragraph [ref=e113]: Made with Emergent
+```
