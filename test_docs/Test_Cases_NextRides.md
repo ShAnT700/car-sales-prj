@@ -25,8 +25,8 @@ This document contains detailed test cases derived from the **NextRides.com Test
   1. Open the homepage.
   2. Click **Sell Car** (or any action that opens the auth modal).
   3. Switch to the **Sign Up / Register** mode if needed.
-  4. Enter a valid email (e.g., `buyer+auth01@test.com`).
-  5. Enter a valid password (e.g., `Test1234!`) and confirm if required.
+  4. Enter a valid email (e.g., `test@test.com`).
+  5. Enter a valid password (e.g., `123456`) and confirm if required.
   6. Submit the registration form.
 - **Expected Result**:
   - Registration succeeds without validation errors.
