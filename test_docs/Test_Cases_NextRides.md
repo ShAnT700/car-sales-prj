@@ -72,7 +72,7 @@ This document contains detailed test cases derived from the **NextRides.com Test
 - **Steps**:
   1. Open the homepage.
   2. Open the login modal.
-  3. Enter `buyer@test.com` and an invalid password (e.g., `WrongPass1!`).
+  3. Enter `test@test.com` and an invalid password (e.g., `WrongPass1!`).
   4. Submit.
 - **Expected Result**:
   - Login is rejected.
