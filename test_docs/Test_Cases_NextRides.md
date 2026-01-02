@@ -57,7 +57,7 @@ This document contains detailed test cases derived from the **NextRides.com Test
 - **Steps**:
   1. Open the homepage.
   2. Open the auth modal in **Login** mode.
-  3. Enter `buyer@test.com` and `Test1234!`.
+  3. Enter `test@test.com` and `123456`.
   4. Submit.
 - **Expected Result**:
   - Login succeeds.
