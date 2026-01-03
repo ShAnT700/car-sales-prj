@@ -1,11 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 
-/**
- * Playwright configuration for NextRides.com
- * - Uses deployed frontend as baseURL
- * - Runs tests in headed Chromium by default
- */
 module.exports = defineConfig({
   testDir: './tests/e2e',
   timeout: 60 * 1000,

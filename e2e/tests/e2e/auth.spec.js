@@ -13,19 +13,19 @@ async function login(page) {
 
 // Basic smoke test: homepage loads
 
- test('homepage loads and shows hero title', async ({ page }) => {
+test('homepage loads and shows hero title', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByTestId('home-page')).toBeVisible();
   await expect(page.getByText('Good cars are selling here!')).toBeVisible();
 });
 
-// Login flow with existing account
+// Login flow with existing account (desktop)
 
 test('user can login with test account (desktop only)', async ({ browserName, page }) => {
   test.skip(browserName !== 'chromium', 'Desktop-only assertion');
 
   await login(page);
 
-  // After login, desktop header should show My Listings button
+  // After login, header should show My Listings button
   await expect(page.getByTestId('my-listings-btn')).toBeVisible();
 });

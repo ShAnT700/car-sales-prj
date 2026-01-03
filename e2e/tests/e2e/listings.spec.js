@@ -11,6 +11,8 @@ async function login(page) {
   await page.getByTestId('auth-submit-btn').click();
 }
 
+// Desktop-only smoke: open create listing page
+
 test('user can open create listing page (desktop only)', async ({ browserName, page }) => {
   test.skip(browserName !== 'chromium', 'Desktop-only flow for now');
 
