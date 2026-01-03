@@ -19,18 +19,18 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
-        working-directory: ./frontend
+      - name: Install dependencies (e2e)
+        working-directory: ./e2e
         run: |
           yarn install
 
       - name: Install Playwright browsers
-        working-directory: ./frontend
+        working-directory: ./e2e
         run: |
           npx playwright install --with-deps
 
       - name: Run Playwright tests
-        working-directory: ./frontend
+        working-directory: ./e2e
         env:
           E2E_BASE_URL: https://nextrides-frontend.onrender.com
         run: |
