@@ -76,7 +76,7 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
   return (
     <Link
       to={`/car/${car.id}`}
-      data-testid={`car-card-${car.id}`}
+      data-testid="listing-card"
       className="group relative overflow-hidden rounded-xl border border-slate-100 bg-white car-card"
     >
       {/* Favorite Button */}
@@ -84,6 +84,7 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
         <button
           onClick={toggleFavorite}
           disabled={loading}
+          data-testid="favorite-btn"
           className={`absolute top-2 right-2 z-10 w-9 h-9 rounded-full flex flex-col items-center justify-center transition-all border ${
             favorite 
               ? 'bg-red-500 text-white border-red-500 shadow-md' 
@@ -91,7 +92,7 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
           }`}
         >
           <Heart className={`w-4 h-4 ${favorite ? 'fill-current' : ''}`} />
-          <span className="text-[9px] leading-none mt-0.5">
+          <span className="text-[9px] leading-none mt-0.5" data-testid="favorite-count">
             {(() => {
               const count = car.favorite_count ?? 0;
               return count >= 1000 ? `${Math.round(count / 100) / 10}K` : count;
