@@ -266,25 +266,26 @@ async def create_listing(
 ):
     user = await require_auth(authorization)
     
-    if len(images) < 3:
-        raise HTTPException(status_code=400, detail="At least 3 images required")
+    if len(images) < 1:
+        raise HTTPException(status_code=400, detail="At least 1 image required")
     
     if len(description) < 10:
         raise HTTPException(status_code=400, detail="Description must be at least 10 characters")
     
-    # Save images
+    # Save images with compression
     image_paths = []
     listing_id = str(uuid.uuid4())
     listing_dir = UPLOAD_DIR / listing_id
     listing_dir.mkdir(exist_ok=True)
     
     for i, img in enumerate(images):
-        ext = img.filename.split('.')[-1] if '.' in img.filename else 'jpg'
-        filename = f"{i}.{ext}"
+        content = await img.read()
+        # Compress image to JPEG under 0.5MB
+        compressed = compress_image(content)
+        filename = f"{i}.jpg"
         file_path = listing_dir / filename
         with open(file_path, "wb") as f:
-            content = await img.read()
-            f.write(content)
+            f.write(compressed)
         image_paths.append(f"/api/images/{listing_id}/{filename}")
     
     clean_title_bool = clean_title.lower() == "true"
