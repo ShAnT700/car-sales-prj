@@ -2,8 +2,8 @@
 
 > **Test automation demonstration project** showcasing a complete testing framework for a web application.
 
-[![Playwright Tests](https://github.com/ShkH7700/car-sales-prj/actions/workflows/playwright-tests.yml/badge.svg)](https://github.com/ShkH7700/car-sales-prj/actions/workflows/playwright-tests.yml)
-[![Test Report](https://img.shields.io/badge/Test%20Report-GitHub%20Pages-blue)](https://shkh7700.github.io/car-sales-prj/)
+![Playwright Tests](https://github.com/shant700/car-sales-prj/actions/workflows/playwright-tests.yml/badge.svg)
+[![Test Report](https://img.shields.io/badge/Test%20Report-GitHub%20Pages-blue)](https://shant700.github.io/car-sales-prj/)
 
 ---
 
@@ -11,13 +11,13 @@
 
 This repository demonstrates a **complete test automation lifecycle** for a web application:
 
-- ✅ **E2E Tests** ([Playwright](https://playwright.dev/)) — User scenario verification
+- ✅ **E2E Tests** (Playwright) — User scenario verification
 - ✅ **API Tests** — Backend endpoint validation
-- ✅ **CI/CD Pipeline** ([GitHub Actions](https://github.com/ShkH7700/car-sales-prj/actions)) — Automated test execution
+- ✅ **CI/CD Pipeline** (GitHub Actions) — Automated test execution
 - ✅ **Test Documentation** — [Test Plan](test_docs/Test_Plan_NextRides.md), [Test Cases](test_docs/Test_Cases_NextRides.md)
-- ✅ **Reporting** — [HTML Reports](https://shkh7700.github.io/car-sales-prj/) with run history
+- ✅ **Reporting** — [HTML Reports](https://shant700.github.io/car-sales-prj/) with run history
 
-**System Under Test (SUT)**: [NextRides.com](https://nextrides-frontend.onrender.com) — A car classifieds platform built with React + FastAPI + MongoDB.
+**System Under Test (SUT)**: NextRides.com — A car classifieds platform built with React + FastAPI + MongoDB.
 
 > 📖 For detailed information about the application itself, see the [Application Documentation](docs/APPLICATION.md).
 
@@ -48,7 +48,7 @@ This repository demonstrates a **complete test automation lifecycle** for a web 
 | **API tests run first** | Fast feedback (3-5 sec). If backend is broken, no point running E2E |
 | **E2E Chrome — main suite** | Covers 95% of users. Runs on every push |
 | **E2E Mobile — nightly run** | Saves CI minutes. WebKit is slower but important for full coverage |
-| **Report on [GitHub Pages](https://shkh7700.github.io/car-sales-prj/)** | Instant access to results without downloading artifacts |
+| **Report on GitHub Pages** | Instant access to results without downloading artifacts |
 
 ---
 
@@ -91,18 +91,18 @@ e2e/
 
 | Tool | Purpose | Why Chosen |
 |------|---------|------------|
-| [**Playwright**](https://playwright.dev/) | E2E testing | Faster than Selenium, built-in waits, mobile viewport support |
-| [**GitHub Actions**](https://github.com/ShkH7700/car-sales-prj/actions) | CI/CD | Free for open-source, excellent GitHub integration |
-| [**GitHub Pages**](https://shkh7700.github.io/car-sales-prj/) | Report hosting | Automatic deployment, no external services required |
+| **Playwright** | E2E testing | Faster than Selenium, built-in waits, mobile viewport support |
+| **GitHub Actions** | CI/CD | Free for open-source, excellent GitHub integration |
+| **GitHub Pages** | Report hosting | Automatic deployment, no external services required |
 
 ### Application Stack (SUT)
 
 | Layer | Technology |
 |-------|------------|
-| Frontend | [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/), Axios |
-| Backend | [FastAPI](https://fastapi.tiangolo.com/) (Python), JWT auth |
-| Database | [MongoDB Atlas](https://www.mongodb.com/atlas) |
-| Hosting | [Render.com](https://render.com/) |
+| Frontend | React, Tailwind CSS, Axios |
+| Backend | FastAPI (Python), JWT auth |
+| Database | MongoDB Atlas |
+| Hosting | Render.com |
 
 ---
 
@@ -136,7 +136,7 @@ Tests automatically run:
 - 📌 On every **push** to main
 - 📌 On every **Pull Request**
 - 🌙 **Nightly at 00:00 UTC** (full suite including Mobile)
-- 🖱️ **Manually** via ["Run workflow" button](https://github.com/ShkH7700/car-sales-prj/actions/workflows/playwright-tests.yml)
+- 🖱️ **Manually** via "Run workflow" button
 
 ---
 
@@ -151,12 +151,12 @@ An interactive HTML report is generated after each run:
 - **Video recordings** of failed tests
 - **Trace files** for detailed debugging
 
-📊 **[View Latest Test Report →](https://shkh7700.github.io/car-sales-prj/)**
+📊 **[View Latest Test Report →](https://shant700.github.io/car-sales-prj/)**
 
 ### Artifacts in GitHub Actions
 
 Each run saves:
-- `playwright-report/` — [HTML report](https://shkh7700.github.io/car-sales-prj/) (30 days retention)
+- `playwright-report/` — [HTML report](https://shant700.github.io/car-sales-prj/) (30 days retention)
 - `test-results/` — screenshots, videos, traces (14 days retention)
 
 ---
@@ -262,25 +262,12 @@ car-sales-prj/
 ## 🎯 Skills Demonstrated
 
 - ✅ Test architecture design
-- ✅ Writing E2E tests with [Playwright](https://playwright.dev/)
+- ✅ Writing E2E tests with Playwright
 - ✅ API testing of REST endpoints
-- ✅ CI/CD pipeline setup ([GitHub Actions](https://github.com/features/actions))
+- ✅ CI/CD pipeline setup (GitHub Actions)
 - ✅ Test documentation creation
 - ✅ Analyzing and fixing flaky tests
-- ✅ Understanding of frontend ([React](https://react.dev/)) and backend ([Python](https://www.python.org/)/[FastAPI](https://fastapi.tiangolo.com/))
-
----
-
-## 🔗 Quick Links
-
-| Resource | Link |
-|----------|------|
-| 🌐 **Live Application** | [nextrides-frontend.onrender.com](https://nextrides-frontend.onrender.com) |
-| 📊 **Test Report** | [shkh7700.github.io/car-sales-prj](https://shkh7700.github.io/car-sales-prj/) |
-| 🔄 **CI/CD Pipeline** | [GitHub Actions](https://github.com/ShkH7700/car-sales-prj/actions) |
-| 📋 **Test Plan** | [Test_Plan_NextRides.md](test_docs/Test_Plan_NextRides.md) |
-| 📝 **Test Cases** | [Test_Cases_NextRides.md](test_docs/Test_Cases_NextRides.md) |
-| 🔧 **Backend API** | [carfinder-37.preview.emergentagent.com/api](https://carfinder-37.preview.emergentagent.com/api/docs) |
+- ✅ Understanding of frontend (React) and backend (Python/FastAPI)
 
 ---
 
@@ -289,13 +276,13 @@ car-sales-prj/
 **Author**: [Your Name]
 
 - 📧 Email: [your.email@example.com]
-- 💼 LinkedIn: [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
-- 🐙 GitHub: [github.com/ShkH7700](https://github.com/ShkH7700)
+- 💼 LinkedIn: [linkedin.com/in/your-profile]
+- 🐙 GitHub: github.com/shant700
 
 ---
 
 <div align="center">
 
-**[📊 Test Report](https://shkh7700.github.io/car-sales-prj/)** • **[🌐 Live App](https://nextrides-frontend.onrender.com)** • **[🔄 CI/CD](https://github.com/ShkH7700/car-sales-prj/actions)** • **[📝 Test Cases](test_docs/Test_Cases_NextRides.md)**
+**[📊 Test Report](https://shant700.github.io/car-sales-prj/)** • **[📋 Test Plan](test_docs/Test_Plan_NextRides.md)** • **[📝 Test Cases](test_docs/Test_Cases_NextRides.md)**
 
 </div>
