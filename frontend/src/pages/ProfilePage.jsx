@@ -160,6 +160,7 @@ export default function ProfilePage() {
               value={profile.name}
               onChange={(e) => setProfile(prev => ({ ...prev, name: e.target.value }))}
               className="h-12 bg-slate-50"
+              data-testid="profile-name"
             />
           </div>
 
