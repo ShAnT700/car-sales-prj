@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "reporter": [
@@ -44,7 +44,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 1
         },
         "id": "e2e-chrome",
         "name": "e2e-chrome",
@@ -60,7 +60,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 1
         },
         "id": "e2e-mobile",
         "name": "e2e-mobile",
@@ -76,7 +76,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 1
         },
         "id": "api",
         "name": "api",
@@ -98,20 +98,20 @@
   },
   "suites": [
     {
-      "title": "e2e/auth.spec.js",
-      "file": "e2e/auth.spec.js",
+      "title": "api/api.spec.js",
+      "file": "api/api.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Homepage",
-          "file": "e2e/auth.spec.js",
-          "line": 26,
+          "title": "API - Authentication",
+          "file": "api/api.spec.js",
+          "line": 24,
           "column": 6,
           "specs": [
             {
-              "title": "TC-SMOKE-01: homepage loads and shows hero title",
+              "title": "API-AUTH-01: login returns token",
               "ok": true,
               "tags": [],
               "tests": [
@@ -119,19 +119,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7115,
+                      "duration": 347,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:33:55.312Z",
+                      "startTime": "2026-01-08T01:36:19.103Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -139,13 +139,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "d5ed79a6b333c2ba7209-e999bd5f133337c0f19b",
-              "file": "e2e/auth.spec.js",
-              "line": 27,
+              "id": "8747e39b871de0524be5-0bef5182f7050dc10973",
+              "file": "api/api.spec.js",
+              "line": 26,
               "column": 3
             },
             {
-              "title": "TC-SMOKE-02: Sell Car button is visible",
+              "title": "API-AUTH-02: login with invalid credentials returns 401",
               "ok": true,
               "tags": [],
               "tests": [
@@ -153,19 +153,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2537,
+                      "duration": 264,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:34:03.120Z",
+                      "startTime": "2026-01-08T01:36:19.468Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -173,13 +173,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "d5ed79a6b333c2ba7209-279d905f70f150f12e9a",
-              "file": "e2e/auth.spec.js",
-              "line": 33,
+              "id": "8747e39b871de0524be5-218fdcdd2d2c6e11b599",
+              "file": "api/api.spec.js",
+              "line": 37,
               "column": 3
             },
             {
-              "title": "TC-SMOKE-03: Go Search button is visible",
+              "title": "API-AUTH-03: register with existing email returns 400",
               "ok": true,
               "tags": [],
               "tests": [
@@ -187,19 +187,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4631,
+                      "duration": 60,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:34:05.718Z",
+                      "startTime": "2026-01-08T01:36:19.740Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -207,547 +207,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "d5ed79a6b333c2ba7209-6983fd93620fc68515d7",
-              "file": "e2e/auth.spec.js",
-              "line": 38,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "Authentication",
-          "file": "e2e/auth.spec.js",
-          "line": 47,
-          "column": 6,
-          "specs": [
-            {
-              "title": "TC-AUTH-01: register a new user successfully",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 10416,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:10.409Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-9a21528546648990177a",
-              "file": "e2e/auth.spec.js",
-              "line": 50,
-              "column": 3
-            },
-            {
-              "title": "TC-AUTH-02: prevent duplicate registration",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 9899,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:21.006Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-91b464fef01294198df7",
-              "file": "e2e/auth.spec.js",
-              "line": 71,
-              "column": 3
-            },
-            {
-              "title": "TC-AUTH-03: login with valid credentials",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 7084,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:30.993Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-da62aeb4dc9eb743e410",
-              "file": "e2e/auth.spec.js",
-              "line": 93,
-              "column": 3
-            },
-            {
-              "title": "TC-AUTH-04: login with invalid credentials shows error",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 10107,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:38.119Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-d35444d74d705313c4e5",
-              "file": "e2e/auth.spec.js",
-              "line": 105,
-              "column": 3
-            },
-            {
-              "title": "TC-AUTH-05: logout clears session",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 11090,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:48.397Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-0aafeafaab11b40d5c3b",
-              "file": "e2e/auth.spec.js",
-              "line": 121,
-              "column": 3
-            },
-            {
-              "title": "TC-AUTH-06: logout from mobile menu",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 14947,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:59.512Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-21343014a2c3815336c4",
-              "file": "e2e/auth.spec.js",
-              "line": 140,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "Session Management",
-          "file": "e2e/auth.spec.js",
-          "line": 165,
-          "column": 6,
-          "specs": [
-            {
-              "title": "TC-SESSION-01: session persists after page reload",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 13832,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:35:14.524Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-473d7806f5359eb44ff3",
-              "file": "e2e/auth.spec.js",
-              "line": 167,
-              "column": 3
-            },
-            {
-              "title": "TC-SESSION-02: token stored in localStorage",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 10081,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:35:28.411Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-c6a2f237419bc24fcf66",
-              "file": "e2e/auth.spec.js",
-              "line": 179,
-              "column": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "e2e/favorites.spec.js",
-      "file": "e2e/favorites.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Favorites",
-          "file": "e2e/favorites.spec.js",
-          "line": 22,
-          "column": 6,
-          "specs": [
-            {
-              "title": "TC-FAV-01: toggle favorite from listing card",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 17737,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:33:55.407Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "62cda71af6f80f24b489-038f03e30520e08e8fb1",
-              "file": "e2e/favorites.spec.js",
-              "line": 31,
-              "column": 3
-            },
-            {
-              "title": "TC-FAV-02: favorites page shows favorited listings",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 14365,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:13.914Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "62cda71af6f80f24b489-6a7b2be146680150ec3a",
-              "file": "e2e/favorites.spec.js",
-              "line": 50,
-              "column": 3
-            },
-            {
-              "title": "TC-FAV-03: can favorite from listing detail page",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 15967,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:28.306Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "62cda71af6f80f24b489-fa56cc6d4d2c95d7fa5c",
-              "file": "e2e/favorites.spec.js",
-              "line": 60,
-              "column": 3
-            },
-            {
-              "title": "TC-FAV-04: favorite count visible on cards",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 13303,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:44.411Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "62cda71af6f80f24b489-d777676064a94c3edfe6",
-              "file": "e2e/favorites.spec.js",
-              "line": 76,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "Favorites - Guest",
-          "file": "e2e/favorites.spec.js",
-          "line": 93,
-          "column": 6,
-          "specs": [
-            {
-              "title": "TC-FAV-GUEST-01: guest user prompted to login when favoriting",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5820,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:57.802Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "62cda71af6f80f24b489-33c706b794dc3ac6d273",
-              "file": "e2e/favorites.spec.js",
-              "line": 96,
-              "column": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "e2e/listings.spec.js",
-      "file": "e2e/listings.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Listings - Create",
-          "file": "e2e/listings.spec.js",
-          "line": 38,
-          "column": 6,
-          "specs": [
-            {
-              "title": "TC-LIST-01: create listing with minimum 1 photo",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 17095,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:33:55.364Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "6e2297e726d63854e50c-4bc7f0805835f763e196",
-              "file": "e2e/listings.spec.js",
+              "id": "8747e39b871de0524be5-64554221a30d0396ed8e",
+              "file": "api/api.spec.js",
               "line": 45,
               "column": 3
             },
             {
-              "title": "TC-LIST-03: cannot submit without photos",
+              "title": "API-AUTH-04: /auth/me requires authentication",
               "ok": true,
               "tags": [],
               "tests": [
@@ -755,19 +221,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13922,
+                      "duration": 17,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:34:13.105Z",
+                      "startTime": "2026-01-08T01:36:19.808Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -775,13 +241,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "6e2297e726d63854e50c-12c646246db324d3379e",
-              "file": "e2e/listings.spec.js",
-              "line": 59,
+              "id": "8747e39b871de0524be5-5ce4a8af902aa664267a",
+              "file": "api/api.spec.js",
+              "line": 55,
               "column": 3
             },
             {
-              "title": "TC-LIST-04: ZIP code accepts only 5 digits",
+              "title": "API-AUTH-05: /auth/me returns user with valid token",
               "ok": true,
               "tags": [],
               "tests": [
@@ -789,19 +255,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15176,
+                      "duration": 312,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:34:27.194Z",
+                      "startTime": "2026-01-08T01:36:19.832Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -809,55 +275,21 @@
                   "status": "expected"
                 }
               ],
-              "id": "6e2297e726d63854e50c-497ee06d0f3a0607b979",
-              "file": "e2e/listings.spec.js",
-              "line": 71,
-              "column": 3
-            },
-            {
-              "title": "TC-LIST-05: description must be 30-1000 characters",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 16113,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:42.419Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "6e2297e726d63854e50c-be171e14af7a61cba45e",
-              "file": "e2e/listings.spec.js",
-              "line": 90,
+              "id": "8747e39b871de0524be5-370a27966cbf22dc9c83",
+              "file": "api/api.spec.js",
+              "line": 60,
               "column": 3
             }
           ]
         },
         {
-          "title": "Listings - View",
-          "file": "e2e/listings.spec.js",
-          "line": 109,
+          "title": "API - Listings",
+          "file": "api/api.spec.js",
+          "line": 81,
           "column": 6,
           "specs": [
             {
-              "title": "TC-LIST-VIEW-01: homepage shows latest listings",
+              "title": "API-LIST-01: get listings returns array",
               "ok": true,
               "tags": [],
               "tests": [
@@ -865,19 +297,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6448,
+                      "duration": 34,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:34:58.621Z",
+                      "startTime": "2026-01-08T01:36:20.150Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -885,13 +317,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "6e2297e726d63854e50c-a7a799038d82717cccbc",
-              "file": "e2e/listings.spec.js",
-              "line": 112,
+              "id": "8747e39b871de0524be5-9c83cd86f76f7c5d2c24",
+              "file": "api/api.spec.js",
+              "line": 83,
               "column": 3
             },
             {
-              "title": "TC-LIST-VIEW-02: listing card displays car info",
+              "title": "API-LIST-02: listings have required fields",
               "ok": true,
               "tags": [],
               "tests": [
@@ -899,19 +331,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6833,
+                      "duration": 20,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:35:05.126Z",
+                      "startTime": "2026-01-08T01:36:20.194Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -919,13 +351,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "6e2297e726d63854e50c-24d2ee0ec2826e651809",
-              "file": "e2e/listings.spec.js",
-              "line": 126,
+              "id": "8747e39b871de0524be5-b7ede306e2cb81809a3e",
+              "file": "api/api.spec.js",
+              "line": 91,
               "column": 3
             },
             {
-              "title": "TC-LIST-VIEW-03: clicking listing opens detail page",
+              "title": "API-LIST-03: filter by make works",
               "ok": true,
               "tags": [],
               "tests": [
@@ -933,19 +365,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6758,
+                      "duration": 18,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:35:11.998Z",
+                      "startTime": "2026-01-08T01:36:20.221Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -953,21 +385,157 @@
                   "status": "expected"
                 }
               ],
-              "id": "6e2297e726d63854e50c-bb84bb7c377ccb332dee",
-              "file": "e2e/listings.spec.js",
-              "line": 138,
+              "id": "8747e39b871de0524be5-64eb267ffd2622000ba2",
+              "file": "api/api.spec.js",
+              "line": 107,
+              "column": 3
+            },
+            {
+              "title": "API-LIST-04: filter by clean_title works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 34,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T01:36:20.245Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-fb9ecf163b6c5162443b",
+              "file": "api/api.spec.js",
+              "line": 117,
+              "column": 3
+            },
+            {
+              "title": "API-LIST-05: get single listing by id",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 37,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T01:36:20.286Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-64a500561f1bc3e3ad36",
+              "file": "api/api.spec.js",
+              "line": 127,
+              "column": 3
+            },
+            {
+              "title": "API-LIST-06: get non-existent listing returns 404",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 64,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T01:36:20.328Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-fe0c52141d55a4a32ef7",
+              "file": "api/api.spec.js",
+              "line": 143,
+              "column": 3
+            },
+            {
+              "title": "API-LIST-07: create listing requires auth",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 42,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T01:36:20.399Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-80ec2fcc82f107ad434d",
+              "file": "api/api.spec.js",
+              "line": 148,
               "column": 3
             }
           ]
         },
         {
-          "title": "Listings - My Listings",
-          "file": "e2e/listings.spec.js",
-          "line": 155,
+          "title": "API - Favorites",
+          "file": "api/api.spec.js",
+          "line": 181,
           "column": 6,
           "specs": [
             {
-              "title": "TC-LIST-MY-01: my listings page shows user listings",
+              "title": "API-FAV-01: get favorites requires auth",
               "ok": true,
               "tags": [],
               "tests": [
@@ -975,19 +543,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10207,
+                      "duration": 14,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:35:18.807Z",
+                      "startTime": "2026-01-08T01:36:20.453Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -995,21 +563,89 @@
                   "status": "expected"
                 }
               ],
-              "id": "6e2297e726d63854e50c-bdec8c6ca08aeff3af7d",
-              "file": "e2e/listings.spec.js",
-              "line": 162,
+              "id": "8747e39b871de0524be5-05c5bd8658bd315a0c40",
+              "file": "api/api.spec.js",
+              "line": 183,
+              "column": 3
+            },
+            {
+              "title": "API-FAV-02: get favorites with auth returns array",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 302,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T01:36:20.474Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-3e2aac9b4d61b82f7e6e",
+              "file": "api/api.spec.js",
+              "line": 188,
+              "column": 3
+            },
+            {
+              "title": "API-FAV-03: favorite ids endpoint works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 257,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T01:36:20.784Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-75e8c93dbf929df8724c",
+              "file": "api/api.spec.js",
+              "line": 204,
               "column": 3
             }
           ]
         },
         {
-          "title": "Clean Title Badge",
-          "file": "e2e/listings.spec.js",
-          "line": 177,
+          "title": "API - Messages",
+          "file": "api/api.spec.js",
+          "line": 223,
           "column": 6,
           "specs": [
             {
-              "title": "TC-CT-01: clean title badge visible on qualifying listings",
+              "title": "API-MSG-01: get threads requires auth",
               "ok": true,
               "tags": [],
               "tests": [
@@ -1017,19 +653,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7339,
+                      "duration": 15,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:35:29.104Z",
+                      "startTime": "2026-01-08T01:36:21.048Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1037,13 +673,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "6e2297e726d63854e50c-8fd304da4729687d584e",
-              "file": "e2e/listings.spec.js",
-              "line": 180,
+              "id": "8747e39b871de0524be5-486972e670e5ed6f58a1",
+              "file": "api/api.spec.js",
+              "line": 225,
               "column": 3
             },
             {
-              "title": "TC-CT-02: clean title toggle exists on create form",
+              "title": "API-MSG-02: get threads with auth returns array",
               "ok": true,
               "tags": [],
               "tests": [
@@ -1051,19 +687,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10507,
+                      "duration": 273,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:35:36.515Z",
+                      "startTime": "2026-01-08T01:36:21.068Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1071,64 +707,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "6e2297e726d63854e50c-31c6d40d3662410aea68",
-              "file": "e2e/listings.spec.js",
-              "line": 194,
-              "column": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "e2e/messages.spec.js",
-      "file": "e2e/messages.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Messaging",
-          "file": "e2e/messages.spec.js",
-          "line": 22,
-          "column": 6,
-          "specs": [
-            {
-              "title": "TC-MSG-01: messages page loads",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 10801,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:33:55.407Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "af2aaa2c0f09e6088eca-6742612866e11f44d2f7",
-              "file": "e2e/messages.spec.js",
-              "line": 29,
+              "id": "8747e39b871de0524be5-337bc231e5aeac408353",
+              "file": "api/api.spec.js",
+              "line": 230,
               "column": 3
             },
             {
-              "title": "TC-MSG-02: can open message form from listing detail",
+              "title": "API-MSG-03: unread count endpoint works",
               "ok": true,
               "tags": [],
               "tests": [
@@ -1136,19 +721,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15142,
+                      "duration": 260,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:34:06.862Z",
+                      "startTime": "2026-01-08T01:36:21.347Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1156,123 +741,21 @@
                   "status": "expected"
                 }
               ],
-              "id": "af2aaa2c0f09e6088eca-0107542fc1efaa10b7b4",
-              "file": "e2e/messages.spec.js",
-              "line": 39,
-              "column": 3
-            },
-            {
-              "title": "TC-MSG-03: messages page displays conversation threads",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 10951,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:22.100Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "af2aaa2c0f09e6088eca-3102a2c45d00c597f4c7",
-              "file": "e2e/messages.spec.js",
-              "line": 63,
-              "column": 3
-            },
-            {
-              "title": "TC-MSG-04: can view conversation history",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 8818,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:33.101Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "af2aaa2c0f09e6088eca-fdb7ec0150e72df7fd81",
-              "file": "e2e/messages.spec.js",
-              "line": 73,
-              "column": 3
-            },
-            {
-              "title": "TC-MSG-05: can type and send message in conversation",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 9578,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:34:41.963Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "af2aaa2c0f09e6088eca-fd84c73bc05b4a6804d3",
-              "file": "e2e/messages.spec.js",
-              "line": 93,
+              "id": "8747e39b871de0524be5-e7425793081aba39eb53",
+              "file": "api/api.spec.js",
+              "line": 245,
               "column": 3
             }
           ]
         },
         {
-          "title": "Messaging - Unread Indicator",
-          "file": "e2e/messages.spec.js",
-          "line": 116,
+          "title": "API - Profile",
+          "file": "api/api.spec.js",
+          "line": 265,
           "column": 6,
           "specs": [
             {
-              "title": "TC-MSG-UNREAD-01: unread badge visible when there are unread messages",
+              "title": "API-PROF-01: get profile requires auth",
               "ok": true,
               "tags": [],
               "tests": [
@@ -1280,19 +763,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10895,
+                      "duration": 15,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:34:51.601Z",
+                      "startTime": "2026-01-08T01:36:21.613Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1300,64 +783,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "af2aaa2c0f09e6088eca-5571b142ef26f1b971c7",
-              "file": "e2e/messages.spec.js",
-              "line": 119,
-              "column": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "e2e/profile.spec.js",
-      "file": "e2e/profile.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Profile",
-          "file": "e2e/profile.spec.js",
-          "line": 22,
-          "column": 6,
-          "specs": [
-            {
-              "title": "TC-PROF-01: profile page loads",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 9359,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:35:02.618Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d3b94327e94fcbd90a1b-a5a335b90110ba60ae80",
-              "file": "e2e/profile.spec.js",
-              "line": 29,
+              "id": "8747e39b871de0524be5-b93e3c9e17f5d26c7e43",
+              "file": "api/api.spec.js",
+              "line": 267,
               "column": 3
             },
             {
-              "title": "TC-PROF-02: profile displays user information",
+              "title": "API-PROF-02: get profile with auth returns user data",
               "ok": true,
               "tags": [],
               "tests": [
@@ -1365,19 +797,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11529,
+                      "duration": 263,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:35:12.194Z",
+                      "startTime": "2026-01-08T01:36:21.634Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1385,13 +817,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "d3b94327e94fcbd90a1b-91d1af09ebf4e941e996",
-              "file": "e2e/profile.spec.js",
-              "line": 39,
+              "id": "8747e39b871de0524be5-589dd59b582e8289e16d",
+              "file": "api/api.spec.js",
+              "line": 272,
               "column": 3
             },
             {
-              "title": "TC-PROF-03: profile name field editable",
+              "title": "API-PROF-03: public profile endpoint works",
               "ok": true,
               "tags": [],
               "tests": [
@@ -1399,19 +831,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8932,
+                      "duration": 42,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:35:23.922Z",
+                      "startTime": "2026-01-08T01:36:21.907Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1419,89 +851,21 @@
                   "status": "expected"
                 }
               ],
-              "id": "d3b94327e94fcbd90a1b-57b864e156e1ed02d351",
-              "file": "e2e/profile.spec.js",
-              "line": 53,
-              "column": 3
-            },
-            {
-              "title": "TC-PROF-04: avatar upload control available",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 8676,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:35:32.906Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d3b94327e94fcbd90a1b-0609c1f7261f83ff3533",
-              "file": "e2e/profile.spec.js",
-              "line": 67,
-              "column": 3
-            },
-            {
-              "title": "TC-PROF-05: save button exists on profile",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 6899,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:35:41.603Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d3b94327e94fcbd90a1b-e9d0acd84f15548fa136",
-              "file": "e2e/profile.spec.js",
-              "line": 81,
+              "id": "8747e39b871de0524be5-bab652e646026b7f583f",
+              "file": "api/api.spec.js",
+              "line": 287,
               "column": 3
             }
           ]
         },
         {
-          "title": "Public Profile",
-          "file": "e2e/profile.spec.js",
-          "line": 95,
+          "title": "API - Saved Searches",
+          "file": "api/api.spec.js",
+          "line": 308,
           "column": 6,
           "specs": [
             {
-              "title": "TC-PROF-PUBLIC-01: can view seller public profile from listing",
+              "title": "API-SAVED-01: get saved searches requires auth",
               "ok": true,
               "tags": [],
               "tests": [
@@ -1509,19 +873,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3500,
+                      "duration": 14,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:35:48.550Z",
+                      "startTime": "2026-01-08T01:36:21.958Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1529,13 +893,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "d3b94327e94fcbd90a1b-e34b0deb8f3bb1297b9a",
-              "file": "e2e/profile.spec.js",
-              "line": 98,
+              "id": "8747e39b871de0524be5-21c0149b3ec8b8f9c94e",
+              "file": "api/api.spec.js",
+              "line": 310,
               "column": 3
             },
             {
-              "title": "TC-PROF-PUBLIC-02: public profile displays user listings",
+              "title": "API-SAVED-02: get saved searches with auth",
               "ok": true,
               "tags": [],
               "tests": [
@@ -1543,19 +907,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2809,
+                      "duration": 304,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:35:52.063Z",
+                      "startTime": "2026-01-08T01:36:21.978Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1563,306 +927,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "d3b94327e94fcbd90a1b-46aa3331a55fbce1e63b",
-              "file": "e2e/profile.spec.js",
-              "line": 121,
-              "column": 3
-            },
-            {
-              "title": "TC-PROF-PUBLIC-03: seller avatar displayed on listing cards",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 2573,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:35:54.881Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d3b94327e94fcbd90a1b-07404711b118c516a289",
-              "file": "e2e/profile.spec.js",
-              "line": 142,
-              "column": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "e2e/search.spec.js",
-      "file": "e2e/search.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Search Panel",
-          "file": "e2e/search.spec.js",
-          "line": 21,
-          "column": 6,
-          "specs": [
-            {
-              "title": "TC-SEARCH-01: open and close search panel via Go Search / Hide Search",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 10296,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:35:03.807Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "9e6ea2b6d72fedbaa223-ce801a70d693d7028188",
-              "file": "e2e/search.spec.js",
-              "line": 24,
-              "column": 3
-            },
-            {
-              "title": "TC-SEARCH-02: filter by make shows relevant results",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 14597,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:35:14.314Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "9e6ea2b6d72fedbaa223-ec479ad82e7feb30d543",
-              "file": "e2e/search.spec.js",
-              "line": 50,
-              "column": 3
-            },
-            {
-              "title": "TC-SEARCH-03: model dropdown depends on selected make",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 13311,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:35:28.926Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "9e6ea2b6d72fedbaa223-73d23ee72424c887d4ff",
-              "file": "e2e/search.spec.js",
-              "line": 73,
-              "column": 3
-            },
-            {
-              "title": "TC-SEARCH-04: filter by price range",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 6700,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:35:42.323Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "9e6ea2b6d72fedbaa223-561334a108f94102e0be",
-              "file": "e2e/search.spec.js",
-              "line": 99,
-              "column": 3
-            },
-            {
-              "title": "TC-SEARCH-05: filter by clean title only",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 6568,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:35:49.068Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "9e6ea2b6d72fedbaa223-8eb992d92839f5084923",
-              "file": "e2e/search.spec.js",
-              "line": 116,
-              "column": 3
-            },
-            {
-              "title": "TC-SEARCH-06: clear filters resets search",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5043,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:35:55.667Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "9e6ea2b6d72fedbaa223-289dd7838d78ed260907",
-              "file": "e2e/search.spec.js",
-              "line": 137,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "Search Panel - Mobile",
-          "file": "e2e/search.spec.js",
-          "line": 162,
-          "column": 6,
-          "specs": [
-            {
-              "title": "TC-SEARCH-MOBILE-01: search panel accessible on mobile",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 2446,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T01:36:00.743Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "9e6ea2b6d72fedbaa223-2e8a5028ecc00fbf4b69",
-              "file": "e2e/search.spec.js",
-              "line": 169,
+              "id": "8747e39b871de0524be5-a8adc954ca6ee537da3b",
+              "file": "api/api.spec.js",
+              "line": 315,
               "column": 3
             }
           ]
@@ -1872,9 +939,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-08T01:33:53.114Z",
-    "duration": 130206.54,
-    "expected": 47,
+    "startTime": "2026-01-08T01:36:18.373Z",
+    "duration": 3941.789,
+    "expected": 23,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
