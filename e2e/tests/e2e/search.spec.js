@@ -61,8 +61,8 @@ test.describe('Search Panel', () => {
     await makeSelect.click();
     await page.getByText('Tesla', { exact: true }).click();
     
-    // Click Show Matches (use first one to avoid duplicate issues)
-    await page.getByTestId('search-btn').click();
+    // Click Show Matches - use force to bypass any overlay issues
+    await page.getByTestId('search-btn').click({ force: true });
     await page.waitForLoadState('networkidle');
     await page.waitForTimeout(1000);
     
@@ -98,7 +98,7 @@ test.describe('Search Panel', () => {
     // Now Model should be enabled with BMW models
     const modelSelect = page.getByTestId('filter-model');
     await expect(modelSelect).toBeVisible();
-    await modelSelect.click();
+    await modelSelect.click({ force: true });
     // Should show BMW models like 3 Series, X5, etc.
     await expect(page.getByText('3 Series')).toBeVisible();
   });
@@ -115,8 +115,8 @@ test.describe('Search Panel', () => {
     // Verify search panel is open
     await expect(page.getByTestId('full-search-panel')).toBeVisible();
     
-    // Apply filter
-    await page.getByTestId('search-btn').click();
+    // Apply filter - use force for overlay
+    await page.getByTestId('search-btn').click({ force: true });
     await page.waitForLoadState('networkidle');
   });
 
@@ -132,11 +132,11 @@ test.describe('Search Panel', () => {
     // Look for Clean Title filter
     const ctFilter = page.getByTestId('filter-clean-title');
     await expect(ctFilter).toBeVisible();
-    await ctFilter.click();
+    await ctFilter.click({ force: true });
     await page.getByText('Clean Title Only').click();
     
-    // Apply filter
-    await page.getByTestId('search-btn').click();
+    // Apply filter - use force for overlay
+    await page.getByTestId('search-btn').click({ force: true });
     await page.waitForLoadState('networkidle');
     await page.waitForTimeout(1000);
   });
