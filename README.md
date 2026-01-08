@@ -17,8 +17,7 @@ This repository demonstrates a **complete test automation lifecycle** for a web 
 - ✅ **Test Documentation** — [Test Plan](test_docs/Test_Plan_NextRides.md), [Test Cases](test_docs/Test_Cases_NextRides.md)
 - ✅ **Reporting** — [HTML Reports](https://shant700.github.io/car-sales-prj/) with run history
 
-**System Under Test (SUT)**: NextRides.com — A car classifieds platform built with React + FastAPI + MongoDB.
-
+**System Under Test (SUT)**: [NextRides.com](https://nextrides-frontend.onrender.com) — A car classifieds platform built with React + FastAPI + M
 > 📖 For detailed information about the application itself, see the [Application Documentation](docs/APPLICATION.md).
 
 ---
