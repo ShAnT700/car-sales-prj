@@ -28,77 +28,65 @@ test.describe('Profile', () => {
   // TC-PROF-01: Profile page accessible
   test('TC-PROF-01: profile page loads', async ({ page }) => {
     // Click on profile/avatar in header
-    const profileBtn = page.getByTestId('profile-btn');
-    if (await profileBtn.isVisible()) {
-      await profileBtn.click();
-    } else {
-      // Try navigating directly
-      await page.goto('/profile');
-    }
-    
+    await page.getByTestId('profile-btn').click();
     await page.waitForLoadState('networkidle');
     
     // Should show profile page elements
-    await expect(page.getByRole('heading', { name: /Profile|Settings/i })).toBeVisible();
+    await expect(page.getByTestId('profile-page')).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Profile/i })).toBeVisible();
   });
 
   // TC-PROF-02: Profile shows user info
   test('TC-PROF-02: profile displays user information', async ({ page }) => {
-    await page.goto('/profile');
+    await page.getByTestId('profile-btn').click();
     await page.waitForLoadState('networkidle');
     
-    // Should show email or name
-    await expect(page.getByText(TEST_EMAIL)).toBeVisible({ timeout: 5000 }).catch(() => {
-      // Email might be partially hidden
-    });
-    
     // Should have avatar area
-    const avatarArea = page.locator('[data-testid="avatar"], img[alt*="avatar"], [class*="avatar"]');
-    await expect(avatarArea.first()).toBeVisible();
+    const avatarArea = page.getByTestId('avatar');
+    await expect(avatarArea).toBeVisible();
+    
+    // Should have name input
+    const nameInput = page.getByTestId('profile-name');
+    await expect(nameInput).toBeVisible();
   });
 
   // TC-PROF-03: Can update profile name
   test('TC-PROF-03: profile name field editable', async ({ page }) => {
-    await page.goto('/profile');
+    await page.getByTestId('profile-btn').click();
     await page.waitForLoadState('networkidle');
     
     // Find name input
-    const nameInput = page.locator('[data-testid="profile-name"], input[name="name"], input[placeholder*="name"]');
+    const nameInput = page.getByTestId('profile-name');
+    await expect(nameInput).toBeVisible();
     
-    if (await nameInput.isVisible()) {
-      // Should be editable
-      await nameInput.fill('Updated Test User');
-      await expect(nameInput).toHaveValue('Updated Test User');
-    }
+    // Should be editable
+    await nameInput.fill('Updated Test User');
+    await expect(nameInput).toHaveValue('Updated Test User');
   });
 
   // TC-PROF-04: Avatar upload control exists
   test('TC-PROF-04: avatar upload control available', async ({ page }) => {
-    await page.goto('/profile');
+    await page.getByTestId('profile-btn').click();
     await page.waitForLoadState('networkidle');
     
-    // Look for avatar upload button or file input
-    const uploadBtn = page.locator('[data-testid="avatar-upload"], button:has-text("Upload"), input[type="file"]');
+    // Look for avatar upload button
+    const uploadBtn = page.getByTestId('avatar-upload');
+    await expect(uploadBtn).toBeVisible();
     
-    // Should have some way to upload avatar
-    const uploadExists = await uploadBtn.first().isVisible().catch(() => false);
-    
-    // Also check for clickable avatar area
-    const avatarArea = page.locator('[data-testid="avatar"], [class*="avatar"]').first();
-    await expect(avatarArea).toBeVisible();
+    // Should have hidden file input
+    const fileInput = page.getByTestId('avatar-input');
+    await expect(fileInput).toBeAttached();
   });
 
   // TC-PROF-05: Save profile changes
   test('TC-PROF-05: save button exists on profile', async ({ page }) => {
-    await page.goto('/profile');
+    await page.getByTestId('profile-btn').click();
     await page.waitForLoadState('networkidle');
     
-    // Look for save/update button
-    const saveBtn = page.locator('button:has-text("Save"), button:has-text("Update"), [data-testid="save-profile-btn"]');
-    
-    if (await saveBtn.isVisible()) {
-      await expect(saveBtn).toBeEnabled();
-    }
+    // Look for save button
+    const saveBtn = page.getByTestId('save-profile-btn');
+    await expect(saveBtn).toBeVisible();
+    await expect(saveBtn).toBeEnabled();
   });
 });
 
