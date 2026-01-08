@@ -442,12 +442,13 @@ async def add_images(
     
     new_paths = []
     for i, img in enumerate(images):
-        ext = img.filename.split('.')[-1] if '.' in img.filename else 'jpg'
-        filename = f"{start_idx + i}.{ext}"
+        content = await img.read()
+        # Compress image to JPEG under 0.5MB
+        compressed = compress_image(content)
+        filename = f"{start_idx + i}.jpg"
         file_path = listing_dir / filename
         with open(file_path, "wb") as f:
-            content = await img.read()
-            f.write(content)
+            f.write(compressed)
         new_paths.append(f"/api/images/{listing_id}/{filename}")
     
     await db.listings.update_one(
