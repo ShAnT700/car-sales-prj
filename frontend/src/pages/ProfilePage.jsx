@@ -219,6 +219,7 @@ export default function ProfilePage() {
           <Button
             onClick={handleSave}
             disabled={saving}
+            data-testid="save-profile-btn"
             className="w-full h-12 rounded-full bg-slate-900 text-white hover:bg-slate-800"
           >
             {saving ? (
