@@ -101,20 +101,21 @@ test.describe('Public Profile', () => {
     await page.waitForLoadState('networkidle');
     
     // Click on a listing card
-    const firstCard = page.locator('[data-testid="listing-card"]').first();
+    const firstCard = page.getByTestId('listing-card').first();
+    await expect(firstCard).toBeVisible({ timeout: 10000 });
     await firstCard.click();
     await page.waitForLoadState('networkidle');
     
-    // Look for seller info/link
-    const sellerLink = page.locator('[data-testid="seller-link"], a[href*="/user/"], [data-testid="seller-avatar"]');
+    // Look for seller link
+    const sellerLink = page.getByTestId('seller-link');
+    await expect(sellerLink).toBeVisible();
     
-    if (await sellerLink.isVisible()) {
-      await sellerLink.click();
-      await page.waitForLoadState('networkidle');
-      
-      // Should be on public profile page
-      await expect(page.url()).toContain('/user/');
-    }
+    await sellerLink.click();
+    await page.waitForLoadState('networkidle');
+    
+    // Should be on public profile page
+    await expect(page.url()).toContain('/user/');
+    await expect(page.getByTestId('public-profile-page')).toBeVisible();
   });
 
   // TC-PROF-PUBLIC-02: Public profile shows user listings
@@ -123,20 +124,19 @@ test.describe('Public Profile', () => {
     await page.waitForLoadState('networkidle');
     
     // Go to a listing detail
-    const firstCard = page.locator('[data-testid="listing-card"]').first();
+    const firstCard = page.getByTestId('listing-card').first();
+    await expect(firstCard).toBeVisible({ timeout: 10000 });
     await firstCard.click();
     await page.waitForLoadState('networkidle');
     
     // Click seller link
-    const sellerLink = page.locator('[data-testid="seller-link"], a[href*="/user/"]');
+    const sellerLink = page.getByTestId('seller-link');
+    await expect(sellerLink).toBeVisible();
+    await sellerLink.click();
+    await page.waitForLoadState('networkidle');
     
-    if (await sellerLink.isVisible()) {
-      await sellerLink.click();
-      await page.waitForLoadState('networkidle');
-      
-      // Should show user's listings section
-      await expect(page.getByText(/Listings|Cars/i)).toBeVisible({ timeout: 5000 }).catch(() => {});
-    }
+    // Should show public profile page
+    await expect(page.getByTestId('public-profile-page')).toBeVisible();
   });
 
   // TC-PROF-PUBLIC-03: Avatar shown on listing cards
@@ -145,13 +145,11 @@ test.describe('Public Profile', () => {
     await page.waitForLoadState('networkidle');
     
     // Check first listing card for avatar
-    const firstCard = page.locator('[data-testid="listing-card"]').first();
+    const firstCard = page.getByTestId('listing-card').first();
     await expect(firstCard).toBeVisible({ timeout: 10000 });
     
-    // Look for avatar element within card
-    const avatar = firstCard.locator('[data-testid="seller-avatar"], img[class*="avatar"], [class*="avatar"]');
-    
-    // Avatar should be present (may be default or custom)
-    const hasAvatar = await avatar.first().isVisible().catch(() => false);
+    // Look for seller avatar element within card
+    const avatar = firstCard.getByTestId('seller-avatar');
+    await expect(avatar).toBeVisible();
   });
 });
