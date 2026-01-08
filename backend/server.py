@@ -33,6 +33,42 @@ JWT_EXPIRATION_HOURS = 24
 UPLOAD_DIR = ROOT_DIR / "uploads"
 UPLOAD_DIR.mkdir(exist_ok=True)
 
+# Maximum image size after compression (0.5MB = 512KB)
+MAX_IMAGE_SIZE_BYTES = 500 * 1024
+
+def compress_image(image_bytes: bytes, max_size: int = MAX_IMAGE_SIZE_BYTES) -> bytes:
+    """Compress image to JPEG format with size limit."""
+    img = Image.open(io.BytesIO(image_bytes))
+    
+    # Convert to RGB if necessary (for PNG with transparency, etc.)
+    if img.mode in ('RGBA', 'LA', 'P'):
+        background = Image.new('RGB', img.size, (255, 255, 255))
+        if img.mode == 'P':
+            img = img.convert('RGBA')
+        background.paste(img, mask=img.split()[-1] if img.mode == 'RGBA' else None)
+        img = background
+    elif img.mode != 'RGB':
+        img = img.convert('RGB')
+    
+    # Resize if image is very large (max 2000px on longest side)
+    max_dimension = 2000
+    if max(img.size) > max_dimension:
+        ratio = max_dimension / max(img.size)
+        new_size = (int(img.size[0] * ratio), int(img.size[1] * ratio))
+        img = img.resize(new_size, Image.LANCZOS)
+    
+    # Start with quality 85 and reduce until under max_size
+    quality = 85
+    output = io.BytesIO()
+    img.save(output, format='JPEG', quality=quality, optimize=True)
+    
+    while output.tell() > max_size and quality > 20:
+        quality -= 5
+        output = io.BytesIO()
+        img.save(output, format='JPEG', quality=quality, optimize=True)
+    
+    return output.getvalue()
+
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
