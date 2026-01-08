@@ -341,7 +341,7 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
               value={filters.cleanTitle} 
               onValueChange={(v) => setFilters({ ...filters, cleanTitle: v })}
             >
-              <SelectTrigger className="h-12 bg-slate-50">
+              <SelectTrigger data-testid="filter-clean-title" className="h-12 bg-slate-50">
                 <SelectValue placeholder="Clean Title" />
               </SelectTrigger>
               <SelectContent className="z-[80]">
