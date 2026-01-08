@@ -31,8 +31,8 @@ test.describe('Messaging', () => {
     await page.getByTestId('messages-btn').click();
     await page.waitForLoadState('networkidle');
     
-    // Should show Messages page
-    await expect(page.getByRole('heading', { name: /Messages/i })).toBeVisible();
+    // Should show Messages page - use exact match to avoid multiple elements
+    await expect(page.getByRole('heading', { name: 'Messages', exact: true })).toBeVisible();
   });
 
   // TC-MSG-02: Send message from listing detail
