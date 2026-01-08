@@ -149,5 +149,5 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: test-results/html-report
+          publish_dir: test-results/playwright-report
           destination_dir: playwright-report
