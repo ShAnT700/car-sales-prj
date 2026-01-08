@@ -25,8 +25,8 @@ module.exports = defineConfig({
   // Reporter configuration
   reporter: [
     ['list'],
-    ['html', { outputFolder: 'test-results/html-report', open: 'never' }],
-    ['json', { outputFile: 'test-results/results.json' }],
+    ['html', { outputFolder: 'playwright-report', open: 'never' }],
+    ['json', { outputFile: 'playwright-report/results.json' }],
   ],
   
   // Global configuration
