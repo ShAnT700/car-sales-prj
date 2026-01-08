@@ -143,8 +143,8 @@ export default function CreateListingPage() {
     const validFiles = [];
 
     files.forEach(file => {
-      if (file.size > 1024 * 1024) {
-        toast.error(`Image ${file.name} is larger than 1MB`);
+      if (file.size > 10 * 1024 * 1024) {
+        toast.error(`Image ${file.name} is larger than 10MB`);
       } else {
         validFiles.push({
           file,
@@ -177,8 +177,8 @@ export default function CreateListingPage() {
     e.preventDefault();
     
     // Validation
-    if (!isEditing && totalImages < 3) {
-      toast.error("Please upload at least 3 images");
+    if (!isEditing && totalImages < 1) {
+      toast.error("Please upload at least 1 image");
       return;
     }
     
@@ -304,7 +304,7 @@ export default function CreateListingPage() {
             <p className="text-sm text-slate-500 mb-4">
               {isEditing 
                 ? "Add more photos or keep existing ones"
-                : "Upload at least 3 photos of your vehicle"
+                : "Upload at least 1 photo of your vehicle (max 10MB each)"
               }
             </p>
 
@@ -367,9 +367,9 @@ export default function CreateListingPage() {
               data-testid="image-input"
             />
 
-            {totalImages < 3 && !isEditing && (
+            {totalImages < 1 && !isEditing && (
               <p className="text-sm text-red-500">
-                {3 - totalImages} more photo{3 - totalImages > 1 ? "s" : ""} required
+                At least 1 photo required
               </p>
             )}
           </div>
