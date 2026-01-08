@@ -30,24 +30,20 @@ test.describe('Favorites', () => {
   // TC-FAV-01: Favorite and Unfavorite from Card
   test('TC-FAV-01: toggle favorite from listing card', async ({ page }) => {
     // Find first listing card
-    const firstCard = page.locator('[data-testid="listing-card"]').first();
+    const firstCard = page.getByTestId('listing-card').first();
     await expect(firstCard).toBeVisible({ timeout: 10000 });
     
     // Find heart/favorite button on the card
-    const heartBtn = firstCard.locator('[data-testid="favorite-btn"], button:has(svg[class*="heart"]), svg[class*="Heart"]').first();
+    const heartBtn = firstCard.getByTestId('favorite-btn');
+    await expect(heartBtn).toBeVisible();
     
-    if (await heartBtn.isVisible()) {
-      // Get initial favorite count (if displayed)
-      const countBefore = await firstCard.locator('[data-testid="favorite-count"]').textContent().catch(() => '0');
-      
-      // Click to favorite
-      await heartBtn.click();
-      await page.waitForTimeout(1000);
-      
-      // Click again to unfavorite
-      await heartBtn.click();
-      await page.waitForTimeout(1000);
-    }
+    // Click to favorite
+    await heartBtn.click();
+    await page.waitForTimeout(1000);
+    
+    // Click again to unfavorite
+    await heartBtn.click();
+    await page.waitForTimeout(1000);
   });
 
   // TC-FAV-02: Favorites Page Lists Favorite Listings
@@ -63,33 +59,31 @@ test.describe('Favorites', () => {
   // TC-FAV-03: Add to favorites from detail page
   test('TC-FAV-03: can favorite from listing detail page', async ({ page }) => {
     // Click on first listing to go to detail
-    const firstCard = page.locator('[data-testid="listing-card"]').first();
+    const firstCard = page.getByTestId('listing-card').first();
+    await expect(firstCard).toBeVisible({ timeout: 10000 });
     await firstCard.click();
     await page.waitForLoadState('networkidle');
     
     // Look for favorite button on detail page
-    const favBtn = page.locator('[data-testid="favorite-btn"], button:has-text("Favorite"), button:has(svg[class*="heart"])').first();
+    const favBtn = page.getByTestId('detail-favorite-btn');
+    await expect(favBtn).toBeVisible();
     
-    if (await favBtn.isVisible()) {
-      await favBtn.click();
-      await page.waitForTimeout(1000);
-      
-      // Should show some confirmation (toast or button state change)
-    }
+    await favBtn.click();
+    await page.waitForTimeout(1000);
   });
 
   // TC-FAV-04: Favorite count updates in real-time
   test('TC-FAV-04: favorite count visible on cards', async ({ page }) => {
-    const firstCard = page.locator('[data-testid="listing-card"]').first();
+    const firstCard = page.getByTestId('listing-card').first();
     await expect(firstCard).toBeVisible({ timeout: 10000 });
     
-    // Look for favorite count (number near heart icon)
-    const heartArea = firstCard.locator('[data-testid="favorite-btn"], button:has(svg[class*="heart"])').first();
+    // Look for favorite count within the card
+    const favoriteBtn = firstCard.getByTestId('favorite-btn');
+    await expect(favoriteBtn).toBeVisible();
     
-    // Count should be visible (can be 0 or more)
-    const countText = await heartArea.textContent().catch(() => null);
-    // Just verify the element exists
-    await expect(heartArea).toBeVisible();
+    // Count should be visible
+    const count = firstCard.getByTestId('favorite-count');
+    await expect(count).toBeVisible();
   });
 });
 
