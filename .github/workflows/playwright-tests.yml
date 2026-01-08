@@ -88,7 +88,7 @@ jobs:
           name: e2e-chrome-test-results
           path: |
             e2e/test-results/
-            e2e/test-results/html-report/
+            e2e/playwright-report/
           retention-days: 14
 
   # E2E Tests - Mobile (Optional, slower)
