@@ -1,268 +1,286 @@
-# NextRides.com – Modern Car Classifieds Platform
+# 🧪 QA Automation Portfolio: E2E Testing Framework
 
-NextRides.com is a modern, full‑stack car classifieds platform built with **React**, **FastAPI**, and **MongoDB**. 
+> **Демонстрационный проект автоматизации тестирования** на примере веб-приложения для продажи автомобилей.
 
-It is designed as a real product, not just a demo: buyers can quickly find their next car using powerful filters, and sellers can easily manage listings, favorites, and conversations – all in a mobile‑friendly interface.
-
----
-
-## Overview
-
-NextRides.com focuses on used cars in the United States and is optimized for:
-
-- **Private sellers and small dealers** – easy listing creation, photo management, and in‑site messaging.
-- **Buyers** – fast search by real‑world parameters (make, model, year, mileage, price, location, Clean Title).
-
-Key design goals:
-
-- Clean, mobile‑first UI.
-- Minimal manual text entry where possible (selects for makes, models, cities, etc.).
-- Clear visual indicators: Clean Title (CT), favorites, unread messages, etc.
+[![Playwright Tests](https://github.com/ShkH7700/car-sales-prj/actions/workflows/playwright-tests.yml/badge.svg)](https://github.com/ShkH7700/car-sales-prj/actions/workflows/playwright-tests.yml)
+[![Test Report](https://img.shields.io/badge/Test%20Report-GitHub%20Pages-blue)](https://shkh7700.github.io/car-sales-prj/)
 
 ---
 
-## Core Features
+## 📋 О проекте
 
-### 1. User Accounts & Profiles
+Этот репозиторий демонстрирует **полный цикл автоматизации тестирования** веб-приложения:
 
-- Email + password registration and login (JWT‑based authentication).
-- **Public profile** for every user:
-  - Avatar
-  - Display name
-  - List of published listings
-- Profile is accessible from:
-  - Car detail page (seller info block)
-  - Listing card (seller avatar circle)
-  - Chat participants (messages page)
+- ✅ **E2E тесты** (Playwright) — проверка пользовательских сценариев
+- ✅ **API тесты** — валидация backend endpoints
+- ✅ **CI/CD pipeline** — автоматический запуск тестов через GitHub Actions
+- ✅ **Тестовая документация** — Test Plan, Test Cases
+- ✅ **Отчётность** — HTML-отчёты с историей прогонов
 
-### 2. Car Listings
-
-Each listing includes:
-
-- **At least 3 photos** (client‑side file size limit: up to 1 MB per image)
-- Make and model (selected from predefined lists for consistency)
-- Year, mileage, price
-- Drive type (FWD / RWD / AWD / 4WD)
-- City (selected from a curated list of US cities)
-- ZIP code (strict 5‑digit US ZIP validation)
-- Seller phone number (validated input)
-- VIN
-- Rich description (**30–1000 characters**)
-- **Clean Title** status (Yes / No)
-
-Visual details:
-
-- **Clean Title (CT)**
-  - On the detail page: small green CT badge next to the title.
-  - On cards: CT badge in the bottom‑right corner of the main photo.
-- **Listing card layout**
-  - Line 1: `Make Model` + price on the same row.
-  - Line 2: mileage and city.
-  - Top‑left of the photo: seller avatar circle (clickable → seller profile).
-
-### 3. Search & Filters
-
-Search is centered around a global bottom bar:
-
-- Persistent **“Go Search!”** button on all pages.
-  - Tapping opens the full filter panel.
-  - Button text toggles to **“Hide Search!”** when the panel is open.
-  - A green **“Show Matches”** button remains fixed next to it while filters are open.
-  - On mobile, the panel can be closed by swiping down.
-
-Available filters:
-
-- Make (select)
-- Model (dependent select based on make)
-- Year range
-- Mileage range
-- Price range
-- Drive type
-- Clean Title (Any / Clean Title Only)
-- ZIP + distance
-
-On the homepage, search results are rendered as a responsive grid of cards with:
-
-- Up to **16 preview listings** visible at once.
-- CT badges and like counts visible directly on cards.
-
-### 4. Favorites & Like Counts
-
-Any authenticated user can add a listing to their favorites.
-
-- The **favorite icon and like counter are combined**:
-  - On cards and on the detail page:
-    - When in current user’s favorites: **red heart** inside a circular button.
-    - Count of favorites (likes) displayed directly under the heart.
-  - Large counts are abbreviated (e.g., `1.2K`).
-
-This gives an immediate sense of how much interest a car has attracted.
-
-### 5. Messaging & Chat
-
-Messaging between buyer and seller is implemented as a **threaded chat per listing**.
-
-- Messages can be sent from the car detail page (contact seller).
-- Dedicated **Messages** page with:
-
-  1. **Chat selector menu** (top of the page):
-     - All conversations (threads) where the user is either sender or receiver.
-     - Each thread shows:
-       - Seller/buyer avatar (circular image).
-       - Name of the other participant.
-       - Listing title.
-       - Mini photo preview of the car.
-       - Unread message count (badge), if any.
-     - Threads are visually separated with:
-       - Soft rounded borders.
-       - Light translucent background tints (emerald, blue, amber, pink) alternating by row.
-       - A selected thread is highlighted with a subtle emerald ring and shadow.
-
-  2. **Chat window** (below the selector):
-     - Full conversation for the selected thread (all messages for a given listing and user pair).
-     - Bubble layout:
-       - Right‑aligned, green bubbles for messages sent by the current user.
-       - Left‑aligned, light bubbles for messages from the other participant.
-     - Timestamps under each bubble.
-     - Message input area with a textarea and **Send** button.
-
-The backend exposes:
-
-- `/api/messages/threads` – returns conversation threads with metadata.
-- `/api/messages/conversation` – returns full message history for a specific listing + user pair.
-- `/api/messages` (POST) – send a new message.
-
-### 6. Profile & My Listings
-
-- **Profile page**:
-  - Upload/edit avatar.
-  - Edit profile information.
-- **My Listings**:
-  - View all listings created by the current user.
-  - Create, edit, and delete listings.
-  - Update photo sets (add new images, remove old ones). Removed images are also reflected on the backend so they no longer appear in galleries.
+**Тестируемое приложение**: NextRides.com — платформа объявлений о продаже автомобилей (React + FastAPI + MongoDB).
 
 ---
 
-## Tech Stack
+## 🏗️ Архитектура тестирования
 
-### Frontend
-
-- **React** (SPA)
-- **React Router** – client‑side routing
-- **Axios** – HTTP client
-- **Tailwind‑style utility classes** – responsive styling
-- **shadcn/ui** for base button component
-
-### Backend
-
-- **FastAPI** – Python web framework
-- **MongoDB** – primary data store (via async driver)
-- **JWT** – authentication
-- Static image serving via a proxied endpoint: `/api/images/{...}`
-
-### Data Model (simplified)
-
-- `users`: `{ id, email, name, password_hash, avatar, ... }`
-- `listings`: `{ id, user_id, make, model, year, price, mileage, drive_type, city, zip_code, phone, vin, description, images[], clean_title, created_at }`
-- `favorites`: `{ id, user_id, listing_id }`
-- `saved_searches`: `{ id, user_id, name, params }`
-- `messages`: `{ id, listing_id, sender_id, receiver_id, message, read, created_at }`
-
----
-
-## Getting Started (Local)
-
-> The exact commands may vary depending on your environment. This is a typical local setup.
-
-### Backend
-
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-
-# Make sure backend/.env contains valid MONGO_URL and DB_NAME values
-uvicorn server:app --reload --host 0.0.0.0 --port 8001
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        GitHub Actions                            │
+│  ┌──────────┐    ┌──────────────┐    ┌──────────────────────┐  │
+│  │ API Tests│───▶│ E2E (Chrome) │───▶│ Deploy Test Report   │  │
+│  │  23 tests│    │   47 tests   │    │   to GitHub Pages    │  │
+│  └──────────┘    └──────────────┘    └──────────────────────┘  │
+│        │                │                                        │
+│        ▼                ▼                                        │
+│  ┌─────────────────────────────────────┐                        │
+│  │         E2E (Mobile) - Nightly      │                        │
+│  │            47 tests                 │                        │
+│  └─────────────────────────────────────┘                        │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-### Frontend
+### Почему такая архитектура?
+
+| Решение | Причина |
+|---------|---------|
+| **API тесты запускаются первыми** | Быстрая обратная связь (3-5 сек). Если backend сломан, нет смысла запускать E2E |
+| **E2E Chrome — основной набор** | Покрывает 95% пользователей. Запускается на каждый push |
+| **E2E Mobile — ночной запуск** | Экономия CI-минут. WebKit медленнее, но важен для полного покрытия |
+| **Отчёт на GitHub Pages** | Мгновенный доступ к результатам без скачивания артефактов |
+
+---
+
+## 📊 Покрытие тестами
+
+### Структура тестов
+
+```
+e2e/
+├── tests/
+│   ├── api/
+│   │   └── api.spec.js          # 23 API теста
+│   └── e2e/
+│       ├── auth.spec.js         # 11 тестов аутентификации
+│       ├── listings.spec.js     # 12 тестов объявлений
+│       ├── search.spec.js       # 7 тестов поиска и фильтров
+│       ├── favorites.spec.js    # 5 тестов избранного
+│       ├── messages.spec.js     # 6 тестов сообщений
+│       └── profile.spec.js      # 6 тестов профиля
+├── playwright.config.js         # Конфигурация Playwright
+└── package.json                 # Скрипты запуска
+```
+
+### Матрица покрытия
+
+| Модуль | UI тесты | API тесты | Статус |
+|--------|----------|-----------|--------|
+| **Аутентификация** | Регистрация, Логин, Logout, Сессии | /auth/login, /auth/register, /auth/me | ✅ |
+| **Объявления** | Создание, Валидация форм, Просмотр | /listings CRUD, фильтрация | ✅ |
+| **Поиск** | Фильтры, Clean Title, Make/Model | Query параметры | ✅ |
+| **Избранное** | Добавление, Удаление, Счётчик | /favorites endpoints | ✅ |
+| **Сообщения** | Чат, Треды, Отправка | /messages threads, conversation | ✅ |
+| **Профиль** | Редактирование, Аватар, Публичный профиль | /profile, /users/{id}/public | ✅ |
+
+---
+
+## 🛠️ Технологии
+
+### Тестовый стек
+
+| Инструмент | Назначение | Почему выбран |
+|------------|------------|---------------|
+| **Playwright** | E2E тестирование | Быстрее Selenium, встроенные ожидания, поддержка мобильных viewport |
+| **GitHub Actions** | CI/CD | Бесплатно для open-source, отличная интеграция с GitHub |
+| **GitHub Pages** | Хостинг отчётов | Автоматический деплой, не требует внешних сервисов |
+
+### Стек приложения (SUT)
+
+| Слой | Технология |
+|------|------------|
+| Frontend | React, Tailwind CSS, Axios |
+| Backend | FastAPI (Python), JWT auth |
+| Database | MongoDB Atlas |
+| Hosting | Render.com |
+
+---
+
+## 🚀 Запуск тестов
+
+### Локально
 
 ```bash
-cd frontend
+# Установка зависимостей
+cd e2e
 yarn install
-yarn start
+npx playwright install
+
+# Запуск всех тестов
+yarn test
+
+# Запуск по категориям
+yarn test:api        # Только API тесты
+yarn test:e2e        # Только E2E (Chrome)
+yarn test:auth       # Только аутентификация
+yarn test:search     # Только поиск
+
+# Режим отладки
+yarn test:debug      # Пошаговое выполнение
+yarn test:headed     # С открытым браузером
 ```
 
-The frontend expects the backend base URL in `frontend/.env` as:
+### В CI/CD
 
-```env
-REACT_APP_BACKEND_URL=http://localhost:8001
+Тесты автоматически запускаются:
+- 📌 На каждый **push** в main
+- 📌 На каждый **Pull Request**
+- 🌙 **Ночью в 00:00 UTC** (полный набор включая Mobile)
+- 🖱️ **Вручную** через кнопку "Run workflow"
+
+---
+
+## 📈 Отчётность
+
+### Playwright HTML Report
+
+После каждого прогона генерируется интерактивный HTML-отчёт:
+
+- **Статистика**: passed/failed/skipped
+- **Скриншоты** при падении теста
+- **Видео** провалившихся тестов
+- **Trace файлы** для детальной отладки
+
+📊 **[Посмотреть последний отчёт →](https://shkh7700.github.io/car-sales-prj/)**
+
+### Артефакты в GitHub Actions
+
+Каждый прогон сохраняет:
+- `playwright-report/` — HTML отчёт (30 дней)
+- `test-results/` — скриншоты, видео, traces (14 дней)
+
+---
+
+## 📝 Тестовая документация
+
+Проект включает формальную тестовую документацию:
+
+| Документ | Описание | Путь |
+|----------|----------|------|
+| **Test Plan** | Стратегия тестирования, scope, критерии | [`test_docs/Test_Plan_NextRides.md`](test_docs/Test_Plan_NextRides.md) |
+| **Test Cases** | Детальные тест-кейсы с шагами | [`test_docs/Test_Cases_NextRides.md`](test_docs/Test_Cases_NextRides.md) |
+
+### Пример тест-кейса
+
+```markdown
+### TC-AUTH-03 – Login with Valid Credentials
+
+**Preconditions**: User registered with test@test.com / 123456
+
+**Steps**:
+1. Navigate to homepage
+2. Click "Sell Car" button
+3. Enter email and password
+4. Click "Sign In"
+
+**Expected Result**:
+- User redirected to homepage
+- Header shows user menu (My Listings, Favorites, Messages)
+- Token saved in localStorage
 ```
 
-> Note: In production / Kubernetes environments, API routes are typically accessed via `/api` prefix and are proxied by the ingress controller.
+---
+
+## 🔧 Особенности реализации
+
+### Устойчивость тестов
+
+```javascript
+// ❌ Плохо: жёсткое ожидание
+await page.waitForTimeout(5000);
+
+// ✅ Хорошо: умное ожидание с fallback
+const hasListings = await firstCard.isVisible({ timeout: 5000 }).catch(() => false);
+if (!hasListings) {
+  test.skip(true, 'No listings available in database');
+}
+```
+
+### Data-testid стратегия
+
+Все ключевые элементы имеют `data-testid` для стабильных селекторов:
+
+```javascript
+// Селекторы не зависят от CSS классов или текста
+await page.getByTestId('listing-card').first();
+await page.getByTestId('favorite-btn').click();
+await page.getByTestId('search-btn').click();
+```
+
+### Обработка пустой БД
+
+Тесты корректно работают даже с пустой базой данных:
+
+```javascript
+test('TC-FAV-01: toggle favorite', async ({ page }) => {
+  const firstCard = page.getByTestId('listing-card').first();
+  const hasListings = await firstCard.isVisible({ timeout: 5000 }).catch(() => false);
+  
+  if (!hasListings) {
+    test.skip(true, 'No listings available');  // Graceful skip
+    return;
+  }
+  // ... остальной тест
+});
+```
 
 ---
 
-## Screenshots
+## 📁 Структура репозитория
 
-You can customize this section with actual image files in your repository (for example in a `/screenshots` folder). Below are suggested placeholders:
-
-- **Homepage & Search**
-
-  ```markdown
-  ![Homepage and global search bar](screenshots/home.png)
-  ```
-
-- **Listing Detail Page**
-
-  ```markdown
-  ![Car detail page with CT badge, seller info, and Call Seller button](screenshots/detail.png)
-  ```
-
-- **Messages / Chat**
-
-  ```markdown
-  ![Messages page with chat selector and conversation window](screenshots/messages.png)
-  ```
-
-To use these, add PNG/JPEG files into a `screenshots/` directory at the root of your repo and update filenames if needed.
+```
+car-sales-prj/
+├── .github/
+│   └── workflows/
+│       └── playwright-tests.yml    # CI/CD pipeline
+├── backend/                        # FastAPI приложение
+├── frontend/                       # React SPA
+├── e2e/                           # 🧪 ТЕСТОВЫЙ ФРЕЙМВОРК
+│   ├── tests/
+│   │   ├── api/                   # API тесты
+│   │   └── e2e/                   # E2E тесты
+│   ├── playwright.config.js
+│   └── package.json
+├── test_docs/                     # 📄 Тестовая документация
+│   ├── Test_Plan_NextRides.md
+│   └── Test_Cases_NextRides.md
+└── README.md                      # Этот файл
+```
 
 ---
 
-## Roadmap Ideas
+## 🎯 Навыки, демонстрируемые в проекте
 
-Potential future improvements:
-
-- Extended city & ZIP datasets with autocomplete.
-- Web push or email notifications for new messages.
-- Seller ratings and transaction history.
-- Additional filters: body style, engine type, color, etc.
-- Advanced analytics for sellers (views, contact rate, etc.).
-
----
-
-## Contact
-
-If you have questions, suggestions, or would like to collaborate:
-
-- **Project owner:** _[Your Name]_
-- **Email:** _[your.email@example.com]_
-- **GitHub:** _[https://github.com/your‑username](https://github.com/your-username)_
-
-(Replace the placeholders above with your actual contact information.)
+- ✅ Проектирование тестовой архитектуры
+- ✅ Написание E2E тестов на Playwright
+- ✅ API тестирование REST endpoints
+- ✅ Настройка CI/CD pipeline (GitHub Actions)
+- ✅ Работа с тестовой документацией
+- ✅ Анализ и исправление flaky тестов
+- ✅ Понимание frontend (React) и backend (Python/FastAPI)
 
 ---
 
-## Repository Structure
+## 📞 Контакты
 
-- `backend/` – FastAPI application, models, routes, and image handling.
-- `frontend/` – React SPA, pages, components, and styling.
-- `README.md` – this file.
+**Автор**: [Ваше Имя]
 
-You can use this project as:
+- 📧 Email: [your.email@example.com]
+- 💼 LinkedIn: [linkedin.com/in/your-profile]
+- 🐙 GitHub: [github.com/ShkH7700](https://github.com/ShkH7700)
 
-- The foundation for your own car marketplace.
-- A portfolio piece demonstrating full‑stack skills.
-- A reference implementation of a React + FastAPI + MongoDB application with real‑world UX decisions.
+---
+
+<div align="center">
+
+**[📊 Test Report](https://shkh7700.github.io/car-sales-prj/)** • **[🔄 CI/CD](https://github.com/ShkH7700/car-sales-prj/actions)** • **[📝 Test Cases](test_docs/Test_Cases_NextRides.md)**
+
+</div>
