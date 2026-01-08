@@ -272,10 +272,10 @@ car-sales-prj/
 
 ## 📞 Contact
 
-**Author**: [Your Name]
+**Author**: Vitalii Berchikov
 
-- 📧 Email: [your.email@example.com]
-- 💼 LinkedIn: [linkedin.com/in/your-profile]
+- 📧 Email: vitaliibercvikov@gmail.com
+- 💼 LinkedIn: [[linkedin.com/in/your-profile]](https://www.linkedin.com/in/vitalii-berchikov/)
 - 🐙 GitHub: github.com/shant700
 
 ---
