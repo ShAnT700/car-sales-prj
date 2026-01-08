@@ -1,27 +1,29 @@
 # 🧪 QA Automation Portfolio: E2E Testing Framework
 
-> **Демонстрационный проект автоматизации тестирования** на примере веб-приложения для продажи автомобилей.
+> **Test automation demonstration project** showcasing a complete testing framework for a web application.
 
 [![Playwright Tests](https://github.com/ShkH7700/car-sales-prj/actions/workflows/playwright-tests.yml/badge.svg)](https://github.com/ShkH7700/car-sales-prj/actions/workflows/playwright-tests.yml)
 [![Test Report](https://img.shields.io/badge/Test%20Report-GitHub%20Pages-blue)](https://shkh7700.github.io/car-sales-prj/)
 
 ---
 
-## 📋 О проекте
+## 📋 About This Project
 
-Этот репозиторий демонстрирует **полный цикл автоматизации тестирования** веб-приложения:
+This repository demonstrates a **complete test automation lifecycle** for a web application:
 
-- ✅ **E2E тесты** (Playwright) — проверка пользовательских сценариев
-- ✅ **API тесты** — валидация backend endpoints
-- ✅ **CI/CD pipeline** — автоматический запуск тестов через GitHub Actions
-- ✅ **Тестовая документация** — Test Plan, Test Cases
-- ✅ **Отчётность** — HTML-отчёты с историей прогонов
+- ✅ **E2E Tests** ([Playwright](https://playwright.dev/)) — User scenario verification
+- ✅ **API Tests** — Backend endpoint validation
+- ✅ **CI/CD Pipeline** ([GitHub Actions](https://github.com/ShkH7700/car-sales-prj/actions)) — Automated test execution
+- ✅ **Test Documentation** — [Test Plan](test_docs/Test_Plan_NextRides.md), [Test Cases](test_docs/Test_Cases_NextRides.md)
+- ✅ **Reporting** — [HTML Reports](https://shkh7700.github.io/car-sales-prj/) with run history
 
-**Тестируемое приложение**: NextRides.com — платформа объявлений о продаже автомобилей (React + FastAPI + MongoDB).
+**System Under Test (SUT)**: [NextRides.com](https://nextrides-frontend.onrender.com) — A car classifieds platform built with React + FastAPI + MongoDB.
+
+> 📖 For detailed information about the application itself, see the [Application Documentation](docs/APPLICATION.md).
 
 ---
 
-## 🏗️ Архитектура тестирования
+## 🏗️ Test Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -39,136 +41,136 @@
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### Почему такая архитектура?
+### Why This Architecture?
 
-| Решение | Причина |
-|---------|---------|
-| **API тесты запускаются первыми** | Быстрая обратная связь (3-5 сек). Если backend сломан, нет смысла запускать E2E |
-| **E2E Chrome — основной набор** | Покрывает 95% пользователей. Запускается на каждый push |
-| **E2E Mobile — ночной запуск** | Экономия CI-минут. WebKit медленнее, но важен для полного покрытия |
-| **Отчёт на GitHub Pages** | Мгновенный доступ к результатам без скачивания артефактов |
+| Decision | Reasoning |
+|----------|-----------|
+| **API tests run first** | Fast feedback (3-5 sec). If backend is broken, no point running E2E |
+| **E2E Chrome — main suite** | Covers 95% of users. Runs on every push |
+| **E2E Mobile — nightly run** | Saves CI minutes. WebKit is slower but important for full coverage |
+| **Report on [GitHub Pages](https://shkh7700.github.io/car-sales-prj/)** | Instant access to results without downloading artifacts |
 
 ---
 
-## 📊 Покрытие тестами
+## 📊 Test Coverage
 
-### Структура тестов
+### Test Structure
 
 ```
 e2e/
 ├── tests/
 │   ├── api/
-│   │   └── api.spec.js          # 23 API теста
+│   │   └── api.spec.js          # 23 API tests
 │   └── e2e/
-│       ├── auth.spec.js         # 11 тестов аутентификации
-│       ├── listings.spec.js     # 12 тестов объявлений
-│       ├── search.spec.js       # 7 тестов поиска и фильтров
-│       ├── favorites.spec.js    # 5 тестов избранного
-│       ├── messages.spec.js     # 6 тестов сообщений
-│       └── profile.spec.js      # 6 тестов профиля
-├── playwright.config.js         # Конфигурация Playwright
-└── package.json                 # Скрипты запуска
+│       ├── auth.spec.js         # 11 authentication tests
+│       ├── listings.spec.js     # 12 listings tests
+│       ├── search.spec.js       # 7 search & filter tests
+│       ├── favorites.spec.js    # 5 favorites tests
+│       ├── messages.spec.js     # 6 messaging tests
+│       └── profile.spec.js      # 6 profile tests
+├── playwright.config.js         # Playwright configuration
+└── package.json                 # Run scripts
 ```
 
-### Матрица покрытия
+### Coverage Matrix
 
-| Модуль | UI тесты | API тесты | Статус |
+| Module | UI Tests | API Tests | Status |
 |--------|----------|-----------|--------|
-| **Аутентификация** | Регистрация, Логин, Logout, Сессии | /auth/login, /auth/register, /auth/me | ✅ |
-| **Объявления** | Создание, Валидация форм, Просмотр | /listings CRUD, фильтрация | ✅ |
-| **Поиск** | Фильтры, Clean Title, Make/Model | Query параметры | ✅ |
-| **Избранное** | Добавление, Удаление, Счётчик | /favorites endpoints | ✅ |
-| **Сообщения** | Чат, Треды, Отправка | /messages threads, conversation | ✅ |
-| **Профиль** | Редактирование, Аватар, Публичный профиль | /profile, /users/{id}/public | ✅ |
+| **Authentication** | Registration, Login, Logout, Sessions | /auth/login, /auth/register, /auth/me | ✅ |
+| **Listings** | Create, Form validation, View | /listings CRUD, filtering | ✅ |
+| **Search** | Filters, Clean Title, Make/Model | Query parameters | ✅ |
+| **Favorites** | Add, Remove, Counter | /favorites endpoints | ✅ |
+| **Messages** | Chat, Threads, Send | /messages threads, conversation | ✅ |
+| **Profile** | Edit, Avatar, Public profile | /profile, /users/{id}/public | ✅ |
 
 ---
 
-## 🛠️ Технологии
+## 🛠️ Technology Stack
 
-### Тестовый стек
+### Testing Stack
 
-| Инструмент | Назначение | Почему выбран |
-|------------|------------|---------------|
-| **Playwright** | E2E тестирование | Быстрее Selenium, встроенные ожидания, поддержка мобильных viewport |
-| **GitHub Actions** | CI/CD | Бесплатно для open-source, отличная интеграция с GitHub |
-| **GitHub Pages** | Хостинг отчётов | Автоматический деплой, не требует внешних сервисов |
+| Tool | Purpose | Why Chosen |
+|------|---------|------------|
+| [**Playwright**](https://playwright.dev/) | E2E testing | Faster than Selenium, built-in waits, mobile viewport support |
+| [**GitHub Actions**](https://github.com/ShkH7700/car-sales-prj/actions) | CI/CD | Free for open-source, excellent GitHub integration |
+| [**GitHub Pages**](https://shkh7700.github.io/car-sales-prj/) | Report hosting | Automatic deployment, no external services required |
 
-### Стек приложения (SUT)
+### Application Stack (SUT)
 
-| Слой | Технология |
-|------|------------|
-| Frontend | React, Tailwind CSS, Axios |
-| Backend | FastAPI (Python), JWT auth |
-| Database | MongoDB Atlas |
-| Hosting | Render.com |
+| Layer | Technology |
+|-------|------------|
+| Frontend | [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/), Axios |
+| Backend | [FastAPI](https://fastapi.tiangolo.com/) (Python), JWT auth |
+| Database | [MongoDB Atlas](https://www.mongodb.com/atlas) |
+| Hosting | [Render.com](https://render.com/) |
 
 ---
 
-## 🚀 Запуск тестов
+## 🚀 Running Tests
 
-### Локально
+### Locally
 
 ```bash
-# Установка зависимостей
+# Install dependencies
 cd e2e
 yarn install
 npx playwright install
 
-# Запуск всех тестов
+# Run all tests
 yarn test
 
-# Запуск по категориям
-yarn test:api        # Только API тесты
-yarn test:e2e        # Только E2E (Chrome)
-yarn test:auth       # Только аутентификация
-yarn test:search     # Только поиск
+# Run by category
+yarn test:api        # API tests only
+yarn test:e2e        # E2E (Chrome) only
+yarn test:auth       # Authentication only
+yarn test:search     # Search only
 
-# Режим отладки
-yarn test:debug      # Пошаговое выполнение
-yarn test:headed     # С открытым браузером
+# Debug mode
+yarn test:debug      # Step-by-step execution
+yarn test:headed     # With browser visible
 ```
 
-### В CI/CD
+### In CI/CD
 
-Тесты автоматически запускаются:
-- 📌 На каждый **push** в main
-- 📌 На каждый **Pull Request**
-- 🌙 **Ночью в 00:00 UTC** (полный набор включая Mobile)
-- 🖱️ **Вручную** через кнопку "Run workflow"
+Tests automatically run:
+- 📌 On every **push** to main
+- 📌 On every **Pull Request**
+- 🌙 **Nightly at 00:00 UTC** (full suite including Mobile)
+- 🖱️ **Manually** via ["Run workflow" button](https://github.com/ShkH7700/car-sales-prj/actions/workflows/playwright-tests.yml)
 
 ---
 
-## 📈 Отчётность
+## 📈 Reporting
 
 ### Playwright HTML Report
 
-После каждого прогона генерируется интерактивный HTML-отчёт:
+An interactive HTML report is generated after each run:
 
-- **Статистика**: passed/failed/skipped
-- **Скриншоты** при падении теста
-- **Видео** провалившихся тестов
-- **Trace файлы** для детальной отладки
+- **Statistics**: passed/failed/skipped
+- **Screenshots** on test failure
+- **Video recordings** of failed tests
+- **Trace files** for detailed debugging
 
-📊 **[Посмотреть последний отчёт →](https://shkh7700.github.io/car-sales-prj/)**
+📊 **[View Latest Test Report →](https://shkh7700.github.io/car-sales-prj/)**
 
-### Артефакты в GitHub Actions
+### Artifacts in GitHub Actions
 
-Каждый прогон сохраняет:
-- `playwright-report/` — HTML отчёт (30 дней)
-- `test-results/` — скриншоты, видео, traces (14 дней)
+Each run saves:
+- `playwright-report/` — [HTML report](https://shkh7700.github.io/car-sales-prj/) (30 days retention)
+- `test-results/` — screenshots, videos, traces (14 days retention)
 
 ---
 
-## 📝 Тестовая документация
+## 📝 Test Documentation
 
-Проект включает формальную тестовую документацию:
+This project includes formal test documentation:
 
-| Документ | Описание | Путь |
-|----------|----------|------|
-| **Test Plan** | Стратегия тестирования, scope, критерии | [`test_docs/Test_Plan_NextRides.md`](test_docs/Test_Plan_NextRides.md) |
-| **Test Cases** | Детальные тест-кейсы с шагами | [`test_docs/Test_Cases_NextRides.md`](test_docs/Test_Cases_NextRides.md) |
+| Document | Description | Link |
+|----------|-------------|------|
+| **Test Plan** | Testing strategy, scope, criteria | [Test_Plan_NextRides.md](test_docs/Test_Plan_NextRides.md) |
+| **Test Cases** | Detailed test cases with steps | [Test_Cases_NextRides.md](test_docs/Test_Cases_NextRides.md) |
 
-### Пример тест-кейса
+### Sample Test Case
 
 ```markdown
 ### TC-AUTH-03 – Login with Valid Credentials
@@ -189,35 +191,35 @@ yarn test:headed     # С открытым браузером
 
 ---
 
-## 🔧 Особенности реализации
+## 🔧 Implementation Highlights
 
-### Устойчивость тестов
+### Test Stability
 
 ```javascript
-// ❌ Плохо: жёсткое ожидание
+// ❌ Bad: hard-coded wait
 await page.waitForTimeout(5000);
 
-// ✅ Хорошо: умное ожидание с fallback
+// ✅ Good: smart wait with fallback
 const hasListings = await firstCard.isVisible({ timeout: 5000 }).catch(() => false);
 if (!hasListings) {
   test.skip(true, 'No listings available in database');
 }
 ```
 
-### Data-testid стратегия
+### Data-testid Strategy
 
-Все ключевые элементы имеют `data-testid` для стабильных селекторов:
+All key elements have `data-testid` attributes for stable selectors:
 
 ```javascript
-// Селекторы не зависят от CSS классов или текста
+// Selectors don't depend on CSS classes or text content
 await page.getByTestId('listing-card').first();
 await page.getByTestId('favorite-btn').click();
 await page.getByTestId('search-btn').click();
 ```
 
-### Обработка пустой БД
+### Empty Database Handling
 
-Тесты корректно работают даже с пустой базой данных:
+Tests work correctly even with an empty database:
 
 ```javascript
 test('TC-FAV-01: toggle favorite', async ({ page }) => {
@@ -228,59 +230,72 @@ test('TC-FAV-01: toggle favorite', async ({ page }) => {
     test.skip(true, 'No listings available');  // Graceful skip
     return;
   }
-  // ... остальной тест
+  // ... rest of the test
 });
 ```
 
 ---
 
-## 📁 Структура репозитория
+## 📁 Repository Structure
 
 ```
 car-sales-prj/
 ├── .github/
 │   └── workflows/
 │       └── playwright-tests.yml    # CI/CD pipeline
-├── backend/                        # FastAPI приложение
+├── backend/                        # FastAPI application
 ├── frontend/                       # React SPA
-├── e2e/                           # 🧪 ТЕСТОВЫЙ ФРЕЙМВОРК
+├── e2e/                           # 🧪 TEST FRAMEWORK
 │   ├── tests/
-│   │   ├── api/                   # API тесты
-│   │   └── e2e/                   # E2E тесты
+│   │   ├── api/                   # API tests
+│   │   └── e2e/                   # E2E tests
 │   ├── playwright.config.js
 │   └── package.json
-├── test_docs/                     # 📄 Тестовая документация
+├── test_docs/                     # 📄 Test documentation
 │   ├── Test_Plan_NextRides.md
 │   └── Test_Cases_NextRides.md
-└── README.md                      # Этот файл
+└── README.md                      # This file
 ```
 
 ---
 
-## 🎯 Навыки, демонстрируемые в проекте
+## 🎯 Skills Demonstrated
 
-- ✅ Проектирование тестовой архитектуры
-- ✅ Написание E2E тестов на Playwright
-- ✅ API тестирование REST endpoints
-- ✅ Настройка CI/CD pipeline (GitHub Actions)
-- ✅ Работа с тестовой документацией
-- ✅ Анализ и исправление flaky тестов
-- ✅ Понимание frontend (React) и backend (Python/FastAPI)
+- ✅ Test architecture design
+- ✅ Writing E2E tests with [Playwright](https://playwright.dev/)
+- ✅ API testing of REST endpoints
+- ✅ CI/CD pipeline setup ([GitHub Actions](https://github.com/features/actions))
+- ✅ Test documentation creation
+- ✅ Analyzing and fixing flaky tests
+- ✅ Understanding of frontend ([React](https://react.dev/)) and backend ([Python](https://www.python.org/)/[FastAPI](https://fastapi.tiangolo.com/))
 
 ---
 
-## 📞 Контакты
+## 🔗 Quick Links
 
-**Автор**: [Ваше Имя]
+| Resource | Link |
+|----------|------|
+| 🌐 **Live Application** | [nextrides-frontend.onrender.com](https://nextrides-frontend.onrender.com) |
+| 📊 **Test Report** | [shkh7700.github.io/car-sales-prj](https://shkh7700.github.io/car-sales-prj/) |
+| 🔄 **CI/CD Pipeline** | [GitHub Actions](https://github.com/ShkH7700/car-sales-prj/actions) |
+| 📋 **Test Plan** | [Test_Plan_NextRides.md](test_docs/Test_Plan_NextRides.md) |
+| 📝 **Test Cases** | [Test_Cases_NextRides.md](test_docs/Test_Cases_NextRides.md) |
+| 🔧 **Backend API** | [carfinder-37.preview.emergentagent.com/api](https://carfinder-37.preview.emergentagent.com/api/docs) |
+
+---
+
+## 📞 Contact
+
+**Author**: [Your Name]
 
 - 📧 Email: [your.email@example.com]
-- 💼 LinkedIn: [linkedin.com/in/your-profile]
+- 💼 LinkedIn: [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
 - 🐙 GitHub: [github.com/ShkH7700](https://github.com/ShkH7700)
 
 ---
 
 <div align="center">
 
-**[📊 Test Report](https://shkh7700.github.io/car-sales-prj/)** • **[🔄 CI/CD](https://github.com/ShkH7700/car-sales-prj/actions)** • **[📝 Test Cases](test_docs/Test_Cases_NextRides.md)**
+**[📊 Test Report](https://shkh7700.github.io/car-sales-prj/)** • **[🌐 Live App](https://nextrides-frontend.onrender.com)** • **[🔄 CI/CD](https://github.com/ShkH7700/car-sales-prj/actions)** • **[📝 Test Cases](test_docs/Test_Cases_NextRides.md)**
 
 </div>
