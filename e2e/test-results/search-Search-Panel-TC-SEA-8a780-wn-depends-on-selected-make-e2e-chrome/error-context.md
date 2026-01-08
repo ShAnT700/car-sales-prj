@@ -83,7 +83,7 @@
                     - heading [level=3]: Tesla Model 3
                     - generic:
                       - generic: $45,000
-                      - generic: 0 ❤
+                      - generic: 1 ❤
                   - generic:
                     - generic:
                       - img

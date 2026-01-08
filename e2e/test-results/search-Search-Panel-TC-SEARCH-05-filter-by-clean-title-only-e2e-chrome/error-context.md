@@ -11,7 +11,7 @@
           - generic [ref=e8]: NextRides
         - button "Sell Car" [ref=e10] [cursor=pointer]
     - generic [ref=e11]:
-      - button "Hide Search!" [active] [ref=e12] [cursor=pointer]
+      - button "Hide Search!" [ref=e12] [cursor=pointer]
       - button "Show Matches" [ref=e13] [cursor=pointer]
     - generic [ref=e16]:
       - generic [ref=e17]:
@@ -43,8 +43,8 @@
         - combobox [ref=e46] [cursor=pointer]:
           - generic: Drive Type
           - img [ref=e47]
-        - combobox [ref=e49] [cursor=pointer]:
-          - generic: Clean Title
+        - combobox [active] [ref=e49] [cursor=pointer]:
+          - generic: Clean Title Only
           - img [ref=e50]
       - generic:
         - button:
@@ -60,7 +60,7 @@
       - generic [ref=e57]:
         - heading "Latest Listings" [level=2] [ref=e60]
         - generic [ref=e61]:
-          - link "Tesla Model 3 NR Auto CT Tesla Model 3 $45,000 0 ❤ 15k mi San Francisco" [ref=e62] [cursor=pointer]:
+          - link "Tesla Model 3 NR Auto CT Tesla Model 3 $45,000 1 ❤ 15k mi San Francisco" [ref=e62] [cursor=pointer]:
             - /url: /car/6420d076-587f-43d3-8801-a78f4465c7f0
             - generic [ref=e63]:
               - img "Tesla Model 3" [ref=e64]
@@ -73,7 +73,7 @@
                 - heading "Tesla Model 3" [level=3] [ref=e71]
                 - generic [ref=e72]:
                   - generic [ref=e73]: $45,000
-                  - generic [ref=e74]: 0 ❤
+                  - generic [ref=e74]: 1 ❤
               - generic [ref=e75]:
                 - generic [ref=e76]:
                   - img [ref=e77]
