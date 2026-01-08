@@ -130,12 +130,15 @@ jobs:
           path: e2e/test-results/
           retention-days: 14
 
-  # Publish Test Report
+  # Publish Test Report (Optional - requires repo permissions)
   publish-report:
     name: Publish Test Report
     runs-on: ubuntu-latest
     needs: [e2e-tests-chrome]
-    if: always()
+    if: always() && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+      pages: write
     
     steps:
       - name: Download test results
@@ -143,11 +146,13 @@ jobs:
         with:
           name: e2e-chrome-test-results
           path: test-results
+        continue-on-error: true
 
       - name: Deploy HTML Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+        if: hashFiles('test-results/playwright-report/index.html') != ''
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: test-results/playwright-report
           destination_dir: playwright-report
+        continue-on-error: true
