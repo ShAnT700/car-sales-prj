@@ -50,22 +50,29 @@ def compress_image(image_bytes: bytes, max_size: int = MAX_IMAGE_SIZE_BYTES) -> 
     elif img.mode != 'RGB':
         img = img.convert('RGB')
     
-    # Resize if image is very large (max 2000px on longest side)
-    max_dimension = 2000
+    # Resize if image is very large (max 1600px on longest side for better compression)
+    max_dimension = 1600
     if max(img.size) > max_dimension:
         ratio = max_dimension / max(img.size)
         new_size = (int(img.size[0] * ratio), int(img.size[1] * ratio))
         img = img.resize(new_size, Image.LANCZOS)
     
-    # Start with quality 85 and reduce until under max_size
-    quality = 85
+    # Start with quality 80 and reduce until under max_size
+    quality = 80
     output = io.BytesIO()
     img.save(output, format='JPEG', quality=quality, optimize=True)
     
-    while output.tell() > max_size and quality > 20:
+    while output.tell() > max_size and quality > 10:
         quality -= 5
         output = io.BytesIO()
         img.save(output, format='JPEG', quality=quality, optimize=True)
+        
+        # If still too large at quality 20, resize the image
+        if quality <= 20 and output.tell() > max_size:
+            ratio = 0.8
+            new_size = (int(img.size[0] * ratio), int(img.size[1] * ratio))
+            img = img.resize(new_size, Image.LANCZOS)
+            quality = 50  # Reset quality after resize
     
     return output.getvalue()
 
