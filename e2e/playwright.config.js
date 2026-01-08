@@ -76,7 +76,7 @@ module.exports = defineConfig({
       testDir: './tests/api',
       use: {
         // API tests don't need browser
-        baseURL: process.env.E2E_API_URL || 'https://carfinder-37.preview.emergentagent.com/api',
+        baseURL: process.env.E2E_API_URL || 'https://carshub-1.preview.emergentagent.com/api',
       },
     },
   ],
