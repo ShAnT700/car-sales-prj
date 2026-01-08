@@ -39,29 +39,36 @@ class ImageHandlingTester:
 
     def create_test_image(self, size_mb=1.5, format='PNG'):
         """Create a test image of specified size"""
-        # Calculate dimensions for target file size
-        # Rough estimate: RGB image is 3 bytes per pixel
-        target_bytes = int(size_mb * 1024 * 1024)
-        pixels_needed = target_bytes // 3
-        width = int(pixels_needed ** 0.5)
-        height = width
+        # For large images, use a fixed large dimension and adjust quality/compression
+        if size_mb >= 1.0:
+            # Create a large high-resolution image
+            width, height = 2000, 2000  # 4MP image
+        else:
+            # Calculate dimensions for smaller images
+            target_bytes = int(size_mb * 1024 * 1024)
+            pixels_needed = target_bytes // 3
+            width = int(pixels_needed ** 0.5)
+            height = width
         
-        # Create a colorful test image
+        # Create a colorful test image with random-like pattern for poor compression
         img = Image.new('RGB', (width, height))
         pixels = []
         for y in range(height):
             for x in range(width):
-                # Create a gradient pattern
-                r = (x * 255) // width
-                g = (y * 255) // height
-                b = ((x + y) * 255) // (width + height)
+                # Create a noisy pattern that compresses poorly
+                r = ((x * 123 + y * 456) % 256)
+                g = ((x * 789 + y * 234) % 256) 
+                b = ((x * 567 + y * 890) % 256)
                 pixels.append((r, g, b))
         
         img.putdata(pixels)
         
-        # Save to bytes
+        # Save to bytes with settings to achieve target size
         img_bytes = io.BytesIO()
-        img.save(img_bytes, format=format, quality=95 if format == 'JPEG' else None)
+        if format == 'PNG':
+            img.save(img_bytes, format='PNG', compress_level=0)  # No compression for larger file
+        else:
+            img.save(img_bytes, format=format, quality=95)
         img_bytes.seek(0)
         
         actual_size = len(img_bytes.getvalue())
