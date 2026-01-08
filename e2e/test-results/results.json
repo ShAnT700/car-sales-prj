@@ -126,12 +126,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6352,
+                      "duration": 8428,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:24.896Z",
+                      "startTime": "2026-01-08T01:25:00.796Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -160,12 +160,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2297,
+                      "duration": 1456,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:31.912Z",
+                      "startTime": "2026-01-08T01:25:09.766Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -194,12 +194,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2681,
+                      "duration": 4850,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:34.410Z",
+                      "startTime": "2026-01-08T01:25:11.273Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -236,12 +236,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10040,
+                      "duration": 9448,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:37.118Z",
+                      "startTime": "2026-01-08T01:25:16.203Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -270,12 +270,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7970,
+                      "duration": 9997,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:47.219Z",
+                      "startTime": "2026-01-08T01:25:25.663Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -304,12 +304,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9805,
+                      "duration": 6606,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:55.216Z",
+                      "startTime": "2026-01-08T01:25:35.667Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -338,12 +338,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8977,
+                      "duration": 9594,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:05.117Z",
+                      "startTime": "2026-01-08T01:25:42.363Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -372,12 +372,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10405,
+                      "duration": 12788,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:14.160Z",
+                      "startTime": "2026-01-08T01:25:51.967Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -406,12 +406,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 14612,
+                      "duration": 15331,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:24.718Z",
+                      "startTime": "2026-01-08T01:26:04.763Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -448,12 +448,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12652,
+                      "duration": 15786,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:39.502Z",
+                      "startTime": "2026-01-08T01:26:20.162Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -482,12 +482,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8811,
+                      "duration": 8667,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:52.219Z",
+                      "startTime": "2026-01-08T01:26:36.008Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -533,12 +533,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 17216,
+                      "duration": 17553,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:25.063Z",
+                      "startTime": "2026-01-08T01:25:00.896Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -567,12 +567,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 11655,
+                      "duration": 12910,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:42.865Z",
+                      "startTime": "2026-01-08T01:25:19.195Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -601,12 +601,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 16051,
+                      "duration": 15260,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:54.625Z",
+                      "startTime": "2026-01-08T01:25:32.197Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -635,12 +635,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 13041,
+                      "duration": 12877,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:10.798Z",
+                      "startTime": "2026-01-08T01:25:47.467Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -677,12 +677,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 6914,
+                      "duration": 5969,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:23.907Z",
+                      "startTime": "2026-01-08T01:26:00.375Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -728,12 +728,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 14718,
+                      "duration": 15149,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:24.967Z",
+                      "startTime": "2026-01-08T01:25:00.915Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -748,7 +748,7 @@
             },
             {
               "title": "TC-LIST-03: cannot submit without photos",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -761,53 +761,18 @@
                     {
                       "workerIndex": 2,
                       "parallelIndex": 2,
-                      "status": "failed",
-                      "duration": 13723,
-                      "error": {
-                        "message": "Error: locator.click: Error: strict mode violation: getByText('Toyota', { exact: true }) resolved to 2 elements:\n    1) <option value=\"Toyota\">Toyota</option> aka locator('select').first()\n    2) <span id=\"radix-_r_42_\">Toyota</span> aka getByLabel('Toyota').getByText('Toyota')\n\nCall log:\n\u001b[2m  - waiting for getByText('Toyota', { exact: true })\u001b[22m\n",
-                        "stack": "Error: locator.click: Error: strict mode violation: getByText('Toyota', { exact: true }) resolved to 2 elements:\n    1) <option value=\"Toyota\">Toyota</option> aka locator('select').first()\n    2) <span id=\"radix-_r_42_\">Toyota</span> aka getByLabel('Toyota').getByText('Toyota')\n\nCall log:\n\u001b[2m  - waiting for getByText('Toyota', { exact: true })\u001b[22m\n\n    at /app/e2e/tests/e2e/listings.spec.js:67:53",
-                        "location": {
-                          "file": "/app/e2e/tests/e2e/listings.spec.js",
-                          "column": 53,
-                          "line": 67
-                        },
-                        "snippet": "  65 |     // Fill all other fields\n  66 |     await page.getByTestId('listing-make').click();\n> 67 |     await page.getByText('Toyota', { exact: true }).click();\n     |                                                     ^\n  68 |     \n  69 |     await page.getByTestId('listing-model').click();\n  70 |     await page.getByText('Camry', { exact: true }).click();"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/e2e/listings.spec.js",
-                            "column": 53,
-                            "line": 67
-                          },
-                          "message": "Error: locator.click: Error: strict mode violation: getByText('Toyota', { exact: true }) resolved to 2 elements:\n    1) <option value=\"Toyota\">Toyota</option> aka locator('select').first()\n    2) <span id=\"radix-_r_42_\">Toyota</span> aka getByLabel('Toyota').getByText('Toyota')\n\nCall log:\n\u001b[2m  - waiting for getByText('Toyota', { exact: true })\u001b[22m\n\n\n  65 |     // Fill all other fields\n  66 |     await page.getByTestId('listing-make').click();\n> 67 |     await page.getByText('Toyota', { exact: true }).click();\n     |                                                     ^\n  68 |     \n  69 |     await page.getByTestId('listing-model').click();\n  70 |     await page.getByText('Camry', { exact: true }).click();\n    at /app/e2e/tests/e2e/listings.spec.js:67:53"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 14700,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:40.360Z",
+                      "startTime": "2026-01-08T01:25:16.768Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/app/e2e/test-results/listings-Listings---Create-e2258-annot-submit-without-photos-e2e-chrome/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/app/e2e/test-results/listings-Listings---Create-e2258-annot-submit-without-photos-e2e-chrome/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/e2e/listings.spec.js",
-                        "column": 53,
-                        "line": 67
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "6e2297e726d63854e50c-12c646246db324d3379e",
@@ -828,15 +793,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 15791,
+                      "duration": 15831,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:00.096Z",
+                      "startTime": "2026-01-08T01:25:31.597Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -846,7 +811,7 @@
               ],
               "id": "6e2297e726d63854e50c-497ee06d0f3a0607b979",
               "file": "e2e/listings.spec.js",
-              "line": 97,
+              "line": 71,
               "column": 3
             },
             {
@@ -862,15 +827,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 15180,
+                      "duration": 14874,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:17.005Z",
+                      "startTime": "2026-01-08T01:25:47.565Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -880,7 +845,7 @@
               ],
               "id": "6e2297e726d63854e50c-be171e14af7a61cba45e",
               "file": "e2e/listings.spec.js",
-              "line": 116,
+              "line": 90,
               "column": 3
             }
           ]
@@ -888,7 +853,7 @@
         {
           "title": "Listings - View",
           "file": "e2e/listings.spec.js",
-          "line": 135,
+          "line": 109,
           "column": 6,
           "specs": [
             {
@@ -904,15 +869,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 5485,
+                      "duration": 6988,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:32.206Z",
+                      "startTime": "2026-01-08T01:26:02.564Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -922,7 +887,7 @@
               ],
               "id": "6e2297e726d63854e50c-a7a799038d82717cccbc",
               "file": "e2e/listings.spec.js",
-              "line": 138,
+              "line": 112,
               "column": 3
             },
             {
@@ -938,15 +903,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 5387,
+                      "duration": 7095,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:37.711Z",
+                      "startTime": "2026-01-08T01:26:09.564Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -956,7 +921,7 @@
               ],
               "id": "6e2297e726d63854e50c-24d2ee0ec2826e651809",
               "file": "e2e/listings.spec.js",
-              "line": 152,
+              "line": 126,
               "column": 3
             },
             {
@@ -972,15 +937,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 7497,
+                      "duration": 6453,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:43.210Z",
+                      "startTime": "2026-01-08T01:26:16.702Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -990,7 +955,7 @@
               ],
               "id": "6e2297e726d63854e50c-bb84bb7c377ccb332dee",
               "file": "e2e/listings.spec.js",
-              "line": 164,
+              "line": 138,
               "column": 3
             }
           ]
@@ -998,7 +963,7 @@
         {
           "title": "Listings - My Listings",
           "file": "e2e/listings.spec.js",
-          "line": 181,
+          "line": 155,
           "column": 6,
           "specs": [
             {
@@ -1014,15 +979,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 9762,
+                      "duration": 10331,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:50.813Z",
+                      "startTime": "2026-01-08T01:26:23.217Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1032,7 +997,7 @@
               ],
               "id": "6e2297e726d63854e50c-bdec8c6ca08aeff3af7d",
               "file": "e2e/listings.spec.js",
-              "line": 188,
+              "line": 162,
               "column": 3
             }
           ]
@@ -1040,7 +1005,7 @@
         {
           "title": "Clean Title Badge",
           "file": "e2e/listings.spec.js",
-          "line": 203,
+          "line": 177,
           "column": 6,
           "specs": [
             {
@@ -1056,15 +1021,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 4146,
+                      "duration": 5590,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:17:00.800Z",
+                      "startTime": "2026-01-08T01:26:33.612Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1074,7 +1039,7 @@
               ],
               "id": "6e2297e726d63854e50c-8fd304da4729687d584e",
               "file": "e2e/listings.spec.js",
-              "line": 206,
+              "line": 180,
               "column": 3
             },
             {
@@ -1090,15 +1055,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 6364,
+                      "duration": 10924,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:17:04.995Z",
+                      "startTime": "2026-01-08T01:26:39.300Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1108,7 +1073,7 @@
               ],
               "id": "6e2297e726d63854e50c-31c6d40d3662410aea68",
               "file": "e2e/listings.spec.js",
-              "line": 220,
+              "line": 194,
               "column": 3
             }
           ]
@@ -1144,12 +1109,12 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 12305,
+                      "duration": 10829,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:25.000Z",
+                      "startTime": "2026-01-08T01:25:00.914Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1178,12 +1143,12 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 16022,
+                      "duration": 13458,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:37.964Z",
+                      "startTime": "2026-01-08T01:25:12.361Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1212,7 +1177,7 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "failed",
-                      "duration": 9373,
+                      "duration": 10547,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at /app/e2e/tests/e2e/messages.spec.js:76:35",
@@ -1236,7 +1201,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:15:54.197Z",
+                      "startTime": "2026-01-08T01:25:25.872Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1278,15 +1243,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 4,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 10054,
+                      "duration": 9989,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:08.126Z",
+                      "startTime": "2026-01-08T01:25:40.568Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1312,15 +1277,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 4,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 11665,
+                      "duration": 8264,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:19.216Z",
+                      "startTime": "2026-01-08T01:25:51.564Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1354,15 +1319,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 4,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 8689,
+                      "duration": 8720,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:31.099Z",
+                      "startTime": "2026-01-08T01:25:59.866Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1394,7 +1359,7 @@
           "specs": [
             {
               "title": "TC-PROF-01: profile page loads",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -1407,53 +1372,18 @@
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "failed",
-                      "duration": 10698,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Profile/i })\nExpected: visible\nError: strict mode violation: getByRole('heading', { name: /Profile/i }) resolved to 2 elements:\n    1) <h1 class=\"font-manrope font-bold text-2xl sm:text-3xl text-slate-900 mb-8\">Profile Settings</h1> aka getByRole('heading', { name: 'Profile Settings', exact: true })\n    2) <h3 class=\"font-semibold text-slate-900 mb-4\">Public Profile Settings</h3> aka getByRole('heading', { name: 'Public Profile Settings' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Profile/i })\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Profile/i })\nExpected: visible\nError: strict mode violation: getByRole('heading', { name: /Profile/i }) resolved to 2 elements:\n    1) <h1 class=\"font-manrope font-bold text-2xl sm:text-3xl text-slate-900 mb-8\">Profile Settings</h1> aka getByRole('heading', { name: 'Profile Settings', exact: true })\n    2) <h3 class=\"font-semibold text-slate-900 mb-4\">Public Profile Settings</h3> aka getByRole('heading', { name: 'Public Profile Settings' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Profile/i })\u001b[22m\n\n    at /app/e2e/tests/e2e/profile.spec.js:36:67",
-                        "location": {
-                          "file": "/app/e2e/tests/e2e/profile.spec.js",
-                          "column": 67,
-                          "line": 36
-                        },
-                        "snippet": "  34 |     // Should show profile page elements\n  35 |     await expect(page.getByTestId('profile-page')).toBeVisible();\n> 36 |     await expect(page.getByRole('heading', { name: /Profile/i })).toBeVisible();\n     |                                                                   ^\n  37 |   });\n  38 |\n  39 |   // TC-PROF-02: Profile shows user info"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/e2e/profile.spec.js",
-                            "column": 67,
-                            "line": 36
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Profile/i })\nExpected: visible\nError: strict mode violation: getByRole('heading', { name: /Profile/i }) resolved to 2 elements:\n    1) <h1 class=\"font-manrope font-bold text-2xl sm:text-3xl text-slate-900 mb-8\">Profile Settings</h1> aka getByRole('heading', { name: 'Profile Settings', exact: true })\n    2) <h3 class=\"font-semibold text-slate-900 mb-4\">Public Profile Settings</h3> aka getByRole('heading', { name: 'Public Profile Settings' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Profile/i })\u001b[22m\n\n\n  34 |     // Should show profile page elements\n  35 |     await expect(page.getByTestId('profile-page')).toBeVisible();\n> 36 |     await expect(page.getByRole('heading', { name: /Profile/i })).toBeVisible();\n     |                                                                   ^\n  37 |   });\n  38 |\n  39 |   // TC-PROF-02: Profile shows user info\n    at /app/e2e/tests/e2e/profile.spec.js:36:67"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 10004,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:30.897Z",
+                      "startTime": "2026-01-08T01:26:06.461Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/app/e2e/test-results/profile-Profile-TC-PROF-01-profile-page-loads-e2e-chrome/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/app/e2e/test-results/profile-Profile-TC-PROF-01-profile-page-loads-e2e-chrome/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/e2e/profile.spec.js",
-                        "column": 67,
-                        "line": 36
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "d3b94327e94fcbd90a1b-a5a335b90110ba60ae80",
@@ -1474,15 +1404,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 11546,
+                      "duration": 9331,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:46.024Z",
+                      "startTime": "2026-01-08T01:26:16.503Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1492,7 +1422,7 @@
               ],
               "id": "d3b94327e94fcbd90a1b-91d1af09ebf4e941e996",
               "file": "e2e/profile.spec.js",
-              "line": 40,
+              "line": 39,
               "column": 3
             },
             {
@@ -1508,15 +1438,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 8477,
+                      "duration": 9587,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:58.298Z",
+                      "startTime": "2026-01-08T01:26:25.900Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1526,7 +1456,7 @@
               ],
               "id": "d3b94327e94fcbd90a1b-57b864e156e1ed02d351",
               "file": "e2e/profile.spec.js",
-              "line": 54,
+              "line": 53,
               "column": 3
             },
             {
@@ -1542,15 +1472,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5449,
+                      "duration": 10645,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:17:06.799Z",
+                      "startTime": "2026-01-08T01:26:35.505Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1560,7 +1490,7 @@
               ],
               "id": "d3b94327e94fcbd90a1b-0609c1f7261f83ff3533",
               "file": "e2e/profile.spec.js",
-              "line": 68,
+              "line": 67,
               "column": 3
             },
             {
@@ -1576,15 +1506,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3938,
+                      "duration": 6345,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:17:12.262Z",
+                      "startTime": "2026-01-08T01:26:46.218Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1594,7 +1524,7 @@
               ],
               "id": "d3b94327e94fcbd90a1b-e9d0acd84f15548fa136",
               "file": "e2e/profile.spec.js",
-              "line": 82,
+              "line": 81,
               "column": 3
             }
           ]
@@ -1602,7 +1532,7 @@
         {
           "title": "Public Profile",
           "file": "e2e/profile.spec.js",
-          "line": 96,
+          "line": 95,
           "column": 6,
           "specs": [
             {
@@ -1618,15 +1548,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2155,
+                      "duration": 4043,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:17:16.208Z",
+                      "startTime": "2026-01-08T01:26:52.613Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1636,7 +1566,7 @@
               ],
               "id": "d3b94327e94fcbd90a1b-e34b0deb8f3bb1297b9a",
               "file": "e2e/profile.spec.js",
-              "line": 99,
+              "line": 98,
               "column": 3
             },
             {
@@ -1652,15 +1582,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2248,
+                      "duration": 4397,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:17:18.374Z",
+                      "startTime": "2026-01-08T01:26:56.666Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1670,7 +1600,7 @@
               ],
               "id": "d3b94327e94fcbd90a1b-46aa3331a55fbce1e63b",
               "file": "e2e/profile.spec.js",
-              "line": 122,
+              "line": 121,
               "column": 3
             },
             {
@@ -1686,15 +1616,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1911,
+                      "duration": 2717,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:17:20.627Z",
+                      "startTime": "2026-01-08T01:27:01.068Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1704,7 +1634,7 @@
               ],
               "id": "d3b94327e94fcbd90a1b-07404711b118c516a289",
               "file": "e2e/profile.spec.js",
-              "line": 143,
+              "line": 142,
               "column": 3
             }
           ]
@@ -1737,15 +1667,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 4,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 9796,
+                      "duration": 11190,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:39.898Z",
+                      "startTime": "2026-01-08T01:26:08.767Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1771,31 +1701,34 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 4,
                       "parallelIndex": 3,
-                      "status": "timedOut",
-                      "duration": 60208,
+                      "status": "failed",
+                      "duration": 15130,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"tesla\"\u001b[39m\nReceived string:    \u001b[31m\"ctbmw x3$65,0001 ❤14k milos angeles\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"tesla\"\u001b[39m\nReceived string:    \u001b[31m\"ctbmw x3$65,0001 ❤14k milos angeles\"\u001b[39m\n    at /app/e2e/tests/e2e/search.spec.js:77:40",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/search.spec.js",
+                          "column": 40,
+                          "line": 77
+                        },
+                        "snippet": "  75 |       for (let i = 0; i < Math.min(count, 3); i++) {\n  76 |         const cardText = await cards.nth(i).textContent();\n> 77 |         expect(cardText.toLowerCase()).toContain('tesla');\n     |                                        ^\n  78 |       }\n  79 |     }\n  80 |   });"
                       },
                       "errors": [
                         {
-                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
-                        },
-                        {
                           "location": {
                             "file": "/app/e2e/tests/e2e/search.spec.js",
-                            "column": 42,
-                            "line": 65
+                            "column": 40,
+                            "line": 77
                           },
-                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('search-btn')\u001b[22m\n\u001b[2m    - locator resolved to <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"fixed inset-0 bg-black/50 z-40\"></div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"fixed inset-0 bg-black/50 z-40\"></div> intercepts pointer events\u001b[22m\n\u001b[2m  22 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"fixed inset-0 bg-black/50 z-40\"></div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"fixed inset-0 bg-black/50 z-40\"></div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\n\n  63 |     \n  64 |     // Click Show Matches (use first one to avoid duplicate issues)\n> 65 |     await page.getByTestId('search-btn').click();\n     |                                          ^\n  66 |     await page.waitForLoadState('networkidle');\n  67 |     await page.waitForTimeout(1000);\n  68 |     \n    at /app/e2e/tests/e2e/search.spec.js:65:42"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"tesla\"\u001b[39m\nReceived string:    \u001b[31m\"ctbmw x3$65,0001 ❤14k milos angeles\"\u001b[39m\n\n  75 |       for (let i = 0; i < Math.min(count, 3); i++) {\n  76 |         const cardText = await cards.nth(i).textContent();\n> 77 |         expect(cardText.toLowerCase()).toContain('tesla');\n     |                                        ^\n  78 |       }\n  79 |     }\n  80 |   });\n    at /app/e2e/tests/e2e/search.spec.js:77:40"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:16:49.711Z",
+                      "startTime": "2026-01-08T01:26:19.996Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1808,7 +1741,12 @@
                           "contentType": "text/markdown",
                           "path": "/app/e2e/test-results/search-Search-Panel-TC-SEA-1a62e-make-shows-relevant-results-e2e-chrome/error-context.md"
                         }
-                      ]
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/search.spec.js",
+                        "column": 40,
+                        "line": 77
+                      }
                     }
                   ],
                   "status": "unexpected"
@@ -1832,10 +1770,10 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 0,
+                      "workerIndex": 5,
+                      "parallelIndex": 3,
                       "status": "failed",
-                      "duration": 4368,
+                      "duration": 10062,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('3 Series')\nExpected: visible\nError: strict mode violation: getByText('3 Series') resolved to 2 elements:\n    1) <h3 class=\"font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1\">BMW 3 Series</h3> aka getByText('CTBMW 3 Series$68,0000 ❤12k')\n    2) <span id=\"radix-_r_6j_\">3 Series</span> aka getByText('3 Series', { exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('3 Series')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('3 Series')\nExpected: visible\nError: strict mode violation: getByText('3 Series') resolved to 2 elements:\n    1) <h3 class=\"font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1\">BMW 3 Series</h3> aka getByText('CTBMW 3 Series$68,0000 ❤12k')\n    2) <span id=\"radix-_r_6j_\">3 Series</span> aka getByText('3 Series', { exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('3 Series')\u001b[22m\n\n    at /app/e2e/tests/e2e/search.spec.js:103:46",
@@ -1844,7 +1782,7 @@
                           "column": 46,
                           "line": 103
                         },
-                        "snippet": "  101 |     await modelSelect.click();\n  102 |     // Should show BMW models like 3 Series, X5, etc.\n> 103 |     await expect(page.getByText('3 Series')).toBeVisible();\n      |                                              ^\n  104 |   });\n  105 |\n  106 |   // TC-SEARCH-04: Filter by Price Range"
+                        "snippet": "  101 |     await modelSelect.click({ force: true });\n  102 |     // Should show BMW models like 3 Series, X5, etc.\n> 103 |     await expect(page.getByText('3 Series')).toBeVisible();\n      |                                              ^\n  104 |   });\n  105 |\n  106 |   // TC-SEARCH-04: Filter by Price Range"
                       },
                       "errors": [
                         {
@@ -1853,13 +1791,13 @@
                             "column": 46,
                             "line": 103
                           },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('3 Series')\nExpected: visible\nError: strict mode violation: getByText('3 Series') resolved to 2 elements:\n    1) <h3 class=\"font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1\">BMW 3 Series</h3> aka getByText('CTBMW 3 Series$68,0000 ❤12k')\n    2) <span id=\"radix-_r_6j_\">3 Series</span> aka getByText('3 Series', { exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('3 Series')\u001b[22m\n\n\n  101 |     await modelSelect.click();\n  102 |     // Should show BMW models like 3 Series, X5, etc.\n> 103 |     await expect(page.getByText('3 Series')).toBeVisible();\n      |                                              ^\n  104 |   });\n  105 |\n  106 |   // TC-SEARCH-04: Filter by Price Range\n    at /app/e2e/tests/e2e/search.spec.js:103:46"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('3 Series')\nExpected: visible\nError: strict mode violation: getByText('3 Series') resolved to 2 elements:\n    1) <h3 class=\"font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1\">BMW 3 Series</h3> aka getByText('CTBMW 3 Series$68,0000 ❤12k')\n    2) <span id=\"radix-_r_6j_\">3 Series</span> aka getByText('3 Series', { exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('3 Series')\u001b[22m\n\n\n  101 |     await modelSelect.click({ force: true });\n  102 |     // Should show BMW models like 3 Series, X5, etc.\n> 103 |     await expect(page.getByText('3 Series')).toBeVisible();\n      |                                              ^\n  104 |   });\n  105 |\n  106 |   // TC-SEARCH-04: Filter by Price Range\n    at /app/e2e/tests/e2e/search.spec.js:103:46"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:17:50.656Z",
+                      "startTime": "2026-01-08T01:26:40.944Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1890,7 +1828,7 @@
             },
             {
               "title": "TC-SEARCH-04: filter by price range",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -1901,47 +1839,20 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 60235,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/e2e/search.spec.js",
-                            "column": 42,
-                            "line": 119
-                          },
-                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('search-btn')\u001b[22m\n\u001b[2m    - locator resolved to <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"fixed inset-0 bg-black/50 z-40\"></div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"fixed inset-0 bg-black/50 z-40\"></div> intercepts pointer events\u001b[22m\n\u001b[2m  27 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"fixed inset-0 bg-black/50 z-40\"></div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"fixed inset-0 bg-black/50 z-40\"></div> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\n\n  117 |     \n  118 |     // Apply filter\n> 119 |     await page.getByTestId('search-btn').click();\n      |                                          ^\n  120 |     await page.waitForLoadState('networkidle');\n  121 |   });\n  122 |\n    at /app/e2e/tests/e2e/search.spec.js:119:42"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 4774,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:17:55.912Z",
+                      "startTime": "2026-01-08T01:26:53.968Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEARCH-04-filter-by-price-range-e2e-chrome/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEARCH-04-filter-by-price-range-e2e-chrome/error-context.md"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "9e6ea2b6d72fedbaa223-561334a108f94102e0be",
@@ -1951,7 +1862,7 @@
             },
             {
               "title": "TC-SEARCH-05: filter by clean title only",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -1962,47 +1873,20 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 9,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 60264,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/e2e/search.spec.js",
-                            "column": 42,
-                            "line": 139
-                          },
-                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('search-btn')\u001b[22m\n\u001b[2m    - locator resolved to <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"fixed inset-0 bg-black/50 z-40\"></div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"fixed inset-0 bg-black/50 z-40\"></div> intercepts pointer events\u001b[22m\n\u001b[2m  27 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"fixed inset-0 bg-black/50 z-40\"></div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"fixed inset-0 bg-black/50 z-40\"></div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"p-4 sm:p-6\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\n\n  137 |     \n  138 |     // Apply filter\n> 139 |     await page.getByTestId('search-btn').click();\n      |                                          ^\n  140 |     await page.waitForLoadState('networkidle');\n  141 |     await page.waitForTimeout(1000);\n  142 |   });\n    at /app/e2e/tests/e2e/search.spec.js:139:42"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 5501,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:18:56.831Z",
+                      "startTime": "2026-01-08T01:26:59.166Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEARCH-05-filter-by-clean-title-only-e2e-chrome/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEARCH-05-filter-by-clean-title-only-e2e-chrome/error-context.md"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "9e6ea2b6d72fedbaa223-8eb992d92839f5084923",
@@ -2023,15 +1907,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 10,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4400,
+                      "duration": 3975,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:19:57.773Z",
+                      "startTime": "2026-01-08T01:27:04.714Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2065,15 +1949,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 10,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2578,
+                      "duration": 2641,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:20:02.334Z",
+                      "startTime": "2026-01-08T01:27:08.696Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2093,11 +1977,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-08T01:15:22.623Z",
-    "duration": 282381.586,
-    "expected": 40,
+    "startTime": "2026-01-08T01:24:58.530Z",
+    "duration": 132889.574,
+    "expected": 44,
     "skipped": 0,
-    "unexpected": 7,
+    "unexpected": 3,
     "flaky": 0
   }
 }

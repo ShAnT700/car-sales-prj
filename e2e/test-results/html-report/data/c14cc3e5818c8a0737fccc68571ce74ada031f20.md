@@ -30,10 +30,16 @@
       - generic [ref=e31]:
         - img [ref=e32]
         - heading "Messages" [level=1] [ref=e35]
-      - img [ref=e37]
-  - link "Made with Emergent" [ref=e39] [cursor=pointer]:
+      - generic [ref=e36]:
+        - paragraph [ref=e37]: Select chat
+        - paragraph [ref=e38]: No chats yet
+      - generic [ref=e39]:
+        - img [ref=e40]
+        - heading "No messages yet" [level=3] [ref=e43]
+        - paragraph [ref=e44]: When someone contacts you about your listing, it will appear here
+  - link "Made with Emergent" [ref=e45] [cursor=pointer]:
     - /url: https://app.emergent.sh/?utm_source=emergent-badge
-    - generic [ref=e40]:
-      - img [ref=e41]
-      - paragraph [ref=e42]: Made with Emergent
+    - generic [ref=e46]:
+      - img [ref=e47]
+      - paragraph [ref=e48]: Made with Emergent
 ```
