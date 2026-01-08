@@ -65,8 +65,8 @@ test.describe('Messaging', () => {
     await page.waitForLoadState('networkidle');
     
     // Look for thread list or "no messages" state
-    const threadList = page.locator('[data-testid="thread-list"], [data-testid="conversation-list"]');
-    const noMessages = page.locator('text=/no messages|no conversations|empty/i');
+    const threadList = page.getByTestId('thread-list');
+    const noMessages = page.getByText(/no chats yet|no conversations|no messages/i);
     
     // Either threads exist or empty state is shown
     const hasThreads = await threadList.isVisible().catch(() => false);
