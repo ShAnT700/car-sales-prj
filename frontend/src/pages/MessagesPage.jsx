@@ -129,7 +129,7 @@ export default function MessagesPage() {
               {threads.length === 0 ? (
                 <p className="text-sm text-slate-400">No chats yet</p>
               ) : (
-                <div className="space-y-2 max-h-64 overflow-y-auto">
+                <div className="space-y-2 max-h-64 overflow-y-auto" data-testid="thread-list">
                   {threads.map((thread, idx) => {
                     const selected =
                       activeConversation &&
