@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 // API Base URL (will be set from env or default)
-const API_URL = process.env.E2E_API_URL || 'https://carfinder-37.preview.emergentagent.com/api';
+const API_URL = process.env.E2E_API_URL || 'https://carshub-1.preview.emergentagent.com/api';
 
 // Test credentials
 const TEST_EMAIL = 'test@test.com';
