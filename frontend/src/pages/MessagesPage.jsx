@@ -154,6 +154,7 @@ export default function MessagesPage() {
                       <button
                         key={thread.id}
                         type="button"
+                        data-testid="thread-item"
                         onClick={() => openConversation(thread)}
                         className={`w-full text-left rounded-xl border px-3 py-2 flex items-center gap-3 transition-colors ${
                           selected ? 'ring-1 ring-emerald-500 shadow-sm bg-white' : colorClass
