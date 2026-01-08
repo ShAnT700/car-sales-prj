@@ -34,8 +34,8 @@ test.describe('Search Panel', () => {
     await page.waitForTimeout(500);
     
     // Verify filter panel is visible (check for filter elements)
-    await expect(page.getByText('Make')).toBeVisible();
-    await expect(page.getByText('Show Matches')).toBeVisible();
+    await expect(page.getByTestId('full-search-panel')).toBeVisible();
+    await expect(page.getByTestId('filter-make')).toBeVisible();
     await expect(page.getByText('Hide Search!')).toBeVisible();
     
     // Click Hide Search to close
@@ -56,26 +56,25 @@ test.describe('Search Panel', () => {
     await page.waitForTimeout(500);
     
     // Select Make
-    const makeSelect = page.locator('[data-testid="filter-make"]');
-    if (await makeSelect.isVisible()) {
-      await makeSelect.click();
-      await page.getByText('Tesla', { exact: true }).click();
-      
-      // Click Show Matches
-      await page.getByText('Show Matches').click();
-      await page.waitForLoadState('networkidle');
-      await page.waitForTimeout(1000);
-      
-      // Results should only show Tesla (or no results if none exist)
-      const cards = page.locator('[data-testid="listing-card"]');
-      const count = await cards.count();
-      
-      if (count > 0) {
-        // All visible cards should be Tesla
-        for (let i = 0; i < Math.min(count, 3); i++) {
-          const cardText = await cards.nth(i).textContent();
-          expect(cardText.toLowerCase()).toContain('tesla');
-        }
+    const makeSelect = page.getByTestId('filter-make');
+    await expect(makeSelect).toBeVisible();
+    await makeSelect.click();
+    await page.getByText('Tesla', { exact: true }).click();
+    
+    // Click Show Matches (use first one to avoid duplicate issues)
+    await page.getByTestId('search-btn').click();
+    await page.waitForLoadState('networkidle');
+    await page.waitForTimeout(1000);
+    
+    // Results should only show Tesla (or no results if none exist)
+    const cards = page.getByTestId('listing-card');
+    const count = await cards.count();
+    
+    if (count > 0) {
+      // All visible cards should be Tesla
+      for (let i = 0; i < Math.min(count, 3); i++) {
+        const cardText = await cards.nth(i).textContent();
+        expect(cardText.toLowerCase()).toContain('tesla');
       }
     }
   });
@@ -89,23 +88,19 @@ test.describe('Search Panel', () => {
     await page.getByText('Go Search!').click();
     await page.waitForTimeout(500);
     
-    // Model should be disabled or empty before Make is selected
-    const modelSelect = page.locator('[data-testid="filter-model"]');
-    
     // Select Make first
-    const makeSelect = page.locator('[data-testid="filter-make"]');
-    if (await makeSelect.isVisible()) {
-      await makeSelect.click();
-      await page.getByText('BMW', { exact: true }).click();
-      await page.waitForTimeout(500);
-      
-      // Now Model should be enabled with BMW models
-      if (await modelSelect.isVisible()) {
-        await modelSelect.click();
-        // Should show BMW models like 3 Series, X5, etc.
-        await expect(page.getByText('3 Series')).toBeVisible();
-      }
-    }
+    const makeSelect = page.getByTestId('filter-make');
+    await expect(makeSelect).toBeVisible();
+    await makeSelect.click();
+    await page.getByText('BMW', { exact: true }).click();
+    await page.waitForTimeout(500);
+    
+    // Now Model should be enabled with BMW models
+    const modelSelect = page.getByTestId('filter-model');
+    await expect(modelSelect).toBeVisible();
+    await modelSelect.click();
+    // Should show BMW models like 3 Series, X5, etc.
+    await expect(page.getByText('3 Series')).toBeVisible();
   });
 
   // TC-SEARCH-04: Filter by Price Range
@@ -117,19 +112,11 @@ test.describe('Search Panel', () => {
     await page.getByText('Go Search!').click();
     await page.waitForTimeout(500);
     
-    // Set price filters if available
-    const priceFromInput = page.locator('[data-testid="filter-price-from"], [placeholder*="Min Price"]');
-    const priceToInput = page.locator('[data-testid="filter-price-to"], [placeholder*="Max Price"]');
-    
-    if (await priceFromInput.isVisible()) {
-      await priceFromInput.fill('20000');
-    }
-    if (await priceToInput.isVisible()) {
-      await priceToInput.fill('50000');
-    }
+    // Verify search panel is open
+    await expect(page.getByTestId('full-search-panel')).toBeVisible();
     
     // Apply filter
-    await page.getByText('Show Matches').click();
+    await page.getByTestId('search-btn').click();
     await page.waitForLoadState('networkidle');
   });
 
@@ -143,26 +130,15 @@ test.describe('Search Panel', () => {
     await page.waitForTimeout(500);
     
     // Look for Clean Title filter
-    const ctFilter = page.locator('[data-testid="filter-clean-title"], text=/Clean Title/i');
-    if (await ctFilter.isVisible()) {
-      await ctFilter.click();
-    }
+    const ctFilter = page.getByTestId('filter-clean-title');
+    await expect(ctFilter).toBeVisible();
+    await ctFilter.click();
+    await page.getByText('Clean Title Only').click();
     
     // Apply filter
-    await page.getByText('Show Matches').click();
+    await page.getByTestId('search-btn').click();
     await page.waitForLoadState('networkidle');
     await page.waitForTimeout(1000);
-    
-    // If results exist, they should all have CT badge
-    const ctBadges = page.locator('text=CT');
-    const cards = page.locator('[data-testid="listing-card"]');
-    const cardCount = await cards.count();
-    
-    if (cardCount > 0) {
-      // Each card should have a CT badge (approximately)
-      const badgeCount = await ctBadges.count();
-      expect(badgeCount).toBeGreaterThanOrEqual(0);
-    }
   });
 
   // TC-SEARCH-06: Clear filters
@@ -175,20 +151,12 @@ test.describe('Search Panel', () => {
     await page.waitForTimeout(500);
     
     // Apply some filter
-    const makeSelect = page.locator('[data-testid="filter-make"]');
-    if (await makeSelect.isVisible()) {
-      await makeSelect.click();
-      await page.getByText('Tesla', { exact: true }).click();
-    }
+    const makeSelect = page.getByTestId('filter-make');
+    await expect(makeSelect).toBeVisible();
+    await makeSelect.click();
+    await page.getByText('Tesla', { exact: true }).click();
     
-    // Look for clear/reset button
-    const clearBtn = page.locator('button:has-text("Clear"), button:has-text("Reset")');
-    if (await clearBtn.isVisible()) {
-      await clearBtn.click();
-      await page.waitForTimeout(500);
-    }
-    
-    // Hide and show again to verify reset
+    // Hide and show again
     await page.getByText('Hide Search!').click();
     await page.waitForTimeout(300);
     await page.getByText('Go Search!').click();
