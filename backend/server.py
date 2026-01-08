@@ -13,6 +13,8 @@ from datetime import datetime, timezone, timedelta
 import bcrypt
 import jwt
 import shutil
+from PIL import Image
+import io
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -30,6 +32,49 @@ JWT_EXPIRATION_HOURS = 24
 # Upload directory
 UPLOAD_DIR = ROOT_DIR / "uploads"
 UPLOAD_DIR.mkdir(exist_ok=True)
+
+# Maximum image size after compression (0.5MB = 512KB)
+MAX_IMAGE_SIZE_BYTES = 500 * 1024
+
+def compress_image(image_bytes: bytes, max_size: int = MAX_IMAGE_SIZE_BYTES) -> bytes:
+    """Compress image to JPEG format with size limit."""
+    img = Image.open(io.BytesIO(image_bytes))
+    
+    # Convert to RGB if necessary (for PNG with transparency, etc.)
+    if img.mode in ('RGBA', 'LA', 'P'):
+        background = Image.new('RGB', img.size, (255, 255, 255))
+        if img.mode == 'P':
+            img = img.convert('RGBA')
+        background.paste(img, mask=img.split()[-1] if img.mode == 'RGBA' else None)
+        img = background
+    elif img.mode != 'RGB':
+        img = img.convert('RGB')
+    
+    # Resize if image is very large (max 1600px on longest side for better compression)
+    max_dimension = 1600
+    if max(img.size) > max_dimension:
+        ratio = max_dimension / max(img.size)
+        new_size = (int(img.size[0] * ratio), int(img.size[1] * ratio))
+        img = img.resize(new_size, Image.LANCZOS)
+    
+    # Start with quality 80 and reduce until under max_size
+    quality = 80
+    output = io.BytesIO()
+    img.save(output, format='JPEG', quality=quality, optimize=True)
+    
+    while output.tell() > max_size and quality > 10:
+        quality -= 5
+        output = io.BytesIO()
+        img.save(output, format='JPEG', quality=quality, optimize=True)
+        
+        # If still too large at quality 20, resize the image
+        if quality <= 20 and output.tell() > max_size:
+            ratio = 0.8
+            new_size = (int(img.size[0] * ratio), int(img.size[1] * ratio))
+            img = img.resize(new_size, Image.LANCZOS)
+            quality = 50  # Reset quality after resize
+    
+    return output.getvalue()
 
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
@@ -228,25 +273,26 @@ async def create_listing(
 ):
     user = await require_auth(authorization)
     
-    if len(images) < 3:
-        raise HTTPException(status_code=400, detail="At least 3 images required")
+    if len(images) < 1:
+        raise HTTPException(status_code=400, detail="At least 1 image required")
     
     if len(description) < 10:
         raise HTTPException(status_code=400, detail="Description must be at least 10 characters")
     
-    # Save images
+    # Save images with compression
     image_paths = []
     listing_id = str(uuid.uuid4())
     listing_dir = UPLOAD_DIR / listing_id
     listing_dir.mkdir(exist_ok=True)
     
     for i, img in enumerate(images):
-        ext = img.filename.split('.')[-1] if '.' in img.filename else 'jpg'
-        filename = f"{i}.{ext}"
+        content = await img.read()
+        # Compress image to JPEG under 0.5MB
+        compressed = compress_image(content)
+        filename = f"{i}.jpg"
         file_path = listing_dir / filename
         with open(file_path, "wb") as f:
-            content = await img.read()
-            f.write(content)
+            f.write(compressed)
         image_paths.append(f"/api/images/{listing_id}/{filename}")
     
     clean_title_bool = clean_title.lower() == "true"
@@ -403,12 +449,13 @@ async def add_images(
     
     new_paths = []
     for i, img in enumerate(images):
-        ext = img.filename.split('.')[-1] if '.' in img.filename else 'jpg'
-        filename = f"{start_idx + i}.{ext}"
+        content = await img.read()
+        # Compress image to JPEG under 0.5MB
+        compressed = compress_image(content)
+        filename = f"{start_idx + i}.jpg"
         file_path = listing_dir / filename
         with open(file_path, "wb") as f:
-            content = await img.read()
-            f.write(content)
+            f.write(compressed)
         new_paths.append(f"/api/images/{listing_id}/{filename}")
     
     await db.listings.update_one(
