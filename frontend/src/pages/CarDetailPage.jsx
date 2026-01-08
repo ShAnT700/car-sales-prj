@@ -373,6 +373,7 @@ export default function CarDetailPage() {
               {/* Seller profile block */}
               <Link
                 to={`/user/${car.user_id}`}
+                data-testid="seller-link"
                 className="w-full flex items-center justify-between gap-3 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors"
               >
                 <div className="flex items-center gap-3">

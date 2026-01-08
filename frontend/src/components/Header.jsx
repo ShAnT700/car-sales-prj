@@ -280,6 +280,7 @@ export default function Header({ onOpenSearch }) {
                   My Listings
                 </Button>
                 <Button
+                  data-testid="mobile-logout-btn"
                   onClick={() => {
                     logout();
                     setMobileMenuOpen(false);

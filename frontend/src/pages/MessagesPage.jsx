@@ -129,7 +129,7 @@ export default function MessagesPage() {
               {threads.length === 0 ? (
                 <p className="text-sm text-slate-400">No chats yet</p>
               ) : (
-                <div className="space-y-2 max-h-64 overflow-y-auto">
+                <div className="space-y-2 max-h-64 overflow-y-auto" data-testid="thread-list">
                   {threads.map((thread, idx) => {
                     const selected =
                       activeConversation &&
@@ -154,6 +154,7 @@ export default function MessagesPage() {
                       <button
                         key={thread.id}
                         type="button"
+                        data-testid="thread-item"
                         onClick={() => openConversation(thread)}
                         className={`w-full text-left rounded-xl border px-3 py-2 flex items-center gap-3 transition-colors ${
                           selected ? 'ring-1 ring-emerald-500 shadow-sm bg-white' : colorClass
@@ -268,12 +269,14 @@ export default function MessagesPage() {
                       value={replyText}
                       onChange={(e) => setReplyText(e.target.value)}
                       placeholder="Type your message..."
+                      data-testid="message-input"
                       className="flex-1 text-sm border border-slate-200 rounded-xl px-3 py-2 resize-none focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 max-h-24"
                       rows={2}
                     />
                     <Button
                       onClick={sendReply}
                       disabled={!replyText.trim()}
+                      data-testid="send-btn"
                       className="rounded-full h-10 px-4 bg-emerald-600 hover:bg-emerald-700 text-sm"
                     >
                       Send

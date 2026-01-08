@@ -111,11 +111,11 @@ This document contains detailed test cases derived from the **NextRides.com Test
 
 - **Preconditions**:
   - User is logged in as seller (`test@test.com / 123456`).
-  - Test images (≤ 1 MB each) are available.
+  - Test images (≤ 10 MB each) are available.
 - **Steps**:
   1. Navigate to **My Listings**.
   2. Click **Add Listing**.
-  3. Upload 3 valid images.
+  3. Upload at least 1 valid image (minimum requirement).
   4. Set **Clean Title** = Yes.
   5. Choose Make and Model from dropdowns (e.g., Toyota → Camry).
   6. Choose City from dropdown (e.g., Los Angeles).
@@ -123,40 +123,55 @@ This document contains detailed test cases derived from the **NextRides.com Test
   8. Enter valid 5-digit ZIP (e.g., 90001).
   9. Enter valid phone number (e.g., `+1 213 555 1234`).
   10. Enter VIN (any valid pattern if validated), e.g., `1HGCM82633A004352`.
-  11. Enter description of 50+ characters.
+  11. Enter description of 30+ characters.
   12. Submit the form.
 - **Expected Result**:
   - Listing is created successfully with no validation errors.
   - It appears in **My Listings** with correct data.
   - It is visible on the homepage (Latest Listings) and detail page.
+  - Uploaded image is compressed to JPEG format under 0.5MB on backend.
 - **Automation**: Playwright
 
-### TC-LIST-02 – Validate Image Size Limit
+### TC-LIST-02 – Validate Image Size Limit (10MB max)
 
 - **Preconditions**:
   - User is logged in as seller.
-  - One test image > 1 MB available.
+  - One test image > 10 MB available.
 - **Steps**:
   1. Start creating a listing.
-  2. Attempt to upload an image larger than 1 MB.
+  2. Attempt to upload an image larger than 10 MB.
 - **Expected Result**:
-  - Image is rejected.
-  - A toast or inline error is shown (e.g., "Image X is larger than 1MB").
+  - Image is rejected on frontend.
+  - A toast or inline error is shown (e.g., "Image X is larger than 10MB").
   - Oversized image is not added to the preview list.
-- **Automation**: Manual / Playwright (if large image available in test assets)
+- **Automation**: Playwright
 
-### TC-LIST-03 – Validate Minimum 3 Photos
+### TC-LIST-02a – Backend Image Compression
+
+- **Preconditions**:
+  - User is logged in as seller.
+  - Test image between 1-10 MB available.
+- **Steps**:
+  1. Create a listing with a large image (e.g., 5MB PNG).
+  2. Check the saved image on backend.
+- **Expected Result**:
+  - Backend compresses image to JPEG format.
+  - Compressed image size is under 0.5MB (500KB).
+- **Automation**: API Test (pytest)
+
+### TC-LIST-03 – Validate Minimum 1 Photo
 
 - **Preconditions**:
   - User is logged in as seller.
 - **Steps**:
   1. Start creating a listing.
-  2. Upload only 1 or 2 valid images.
+  2. Do NOT upload any images.
   3. Fill in all other required fields correctly.
   4. Try to submit.
 - **Expected Result**:
   - Form is not submitted.
-  - User sees a clear error indicating that at least 3 photos are required.
+  - User sees a clear error indicating that at least 1 photo is required.
+  - Text "At least 1 photo required" is visible.
 - **Automation**: Playwright
 
 ### TC-LIST-04 – Validate ZIP Code (Only 5 Digits)
@@ -191,12 +206,12 @@ This document contains detailed test cases derived from the **NextRides.com Test
 ### TC-LIST-06 – Edit Listing and Remove Existing Photos
 
 - **Preconditions**:
-  - Listing created in TC-LIST-01 exists with ≥3 photos.
+  - Listing created in TC-LIST-01 exists with ≥1 photo.
 - **Steps**:
   1. Navigate to **My Listings**.
   2. Click **Edit** on the target listing.
   3. Remove one or more existing images using the delete icon.
-  4. Ensure at least 3 images remain (existing + new if needed).
+  4. Ensure at least 1 image remains (existing + new if needed).
   5. Save changes.
   6. Open the listing detail page.
 - **Expected Result**:
@@ -411,7 +426,7 @@ This document contains detailed test cases derived from the **NextRides.com Test
 
 - **Preconditions**:
   - User is logged in.
-  - Test image (≤ 1 MB) available.
+  - Test image (≤ 10 MB) available.
 - **Steps**:
   1. Navigate to **Profile** page.
   2. Click on the avatar upload control.
@@ -451,4 +466,16 @@ Recommended minimal set of E2E tests to run on each deployment:
 
 ---
 
-_Last updated: {{DATE}}_
+_Last updated: January 8, 2026_
+
+---
+
+## Changelog
+
+### v1.1 (January 8, 2026)
+- **TC-LIST-01**: Updated minimum photos from 3 to 1, added backend compression verification
+- **TC-LIST-02**: Updated max file size from 1MB to 10MB
+- **TC-LIST-02a**: Added new test case for backend image compression
+- **TC-LIST-03**: Updated from "minimum 3 photos" to "minimum 1 photo"
+- **TC-LIST-06**: Updated minimum photos requirement from 3 to 1
+- **TC-PROF-01**: Updated max file size from 1MB to 10MB

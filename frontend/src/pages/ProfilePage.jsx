@@ -124,8 +124,8 @@ export default function ProfilePage() {
         <div className="bg-white rounded-2xl border border-slate-100 p-6 space-y-6">
           {/* Avatar */}
           <div className="flex items-center gap-4">
-            <div className="relative">
-              <div className="w-20 h-20 rounded-full bg-slate-200 flex items-center justify-center overflow-hidden">
+            <div className="relative" data-testid="avatar-container">
+              <div className="w-20 h-20 rounded-full bg-slate-200 flex items-center justify-center overflow-hidden" data-testid="avatar">
                 {profile.avatar ? (
                   <img 
                     src={profile.avatar.startsWith('/') ? `${BACKEND_URL}${profile.avatar}` : profile.avatar} 
@@ -136,13 +136,14 @@ export default function ProfilePage() {
                   <User className="w-10 h-10 text-slate-400" />
                 )}
               </div>
-              <label className="absolute -bottom-1 -right-1 w-8 h-8 bg-slate-900 rounded-full flex items-center justify-center cursor-pointer hover:bg-slate-700 transition-colors">
+              <label className="absolute -bottom-1 -right-1 w-8 h-8 bg-slate-900 rounded-full flex items-center justify-center cursor-pointer hover:bg-slate-700 transition-colors" data-testid="avatar-upload">
                 <Camera className="w-4 h-4 text-white" />
                 <input 
                   type="file" 
                   accept="image/*" 
                   className="hidden" 
                   onChange={handleAvatarUpload}
+                  data-testid="avatar-input"
                 />
               </label>
             </div>
@@ -159,6 +160,7 @@ export default function ProfilePage() {
               value={profile.name}
               onChange={(e) => setProfile(prev => ({ ...prev, name: e.target.value }))}
               className="h-12 bg-slate-50"
+              data-testid="profile-name"
             />
           </div>
 
@@ -217,6 +219,7 @@ export default function ProfilePage() {
           <Button
             onClick={handleSave}
             disabled={saving}
+            data-testid="save-profile-btn"
             className="w-full h-12 rounded-full bg-slate-900 text-white hover:bg-slate-800"
           >
             {saving ? (

@@ -3,7 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test:e2e": "playwright test"
+    "test": "playwright test",
+    "test:e2e": "playwright test --project=e2e-chrome",
+    "test:mobile": "playwright test --project=e2e-mobile",
+    "test:api": "playwright test --project=api",
+    "test:all": "playwright test",
+    "test:auth": "playwright test tests/e2e/auth.spec.js",
+    "test:listings": "playwright test tests/e2e/listings.spec.js",
+    "test:search": "playwright test tests/e2e/search.spec.js",
+    "test:favorites": "playwright test tests/e2e/favorites.spec.js",
+    "test:messages": "playwright test tests/e2e/messages.spec.js",
+    "test:profile": "playwright test tests/e2e/profile.spec.js",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:report": "playwright show-report test-results/html-report",
+    "test:debug": "playwright test --debug",
+    "test:headed": "playwright test --headed"
   },
   "devDependencies": {
     "@playwright/test": "^1.57.0"
