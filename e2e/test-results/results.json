@@ -126,12 +126,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8428,
+                      "duration": 7115,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:00.796Z",
+                      "startTime": "2026-01-08T01:33:55.312Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -160,12 +160,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1456,
+                      "duration": 2537,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:09.766Z",
+                      "startTime": "2026-01-08T01:34:03.120Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -194,12 +194,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4850,
+                      "duration": 4631,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:11.273Z",
+                      "startTime": "2026-01-08T01:34:05.718Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -236,12 +236,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9448,
+                      "duration": 10416,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:16.203Z",
+                      "startTime": "2026-01-08T01:34:10.409Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -270,12 +270,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9997,
+                      "duration": 9899,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:25.663Z",
+                      "startTime": "2026-01-08T01:34:21.006Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -304,12 +304,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6606,
+                      "duration": 7084,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:35.667Z",
+                      "startTime": "2026-01-08T01:34:30.993Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -338,12 +338,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9594,
+                      "duration": 10107,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:42.363Z",
+                      "startTime": "2026-01-08T01:34:38.119Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -372,12 +372,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12788,
+                      "duration": 11090,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:51.967Z",
+                      "startTime": "2026-01-08T01:34:48.397Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -406,12 +406,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15331,
+                      "duration": 14947,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:04.763Z",
+                      "startTime": "2026-01-08T01:34:59.512Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -448,12 +448,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15786,
+                      "duration": 13832,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:20.162Z",
+                      "startTime": "2026-01-08T01:35:14.524Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -482,12 +482,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8667,
+                      "duration": 10081,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:36.008Z",
+                      "startTime": "2026-01-08T01:35:28.411Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -533,12 +533,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 17553,
+                      "duration": 17737,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:00.896Z",
+                      "startTime": "2026-01-08T01:33:55.407Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -567,12 +567,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 12910,
+                      "duration": 14365,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:19.195Z",
+                      "startTime": "2026-01-08T01:34:13.914Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -601,12 +601,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 15260,
+                      "duration": 15967,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:32.197Z",
+                      "startTime": "2026-01-08T01:34:28.306Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -635,12 +635,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 12877,
+                      "duration": 13303,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:47.467Z",
+                      "startTime": "2026-01-08T01:34:44.411Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -677,12 +677,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5969,
+                      "duration": 5820,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:00.375Z",
+                      "startTime": "2026-01-08T01:34:57.802Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -728,12 +728,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 15149,
+                      "duration": 17095,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:00.915Z",
+                      "startTime": "2026-01-08T01:33:55.364Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -762,12 +762,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 14700,
+                      "duration": 13922,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:16.768Z",
+                      "startTime": "2026-01-08T01:34:13.105Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -796,12 +796,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 15831,
+                      "duration": 15176,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:31.597Z",
+                      "startTime": "2026-01-08T01:34:27.194Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -830,12 +830,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 14874,
+                      "duration": 16113,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:47.565Z",
+                      "startTime": "2026-01-08T01:34:42.419Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -872,12 +872,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 6988,
+                      "duration": 6448,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:02.564Z",
+                      "startTime": "2026-01-08T01:34:58.621Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -906,12 +906,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 7095,
+                      "duration": 6833,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:09.564Z",
+                      "startTime": "2026-01-08T01:35:05.126Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -940,12 +940,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 6453,
+                      "duration": 6758,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:16.702Z",
+                      "startTime": "2026-01-08T01:35:11.998Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -982,12 +982,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 10331,
+                      "duration": 10207,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:23.217Z",
+                      "startTime": "2026-01-08T01:35:18.807Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1024,12 +1024,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 5590,
+                      "duration": 7339,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:33.612Z",
+                      "startTime": "2026-01-08T01:35:29.104Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1058,12 +1058,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 10924,
+                      "duration": 10507,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:39.300Z",
+                      "startTime": "2026-01-08T01:35:36.515Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1109,12 +1109,12 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 10829,
+                      "duration": 10801,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:00.914Z",
+                      "startTime": "2026-01-08T01:33:55.407Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1143,12 +1143,12 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 13458,
+                      "duration": 15142,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:12.361Z",
+                      "startTime": "2026-01-08T01:34:06.862Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1163,7 +1163,7 @@
             },
             {
               "title": "TC-MSG-03: messages page displays conversation threads",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -1176,53 +1176,18 @@
                     {
                       "workerIndex": 3,
                       "parallelIndex": 3,
-                      "status": "failed",
-                      "duration": 10547,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at /app/e2e/tests/e2e/messages.spec.js:76:35",
-                        "location": {
-                          "file": "/app/e2e/tests/e2e/messages.spec.js",
-                          "column": 35,
-                          "line": 76
-                        },
-                        "snippet": "  74 |     \n  75 |     // One of these should be true\n> 76 |     expect(hasThreads || isEmpty).toBeTruthy();\n     |                                   ^\n  77 |   });\n  78 |\n  79 |   // TC-MSG-04: Can select and view a conversation"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/e2e/messages.spec.js",
-                            "column": 35,
-                            "line": 76
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n  74 |     \n  75 |     // One of these should be true\n> 76 |     expect(hasThreads || isEmpty).toBeTruthy();\n     |                                   ^\n  77 |   });\n  78 |\n  79 |   // TC-MSG-04: Can select and view a conversation\n    at /app/e2e/tests/e2e/messages.spec.js:76:35"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 10951,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:25.872Z",
+                      "startTime": "2026-01-08T01:34:22.100Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/app/e2e/test-results/messages-Messaging-TC-MSG--8383c-splays-conversation-threads-e2e-chrome/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/app/e2e/test-results/messages-Messaging-TC-MSG--8383c-splays-conversation-threads-e2e-chrome/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/e2e/messages.spec.js",
-                        "column": 35,
-                        "line": 76
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "af2aaa2c0f09e6088eca-3102a2c45d00c597f4c7",
@@ -1243,15 +1208,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 9989,
+                      "duration": 8818,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:40.568Z",
+                      "startTime": "2026-01-08T01:34:33.101Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1261,7 +1226,7 @@
               ],
               "id": "af2aaa2c0f09e6088eca-fdb7ec0150e72df7fd81",
               "file": "e2e/messages.spec.js",
-              "line": 80,
+              "line": 73,
               "column": 3
             },
             {
@@ -1277,15 +1242,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 8264,
+                      "duration": 9578,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:51.564Z",
+                      "startTime": "2026-01-08T01:34:41.963Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1295,7 +1260,7 @@
               ],
               "id": "af2aaa2c0f09e6088eca-fd84c73bc05b4a6804d3",
               "file": "e2e/messages.spec.js",
-              "line": 100,
+              "line": 93,
               "column": 3
             }
           ]
@@ -1303,7 +1268,7 @@
         {
           "title": "Messaging - Unread Indicator",
           "file": "e2e/messages.spec.js",
-          "line": 123,
+          "line": 116,
           "column": 6,
           "specs": [
             {
@@ -1319,15 +1284,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 8720,
+                      "duration": 10895,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:25:59.866Z",
+                      "startTime": "2026-01-08T01:34:51.601Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1337,7 +1302,7 @@
               ],
               "id": "af2aaa2c0f09e6088eca-5571b142ef26f1b971c7",
               "file": "e2e/messages.spec.js",
-              "line": 126,
+              "line": 119,
               "column": 3
             }
           ]
@@ -1370,15 +1335,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 10004,
+                      "duration": 9359,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:06.461Z",
+                      "startTime": "2026-01-08T01:35:02.618Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1404,15 +1369,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 9331,
+                      "duration": 11529,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:16.503Z",
+                      "startTime": "2026-01-08T01:35:12.194Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1438,15 +1403,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 9587,
+                      "duration": 8932,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:25.900Z",
+                      "startTime": "2026-01-08T01:35:23.922Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1472,15 +1437,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 10645,
+                      "duration": 8676,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:35.505Z",
+                      "startTime": "2026-01-08T01:35:32.906Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1506,15 +1471,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 6345,
+                      "duration": 6899,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:46.218Z",
+                      "startTime": "2026-01-08T01:35:41.603Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1548,15 +1513,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 4043,
+                      "duration": 3500,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:52.613Z",
+                      "startTime": "2026-01-08T01:35:48.550Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1582,15 +1547,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 4397,
+                      "duration": 2809,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:56.666Z",
+                      "startTime": "2026-01-08T01:35:52.063Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1616,15 +1581,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 2717,
+                      "duration": 2573,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:27:01.068Z",
+                      "startTime": "2026-01-08T01:35:54.881Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1667,15 +1632,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 11190,
+                      "duration": 10296,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:08.767Z",
+                      "startTime": "2026-01-08T01:35:03.807Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1690,7 +1655,7 @@
             },
             {
               "title": "TC-SEARCH-02: filter by make shows relevant results",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -1701,55 +1666,20 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
-                      "status": "failed",
-                      "duration": 15130,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"tesla\"\u001b[39m\nReceived string:    \u001b[31m\"ctbmw x3$65,0001 ❤14k milos angeles\"\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"tesla\"\u001b[39m\nReceived string:    \u001b[31m\"ctbmw x3$65,0001 ❤14k milos angeles\"\u001b[39m\n    at /app/e2e/tests/e2e/search.spec.js:77:40",
-                        "location": {
-                          "file": "/app/e2e/tests/e2e/search.spec.js",
-                          "column": 40,
-                          "line": 77
-                        },
-                        "snippet": "  75 |       for (let i = 0; i < Math.min(count, 3); i++) {\n  76 |         const cardText = await cards.nth(i).textContent();\n> 77 |         expect(cardText.toLowerCase()).toContain('tesla');\n     |                                        ^\n  78 |       }\n  79 |     }\n  80 |   });"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/e2e/search.spec.js",
-                            "column": 40,
-                            "line": 77
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"tesla\"\u001b[39m\nReceived string:    \u001b[31m\"ctbmw x3$65,0001 ❤14k milos angeles\"\u001b[39m\n\n  75 |       for (let i = 0; i < Math.min(count, 3); i++) {\n  76 |         const cardText = await cards.nth(i).textContent();\n> 77 |         expect(cardText.toLowerCase()).toContain('tesla');\n     |                                        ^\n  78 |       }\n  79 |     }\n  80 |   });\n    at /app/e2e/tests/e2e/search.spec.js:77:40"
-                        }
-                      ],
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 14597,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:19.996Z",
+                      "startTime": "2026-01-08T01:35:14.314Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEA-1a62e-make-shows-relevant-results-e2e-chrome/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEA-1a62e-make-shows-relevant-results-e2e-chrome/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/e2e/search.spec.js",
-                        "column": 40,
-                        "line": 77
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "9e6ea2b6d72fedbaa223-ec479ad82e7feb30d543",
@@ -1759,7 +1689,7 @@
             },
             {
               "title": "TC-SEARCH-03: model dropdown depends on selected make",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -1770,60 +1700,25 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
-                      "status": "failed",
-                      "duration": 10062,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('3 Series')\nExpected: visible\nError: strict mode violation: getByText('3 Series') resolved to 2 elements:\n    1) <h3 class=\"font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1\">BMW 3 Series</h3> aka getByText('CTBMW 3 Series$68,0000 ❤12k')\n    2) <span id=\"radix-_r_6j_\">3 Series</span> aka getByText('3 Series', { exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('3 Series')\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('3 Series')\nExpected: visible\nError: strict mode violation: getByText('3 Series') resolved to 2 elements:\n    1) <h3 class=\"font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1\">BMW 3 Series</h3> aka getByText('CTBMW 3 Series$68,0000 ❤12k')\n    2) <span id=\"radix-_r_6j_\">3 Series</span> aka getByText('3 Series', { exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('3 Series')\u001b[22m\n\n    at /app/e2e/tests/e2e/search.spec.js:103:46",
-                        "location": {
-                          "file": "/app/e2e/tests/e2e/search.spec.js",
-                          "column": 46,
-                          "line": 103
-                        },
-                        "snippet": "  101 |     await modelSelect.click({ force: true });\n  102 |     // Should show BMW models like 3 Series, X5, etc.\n> 103 |     await expect(page.getByText('3 Series')).toBeVisible();\n      |                                              ^\n  104 |   });\n  105 |\n  106 |   // TC-SEARCH-04: Filter by Price Range"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/e2e/search.spec.js",
-                            "column": 46,
-                            "line": 103
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('3 Series')\nExpected: visible\nError: strict mode violation: getByText('3 Series') resolved to 2 elements:\n    1) <h3 class=\"font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1\">BMW 3 Series</h3> aka getByText('CTBMW 3 Series$68,0000 ❤12k')\n    2) <span id=\"radix-_r_6j_\">3 Series</span> aka getByText('3 Series', { exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('3 Series')\u001b[22m\n\n\n  101 |     await modelSelect.click({ force: true });\n  102 |     // Should show BMW models like 3 Series, X5, etc.\n> 103 |     await expect(page.getByText('3 Series')).toBeVisible();\n      |                                              ^\n  104 |   });\n  105 |\n  106 |   // TC-SEARCH-04: Filter by Price Range\n    at /app/e2e/tests/e2e/search.spec.js:103:46"
-                        }
-                      ],
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 13311,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:40.944Z",
+                      "startTime": "2026-01-08T01:35:28.926Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEA-8a780-wn-depends-on-selected-make-e2e-chrome/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEA-8a780-wn-depends-on-selected-make-e2e-chrome/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/e2e/search.spec.js",
-                        "column": 46,
-                        "line": 103
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "9e6ea2b6d72fedbaa223-73d23ee72424c887d4ff",
               "file": "e2e/search.spec.js",
-              "line": 83,
+              "line": 73,
               "column": 3
             },
             {
@@ -1839,15 +1734,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 4774,
+                      "duration": 6700,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:53.968Z",
+                      "startTime": "2026-01-08T01:35:42.323Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1857,7 +1752,7 @@
               ],
               "id": "9e6ea2b6d72fedbaa223-561334a108f94102e0be",
               "file": "e2e/search.spec.js",
-              "line": 107,
+              "line": 99,
               "column": 3
             },
             {
@@ -1873,15 +1768,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5501,
+                      "duration": 6568,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:26:59.166Z",
+                      "startTime": "2026-01-08T01:35:49.068Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1891,7 +1786,7 @@
               ],
               "id": "9e6ea2b6d72fedbaa223-8eb992d92839f5084923",
               "file": "e2e/search.spec.js",
-              "line": 124,
+              "line": 116,
               "column": 3
             },
             {
@@ -1907,15 +1802,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3975,
+                      "duration": 5043,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:27:04.714Z",
+                      "startTime": "2026-01-08T01:35:55.667Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1925,7 +1820,7 @@
               ],
               "id": "9e6ea2b6d72fedbaa223-289dd7838d78ed260907",
               "file": "e2e/search.spec.js",
-              "line": 145,
+              "line": 137,
               "column": 3
             }
           ]
@@ -1933,7 +1828,7 @@
         {
           "title": "Search Panel - Mobile",
           "file": "e2e/search.spec.js",
-          "line": 170,
+          "line": 162,
           "column": 6,
           "specs": [
             {
@@ -1949,15 +1844,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2641,
+                      "duration": 2446,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T01:27:08.696Z",
+                      "startTime": "2026-01-08T01:36:00.743Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1967,7 +1862,7 @@
               ],
               "id": "9e6ea2b6d72fedbaa223-2e8a5028ecc00fbf4b69",
               "file": "e2e/search.spec.js",
-              "line": 177,
+              "line": 169,
               "column": 3
             }
           ]
@@ -1977,11 +1872,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-08T01:24:58.530Z",
-    "duration": 132889.574,
-    "expected": 44,
+    "startTime": "2026-01-08T01:33:53.114Z",
+    "duration": 130206.54,
+    "expected": 47,
     "skipped": 0,
-    "unexpected": 3,
+    "unexpected": 0,
     "flaky": 0
   }
 }
