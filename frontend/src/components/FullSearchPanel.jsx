@@ -415,7 +415,7 @@ export default function FullSearchPanel({ isOpen, onClose, onSearch }) {
             <Button
               onClick={handleSearch}
               className="flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600"
-              data-testid="search-btn"
+              data-testid="search-button"
             >
               <Search className="w-4 h-4 mr-2" />
               Show Matches
