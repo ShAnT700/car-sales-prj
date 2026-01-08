@@ -186,7 +186,7 @@ test.describe('Search Panel - Mobile', () => {
     await goSearchBtn.click();
     await page.waitForTimeout(500);
     
-    // Panel should open
-    await expect(page.getByText('Show Matches')).toBeVisible();
+    // Panel should open - check for search button
+    await expect(page.getByTestId('search-btn')).toBeVisible();
   });
 });
