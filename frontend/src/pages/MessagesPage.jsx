@@ -269,12 +269,14 @@ export default function MessagesPage() {
                       value={replyText}
                       onChange={(e) => setReplyText(e.target.value)}
                       placeholder="Type your message..."
+                      data-testid="message-input"
                       className="flex-1 text-sm border border-slate-200 rounded-xl px-3 py-2 resize-none focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 max-h-24"
                       rows={2}
                     />
                     <Button
                       onClick={sendReply}
                       disabled={!replyText.trim()}
+                      data-testid="send-btn"
                       className="rounded-full h-10 px-4 bg-emerald-600 hover:bg-emerald-700 text-sm"
                     >
                       Send
