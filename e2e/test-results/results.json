@@ -98,20 +98,20 @@
   },
   "suites": [
     {
-      "title": "api/api.spec.js",
-      "file": "api/api.spec.js",
+      "title": "e2e/auth.spec.js",
+      "file": "e2e/auth.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "API - Authentication",
-          "file": "api/api.spec.js",
-          "line": 24,
+          "title": "Homepage",
+          "file": "e2e/auth.spec.js",
+          "line": 26,
           "column": 6,
           "specs": [
             {
-              "title": "API-AUTH-01: login returns token",
+              "title": "TC-SMOKE-01: homepage loads and shows hero title",
               "ok": true,
               "tags": [],
               "tests": [
@@ -119,19 +119,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 359,
+                      "duration": 1593,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:53:59.303Z",
+                      "startTime": "2026-01-08T00:54:25.526Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -139,13 +139,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8747e39b871de0524be5-0bef5182f7050dc10973",
-              "file": "api/api.spec.js",
-              "line": 26,
+              "id": "d5ed79a6b333c2ba7209-e999bd5f133337c0f19b",
+              "file": "e2e/auth.spec.js",
+              "line": 27,
               "column": 3
             },
             {
-              "title": "API-AUTH-02: login with invalid credentials returns 401",
+              "title": "TC-SMOKE-02: Sell Car button is visible",
               "ok": true,
               "tags": [],
               "tests": [
@@ -153,19 +153,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 250,
+                      "duration": 1495,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:53:59.683Z",
+                      "startTime": "2026-01-08T00:54:27.339Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -173,13 +173,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8747e39b871de0524be5-218fdcdd2d2c6e11b599",
-              "file": "api/api.spec.js",
-              "line": 37,
+              "id": "d5ed79a6b333c2ba7209-279d905f70f150f12e9a",
+              "file": "e2e/auth.spec.js",
+              "line": 33,
               "column": 3
             },
             {
-              "title": "API-AUTH-03: register with existing email returns 400",
+              "title": "TC-SMOKE-03: Go Search button is visible",
               "ok": true,
               "tags": [],
               "tests": [
@@ -187,19 +187,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 46,
+                      "duration": 1424,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:53:59.962Z",
+                      "startTime": "2026-01-08T00:54:28.866Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -207,89 +207,21 @@
                   "status": "expected"
                 }
               ],
-              "id": "8747e39b871de0524be5-64554221a30d0396ed8e",
-              "file": "api/api.spec.js",
-              "line": 45,
-              "column": 3
-            },
-            {
-              "title": "API-AUTH-04: /auth/me requires authentication",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 19,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:00.016Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8747e39b871de0524be5-5ce4a8af902aa664267a",
-              "file": "api/api.spec.js",
-              "line": 55,
-              "column": 3
-            },
-            {
-              "title": "API-AUTH-05: /auth/me returns user with valid token",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 267,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:00.047Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8747e39b871de0524be5-370a27966cbf22dc9c83",
-              "file": "api/api.spec.js",
-              "line": 60,
+              "id": "d5ed79a6b333c2ba7209-6983fd93620fc68515d7",
+              "file": "e2e/auth.spec.js",
+              "line": 38,
               "column": 3
             }
           ]
         },
         {
-          "title": "API - Listings",
-          "file": "api/api.spec.js",
-          "line": 81,
+          "title": "Authentication",
+          "file": "e2e/auth.spec.js",
+          "line": 47,
           "column": 6,
           "specs": [
             {
-              "title": "API-LIST-01: get listings returns array",
+              "title": "TC-AUTH-01: register a new user successfully",
               "ok": true,
               "tags": [],
               "tests": [
@@ -297,19 +229,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 37,
+                      "duration": 3327,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:54:00.336Z",
+                      "startTime": "2026-01-08T00:54:30.297Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -317,13 +249,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8747e39b871de0524be5-9c83cd86f76f7c5d2c24",
-              "file": "api/api.spec.js",
-              "line": 83,
+              "id": "d5ed79a6b333c2ba7209-9a21528546648990177a",
+              "file": "e2e/auth.spec.js",
+              "line": 50,
               "column": 3
             },
             {
-              "title": "API-LIST-02: listings have required fields",
+              "title": "TC-AUTH-02: prevent duplicate registration",
               "ok": true,
               "tags": [],
               "tests": [
@@ -331,19 +263,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 26,
+                      "duration": 2553,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:54:00.383Z",
+                      "startTime": "2026-01-08T00:54:33.632Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -351,13 +283,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8747e39b871de0524be5-b7ede306e2cb81809a3e",
-              "file": "api/api.spec.js",
-              "line": 91,
+              "id": "d5ed79a6b333c2ba7209-91b464fef01294198df7",
+              "file": "e2e/auth.spec.js",
+              "line": 71,
               "column": 3
             },
             {
-              "title": "API-LIST-03: filter by make works",
+              "title": "TC-AUTH-03: login with valid credentials",
               "ok": true,
               "tags": [],
               "tests": [
@@ -365,19 +297,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 19,
+                      "duration": 3776,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:54:00.418Z",
+                      "startTime": "2026-01-08T00:54:36.214Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -385,13 +317,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8747e39b871de0524be5-64eb267ffd2622000ba2",
-              "file": "api/api.spec.js",
-              "line": 107,
+              "id": "d5ed79a6b333c2ba7209-da62aeb4dc9eb743e410",
+              "file": "e2e/auth.spec.js",
+              "line": 93,
               "column": 3
             },
             {
-              "title": "API-LIST-04: filter by clean_title works",
+              "title": "TC-AUTH-04: login with invalid credentials shows error",
               "ok": true,
               "tags": [],
               "tests": [
@@ -399,19 +331,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 36,
+                      "duration": 2108,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:54:00.443Z",
+                      "startTime": "2026-01-08T00:54:39.997Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -419,13 +351,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8747e39b871de0524be5-fb9ecf163b6c5162443b",
-              "file": "api/api.spec.js",
-              "line": 117,
+              "id": "d5ed79a6b333c2ba7209-d35444d74d705313c4e5",
+              "file": "e2e/auth.spec.js",
+              "line": 105,
               "column": 3
             },
             {
-              "title": "API-LIST-05: get single listing by id",
+              "title": "TC-AUTH-05: logout clears session",
               "ok": true,
               "tags": [],
               "tests": [
@@ -433,19 +365,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 76,
+                      "duration": 4852,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:54:00.487Z",
+                      "startTime": "2026-01-08T00:54:42.119Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -453,47 +385,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8747e39b871de0524be5-64a500561f1bc3e3ad36",
-              "file": "api/api.spec.js",
-              "line": 127,
+              "id": "d5ed79a6b333c2ba7209-0aafeafaab11b40d5c3b",
+              "file": "e2e/auth.spec.js",
+              "line": 121,
               "column": 3
             },
             {
-              "title": "API-LIST-06: get non-existent listing returns 404",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 15,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:00.570Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8747e39b871de0524be5-fe0c52141d55a4a32ef7",
-              "file": "api/api.spec.js",
-              "line": 143,
-              "column": 3
-            },
-            {
-              "title": "API-LIST-07: create listing requires auth",
+              "title": "TC-AUTH-06: logout from mobile menu",
               "ok": false,
               "tags": [],
               "tests": [
@@ -501,65 +399,68 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 33,
+                      "status": "timedOut",
+                      "duration": 60071,
                       "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m422\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n    at /app/e2e/tests/api/api.spec.js:172:31",
-                        "location": {
-                          "file": "/app/e2e/tests/api/api.spec.js",
-                          "column": 31,
-                          "line": 172
-                        },
-                        "snippet": "  170 |     });\n  171 |     \n> 172 |     expect(response.status()).toBe(401);\n      |                               ^\n  173 |   });\n  174 | });\n  175 |"
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
                       },
                       "errors": [
                         {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
                           "location": {
-                            "file": "/app/e2e/tests/api/api.spec.js",
-                            "column": 31,
-                            "line": 172
+                            "file": "/app/e2e/tests/e2e/auth.spec.js",
+                            "column": 51,
+                            "line": 153
                           },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n\n  170 |     });\n  171 |     \n> 172 |     expect(response.status()).toBe(401);\n      |                               ^\n  173 |   });\n  174 | });\n  175 |\n    at /app/e2e/tests/api/api.spec.js:172:31"
+                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('mobile-logout-btn')\u001b[22m\n\n\n  151 |       await mobileMenuBtn.click();\n  152 |       await page.waitForTimeout(500);\n> 153 |       await page.getByTestId('mobile-logout-btn').click();\n      |                                                   ^\n  154 |     }\n  155 |     \n  156 |     // Verify logged out\n    at /app/e2e/tests/e2e/auth.spec.js:153:51"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:54:00.594Z",
+                      "startTime": "2026-01-08T00:54:46.979Z",
                       "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/api/api.spec.js",
-                        "column": 31,
-                        "line": 172
-                      }
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/auth-Authentication-TC-AUTH-06-logout-from-mobile-menu-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/auth-Authentication-TC-AUTH-06-logout-from-mobile-menu-e2e-chrome/error-context.md"
+                        }
+                      ]
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "8747e39b871de0524be5-80ec2fcc82f107ad434d",
-              "file": "api/api.spec.js",
-              "line": 148,
+              "id": "d5ed79a6b333c2ba7209-21343014a2c3815336c4",
+              "file": "e2e/auth.spec.js",
+              "line": 140,
               "column": 3
             }
           ]
         },
         {
-          "title": "API - Favorites",
-          "file": "api/api.spec.js",
-          "line": 179,
+          "title": "Session Management",
+          "file": "e2e/auth.spec.js",
+          "line": 165,
           "column": 6,
           "specs": [
             {
-              "title": "API-FAV-01: get favorites requires auth",
+              "title": "TC-SESSION-01: session persists after page reload",
               "ok": true,
               "tags": [],
               "tests": [
@@ -567,19 +468,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 76,
+                      "duration": 4979,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:54:01.135Z",
+                      "startTime": "2026-01-08T00:55:47.652Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -587,13 +488,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8747e39b871de0524be5-05c5bd8658bd315a0c40",
-              "file": "api/api.spec.js",
-              "line": 181,
+              "id": "d5ed79a6b333c2ba7209-473d7806f5359eb44ff3",
+              "file": "e2e/auth.spec.js",
+              "line": 167,
               "column": 3
             },
             {
-              "title": "API-FAV-02: get favorites with auth returns array",
+              "title": "TC-SESSION-02: token stored in localStorage",
               "ok": true,
               "tags": [],
               "tests": [
@@ -601,19 +502,19 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 282,
+                      "duration": 3734,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:54:01.241Z",
+                      "startTime": "2026-01-08T00:55:52.796Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -621,339 +522,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "8747e39b871de0524be5-3e2aac9b4d61b82f7e6e",
-              "file": "api/api.spec.js",
-              "line": 186,
-              "column": 3
-            },
-            {
-              "title": "API-FAV-03: favorite ids endpoint works",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 267,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:01.536Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8747e39b871de0524be5-75e8c93dbf929df8724c",
-              "file": "api/api.spec.js",
-              "line": 202,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "API - Messages",
-          "file": "api/api.spec.js",
-          "line": 221,
-          "column": 6,
-          "specs": [
-            {
-              "title": "API-MSG-01: get threads requires auth",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 14,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:01.813Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8747e39b871de0524be5-486972e670e5ed6f58a1",
-              "file": "api/api.spec.js",
-              "line": 223,
-              "column": 3
-            },
-            {
-              "title": "API-MSG-02: get threads with auth returns array",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 333,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:01.835Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8747e39b871de0524be5-337bc231e5aeac408353",
-              "file": "api/api.spec.js",
-              "line": 228,
-              "column": 3
-            },
-            {
-              "title": "API-MSG-03: unread count endpoint works",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 271,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:02.174Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8747e39b871de0524be5-e7425793081aba39eb53",
-              "file": "api/api.spec.js",
-              "line": 243,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "API - Profile",
-          "file": "api/api.spec.js",
-          "line": 263,
-          "column": 6,
-          "specs": [
-            {
-              "title": "API-PROF-01: get profile requires auth",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 14,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:02.451Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8747e39b871de0524be5-b93e3c9e17f5d26c7e43",
-              "file": "api/api.spec.js",
-              "line": 265,
-              "column": 3
-            },
-            {
-              "title": "API-PROF-02: get profile with auth returns user data",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 251,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:02.472Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8747e39b871de0524be5-589dd59b582e8289e16d",
-              "file": "api/api.spec.js",
-              "line": 270,
-              "column": 3
-            },
-            {
-              "title": "API-PROF-03: public profile endpoint works",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 69,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:02.729Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8747e39b871de0524be5-bab652e646026b7f583f",
-              "file": "api/api.spec.js",
-              "line": 285,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "API - Saved Searches",
-          "file": "api/api.spec.js",
-          "line": 306,
-          "column": 6,
-          "specs": [
-            {
-              "title": "API-SAVED-01: get saved searches requires auth",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 52,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:02.804Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8747e39b871de0524be5-21c0149b3ec8b8f9c94e",
-              "file": "api/api.spec.js",
-              "line": 308,
-              "column": 3
-            },
-            {
-              "title": "API-SAVED-02: get saved searches with auth",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 259,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:02.863Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8747e39b871de0524be5-a8adc954ca6ee537da3b",
-              "file": "api/api.spec.js",
-              "line": 313,
+              "id": "d5ed79a6b333c2ba7209-c6a2f237419bc24fcf66",
+              "file": "e2e/auth.spec.js",
+              "line": 179,
               "column": 3
             }
           ]
@@ -963,9 +534,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-08T00:53:58.587Z",
-    "duration": 4554.272,
-    "expected": 22,
+    "startTime": "2026-01-08T00:54:24.875Z",
+    "duration": 91799.091,
+    "expected": 10,
     "skipped": 0,
     "unexpected": 1,
     "flaky": 0
