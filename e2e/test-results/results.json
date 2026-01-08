@@ -105,294 +105,14 @@
       "specs": [],
       "suites": [
         {
-          "title": "Homepage",
-          "file": "e2e/auth.spec.js",
-          "line": 26,
-          "column": 6,
-          "specs": [
-            {
-              "title": "TC-SMOKE-01: homepage loads and shows hero title",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1593,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:25.526Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-e999bd5f133337c0f19b",
-              "file": "e2e/auth.spec.js",
-              "line": 27,
-              "column": 3
-            },
-            {
-              "title": "TC-SMOKE-02: Sell Car button is visible",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1495,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:27.339Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-279d905f70f150f12e9a",
-              "file": "e2e/auth.spec.js",
-              "line": 33,
-              "column": 3
-            },
-            {
-              "title": "TC-SMOKE-03: Go Search button is visible",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1424,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:28.866Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-6983fd93620fc68515d7",
-              "file": "e2e/auth.spec.js",
-              "line": 38,
-              "column": 3
-            }
-          ]
-        },
-        {
           "title": "Authentication",
           "file": "e2e/auth.spec.js",
           "line": 47,
           "column": 6,
           "specs": [
             {
-              "title": "TC-AUTH-01: register a new user successfully",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3327,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:30.297Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-9a21528546648990177a",
-              "file": "e2e/auth.spec.js",
-              "line": 50,
-              "column": 3
-            },
-            {
-              "title": "TC-AUTH-02: prevent duplicate registration",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2553,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:33.632Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-91b464fef01294198df7",
-              "file": "e2e/auth.spec.js",
-              "line": 71,
-              "column": 3
-            },
-            {
-              "title": "TC-AUTH-03: login with valid credentials",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3776,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:36.214Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-da62aeb4dc9eb743e410",
-              "file": "e2e/auth.spec.js",
-              "line": 93,
-              "column": 3
-            },
-            {
-              "title": "TC-AUTH-04: login with invalid credentials shows error",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2108,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:39.997Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-d35444d74d705313c4e5",
-              "file": "e2e/auth.spec.js",
-              "line": 105,
-              "column": 3
-            },
-            {
-              "title": "TC-AUTH-05: logout clears session",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4852,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:54:42.119Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-0aafeafaab11b40d5c3b",
-              "file": "e2e/auth.spec.js",
-              "line": 121,
-              "column": 3
-            },
-            {
               "title": "TC-AUTH-06: logout from mobile menu",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -405,126 +125,23 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 60071,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/e2e/auth.spec.js",
-                            "column": 51,
-                            "line": 153
-                          },
-                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('mobile-logout-btn')\u001b[22m\n\n\n  151 |       await mobileMenuBtn.click();\n  152 |       await page.waitForTimeout(500);\n> 153 |       await page.getByTestId('mobile-logout-btn').click();\n      |                                                   ^\n  154 |     }\n  155 |     \n  156 |     // Verify logged out\n    at /app/e2e/tests/e2e/auth.spec.js:153:51"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 8121,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:54:46.979Z",
+                      "startTime": "2026-01-08T00:56:48.162Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/app/e2e/test-results/auth-Authentication-TC-AUTH-06-logout-from-mobile-menu-e2e-chrome/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/app/e2e/test-results/auth-Authentication-TC-AUTH-06-logout-from-mobile-menu-e2e-chrome/error-context.md"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "d5ed79a6b333c2ba7209-21343014a2c3815336c4",
               "file": "e2e/auth.spec.js",
               "line": 140,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "Session Management",
-          "file": "e2e/auth.spec.js",
-          "line": 165,
-          "column": 6,
-          "specs": [
-            {
-              "title": "TC-SESSION-01: session persists after page reload",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4979,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:55:47.652Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-473d7806f5359eb44ff3",
-              "file": "e2e/auth.spec.js",
-              "line": 167,
-              "column": 3
-            },
-            {
-              "title": "TC-SESSION-02: token stored in localStorage",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "e2e-chrome",
-                  "projectName": "e2e-chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3734,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-01-08T00:55:52.796Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-c6a2f237419bc24fcf66",
-              "file": "e2e/auth.spec.js",
-              "line": 179,
               "column": 3
             }
           ]
@@ -534,11 +151,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-08T00:54:24.875Z",
-    "duration": 91799.091,
-    "expected": 10,
+    "startTime": "2026-01-08T00:56:47.630Z",
+    "duration": 8880.797999999999,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }
