@@ -1,0 +1,66 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - region "Notifications alt+T"
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "NextRides" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e8]: NextRides
+        - generic [ref=e10]:
+          - button [ref=e11] [cursor=pointer]:
+            - img
+          - button [ref=e12] [cursor=pointer]:
+            - img
+          - button [ref=e13] [cursor=pointer]:
+            - img
+          - button "My Listings" [ref=e14] [cursor=pointer]
+          - button "N" [ref=e15] [cursor=pointer]:
+            - generic [ref=e16]: "N"
+          - button "Logout" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+    - button "Go Search!" [ref=e22] [cursor=pointer]
+    - generic [ref=e24]:
+      - heading "Profile Settings" [level=1] [ref=e25]
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - img "Avatar" [ref=e30]
+            - img [ref=e32] [cursor=pointer]
+          - generic [ref=e35]:
+            - paragraph [ref=e36]: NR Auto
+            - paragraph [ref=e37]: test@test.com
+        - generic [ref=e38]:
+          - text: Full Name
+          - textbox [ref=e39]: NR Auto
+        - generic [ref=e40]:
+          - text: Nickname (public display name)
+          - textbox "e.g. CarEnthusiast92" [ref=e41]
+        - generic [ref=e42]:
+          - text: Phone Number
+          - textbox "+1 234 567 8900" [ref=e43]
+        - generic [ref=e44]:
+          - heading "Public Profile Settings" [level=3] [ref=e45]
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - generic [ref=e48]:
+                - paragraph [ref=e49]: Show Favorites
+                - paragraph [ref=e50]: Others can see your favorite cars
+              - switch [checked] [ref=e51] [cursor=pointer]
+            - generic [ref=e52]:
+              - generic [ref=e53]:
+                - paragraph [ref=e54]: Show Saved Searches
+                - paragraph [ref=e55]: Others can see your saved search criteria
+              - switch [ref=e56] [cursor=pointer]
+        - button "Save Changes" [ref=e57] [cursor=pointer]:
+          - img
+          - text: Save Changes
+        - button "View My Public Profile" [ref=e58] [cursor=pointer]
+  - link "Made with Emergent" [ref=e59] [cursor=pointer]:
+    - /url: https://app.emergent.sh/?utm_source=emergent-badge
+    - generic [ref=e60]:
+      - img [ref=e61]
+      - paragraph [ref=e62]: Made with Emergent
+```

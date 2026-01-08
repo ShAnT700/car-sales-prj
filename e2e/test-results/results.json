@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "reporter": [
@@ -44,7 +44,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "e2e-chrome",
         "name": "e2e-chrome",
@@ -60,7 +60,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "e2e-mobile",
         "name": "e2e-mobile",
@@ -76,7 +76,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "api",
         "name": "api",
@@ -105,11 +105,291 @@
       "specs": [],
       "suites": [
         {
+          "title": "Homepage",
+          "file": "e2e/auth.spec.js",
+          "line": 26,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-SMOKE-01: homepage loads and shows hero title",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5226,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:07.366Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-e999bd5f133337c0f19b",
+              "file": "e2e/auth.spec.js",
+              "line": 27,
+              "column": 3
+            },
+            {
+              "title": "TC-SMOKE-02: Sell Car button is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3363,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:13.161Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-279d905f70f150f12e9a",
+              "file": "e2e/auth.spec.js",
+              "line": 33,
+              "column": 3
+            },
+            {
+              "title": "TC-SMOKE-03: Go Search button is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2895,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:16.668Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-6983fd93620fc68515d7",
+              "file": "e2e/auth.spec.js",
+              "line": 38,
+              "column": 3
+            }
+          ]
+        },
+        {
           "title": "Authentication",
           "file": "e2e/auth.spec.js",
           "line": 47,
           "column": 6,
           "specs": [
+            {
+              "title": "TC-AUTH-01: register a new user successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8203,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:19.660Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-9a21528546648990177a",
+              "file": "e2e/auth.spec.js",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-02: prevent duplicate registration",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6498,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:27.917Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-91b464fef01294198df7",
+              "file": "e2e/auth.spec.js",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-03: login with valid credentials",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10924,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:34.465Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-da62aeb4dc9eb743e410",
+              "file": "e2e/auth.spec.js",
+              "line": 93,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-04: login with invalid credentials shows error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10769,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:45.467Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-d35444d74d705313c4e5",
+              "file": "e2e/auth.spec.js",
+              "line": 105,
+              "column": 3
+            },
+            {
+              "title": "TC-AUTH-05: logout clears session",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12667,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:56.275Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-0aafeafaab11b40d5c3b",
+              "file": "e2e/auth.spec.js",
+              "line": 121,
+              "column": 3
+            },
             {
               "title": "TC-AUTH-06: logout from mobile menu",
               "ok": true,
@@ -126,12 +406,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8121,
+                      "duration": 12324,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T00:56:48.162Z",
+                      "startTime": "2026-01-08T00:58:09.103Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -145,17 +425,2126 @@
               "column": 3
             }
           ]
+        },
+        {
+          "title": "Session Management",
+          "file": "e2e/auth.spec.js",
+          "line": 165,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-SESSION-01: session persists after page reload",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8350,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:21.527Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-473d7806f5359eb44ff3",
+              "file": "e2e/auth.spec.js",
+              "line": 167,
+              "column": 3
+            },
+            {
+              "title": "TC-SESSION-02: token stored in localStorage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5523,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:29.999Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-c6a2f237419bc24fcf66",
+              "file": "e2e/auth.spec.js",
+              "line": 179,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e/favorites.spec.js",
+      "file": "e2e/favorites.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Favorites",
+          "file": "e2e/favorites.spec.js",
+          "line": 22,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-FAV-01: toggle favorite from listing card",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 24953,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n\n    at /app/e2e/tests/e2e/favorites.spec.js:34:29",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                          "column": 29,
+                          "line": 34
+                        },
+                        "snippet": "  32 |     // Find first listing card\n  33 |     const firstCard = page.locator('[data-testid=\"listing-card\"]').first();\n> 34 |     await expect(firstCard).toBeVisible({ timeout: 10000 });\n     |                             ^\n  35 |     \n  36 |     // Find heart/favorite button on the card\n  37 |     const heartBtn = firstCard.locator('[data-testid=\"favorite-btn\"], button:has(svg[class*=\"heart\"]), svg[class*=\"Heart\"]').first();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                            "column": 29,
+                            "line": 34
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n\n\n  32 |     // Find first listing card\n  33 |     const firstCard = page.locator('[data-testid=\"listing-card\"]').first();\n> 34 |     await expect(firstCard).toBeVisible({ timeout: 10000 });\n     |                             ^\n  35 |     \n  36 |     // Find heart/favorite button on the card\n  37 |     const heartBtn = firstCard.locator('[data-testid=\"favorite-btn\"], button:has(svg[class*=\"heart\"]), svg[class*=\"Heart\"]').first();\n    at /app/e2e/tests/e2e/favorites.spec.js:34:29"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:07.314Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/favorites-Favorites-TC-FAV-38f7e--favorite-from-listing-card-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/favorites-Favorites-TC-FAV-38f7e--favorite-from-listing-card-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                        "column": 29,
+                        "line": 34
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "62cda71af6f80f24b489-038f03e30520e08e8fb1",
+              "file": "e2e/favorites.spec.js",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "TC-FAV-02: favorites page shows favorited listings",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 15344,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:36.269Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "62cda71af6f80f24b489-6a7b2be146680150ec3a",
+              "file": "e2e/favorites.spec.js",
+              "line": 54,
+              "column": 3
+            },
+            {
+              "title": "TC-FAV-03: can favorite from listing detail page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 60998,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                            "column": 21,
+                            "line": 67
+                          },
+                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n\n\n  65 |     // Click on first listing to go to detail\n  66 |     const firstCard = page.locator('[data-testid=\"listing-card\"]').first();\n> 67 |     await firstCard.click();\n     |                     ^\n  68 |     await page.waitForLoadState('networkidle');\n  69 |     \n  70 |     // Look for favorite button on detail page\n    at /app/e2e/tests/e2e/favorites.spec.js:67:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:52.764Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/favorites-Favorites-TC-FAV-7844d-te-from-listing-detail-page-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/favorites-Favorites-TC-FAV-7844d-te-from-listing-detail-page-e2e-chrome/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "62cda71af6f80f24b489-fa56cc6d4d2c95d7fa5c",
+              "file": "e2e/favorites.spec.js",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "TC-FAV-04: favorite count visible on cards",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 17889,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n\n    at /app/e2e/tests/e2e/favorites.spec.js:84:29",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                          "column": 29,
+                          "line": 84
+                        },
+                        "snippet": "  82 |   test('TC-FAV-04: favorite count visible on cards', async ({ page }) => {\n  83 |     const firstCard = page.locator('[data-testid=\"listing-card\"]').first();\n> 84 |     await expect(firstCard).toBeVisible({ timeout: 10000 });\n     |                             ^\n  85 |     \n  86 |     // Look for favorite count (number near heart icon)\n  87 |     const heartArea = firstCard.locator('[data-testid=\"favorite-btn\"], button:has(svg[class*=\"heart\"])').first();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                            "column": 29,
+                            "line": 84
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n\n\n  82 |   test('TC-FAV-04: favorite count visible on cards', async ({ page }) => {\n  83 |     const firstCard = page.locator('[data-testid=\"listing-card\"]').first();\n> 84 |     await expect(firstCard).toBeVisible({ timeout: 10000 });\n     |                             ^\n  85 |     \n  86 |     // Look for favorite count (number near heart icon)\n  87 |     const heartArea = firstCard.locator('[data-testid=\"favorite-btn\"], button:has(svg[class*=\"heart\"])').first();\n    at /app/e2e/tests/e2e/favorites.spec.js:84:29"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:56.072Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/favorites-Favorites-TC-FAV-1f010-rite-count-visible-on-cards-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/favorites-Favorites-TC-FAV-1f010-rite-count-visible-on-cards-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                        "column": 29,
+                        "line": 84
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "62cda71af6f80f24b489-d777676064a94c3edfe6",
+              "file": "e2e/favorites.spec.js",
+              "line": 82,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Favorites - Guest",
+          "file": "e2e/favorites.spec.js",
+          "line": 99,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-FAV-GUEST-01: guest user prompted to login when favoriting",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4724,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:59:16.963Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "62cda71af6f80f24b489-33c706b794dc3ac6d273",
+              "file": "e2e/favorites.spec.js",
+              "line": 102,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e/listings.spec.js",
+      "file": "e2e/listings.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Listings - Create",
+          "file": "e2e/listings.spec.js",
+          "line": 38,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-LIST-01: create listing with minimum 1 photo",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 14639,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:07.398Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e2297e726d63854e50c-4bc7f0805835f763e196",
+              "file": "e2e/listings.spec.js",
+              "line": 45,
+              "column": 3
+            },
+            {
+              "title": "TC-LIST-03: cannot submit without photos",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 11666,
+                      "error": {
+                        "message": "Error: locator.click: Error: strict mode violation: getByText('Toyota', { exact: true }) resolved to 2 elements:\n    1) <option value=\"Toyota\">Toyota</option> aka locator('select').first()\n    2) <span id=\"radix-_r_42_\">Toyota</span> aka getByLabel('Toyota').getByText('Toyota')\n\nCall log:\n\u001b[2m  - waiting for getByText('Toyota', { exact: true })\u001b[22m\n",
+                        "stack": "Error: locator.click: Error: strict mode violation: getByText('Toyota', { exact: true }) resolved to 2 elements:\n    1) <option value=\"Toyota\">Toyota</option> aka locator('select').first()\n    2) <span id=\"radix-_r_42_\">Toyota</span> aka getByLabel('Toyota').getByText('Toyota')\n\nCall log:\n\u001b[2m  - waiting for getByText('Toyota', { exact: true })\u001b[22m\n\n    at /app/e2e/tests/e2e/listings.spec.js:67:53",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/listings.spec.js",
+                          "column": 53,
+                          "line": 67
+                        },
+                        "snippet": "  65 |     // Fill all other fields\n  66 |     await page.getByTestId('listing-make').click();\n> 67 |     await page.getByText('Toyota', { exact: true }).click();\n     |                                                     ^\n  68 |     \n  69 |     await page.getByTestId('listing-model').click();\n  70 |     await page.getByText('Camry', { exact: true }).click();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/listings.spec.js",
+                            "column": 53,
+                            "line": 67
+                          },
+                          "message": "Error: locator.click: Error: strict mode violation: getByText('Toyota', { exact: true }) resolved to 2 elements:\n    1) <option value=\"Toyota\">Toyota</option> aka locator('select').first()\n    2) <span id=\"radix-_r_42_\">Toyota</span> aka getByLabel('Toyota').getByText('Toyota')\n\nCall log:\n\u001b[2m  - waiting for getByText('Toyota', { exact: true })\u001b[22m\n\n\n  65 |     // Fill all other fields\n  66 |     await page.getByTestId('listing-make').click();\n> 67 |     await page.getByText('Toyota', { exact: true }).click();\n     |                                                     ^\n  68 |     \n  69 |     await page.getByTestId('listing-model').click();\n  70 |     await page.getByText('Camry', { exact: true }).click();\n    at /app/e2e/tests/e2e/listings.spec.js:67:53"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:22.717Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/listings-Listings---Create-e2258-annot-submit-without-photos-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/listings-Listings---Create-e2258-annot-submit-without-photos-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/listings.spec.js",
+                        "column": 53,
+                        "line": 67
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6e2297e726d63854e50c-12c646246db324d3379e",
+              "file": "e2e/listings.spec.js",
+              "line": 59,
+              "column": 3
+            },
+            {
+              "title": "TC-LIST-04: ZIP code accepts only 5 digits",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 17841,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:37.770Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e2297e726d63854e50c-497ee06d0f3a0607b979",
+              "file": "e2e/listings.spec.js",
+              "line": 97,
+              "column": 3
+            },
+            {
+              "title": "TC-LIST-05: description must be 30-1000 characters",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 15178,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:56.564Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e2297e726d63854e50c-be171e14af7a61cba45e",
+              "file": "e2e/listings.spec.js",
+              "line": 116,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Listings - View",
+          "file": "e2e/listings.spec.js",
+          "line": 135,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-LIST-VIEW-01: homepage shows latest listings",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 15144,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n\n    at /app/e2e/tests/e2e/listings.spec.js:148:33",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/listings.spec.js",
+                          "column": 33,
+                          "line": 148
+                        },
+                        "snippet": "  146 |     const cards = page.locator('[data-testid=\"listing-card\"]');\n  147 |     // At least one listing should exist (from previous tests or seed data)\n> 148 |     await expect(cards.first()).toBeVisible({ timeout: 10000 });\n      |                                 ^\n  149 |   });\n  150 |\n  151 |   // TC-LIST-VIEW-02: Listing card shows essential info"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/listings.spec.js",
+                            "column": 33,
+                            "line": 148
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n\n\n  146 |     const cards = page.locator('[data-testid=\"listing-card\"]');\n  147 |     // At least one listing should exist (from previous tests or seed data)\n> 148 |     await expect(cards.first()).toBeVisible({ timeout: 10000 });\n      |                                 ^\n  149 |   });\n  150 |\n  151 |   // TC-LIST-VIEW-02: Listing card shows essential info\n    at /app/e2e/tests/e2e/listings.spec.js:148:33"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:11.768Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/listings-Listings---View-T-8aae6-epage-shows-latest-listings-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/listings-Listings---View-T-8aae6-epage-shows-latest-listings-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/listings.spec.js",
+                        "column": 33,
+                        "line": 148
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6e2297e726d63854e50c-a7a799038d82717cccbc",
+              "file": "e2e/listings.spec.js",
+              "line": 138,
+              "column": 3
+            },
+            {
+              "title": "TC-LIST-VIEW-02: listing card displays car info",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 14210,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first().locator('text=/\\\\$[0-9,]+/')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first().locator('text=/\\\\$[0-9,]+/')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first().locator('text=/\\\\$[0-9,]+/')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first().locator('text=/\\\\$[0-9,]+/')\u001b[22m\n\n    at /app/e2e/tests/e2e/listings.spec.js:159:58",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/listings.spec.js",
+                          "column": 58,
+                          "line": 159
+                        },
+                        "snippet": "  157 |     \n  158 |     // Card should show price\n> 159 |     await expect(firstCard.locator('text=/\\\\$[0-9,]+/')).toBeVisible();\n      |                                                          ^\n  160 |     \n  161 |     // Card should show location icon or city\n  162 |     await expect(firstCard.locator('[class*=\"location\"], text=/Los Angeles|Miami|New York/i')).toBeVisible();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/listings.spec.js",
+                            "column": 58,
+                            "line": 159
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first().locator('text=/\\\\$[0-9,]+/')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first().locator('text=/\\\\$[0-9,]+/')\u001b[22m\n\n\n  157 |     \n  158 |     // Card should show price\n> 159 |     await expect(firstCard.locator('text=/\\\\$[0-9,]+/')).toBeVisible();\n      |                                                          ^\n  160 |     \n  161 |     // Card should show location icon or city\n  162 |     await expect(firstCard.locator('[class*=\"location\"], text=/Los Angeles|Miami|New York/i')).toBeVisible();\n    at /app/e2e/tests/e2e/listings.spec.js:159:58"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:29.277Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/listings-Listings---View-T-6ea12-ting-card-displays-car-info-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/listings-Listings---View-T-6ea12-ting-card-displays-car-info-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/listings.spec.js",
+                        "column": 58,
+                        "line": 159
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6e2297e726d63854e50c-24d2ee0ec2826e651809",
+              "file": "e2e/listings.spec.js",
+              "line": 152,
+              "column": 3
+            },
+            {
+              "title": "TC-LIST-VIEW-03: clicking listing opens detail page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 60146,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/listings.spec.js",
+                            "column": 21,
+                            "line": 171
+                          },
+                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n\n\n  169 |     \n  170 |     const firstCard = page.locator('[data-testid=\"listing-card\"]').first();\n> 171 |     await firstCard.click();\n      |                     ^\n  172 |     \n  173 |     // Should navigate to detail page\n  174 |     await page.waitForLoadState('networkidle');\n    at /app/e2e/tests/e2e/listings.spec.js:171:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:46.127Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/listings-Listings---View-T-93495-g-listing-opens-detail-page-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/listings-Listings---View-T-93495-g-listing-opens-detail-page-e2e-chrome/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6e2297e726d63854e50c-bb84bb7c377ccb332dee",
+              "file": "e2e/listings.spec.js",
+              "line": 166,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Listings - My Listings",
+          "file": "e2e/listings.spec.js",
+          "line": 182,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-LIST-MY-01: my listings page shows user listings",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4092,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:59:47.164Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e2297e726d63854e50c-bdec8c6ca08aeff3af7d",
+              "file": "e2e/listings.spec.js",
+              "line": 189,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Clean Title Badge",
+          "file": "e2e/listings.spec.js",
+          "line": 204,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CT-01: clean title badge visible on qualifying listings",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1796,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:59:51.408Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e2297e726d63854e50c-8fd304da4729687d584e",
+              "file": "e2e/listings.spec.js",
+              "line": 207,
+              "column": 3
+            },
+            {
+              "title": "TC-CT-02: clean title toggle exists on create form",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5439,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:59:53.262Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e2297e726d63854e50c-31c6d40d3662410aea68",
+              "file": "e2e/listings.spec.js",
+              "line": 221,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e/messages.spec.js",
+      "file": "e2e/messages.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Messaging",
+          "file": "e2e/messages.spec.js",
+          "line": 22,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-MSG-01: messages page loads",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 12896,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:07.323Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "af2aaa2c0f09e6088eca-6742612866e11f44d2f7",
+              "file": "e2e/messages.spec.js",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "TC-MSG-02: can open message form from listing detail",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 11660,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:20.903Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "af2aaa2c0f09e6088eca-0107542fc1efaa10b7b4",
+              "file": "e2e/messages.spec.js",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "TC-MSG-03: messages page displays conversation threads",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 8862,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at /app/e2e/tests/e2e/messages.spec.js:76:35",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/messages.spec.js",
+                          "column": 35,
+                          "line": 76
+                        },
+                        "snippet": "  74 |     \n  75 |     // One of these should be true\n> 76 |     expect(hasThreads || isEmpty).toBeTruthy();\n     |                                   ^\n  77 |   });\n  78 |\n  79 |   // TC-MSG-04: Can select and view a conversation"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/messages.spec.js",
+                            "column": 35,
+                            "line": 76
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n  74 |     \n  75 |     // One of these should be true\n> 76 |     expect(hasThreads || isEmpty).toBeTruthy();\n     |                                   ^\n  77 |   });\n  78 |\n  79 |   // TC-MSG-04: Can select and view a conversation\n    at /app/e2e/tests/e2e/messages.spec.js:76:35"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:32.665Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/messages-Messaging-TC-MSG--8383c-splays-conversation-threads-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/messages-Messaging-TC-MSG--8383c-splays-conversation-threads-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/messages.spec.js",
+                        "column": 35,
+                        "line": 76
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "af2aaa2c0f09e6088eca-3102a2c45d00c597f4c7",
+              "file": "e2e/messages.spec.js",
+              "line": 63,
+              "column": 3
+            },
+            {
+              "title": "TC-MSG-04: can view conversation history",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 11531,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:46.161Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "af2aaa2c0f09e6088eca-fdb7ec0150e72df7fd81",
+              "file": "e2e/messages.spec.js",
+              "line": 80,
+              "column": 3
+            },
+            {
+              "title": "TC-MSG-05: can type and send message in conversation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 9460,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:57:58.562Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "af2aaa2c0f09e6088eca-fd84c73bc05b4a6804d3",
+              "file": "e2e/messages.spec.js",
+              "line": 100,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Messaging - Unread Indicator",
+          "file": "e2e/messages.spec.js",
+          "line": 123,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-MSG-UNREAD-01: unread badge visible when there are unread messages",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 7443,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:08.213Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "af2aaa2c0f09e6088eca-5571b142ef26f1b971c7",
+              "file": "e2e/messages.spec.js",
+              "line": 126,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e/profile.spec.js",
+      "file": "e2e/profile.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Profile",
+          "file": "e2e/profile.spec.js",
+          "line": 22,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-PROF-01: profile page loads",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 4739,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Profile|Settings/i })\nExpected: visible\nError: strict mode violation: getByRole('heading', { name: /Profile|Settings/i }) resolved to 2 elements:\n    1) <h1 class=\"font-manrope font-bold text-2xl sm:text-3xl text-slate-900 mb-8\">Profile Settings</h1> aka getByRole('heading', { name: 'Profile Settings', exact: true })\n    2) <h3 class=\"font-semibold text-slate-900 mb-4\">Public Profile Settings</h3> aka getByRole('heading', { name: 'Public Profile Settings' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Profile|Settings/i })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Profile|Settings/i })\nExpected: visible\nError: strict mode violation: getByRole('heading', { name: /Profile|Settings/i }) resolved to 2 elements:\n    1) <h1 class=\"font-manrope font-bold text-2xl sm:text-3xl text-slate-900 mb-8\">Profile Settings</h1> aka getByRole('heading', { name: 'Profile Settings', exact: true })\n    2) <h3 class=\"font-semibold text-slate-900 mb-4\">Public Profile Settings</h3> aka getByRole('heading', { name: 'Public Profile Settings' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Profile|Settings/i })\u001b[22m\n\n    at /app/e2e/tests/e2e/profile.spec.js:42:76",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/profile.spec.js",
+                          "column": 76,
+                          "line": 42
+                        },
+                        "snippet": "  40 |     \n  41 |     // Should show profile page elements\n> 42 |     await expect(page.getByRole('heading', { name: /Profile|Settings/i })).toBeVisible();\n     |                                                                            ^\n  43 |   });\n  44 |\n  45 |   // TC-PROF-02: Profile shows user info"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/profile.spec.js",
+                            "column": 76,
+                            "line": 42
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Profile|Settings/i })\nExpected: visible\nError: strict mode violation: getByRole('heading', { name: /Profile|Settings/i }) resolved to 2 elements:\n    1) <h1 class=\"font-manrope font-bold text-2xl sm:text-3xl text-slate-900 mb-8\">Profile Settings</h1> aka getByRole('heading', { name: 'Profile Settings', exact: true })\n    2) <h3 class=\"font-semibold text-slate-900 mb-4\">Public Profile Settings</h3> aka getByRole('heading', { name: 'Public Profile Settings' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Profile|Settings/i })\u001b[22m\n\n\n  40 |     \n  41 |     // Should show profile page elements\n> 42 |     await expect(page.getByRole('heading', { name: /Profile|Settings/i })).toBeVisible();\n     |                                                                            ^\n  43 |   });\n  44 |\n  45 |   // TC-PROF-02: Profile shows user info\n    at /app/e2e/tests/e2e/profile.spec.js:42:76"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:15.719Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/profile-Profile-TC-PROF-01-profile-page-loads-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/profile-Profile-TC-PROF-01-profile-page-loads-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/profile.spec.js",
+                        "column": 76,
+                        "line": 42
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d3b94327e94fcbd90a1b-a5a335b90110ba60ae80",
+              "file": "e2e/profile.spec.js",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "TC-PROF-02: profile displays user information",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 18063,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"avatar\"], img[alt*=\"avatar\"], [class*=\"avatar\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"avatar\"], img[alt*=\"avatar\"], [class*=\"avatar\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"avatar\"], img[alt*=\"avatar\"], [class*=\"avatar\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"avatar\"], img[alt*=\"avatar\"], [class*=\"avatar\"]').first()\u001b[22m\n\n    at /app/e2e/tests/e2e/profile.spec.js:57:38",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/profile.spec.js",
+                          "column": 38,
+                          "line": 57
+                        },
+                        "snippet": "  55 |     // Should have avatar area\n  56 |     const avatarArea = page.locator('[data-testid=\"avatar\"], img[alt*=\"avatar\"], [class*=\"avatar\"]');\n> 57 |     await expect(avatarArea.first()).toBeVisible();\n     |                                      ^\n  58 |   });\n  59 |\n  60 |   // TC-PROF-03: Can update profile name"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/profile.spec.js",
+                            "column": 38,
+                            "line": 57
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"avatar\"], img[alt*=\"avatar\"], [class*=\"avatar\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"avatar\"], img[alt*=\"avatar\"], [class*=\"avatar\"]').first()\u001b[22m\n\n\n  55 |     // Should have avatar area\n  56 |     const avatarArea = page.locator('[data-testid=\"avatar\"], img[alt*=\"avatar\"], [class*=\"avatar\"]');\n> 57 |     await expect(avatarArea.first()).toBeVisible();\n     |                                      ^\n  58 |   });\n  59 |\n  60 |   // TC-PROF-03: Can update profile name\n    at /app/e2e/tests/e2e/profile.spec.js:57:38"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:21.707Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/profile-Profile-TC-PROF-02-profile-displays-user-information-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/profile-Profile-TC-PROF-02-profile-displays-user-information-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/profile.spec.js",
+                        "column": 38,
+                        "line": 57
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d3b94327e94fcbd90a1b-91d1af09ebf4e941e996",
+              "file": "e2e/profile.spec.js",
+              "line": 46,
+              "column": 3
+            },
+            {
+              "title": "TC-PROF-03: profile name field editable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 8179,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:42.167Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d3b94327e94fcbd90a1b-57b864e156e1ed02d351",
+              "file": "e2e/profile.spec.js",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "TC-PROF-04: avatar upload control available",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 17854,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"avatar\"], [class*=\"avatar\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"avatar\"], [class*=\"avatar\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"avatar\"], [class*=\"avatar\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"avatar\"], [class*=\"avatar\"]').first()\u001b[22m\n\n    at /app/e2e/tests/e2e/profile.spec.js:88:30",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/profile.spec.js",
+                          "column": 30,
+                          "line": 88
+                        },
+                        "snippet": "  86 |     // Also check for clickable avatar area\n  87 |     const avatarArea = page.locator('[data-testid=\"avatar\"], [class*=\"avatar\"]').first();\n> 88 |     await expect(avatarArea).toBeVisible();\n     |                              ^\n  89 |   });\n  90 |\n  91 |   // TC-PROF-05: Save profile changes"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/profile.spec.js",
+                            "column": 30,
+                            "line": 88
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"avatar\"], [class*=\"avatar\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"avatar\"], [class*=\"avatar\"]').first()\u001b[22m\n\n\n  86 |     // Also check for clickable avatar area\n  87 |     const avatarArea = page.locator('[data-testid=\"avatar\"], [class*=\"avatar\"]').first();\n> 88 |     await expect(avatarArea).toBeVisible();\n     |                              ^\n  89 |   });\n  90 |\n  91 |   // TC-PROF-05: Save profile changes\n    at /app/e2e/tests/e2e/profile.spec.js:88:30"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:50.672Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/profile-Profile-TC-PROF-04-avatar-upload-control-available-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/profile-Profile-TC-PROF-04-avatar-upload-control-available-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/profile.spec.js",
+                        "column": 30,
+                        "line": 88
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d3b94327e94fcbd90a1b-0609c1f7261f83ff3533",
+              "file": "e2e/profile.spec.js",
+              "line": 76,
+              "column": 3
+            },
+            {
+              "title": "TC-PROF-05: save button exists on profile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 7526,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:59:09.682Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d3b94327e94fcbd90a1b-e9d0acd84f15548fa136",
+              "file": "e2e/profile.spec.js",
+              "line": 92,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Public Profile",
+          "file": "e2e/profile.spec.js",
+          "line": 108,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-PROF-PUBLIC-01: can view seller public profile from listing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 60159,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/profile.spec.js",
+                            "column": 21,
+                            "line": 117
+                          },
+                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n\n\n  115 |     // Click on a listing card\n  116 |     const firstCard = page.locator('[data-testid=\"listing-card\"]').first();\n> 117 |     await firstCard.click();\n      |                     ^\n  118 |     await page.waitForLoadState('networkidle');\n  119 |     \n  120 |     // Look for seller info/link\n    at /app/e2e/tests/e2e/profile.spec.js:117:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:59:17.394Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/profile-Public-Profile-TC--02fdb-public-profile-from-listing-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/profile-Public-Profile-TC--02fdb-public-profile-from-listing-e2e-chrome/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d3b94327e94fcbd90a1b-e34b0deb8f3bb1297b9a",
+              "file": "e2e/profile.spec.js",
+              "line": 111,
+              "column": 3
+            },
+            {
+              "title": "TC-PROF-PUBLIC-02: public profile displays user listings",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 20,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60162,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/profile.spec.js",
+                            "column": 21,
+                            "line": 139
+                          },
+                          "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n\n\n  137 |     // Go to a listing detail\n  138 |     const firstCard = page.locator('[data-testid=\"listing-card\"]').first();\n> 139 |     await firstCard.click();\n      |                     ^\n  140 |     await page.waitForLoadState('networkidle');\n  141 |     \n  142 |     // Click seller link\n    at /app/e2e/tests/e2e/profile.spec.js:139:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T01:00:18.162Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/profile-Public-Profile-TC--c1399-file-displays-user-listings-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/profile-Public-Profile-TC--c1399-file-displays-user-listings-e2e-chrome/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d3b94327e94fcbd90a1b-46aa3331a55fbce1e63b",
+              "file": "e2e/profile.spec.js",
+              "line": 133,
+              "column": 3
+            },
+            {
+              "title": "TC-PROF-PUBLIC-03: seller avatar displayed on listing cards",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 21,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12047,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n\n    at /app/e2e/tests/e2e/profile.spec.js:161:29",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/profile.spec.js",
+                          "column": 29,
+                          "line": 161
+                        },
+                        "snippet": "  159 |     // Check first listing card for avatar\n  160 |     const firstCard = page.locator('[data-testid=\"listing-card\"]').first();\n> 161 |     await expect(firstCard).toBeVisible({ timeout: 10000 });\n      |                             ^\n  162 |     \n  163 |     // Look for avatar element within card\n  164 |     const avatar = firstCard.locator('[data-testid=\"seller-avatar\"], img[class*=\"avatar\"], [class*=\"avatar\"]');"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/profile.spec.js",
+                            "column": 29,
+                            "line": 161
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"listing-card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"listing-card\"]').first()\u001b[22m\n\n\n  159 |     // Check first listing card for avatar\n  160 |     const firstCard = page.locator('[data-testid=\"listing-card\"]').first();\n> 161 |     await expect(firstCard).toBeVisible({ timeout: 10000 });\n      |                             ^\n  162 |     \n  163 |     // Look for avatar element within card\n  164 |     const avatar = firstCard.locator('[data-testid=\"seller-avatar\"], img[class*=\"avatar\"], [class*=\"avatar\"]');\n    at /app/e2e/tests/e2e/profile.spec.js:161:29"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T01:01:18.998Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/profile-Public-Profile-TC--92238--displayed-on-listing-cards-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/profile-Public-Profile-TC--92238--displayed-on-listing-cards-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/profile.spec.js",
+                        "column": 29,
+                        "line": 161
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d3b94327e94fcbd90a1b-07404711b118c516a289",
+              "file": "e2e/profile.spec.js",
+              "line": 155,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e/search.spec.js",
+      "file": "e2e/search.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Search Panel",
+          "file": "e2e/search.spec.js",
+          "line": 21,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-SEARCH-01: open and close search panel via Go Search / Hide Search",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2997,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Show Matches')\nExpected: visible\nError: strict mode violation: getByText('Show Matches') resolved to 2 elements:\n    1) <button type=\"button\" class=\"flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md\">Show Matches</button> aka getByRole('button', { name: 'Show Matches' }).first()\n    2) <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button> aka getByTestId('search-btn')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Show Matches')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Show Matches')\nExpected: visible\nError: strict mode violation: getByText('Show Matches') resolved to 2 elements:\n    1) <button type=\"button\" class=\"flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md\">Show Matches</button> aka getByRole('button', { name: 'Show Matches' }).first()\n    2) <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button> aka getByTestId('search-btn')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Show Matches')\u001b[22m\n\n    at /app/e2e/tests/e2e/search.spec.js:38:50",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/search.spec.js",
+                          "column": 50,
+                          "line": 38
+                        },
+                        "snippet": "  36 |     // Verify filter panel is visible (check for filter elements)\n  37 |     await expect(page.getByText('Make')).toBeVisible();\n> 38 |     await expect(page.getByText('Show Matches')).toBeVisible();\n     |                                                  ^\n  39 |     await expect(page.getByText('Hide Search!')).toBeVisible();\n  40 |     \n  41 |     // Click Hide Search to close"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/search.spec.js",
+                            "column": 50,
+                            "line": 38
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Show Matches')\nExpected: visible\nError: strict mode violation: getByText('Show Matches') resolved to 2 elements:\n    1) <button type=\"button\" class=\"flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md\">Show Matches</button> aka getByRole('button', { name: 'Show Matches' }).first()\n    2) <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button> aka getByTestId('search-btn')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Show Matches')\u001b[22m\n\n\n  36 |     // Verify filter panel is visible (check for filter elements)\n  37 |     await expect(page.getByText('Make')).toBeVisible();\n> 38 |     await expect(page.getByText('Show Matches')).toBeVisible();\n     |                                                  ^\n  39 |     await expect(page.getByText('Hide Search!')).toBeVisible();\n  40 |     \n  41 |     // Click Hide Search to close\n    at /app/e2e/tests/e2e/search.spec.js:38:50"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:35.711Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEA-edcec-l-via-Go-Search-Hide-Search-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEA-edcec-l-via-Go-Search-Hide-Search-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/search.spec.js",
+                        "column": 50,
+                        "line": 38
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9e6ea2b6d72fedbaa223-ce801a70d693d7028188",
+              "file": "e2e/search.spec.js",
+              "line": 24,
+              "column": 3
+            },
+            {
+              "title": "TC-SEARCH-02: filter by make shows relevant results",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9197,
+                      "error": {
+                        "message": "Error: locator.click: Error: strict mode violation: getByText('Show Matches') resolved to 2 elements:\n    1) <button type=\"button\" class=\"flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md\">Show Matches</button> aka getByRole('button', { name: 'Show Matches' }).first()\n    2) <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button> aka getByTestId('search-btn')\n\nCall log:\n\u001b[2m  - waiting for getByText('Show Matches')\u001b[22m\n",
+                        "stack": "Error: locator.click: Error: strict mode violation: getByText('Show Matches') resolved to 2 elements:\n    1) <button type=\"button\" class=\"flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md\">Show Matches</button> aka getByRole('button', { name: 'Show Matches' }).first()\n    2) <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button> aka getByTestId('search-btn')\n\nCall log:\n\u001b[2m  - waiting for getByText('Show Matches')\u001b[22m\n\n    at /app/e2e/tests/e2e/search.spec.js:65:44",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/search.spec.js",
+                          "column": 44,
+                          "line": 65
+                        },
+                        "snippet": "  63 |       \n  64 |       // Click Show Matches\n> 65 |       await page.getByText('Show Matches').click();\n     |                                            ^\n  66 |       await page.waitForLoadState('networkidle');\n  67 |       await page.waitForTimeout(1000);\n  68 |       "
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/search.spec.js",
+                            "column": 44,
+                            "line": 65
+                          },
+                          "message": "Error: locator.click: Error: strict mode violation: getByText('Show Matches') resolved to 2 elements:\n    1) <button type=\"button\" class=\"flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md\">Show Matches</button> aka getByRole('button', { name: 'Show Matches' }).first()\n    2) <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button> aka getByTestId('search-btn')\n\nCall log:\n\u001b[2m  - waiting for getByText('Show Matches')\u001b[22m\n\n\n  63 |       \n  64 |       // Click Show Matches\n> 65 |       await page.getByText('Show Matches').click();\n     |                                            ^\n  66 |       await page.waitForLoadState('networkidle');\n  67 |       await page.waitForTimeout(1000);\n  68 |       \n    at /app/e2e/tests/e2e/search.spec.js:65:44"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:39.569Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEA-1a62e-make-shows-relevant-results-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEA-1a62e-make-shows-relevant-results-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/search.spec.js",
+                        "column": 44,
+                        "line": 65
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9e6ea2b6d72fedbaa223-ec479ad82e7feb30d543",
+              "file": "e2e/search.spec.js",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "TC-SEARCH-03: model dropdown depends on selected make",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9555,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('3 Series')\nExpected: visible\nError: strict mode violation: getByText('3 Series') resolved to 2 elements:\n    1) <h3 class=\"font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1\">BMW 3 Series</h3> aka getByTestId('car-card-37577949-4fd6-4502-934c-dc21573332a5')\n    2) <span id=\"radix-_r_6j_\">3 Series</span> aka getByText('3 Series', { exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('3 Series')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('3 Series')\nExpected: visible\nError: strict mode violation: getByText('3 Series') resolved to 2 elements:\n    1) <h3 class=\"font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1\">BMW 3 Series</h3> aka getByTestId('car-card-37577949-4fd6-4502-934c-dc21573332a5')\n    2) <span id=\"radix-_r_6j_\">3 Series</span> aka getByText('3 Series', { exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('3 Series')\u001b[22m\n\n    at /app/e2e/tests/e2e/search.spec.js:106:50",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/search.spec.js",
+                          "column": 50,
+                          "line": 106
+                        },
+                        "snippet": "  104 |         await modelSelect.click();\n  105 |         // Should show BMW models like 3 Series, X5, etc.\n> 106 |         await expect(page.getByText('3 Series')).toBeVisible();\n      |                                                  ^\n  107 |       }\n  108 |     }\n  109 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/search.spec.js",
+                            "column": 50,
+                            "line": 106
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('3 Series')\nExpected: visible\nError: strict mode violation: getByText('3 Series') resolved to 2 elements:\n    1) <h3 class=\"font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1\">BMW 3 Series</h3> aka getByTestId('car-card-37577949-4fd6-4502-934c-dc21573332a5')\n    2) <span id=\"radix-_r_6j_\">3 Series</span> aka getByText('3 Series', { exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('3 Series')\u001b[22m\n\n\n  104 |         await modelSelect.click();\n  105 |         // Should show BMW models like 3 Series, X5, etc.\n> 106 |         await expect(page.getByText('3 Series')).toBeVisible();\n      |                                                  ^\n  107 |       }\n  108 |     }\n  109 |   });\n    at /app/e2e/tests/e2e/search.spec.js:106:50"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:58:51.400Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEA-8a780-wn-depends-on-selected-make-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEA-8a780-wn-depends-on-selected-make-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/search.spec.js",
+                        "column": 50,
+                        "line": 106
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9e6ea2b6d72fedbaa223-73d23ee72424c887d4ff",
+              "file": "e2e/search.spec.js",
+              "line": 84,
+              "column": 3
+            },
+            {
+              "title": "TC-SEARCH-04: filter by price range",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3962,
+                      "error": {
+                        "message": "Error: locator.click: Error: strict mode violation: getByText('Show Matches') resolved to 2 elements:\n    1) <button type=\"button\" class=\"flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md\">Show Matches</button> aka getByRole('button', { name: 'Show Matches' }).first()\n    2) <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button> aka getByTestId('search-btn')\n\nCall log:\n\u001b[2m  - waiting for getByText('Show Matches')\u001b[22m\n",
+                        "stack": "Error: locator.click: Error: strict mode violation: getByText('Show Matches') resolved to 2 elements:\n    1) <button type=\"button\" class=\"flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md\">Show Matches</button> aka getByRole('button', { name: 'Show Matches' }).first()\n    2) <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button> aka getByTestId('search-btn')\n\nCall log:\n\u001b[2m  - waiting for getByText('Show Matches')\u001b[22m\n\n    at /app/e2e/tests/e2e/search.spec.js:132:42",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/search.spec.js",
+                          "column": 42,
+                          "line": 132
+                        },
+                        "snippet": "  130 |     \n  131 |     // Apply filter\n> 132 |     await page.getByText('Show Matches').click();\n      |                                          ^\n  133 |     await page.waitForLoadState('networkidle');\n  134 |   });\n  135 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/search.spec.js",
+                            "column": 42,
+                            "line": 132
+                          },
+                          "message": "Error: locator.click: Error: strict mode violation: getByText('Show Matches') resolved to 2 elements:\n    1) <button type=\"button\" class=\"flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md\">Show Matches</button> aka getByRole('button', { name: 'Show Matches' }).first()\n    2) <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button> aka getByTestId('search-btn')\n\nCall log:\n\u001b[2m  - waiting for getByText('Show Matches')\u001b[22m\n\n\n  130 |     \n  131 |     // Apply filter\n> 132 |     await page.getByText('Show Matches').click();\n      |                                          ^\n  133 |     await page.waitForLoadState('networkidle');\n  134 |   });\n  135 |\n    at /app/e2e/tests/e2e/search.spec.js:132:42"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:59:01.969Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEARCH-04-filter-by-price-range-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEARCH-04-filter-by-price-range-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/search.spec.js",
+                        "column": 42,
+                        "line": 132
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9e6ea2b6d72fedbaa223-561334a108f94102e0be",
+              "file": "e2e/search.spec.js",
+              "line": 112,
+              "column": 3
+            },
+            {
+              "title": "TC-SEARCH-05: filter by clean title only",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3648,
+                      "error": {
+                        "message": "Error: locator.isVisible: Unexpected token \"=\" while parsing css selector \"[data-testid=\"filter-clean-title\"], text=/Clean Title/i\". Did you mean to CSS.escape it?\nCall log:\n\u001b[2m    - checking visibility of [data-testid=\"filter-clean-title\"], text=/Clean Title/i\u001b[22m\n",
+                        "stack": "Error: locator.isVisible: Unexpected token \"=\" while parsing css selector \"[data-testid=\"filter-clean-title\"], text=/Clean Title/i\". Did you mean to CSS.escape it?\nCall log:\n\u001b[2m    - checking visibility of [data-testid=\"filter-clean-title\"], text=/Clean Title/i\u001b[22m\n\n    at /app/e2e/tests/e2e/search.spec.js:147:24",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/search.spec.js",
+                          "column": 24,
+                          "line": 147
+                        },
+                        "snippet": "  145 |     // Look for Clean Title filter\n  146 |     const ctFilter = page.locator('[data-testid=\"filter-clean-title\"], text=/Clean Title/i');\n> 147 |     if (await ctFilter.isVisible()) {\n      |                        ^\n  148 |       await ctFilter.click();\n  149 |     }\n  150 |     "
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/search.spec.js",
+                            "column": 24,
+                            "line": 147
+                          },
+                          "message": "Error: locator.isVisible: Unexpected token \"=\" while parsing css selector \"[data-testid=\"filter-clean-title\"], text=/Clean Title/i\". Did you mean to CSS.escape it?\nCall log:\n\u001b[2m    - checking visibility of [data-testid=\"filter-clean-title\"], text=/Clean Title/i\u001b[22m\n\n\n  145 |     // Look for Clean Title filter\n  146 |     const ctFilter = page.locator('[data-testid=\"filter-clean-title\"], text=/Clean Title/i');\n> 147 |     if (await ctFilter.isVisible()) {\n      |                        ^\n  148 |       await ctFilter.click();\n  149 |     }\n  150 |     \n    at /app/e2e/tests/e2e/search.spec.js:147:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:59:06.702Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEARCH-05-filter-by-clean-title-only-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/search-Search-Panel-TC-SEARCH-05-filter-by-clean-title-only-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/search.spec.js",
+                        "column": 24,
+                        "line": 147
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9e6ea2b6d72fedbaa223-8eb992d92839f5084923",
+              "file": "e2e/search.spec.js",
+              "line": 137,
+              "column": 3
+            },
+            {
+              "title": "TC-SEARCH-06: clear filters resets search",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9806,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:59:12.364Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9e6ea2b6d72fedbaa223-289dd7838d78ed260907",
+              "file": "e2e/search.spec.js",
+              "line": 169,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Search Panel - Mobile",
+          "file": "e2e/search.spec.js",
+          "line": 202,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-SEARCH-MOBILE-01: search panel accessible on mobile",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "e2e-chrome",
+                  "projectName": "e2e-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2681,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Show Matches')\nExpected: visible\nError: strict mode violation: getByText('Show Matches') resolved to 2 elements:\n    1) <button type=\"button\" class=\"flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md\">Show Matches</button> aka getByRole('button', { name: 'Show Matches' }).first()\n    2) <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button> aka getByTestId('search-btn')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Show Matches')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Show Matches')\nExpected: visible\nError: strict mode violation: getByText('Show Matches') resolved to 2 elements:\n    1) <button type=\"button\" class=\"flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md\">Show Matches</button> aka getByRole('button', { name: 'Show Matches' }).first()\n    2) <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button> aka getByTestId('search-btn')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Show Matches')\u001b[22m\n\n    at /app/e2e/tests/e2e/search.spec.js:222:50",
+                        "location": {
+                          "file": "/app/e2e/tests/e2e/search.spec.js",
+                          "column": 50,
+                          "line": 222
+                        },
+                        "snippet": "  220 |     \n  221 |     // Panel should open\n> 222 |     await expect(page.getByText('Show Matches')).toBeVisible();\n      |                                                  ^\n  223 |   });\n  224 | });\n  225 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/search.spec.js",
+                            "column": 50,
+                            "line": 222
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Show Matches')\nExpected: visible\nError: strict mode violation: getByText('Show Matches') resolved to 2 elements:\n    1) <button type=\"button\" class=\"flex-1 h-14 sm:h-16 rounded-full text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 shadow-md\">Show Matches</button> aka getByRole('button', { name: 'Show Matches' }).first()\n    2) <button data-testid=\"search-btn\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow px-4 py-2 flex-1 h-12 rounded-full bg-emerald-500 text-white hover:bg-emerald-600\">…</button> aka getByTestId('search-btn')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Show Matches')\u001b[22m\n\n\n  220 |     \n  221 |     // Panel should open\n> 222 |     await expect(page.getByText('Show Matches')).toBeVisible();\n      |                                                  ^\n  223 |   });\n  224 | });\n  225 |\n    at /app/e2e/tests/e2e/search.spec.js:222:50"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-08T00:59:22.507Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/e2e/test-results/search-Search-Panel---Mobi-a3a9f--panel-accessible-on-mobile-e2e-chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/e2e/test-results/search-Search-Panel---Mobi-a3a9f--panel-accessible-on-mobile-e2e-chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/e2e/tests/e2e/search.spec.js",
+                        "column": 50,
+                        "line": 222
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "9e6ea2b6d72fedbaa223-2e8a5028ecc00fbf4b69",
+              "file": "e2e/search.spec.js",
+              "line": 209,
+              "column": 3
+            }
+          ]
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-08T00:56:47.630Z",
-    "duration": 8880.797999999999,
-    "expected": 1,
+    "startTime": "2026-01-08T00:57:04.761Z",
+    "duration": 266509.867,
+    "expected": 27,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 20,
     "flaky": 0
   }
 }

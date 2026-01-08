@@ -1,0 +1,409 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - region "Notifications alt+T"
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "NextRides" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e8]: NextRides
+        - generic [ref=e10]:
+          - button [ref=e11] [cursor=pointer]:
+            - img
+          - button [ref=e12] [cursor=pointer]:
+            - img
+          - button [ref=e13] [cursor=pointer]:
+            - img
+          - button "My Listings" [ref=e14] [cursor=pointer]
+          - button "N" [ref=e15] [cursor=pointer]:
+            - generic [ref=e16]: "N"
+          - button "Logout" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+    - button "Go Search!" [ref=e22] [cursor=pointer]
+    - generic [ref=e23]:
+      - heading "Good cars are selling here!" [level=1] [ref=e26]
+      - generic [ref=e28]:
+        - heading "Latest Listings" [level=2] [ref=e31]
+        - generic [ref=e32]:
+          - link "0 Tesla Model 3 NR Auto CT Tesla Model 3 $45,000 0 ❤ 15k mi San Francisco" [ref=e33] [cursor=pointer]:
+            - /url: /car/6420d076-587f-43d3-8801-a78f4465c7f0
+            - button "0" [ref=e34]:
+              - img [ref=e35]
+              - generic [ref=e37]: "0"
+            - generic [ref=e38]:
+              - img "Tesla Model 3" [ref=e39]
+              - link "NR Auto" [ref=e40]:
+                - /url: /user/37b36313-96fa-4d11-b28c-cb6b8df4a9e3
+                - img "NR Auto" [ref=e41]
+              - generic "Clean Title" [ref=e43]: CT
+            - generic [ref=e44]:
+              - generic [ref=e45]:
+                - heading "Tesla Model 3" [level=3] [ref=e46]
+                - generic [ref=e47]:
+                  - generic [ref=e48]: $45,000
+                  - generic [ref=e49]: 0 ❤
+              - generic [ref=e50]:
+                - generic [ref=e51]:
+                  - img [ref=e52]
+                  - generic [ref=e55]: 15k mi
+                - generic [ref=e56]:
+                  - img [ref=e57]
+                  - generic [ref=e60]: San Francisco
+          - link "1 BMW X3 CT BMW X3 $65,000 1 ❤ 14k mi Los Angeles" [ref=e61] [cursor=pointer]:
+            - /url: /car/f8fa28cc-7a2a-4309-bd38-d53ac109d280
+            - button "1" [ref=e62]:
+              - img [ref=e63]
+              - generic [ref=e65]: "1"
+            - generic [ref=e66]:
+              - img "BMW X3" [ref=e67]
+              - link [ref=e68]:
+                - /url: /user/7b0923b2-57b9-4edd-9742-116588c6a7d2
+                - img [ref=e69]
+              - generic "Clean Title" [ref=e73]: CT
+            - generic [ref=e74]:
+              - generic [ref=e75]:
+                - heading "BMW X3" [level=3] [ref=e76]
+                - generic [ref=e77]:
+                  - generic [ref=e78]: $65,000
+                  - generic [ref=e79]: 1 ❤
+              - generic [ref=e80]:
+                - generic [ref=e81]:
+                  - img [ref=e82]
+                  - generic [ref=e85]: 14k mi
+                - generic [ref=e86]:
+                  - img [ref=e87]
+                  - generic [ref=e90]: Los Angeles
+          - link "0 BMW 3 Series Demo User CT BMW 3 Series $68,000 0 ❤ 12k mi Los Angeles" [ref=e91] [cursor=pointer]:
+            - /url: /car/37577949-4fd6-4502-934c-dc21573332a5
+            - button "0" [ref=e92]:
+              - img [ref=e93]
+              - generic [ref=e95]: "0"
+            - generic [ref=e96]:
+              - img "BMW 3 Series" [ref=e97]
+              - link "Demo User" [ref=e98]:
+                - /url: /user/565dc063-68e4-457a-ab4a-f64b08282bf6
+                - img "Demo User" [ref=e99]
+              - generic "Clean Title" [ref=e101]: CT
+            - generic [ref=e102]:
+              - generic [ref=e103]:
+                - heading "BMW 3 Series" [level=3] [ref=e104]
+                - generic [ref=e105]:
+                  - generic [ref=e106]: $68,000
+                  - generic [ref=e107]: 0 ❤
+              - generic [ref=e108]:
+                - generic [ref=e109]:
+                  - img [ref=e110]
+                  - generic [ref=e113]: 12k mi
+                - generic [ref=e114]:
+                  - img [ref=e115]
+                  - generic [ref=e118]: Los Angeles
+          - link "2 Lexus IS Vitalii B Lexus IS $26,000 2 ❤ 80k mi Los Angeles" [ref=e119] [cursor=pointer]:
+            - /url: /car/3b7108b6-4a89-46d4-9c16-32d60303ef35
+            - button "2" [ref=e120]:
+              - img [ref=e121]
+              - generic [ref=e123]: "2"
+            - generic [ref=e124]:
+              - img "Lexus IS" [ref=e125]
+              - link "Vitalii B" [ref=e126]:
+                - /url: /user/abe0a3f2-9569-4d42-a8bb-0fcf0be18da3
+                - img "Vitalii B" [ref=e127]
+            - generic [ref=e128]:
+              - generic [ref=e129]:
+                - heading "Lexus IS" [level=3] [ref=e130]
+                - generic [ref=e131]:
+                  - generic [ref=e132]: $26,000
+                  - generic [ref=e133]: 2 ❤
+              - generic [ref=e134]:
+                - generic [ref=e135]:
+                  - img [ref=e136]
+                  - generic [ref=e139]: 80k mi
+                - generic [ref=e140]:
+                  - img [ref=e141]
+                  - generic [ref=e144]: Los Angeles
+          - link "1 Lexus IS Vitalii B CT Lexus IS $13,000 1 ❤ 67k mi Los Angeles" [ref=e145] [cursor=pointer]:
+            - /url: /car/bb37d106-2474-47ae-8a28-46a64866b0ef
+            - button "1" [ref=e146]:
+              - img [ref=e147]
+              - generic [ref=e149]: "1"
+            - generic [ref=e150]:
+              - img "Lexus IS" [ref=e151]
+              - link "Vitalii B" [ref=e152]:
+                - /url: /user/abe0a3f2-9569-4d42-a8bb-0fcf0be18da3
+                - img "Vitalii B" [ref=e153]
+              - generic "Clean Title" [ref=e155]: CT
+            - generic [ref=e156]:
+              - generic [ref=e157]:
+                - heading "Lexus IS" [level=3] [ref=e158]
+                - generic [ref=e159]:
+                  - generic [ref=e160]: $13,000
+                  - generic [ref=e161]: 1 ❤
+              - generic [ref=e162]:
+                - generic [ref=e163]:
+                  - img [ref=e164]
+                  - generic [ref=e167]: 67k mi
+                - generic [ref=e168]:
+                  - img [ref=e169]
+                  - generic [ref=e172]: Los Angeles
+          - link "2 Nissan GT-R Nissan GT-R $115,000 2 ❤ 8k mi Orlando" [ref=e173] [cursor=pointer]:
+            - /url: /car/faec4f74-0dcf-4fea-bc60-0a0af80c1e8d
+            - button "2" [ref=e174]:
+              - img [ref=e175]
+              - generic [ref=e177]: "2"
+            - generic [ref=e178]:
+              - img "Nissan GT-R" [ref=e179]
+              - link [ref=e180]:
+                - /url: /user/c97abbe9-9f9b-4856-a7dc-d7a2cec5d8b1
+                - img [ref=e181]
+            - generic [ref=e184]:
+              - generic [ref=e185]:
+                - heading "Nissan GT-R" [level=3] [ref=e186]
+                - generic [ref=e187]:
+                  - generic [ref=e188]: $115,000
+                  - generic [ref=e189]: 2 ❤
+              - generic [ref=e190]:
+                - generic [ref=e191]:
+                  - img [ref=e192]
+                  - generic [ref=e195]: 8k mi
+                - generic [ref=e196]:
+                  - img [ref=e197]
+                  - generic [ref=e200]: Orlando
+          - link "1 Cadillac Escalade Cadillac Escalade $78,000 1 ❤ 22k mi Philadelphia" [ref=e201] [cursor=pointer]:
+            - /url: /car/8b870f43-9837-40c1-8348-69ed849ce979
+            - button "1" [ref=e202]:
+              - img [ref=e203]
+              - generic [ref=e205]: "1"
+            - generic [ref=e206]:
+              - img "Cadillac Escalade" [ref=e207]
+              - link [ref=e208]:
+                - /url: /user/c97abbe9-9f9b-4856-a7dc-d7a2cec5d8b1
+                - img [ref=e209]
+            - generic [ref=e212]:
+              - generic [ref=e213]:
+                - heading "Cadillac Escalade" [level=3] [ref=e214]
+                - generic [ref=e215]:
+                  - generic [ref=e216]: $78,000
+                  - generic [ref=e217]: 1 ❤
+              - generic [ref=e218]:
+                - generic [ref=e219]:
+                  - img [ref=e220]
+                  - generic [ref=e223]: 22k mi
+                - generic [ref=e224]:
+                  - img [ref=e225]
+                  - generic [ref=e228]: Philadelphia
+          - link "1 GMC Sierra GMC Sierra $55,000 1 ❤ 15k mi Las Vegas" [ref=e229] [cursor=pointer]:
+            - /url: /car/cf73e23c-9e38-4c81-bbb0-24a32e2098a7
+            - button "1" [ref=e230]:
+              - img [ref=e231]
+              - generic [ref=e233]: "1"
+            - generic [ref=e234]:
+              - img "GMC Sierra" [ref=e235]
+              - link [ref=e236]:
+                - /url: /user/c97abbe9-9f9b-4856-a7dc-d7a2cec5d8b1
+                - img [ref=e237]
+            - generic [ref=e240]:
+              - generic [ref=e241]:
+                - heading "GMC Sierra" [level=3] [ref=e242]
+                - generic [ref=e243]:
+                  - generic [ref=e244]: $55,000
+                  - generic [ref=e245]: 1 ❤
+              - generic [ref=e246]:
+                - generic [ref=e247]:
+                  - img [ref=e248]
+                  - generic [ref=e251]: 15k mi
+                - generic [ref=e252]:
+                  - img [ref=e253]
+                  - generic [ref=e256]: Las Vegas
+          - link "0 Ram 1500 Ram 1500 $48,000 0 ❤ 28k mi Detroit" [ref=e257] [cursor=pointer]:
+            - /url: /car/3fb7fd13-f859-4a14-a7d9-38a32b39de83
+            - button "0" [ref=e258]:
+              - img [ref=e259]
+              - generic [ref=e261]: "0"
+            - generic [ref=e262]:
+              - img "Ram 1500" [ref=e263]
+              - link [ref=e264]:
+                - /url: /user/c97abbe9-9f9b-4856-a7dc-d7a2cec5d8b1
+                - img [ref=e265]
+            - generic [ref=e268]:
+              - generic [ref=e269]:
+                - heading "Ram 1500" [level=3] [ref=e270]
+                - generic [ref=e271]:
+                  - generic [ref=e272]: $48,000
+                  - generic [ref=e273]: 0 ❤
+              - generic [ref=e274]:
+                - generic [ref=e275]:
+                  - img [ref=e276]
+                  - generic [ref=e279]: 28k mi
+                - generic [ref=e280]:
+                  - img [ref=e281]
+                  - generic [ref=e284]: Detroit
+          - link "0 Kia Telluride Kia Telluride $45,000 0 ❤ 12k mi Nashville" [ref=e285] [cursor=pointer]:
+            - /url: /car/e4e11f34-316b-4385-81d0-be6dbbd36adf
+            - button "0" [ref=e286]:
+              - img [ref=e287]
+              - generic [ref=e289]: "0"
+            - generic [ref=e290]:
+              - img "Kia Telluride" [ref=e291]
+              - link [ref=e292]:
+                - /url: /user/c97abbe9-9f9b-4856-a7dc-d7a2cec5d8b1
+                - img [ref=e293]
+            - generic [ref=e296]:
+              - generic [ref=e297]:
+                - heading "Kia Telluride" [level=3] [ref=e298]
+                - generic [ref=e299]:
+                  - generic [ref=e300]: $45,000
+                  - generic [ref=e301]: 0 ❤
+              - generic [ref=e302]:
+                - generic [ref=e303]:
+                  - img [ref=e304]
+                  - generic [ref=e307]: 12k mi
+                - generic [ref=e308]:
+                  - img [ref=e309]
+                  - generic [ref=e312]: Nashville
+          - link "0 Hyundai Tucson Hyundai Tucson $30,000 0 ❤ 7k mi Houston" [ref=e313] [cursor=pointer]:
+            - /url: /car/4306b074-8892-4f35-badd-e47e65953fd7
+            - button "0" [ref=e314]:
+              - img [ref=e315]
+              - generic [ref=e317]: "0"
+            - generic [ref=e318]:
+              - img "Hyundai Tucson" [ref=e319]
+              - link [ref=e320]:
+                - /url: /user/c97abbe9-9f9b-4856-a7dc-d7a2cec5d8b1
+                - img [ref=e321]
+            - generic [ref=e324]:
+              - generic [ref=e325]:
+                - heading "Hyundai Tucson" [level=3] [ref=e326]
+                - generic [ref=e327]:
+                  - generic [ref=e328]: $30,000
+                  - generic [ref=e329]: 0 ❤
+              - generic [ref=e330]:
+                - generic [ref=e331]:
+                  - img [ref=e332]
+                  - generic [ref=e335]: 7k mi
+                - generic [ref=e336]:
+                  - img [ref=e337]
+                  - generic [ref=e340]: Houston
+          - link "0 Volkswagen Atlas Volkswagen Atlas $38,000 0 ❤ 20k mi Boston" [ref=e341] [cursor=pointer]:
+            - /url: /car/7fe7735c-9956-491f-9b9a-a0dcc754750a
+            - button "0" [ref=e342]:
+              - img [ref=e343]
+              - generic [ref=e345]: "0"
+            - generic [ref=e346]:
+              - img "Volkswagen Atlas" [ref=e347]
+              - link [ref=e348]:
+                - /url: /user/c97abbe9-9f9b-4856-a7dc-d7a2cec5d8b1
+                - img [ref=e349]
+            - generic [ref=e352]:
+              - generic [ref=e353]:
+                - heading "Volkswagen Atlas" [level=3] [ref=e354]
+                - generic [ref=e355]:
+                  - generic [ref=e356]: $38,000
+                  - generic [ref=e357]: 0 ❤
+              - generic [ref=e358]:
+                - generic [ref=e359]:
+                  - img [ref=e360]
+                  - generic [ref=e363]: 20k mi
+                - generic [ref=e364]:
+                  - img [ref=e365]
+                  - generic [ref=e368]: Boston
+          - link "1 Mazda CX-5 Mazda CX-5 $32,000 1 ❤ 10k mi San Diego" [ref=e369] [cursor=pointer]:
+            - /url: /car/9c5d4ee8-3657-4b34-9248-e7ea7b3ba843
+            - button "1" [ref=e370]:
+              - img [ref=e371]
+              - generic [ref=e373]: "1"
+            - generic [ref=e374]:
+              - img "Mazda CX-5" [ref=e375]
+              - link [ref=e376]:
+                - /url: /user/c97abbe9-9f9b-4856-a7dc-d7a2cec5d8b1
+                - img [ref=e377]
+            - generic [ref=e380]:
+              - generic [ref=e381]:
+                - heading "Mazda CX-5" [level=3] [ref=e382]
+                - generic [ref=e383]:
+                  - generic [ref=e384]: $32,000
+                  - generic [ref=e385]: 1 ❤
+              - generic [ref=e386]:
+                - generic [ref=e387]:
+                  - img [ref=e388]
+                  - generic [ref=e391]: 10k mi
+                - generic [ref=e392]:
+                  - img [ref=e393]
+                  - generic [ref=e396]: San Diego
+          - link "0 Subaru Outback Subaru Outback $34,000 0 ❤ 14k mi Portland" [ref=e397] [cursor=pointer]:
+            - /url: /car/aea50559-5d27-4ffc-90ef-3f5262ffd105
+            - button "0" [ref=e398]:
+              - img [ref=e399]
+              - generic [ref=e401]: "0"
+            - generic [ref=e402]:
+              - img "Subaru Outback" [ref=e403]
+              - link [ref=e404]:
+                - /url: /user/c97abbe9-9f9b-4856-a7dc-d7a2cec5d8b1
+                - img [ref=e405]
+            - generic [ref=e408]:
+              - generic [ref=e409]:
+                - heading "Subaru Outback" [level=3] [ref=e410]
+                - generic [ref=e411]:
+                  - generic [ref=e412]: $34,000
+                  - generic [ref=e413]: 0 ❤
+              - generic [ref=e414]:
+                - generic [ref=e415]:
+                  - img [ref=e416]
+                  - generic [ref=e419]: 14k mi
+                - generic [ref=e420]:
+                  - img [ref=e421]
+                  - generic [ref=e424]: Portland
+          - link "0 Porsche Cayenne CT Porsche Cayenne $92,000 0 ❤ 16k mi New York" [ref=e425] [cursor=pointer]:
+            - /url: /car/d099b6d9-46d0-4582-8337-7c83e264ea65
+            - button "0" [ref=e426]:
+              - img [ref=e427]
+              - generic [ref=e429]: "0"
+            - generic [ref=e430]:
+              - img "Porsche Cayenne" [ref=e431]
+              - link [ref=e432]:
+                - /url: /user/c97abbe9-9f9b-4856-a7dc-d7a2cec5d8b1
+                - img [ref=e433]
+              - generic "Clean Title" [ref=e437]: CT
+            - generic [ref=e438]:
+              - generic [ref=e439]:
+                - heading "Porsche Cayenne" [level=3] [ref=e440]
+                - generic [ref=e441]:
+                  - generic [ref=e442]: $92,000
+                  - generic [ref=e443]: 0 ❤
+              - generic [ref=e444]:
+                - generic [ref=e445]:
+                  - img [ref=e446]
+                  - generic [ref=e449]: 16k mi
+                - generic [ref=e450]:
+                  - img [ref=e451]
+                  - generic [ref=e454]: New York
+          - link "0 Lexus RX CT Lexus RX $55,000 0 ❤ 8k mi Atlanta" [ref=e455] [cursor=pointer]:
+            - /url: /car/88a1c360-e2a2-45e0-8060-57ca5a86eeff
+            - button "0" [ref=e456]:
+              - img [ref=e457]
+              - generic [ref=e459]: "0"
+            - generic [ref=e460]:
+              - img "Lexus RX" [ref=e461]
+              - link [ref=e462]:
+                - /url: /user/c97abbe9-9f9b-4856-a7dc-d7a2cec5d8b1
+                - img [ref=e463]
+              - generic "Clean Title" [ref=e467]: CT
+            - generic [ref=e468]:
+              - generic [ref=e469]:
+                - heading "Lexus RX" [level=3] [ref=e470]
+                - generic [ref=e471]:
+                  - generic [ref=e472]: $55,000
+                  - generic [ref=e473]: 0 ❤
+              - generic [ref=e474]:
+                - generic [ref=e475]:
+                  - img [ref=e476]
+                  - generic [ref=e479]: 8k mi
+                - generic [ref=e480]:
+                  - img [ref=e481]
+                  - generic [ref=e484]: Atlanta
+  - link "Made with Emergent" [ref=e485] [cursor=pointer]:
+    - /url: https://app.emergent.sh/?utm_source=emergent-badge
+    - generic [ref=e486]:
+      - img [ref=e487]
+      - paragraph [ref=e488]: Made with Emergent
+```

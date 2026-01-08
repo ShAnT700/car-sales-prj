@@ -1,0 +1,186 @@
+# Page snapshot
+
+```yaml
+- generic:
+  - generic:
+    - generic:
+      - region "Notifications alt+T"
+      - banner:
+        - generic:
+          - generic:
+            - link:
+              - /url: /
+              - generic: NextRides
+            - generic:
+              - generic:
+                - button:
+                  - img
+                - button:
+                  - img
+                - button:
+                  - img
+                - button: My Listings
+                - button:
+                  - generic: "N"
+                - button:
+                  - img
+      - button [ref=e2] [cursor=pointer]: Go Search!
+      - generic:
+        - generic:
+          - generic:
+            - button:
+              - img
+              - text: Back
+            - heading [level=1]: Create New Listing
+          - generic:
+            - generic:
+              - heading [level=2]: Photos *
+              - paragraph: Upload at least 1 photo of your vehicle (max 10MB each)
+              - generic:
+                - button:
+                  - img
+                  - generic: Add Photo
+              - paragraph: At least 1 photo required
+            - generic:
+              - heading [level=2]: Clean Title
+              - generic:
+                - button: "Yes"
+                - button: "No"
+            - generic:
+              - heading [level=2]: Vehicle Details
+              - generic:
+                - generic:
+                  - generic: Make *
+                  - combobox [expanded]:
+                    - generic: Select Make
+                    - img
+                  - combobox
+                - generic:
+                  - generic: Model *
+                  - combobox [disabled]:
+                    - generic: Select Make first
+                    - img
+                  - combobox [disabled]
+                - generic:
+                  - generic: Year *
+                  - combobox:
+                    - generic: Select Year
+                    - img
+                  - combobox
+                - generic:
+                  - generic: Drive Type *
+                  - combobox:
+                    - generic: Select Drive Type
+                    - img
+                  - combobox
+                - generic:
+                  - generic: Mileage *
+                  - spinbutton
+                - generic:
+                  - generic: Price (USD) *
+                  - spinbutton
+                - generic:
+                  - generic: VIN *
+                  - textbox:
+                    - /placeholder: 17-character VIN
+            - generic:
+              - heading [level=2]: Location & Contact
+              - generic:
+                - generic:
+                  - generic: City *
+                  - combobox:
+                    - generic: Select City
+                    - img
+                  - combobox
+                - generic:
+                  - generic: Zip Code *
+                  - textbox:
+                    - /placeholder: e.g. 90001
+                - generic:
+                  - generic: Phone Number *
+                  - textbox:
+                    - /placeholder: e.g. +1 234 567 8900
+            - generic:
+              - heading [level=2]: Description
+              - textbox:
+                - /placeholder: Describe your vehicle... (30-1000 characters)
+              - paragraph: 0/1000 characters
+            - generic:
+              - button: Cancel
+              - button: Create Listing
+  - link:
+    - /url: https://app.emergent.sh/?utm_source=emergent-badge
+    - generic:
+      - img
+      - paragraph: Made with Emergent
+  - listbox [ref=e3]:
+    - option "Acura" [active] [ref=e4]:
+      - generic [ref=e6]: Acura
+    - option "Audi" [ref=e7]:
+      - generic [ref=e9]: Audi
+    - option "BMW" [ref=e10]:
+      - generic [ref=e12]: BMW
+    - option "Buick" [ref=e13]:
+      - generic [ref=e15]: Buick
+    - option "Cadillac" [ref=e16]:
+      - generic [ref=e18]: Cadillac
+    - option "Chevrolet" [ref=e19]:
+      - generic [ref=e21]: Chevrolet
+    - option "Chrysler" [ref=e22]:
+      - generic [ref=e24]: Chrysler
+    - option "Dodge" [ref=e25]:
+      - generic [ref=e27]: Dodge
+    - option "Ferrari" [ref=e28]:
+      - generic [ref=e30]: Ferrari
+    - option "Ford" [ref=e31]:
+      - generic [ref=e33]: Ford
+    - option "GMC" [ref=e34]:
+      - generic [ref=e36]: GMC
+    - option "Honda" [ref=e37]:
+      - generic [ref=e39]: Honda
+    - option "Hyundai" [ref=e40]:
+      - generic [ref=e42]: Hyundai
+    - option "Infiniti" [ref=e43]:
+      - generic [ref=e45]: Infiniti
+    - option "Jaguar" [ref=e46]:
+      - generic [ref=e48]: Jaguar
+    - option "Jeep" [ref=e49]:
+      - generic [ref=e51]: Jeep
+    - option "Kia" [ref=e52]:
+      - generic [ref=e54]: Kia
+    - option "Lamborghini" [ref=e55]:
+      - generic [ref=e57]: Lamborghini
+    - option "Land Rover" [ref=e58]:
+      - generic [ref=e60]: Land Rover
+    - option "Lexus" [ref=e61]:
+      - generic [ref=e63]: Lexus
+    - option "Lincoln" [ref=e64]:
+      - generic [ref=e66]: Lincoln
+    - option "Maserati" [ref=e67]:
+      - generic [ref=e69]: Maserati
+    - option "Mazda" [ref=e70]:
+      - generic [ref=e72]: Mazda
+    - option "Mercedes-Benz" [ref=e73]:
+      - generic [ref=e75]: Mercedes-Benz
+    - option "Mini" [ref=e76]:
+      - generic [ref=e78]: Mini
+    - option "Mitsubishi" [ref=e79]:
+      - generic [ref=e81]: Mitsubishi
+    - option "Nissan" [ref=e82]:
+      - generic [ref=e84]: Nissan
+    - option "Porsche" [ref=e85]:
+      - generic [ref=e87]: Porsche
+    - option "Ram" [ref=e88]:
+      - generic [ref=e90]: Ram
+    - option "Subaru" [ref=e91]:
+      - generic [ref=e93]: Subaru
+    - option "Tesla" [ref=e94]:
+      - generic [ref=e96]: Tesla
+    - option "Toyota" [ref=e97]:
+      - generic [ref=e99]: Toyota
+    - option "Volkswagen" [ref=e100]:
+      - generic [ref=e102]: Volkswagen
+    - option "Volvo" [ref=e103]:
+      - generic [ref=e105]: Volvo
+    - img [ref=e107]
+```
