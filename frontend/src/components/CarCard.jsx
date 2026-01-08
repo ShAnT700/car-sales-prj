@@ -114,6 +114,7 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
         <Link
           to={`/user/${car.user_id}`}
           onClick={(e) => e.stopPropagation()}
+          data-testid="seller-avatar"
           className="absolute top-2 left-2 w-9 h-9 rounded-full border-2 border-white shadow-md overflow-hidden bg-slate-200 flex items-center justify-center hover:scale-105 transition-transform z-10"
         >
           {car.user_avatar ? (
