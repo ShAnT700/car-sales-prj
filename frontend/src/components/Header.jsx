@@ -248,7 +248,7 @@ export default function Header({ onOpenSearch }) {
                   <div className="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center overflow-hidden">
                     {user.avatar ? (
                       <img
-                        src={user.avatar}
+                        src={user.avatar.startsWith('/') ? `${process.env.REACT_APP_BACKEND_URL}${user.avatar}` : user.avatar}
                         alt="Avatar"
                         className="w-full h-full object-cover"
                       />
