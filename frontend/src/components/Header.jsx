@@ -158,7 +158,7 @@ export default function Header({ onOpenSearch }) {
                       className="h-10 w-10 p-0 rounded-full bg-slate-100 hover:bg-slate-200"
                     >
                       {user.avatar ? (
-                        <img src={user.avatar} alt="" className="w-full h-full rounded-full object-cover" />
+                        <img src={user.avatar.startsWith('/') ? `${process.env.REACT_APP_BACKEND_URL}${user.avatar}` : user.avatar} alt="" className="w-full h-full rounded-full object-cover" />
                       ) : (
                         <span className="text-sm font-bold text-slate-600">
                           {user.name?.charAt(0).toUpperCase()}
