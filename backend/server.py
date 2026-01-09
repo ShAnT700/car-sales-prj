@@ -105,6 +105,7 @@ class UserResponse(BaseModel):
     email: str
     name: str
     phone: Optional[str] = None
+    avatar: Optional[str] = None
     created_at: str
 
 class TokenResponse(BaseModel):
