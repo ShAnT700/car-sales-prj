@@ -44,7 +44,7 @@ export default function AuthModal({ open, onClose }) {
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md" data-testid="auth-modal">
+      <DialogContent className="sm:max-w-md max-h-[85vh] overflow-y-auto" data-testid="auth-modal">
         <DialogHeader>
           <DialogTitle className="text-2xl font-manrope font-bold text-center">
             {isLogin ? "Welcome Back" : "Create Account"}

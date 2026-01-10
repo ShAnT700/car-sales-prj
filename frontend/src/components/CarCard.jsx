@@ -21,6 +21,7 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
   const { user, token } = useAuth();
   const [favorite, setFavorite] = useState(isFavorite);
   const [loading, setLoading] = useState(false);
+  const [localCount, setLocalCount] = useState(car.favorite_count ?? 0);
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-US', {
@@ -35,6 +36,13 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
       return `${Math.round(mileage / 1000)}k`;
     }
     return new Intl.NumberFormat('en-US').format(mileage);
+  };
+
+  const formatCount = (count) => {
+    if (count >= 1000) {
+      return `${Math.round(count / 100) / 10}K`;
+    }
+    return count;
   };
 
   const imageUrl = car.images?.[0] 
@@ -57,12 +65,14 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
           headers: { Authorization: `Bearer ${token}` }
         });
         setFavorite(false);
+        setLocalCount(prev => Math.max(0, prev - 1));
         toast.success("Removed from favorites");
       } else {
         await axios.post(`${API}/favorites`, { listing_id: car.id }, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setFavorite(true);
+        setLocalCount(prev => prev + 1);
         toast.success("Added to favorites");
       }
       onFavoriteChange?.();
@@ -79,28 +89,6 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
       data-testid="listing-card"
       className="group relative overflow-hidden rounded-xl border border-slate-100 bg-white car-card"
     >
-      {/* Favorite Button */}
-      {user && (
-        <button
-          onClick={toggleFavorite}
-          disabled={loading}
-          data-testid="favorite-btn"
-          className={`absolute top-2 right-2 z-10 w-9 h-9 rounded-full flex flex-col items-center justify-center transition-all border ${
-            favorite 
-              ? 'bg-red-500 text-white border-red-500 shadow-md' 
-              : 'bg-white/90 text-slate-400 border-slate-200 hover:text-red-500'
-          }`}
-        >
-          <Heart className={`w-4 h-4 ${favorite ? 'fill-current' : ''}`} />
-          <span className="text-[9px] leading-none mt-0.5" data-testid="favorite-count">
-            {(() => {
-              const count = car.favorite_count ?? 0;
-              return count >= 1000 ? `${Math.round(count / 100) / 10}K` : count;
-            })()}
-          </span>
-        </button>
-      )}
-
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
         <img
@@ -142,26 +130,45 @@ export default function CarCard({ car, isFavorite = false, onFavoriteChange }) {
           <h3 className="font-manrope font-bold text-slate-900 truncate text-xs sm:text-base flex-1">
             {car.make} {car.model}
           </h3>
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <span className="inline-block text-emerald-700 font-bold bg-emerald-50 rounded-full text-xs sm:text-sm px-2 py-0.5 whitespace-nowrap">
-              {formatPrice(car.price)}
-            </span>
-            <span className="text-[10px] sm:text-xs text-slate-500 whitespace-nowrap">
-              {car.favorite_count ?? 0} ❤
-            </span>
-          </div>
+          <span className="inline-block text-emerald-700 font-bold bg-emerald-50 rounded-full text-xs sm:text-sm px-2 py-0.5 whitespace-nowrap flex-shrink-0">
+            {formatPrice(car.price)}
+          </span>
         </div>
 
-        {/* Mileage & City on second line */}
-        <div className="mt-1.5 sm:mt-2 flex items-center justify-between gap-2 text-slate-500 text-[11px] sm:text-xs">
-          <div className="flex items-center gap-1">
-            <Gauge className="w-3 h-3" />
-            <span>{formatMileage(car.mileage)} mi</span>
+        {/* Mileage, City & Like button on second line */}
+        <div className="mt-1.5 sm:mt-2 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-3 text-slate-500 text-[11px] sm:text-xs">
+            <div className="flex items-center gap-1">
+              <Gauge className="w-3 h-3" />
+              <span>{formatMileage(car.mileage)} mi</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <MapPin className="w-3 h-3" />
+              <span className="truncate max-w-[60px] sm:max-w-[80px]">{car.city}</span>
+            </div>
           </div>
-          <div className="flex items-center gap-1">
-            <MapPin className="w-3 h-3" />
-            <span className="truncate max-w-[80px] sm:max-w-[100px]">{car.city}</span>
-          </div>
+
+          {/* Like button */}
+          <button
+            onClick={toggleFavorite}
+            disabled={loading}
+            data-testid="favorite-btn"
+            className={`flex items-center gap-1 px-2 py-1 rounded-full transition-all ${
+              favorite 
+                ? 'bg-red-50 text-red-500' 
+                : 'bg-slate-50 text-slate-400 hover:text-red-500 hover:bg-red-50'
+            }`}
+          >
+            <Heart 
+              className={`w-4 h-4 sm:w-5 sm:h-5 transition-all ${favorite ? 'fill-current scale-110' : ''}`} 
+            />
+            <span 
+              className={`text-xs sm:text-sm font-medium ${favorite ? 'text-red-500' : 'text-slate-500'}`}
+              data-testid="favorite-count"
+            >
+              {formatCount(localCount)}
+            </span>
+          </button>
         </div>
       </div>
     </Link>

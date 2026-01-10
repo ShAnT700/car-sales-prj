@@ -87,18 +87,23 @@ export default function Header({ onOpenSearch }) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
-            {/* Logo */}
-            <Link 
-              to="/" 
-              data-testid="logo-link"
-              className="flex items-center gap-2"
-            >
-              <div className="border-2 border-slate-900 rounded-[50%] px-3 sm:px-4 py-0.5 sm:py-1">
-                <span className="font-manrope font-black text-base sm:text-xl tracking-tighter italic text-slate-900">
-                  NextRides
-                </span>
-              </div>
-            </Link>
+            {/* Logo + Tagline */}
+            <div className="flex items-center gap-2 sm:gap-4">
+              <Link 
+                to="/" 
+                data-testid="logo-link"
+                className="flex items-center gap-2 flex-shrink-0"
+              >
+                <div className="border-2 border-slate-900 rounded-[50%] px-2 sm:px-4 py-0.5 sm:py-1">
+                  <span className="font-manrope font-black text-sm sm:text-xl tracking-tighter italic text-slate-900">
+                    NextRides
+                  </span>
+                </div>
+              </Link>
+              <span className="font-manrope font-medium text-slate-500 text-[10px] sm:text-sm lg:text-base truncate">
+                Good cars are here!
+              </span>
+            </div>
 
             {/* Right side buttons */}
             <div className="flex items-center gap-1.5 sm:gap-2">
@@ -152,13 +157,13 @@ export default function Header({ onOpenSearch }) {
 
                     {/* Profile */}
                     <Button
-                      data-testid="profile-btn"
+                      data-testid="user-profile-btn"
                       onClick={() => navigate("/profile")}
                       variant="outline"
                       className="h-10 w-10 p-0 rounded-full bg-slate-100 hover:bg-slate-200"
                     >
                       {user.avatar ? (
-                        <img src={user.avatar} alt="" className="w-full h-full rounded-full object-cover" />
+                        <img src={user.avatar.startsWith('/') ? `${process.env.REACT_APP_BACKEND_URL}${user.avatar}` : user.avatar} alt="" className="w-full h-full rounded-full object-cover" />
                       ) : (
                         <span className="text-sm font-bold text-slate-600">
                           {user.name?.charAt(0).toUpperCase()}
@@ -248,7 +253,7 @@ export default function Header({ onOpenSearch }) {
                   <div className="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center overflow-hidden">
                     {user.avatar ? (
                       <img
-                        src={user.avatar}
+                        src={user.avatar.startsWith('/') ? `${process.env.REACT_APP_BACKEND_URL}${user.avatar}` : user.avatar}
                         alt="Avatar"
                         className="w-full h-full object-cover"
                       />
