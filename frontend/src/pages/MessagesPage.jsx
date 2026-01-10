@@ -17,7 +17,6 @@ export default function MessagesPage() {
   const [conversationMessages, setConversationMessages] = useState([]);
   const [conversationLoading, setConversationLoading] = useState(false);
   const [replyText, setReplyText] = useState("");
-  const [showChatList, setShowChatList] = useState(true); // For mobile toggle
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -59,9 +58,6 @@ export default function MessagesPage() {
       other_user_avatar: thread.other_user_avatar,
     });
 
-    // On mobile, hide chat list when opening conversation
-    setShowChatList(false);
-
     setConversationLoading(true);
     try {
       const res = await axios.get(`${API}/messages/conversation`, {
@@ -78,7 +74,6 @@ export default function MessagesPage() {
   };
 
   const handleBackToList = () => {
-    setShowChatList(true);
     setActiveConversation(null);
   };
 
@@ -123,14 +118,117 @@ export default function MessagesPage() {
 
   if (!user) return null;
 
-  // On mobile when chat is open, use full height
-  const isMobileChatOpen = !showChatList && activeConversation;
+  // Mobile: show either list OR chat, not both
+  const showMobileChat = activeConversation !== null;
 
   return (
     <div className="min-h-screen bg-slate-50" data-testid="messages-page">
-      <div className={`max-w-6xl mx-auto ${isMobileChatOpen ? 'px-0 py-0 sm:px-6 sm:py-6' : 'px-4 py-4 sm:px-6 sm:py-6'}`}>
-        {/* Header - hidden on mobile when in chat */}
-        <div className={`flex items-center gap-3 mb-4 ${isMobileChatOpen ? 'hidden sm:flex' : ''} ${isMobileChatOpen ? '' : 'px-0'}`}>
+      {/* Mobile Chat View */}
+      {showMobileChat && (
+        <div className="sm:hidden fixed inset-0 z-40 bg-white flex flex-col">
+          {/* Mobile Chat Header */}
+          <div className="flex items-center gap-3 p-3 border-b border-slate-100 bg-white">
+            <button
+              onClick={handleBackToList}
+              className="p-1 text-slate-600 hover:text-slate-900"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            
+            <div className="w-10 h-10 rounded-full overflow-hidden bg-slate-200 flex items-center justify-center flex-shrink-0">
+              {activeConversation.other_user_avatar ? (
+                <img
+                  src={getAvatarUrl(activeConversation.other_user_avatar)}
+                  alt={activeConversation.other_user_name}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <User className="w-5 h-5 text-slate-400" />
+              )}
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="font-semibold text-slate-900 truncate">
+                {activeConversation.other_user_name}
+              </p>
+              <p className="text-xs text-slate-500 truncate">
+                {activeConversation.listing_title}
+              </p>
+            </div>
+          </div>
+
+          {/* Mobile Messages */}
+          <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-slate-50">
+            {conversationLoading ? (
+              <div className="flex items-center justify-center h-full">
+                <Loader2 className="w-6 h-6 animate-spin text-slate-400" />
+              </div>
+            ) : conversationMessages.length === 0 ? (
+              <div className="flex items-center justify-center h-full text-slate-400 text-sm">
+                No messages yet. Start the conversation!
+              </div>
+            ) : (
+              <>
+                {conversationMessages.map((m) => {
+                  const isMe = m.sender_id === user.id;
+                  return (
+                    <div
+                      key={m.id}
+                      className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}
+                    >
+                      <div
+                        className={`max-w-[80%] rounded-2xl px-3 py-2 shadow-sm ${
+                          isMe
+                            ? 'bg-emerald-600 text-white rounded-br-md'
+                            : 'bg-white text-slate-900 rounded-bl-md border border-slate-100'
+                        }`}
+                      >
+                        <p className="text-sm">{m.message}</p>
+                        <p className={`mt-1 text-[10px] text-right ${isMe ? 'text-emerald-200' : 'text-slate-400'}`}>
+                          {formatDate(m.created_at)}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+                <div ref={messagesEndRef} />
+              </>
+            )}
+          </div>
+
+          {/* Mobile Input */}
+          <div className="p-3 border-t border-slate-100 bg-white safe-area-bottom">
+            <div className="flex items-end gap-2">
+              <textarea
+                value={replyText}
+                onChange={(e) => setReplyText(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendReply();
+                  }
+                }}
+                placeholder="Type your message..."
+                data-testid="message-input"
+                className="flex-1 text-sm border border-slate-200 rounded-xl px-3 py-2.5 resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                rows={1}
+              />
+              <Button
+                onClick={sendReply}
+                disabled={!replyText.trim()}
+                data-testid="send-btn"
+                className="h-10 w-10 rounded-full bg-emerald-600 hover:bg-emerald-700 p-0 flex-shrink-0"
+              >
+                <Send className="w-4 h-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Desktop & Mobile List View */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-4">
           <Mail className="w-5 h-5 text-blue-500" />
           <h1 className="font-manrope font-bold text-xl text-slate-900">
             Messages
@@ -152,9 +250,9 @@ export default function MessagesPage() {
             </p>
           </div>
         ) : (
-          <div className={`flex bg-white ${isMobileChatOpen ? 'rounded-none sm:rounded-2xl' : 'rounded-2xl'} border border-slate-100 overflow-hidden ${isMobileChatOpen ? 'h-[calc(100vh-56px)] sm:h-[calc(100vh-180px)]' : 'h-[calc(100vh-140px)] sm:h-[calc(100vh-180px)]'} min-h-[400px]`}>
+          <div className="flex bg-white rounded-2xl border border-slate-100 overflow-hidden h-[calc(100vh-180px)] min-h-[400px]">
             {/* Left sidebar - Chat list */}
-            <div className={`w-full sm:w-72 border-r border-slate-100 flex flex-col ${!showChatList ? 'hidden sm:flex' : ''}`}>
+            <div className="w-full sm:w-72 border-r border-slate-100 flex flex-col">
               {/* Sidebar header */}
               <div className="p-3 border-b border-slate-100">
                 <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Chats</p>
@@ -216,20 +314,12 @@ export default function MessagesPage() {
               </div>
             </div>
 
-            {/* Right side - Chat window */}
-            <div className={`flex-1 flex flex-col ${showChatList ? 'hidden sm:flex' : ''}`}>
+            {/* Right side - Chat window (Desktop only) */}
+            <div className="hidden sm:flex flex-1 flex-col">
               {activeConversation ? (
                 <>
                   {/* Chat header */}
-                  <div className="p-3 sm:p-4 border-b border-slate-100 flex items-center gap-3">
-                    {/* Back button - mobile only */}
-                    <button
-                      onClick={handleBackToList}
-                      className="sm:hidden p-1 -ml-1 text-slate-600 hover:text-slate-900"
-                    >
-                      <ArrowLeft className="w-5 h-5" />
-                    </button>
-                    
+                  <div className="p-4 border-b border-slate-100 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full overflow-hidden bg-slate-200 flex items-center justify-center flex-shrink-0">
                       {activeConversation.other_user_avatar ? (
                         <img
@@ -252,7 +342,7 @@ export default function MessagesPage() {
                   </div>
 
                   {/* Messages */}
-                  <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 bg-slate-50/50">
+                  <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50/50">
                     {conversationLoading ? (
                       <div className="flex items-center justify-center h-full">
                         <Loader2 className="w-6 h-6 animate-spin text-slate-400" />
@@ -271,7 +361,7 @@ export default function MessagesPage() {
                               className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}
                             >
                               <div
-                                className={`max-w-[80%] sm:max-w-[75%] rounded-2xl px-3 sm:px-4 py-2 sm:py-2.5 shadow-sm ${
+                                className={`max-w-[75%] rounded-2xl px-4 py-2.5 shadow-sm ${
                                   isMe
                                     ? 'bg-emerald-600 text-white rounded-br-md'
                                     : 'bg-white text-slate-900 rounded-bl-md border border-slate-100'
@@ -291,7 +381,7 @@ export default function MessagesPage() {
                   </div>
 
                   {/* Input */}
-                  <div className="p-3 sm:p-4 border-t border-slate-100 bg-white">
+                  <div className="p-4 border-t border-slate-100 bg-white">
                     <div className="flex items-end gap-2">
                       <textarea
                         value={replyText}
@@ -303,15 +393,15 @@ export default function MessagesPage() {
                           }
                         }}
                         placeholder="Type your message..."
-                        data-testid="message-input"
-                        className="flex-1 text-sm border border-slate-200 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        data-testid="message-input-desktop"
+                        className="flex-1 text-sm border border-slate-200 rounded-xl px-4 py-3 resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                         rows={1}
                       />
                       <Button
                         onClick={sendReply}
                         disabled={!replyText.trim()}
-                        data-testid="send-btn"
-                        className="h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-emerald-600 hover:bg-emerald-700 p-0 flex-shrink-0"
+                        data-testid="send-btn-desktop"
+                        className="h-11 w-11 rounded-full bg-emerald-600 hover:bg-emerald-700 p-0"
                       >
                         <Send className="w-4 h-4" />
                       </Button>
