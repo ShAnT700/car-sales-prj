@@ -157,7 +157,7 @@ export default function Header({ onOpenSearch }) {
 
                     {/* Profile */}
                     <Button
-                      data-testid="profile-btn"
+                      data-testid="user-profile-btn"
                       onClick={() => navigate("/profile")}
                       variant="outline"
                       className="h-10 w-10 p-0 rounded-full bg-slate-100 hover:bg-slate-200"
