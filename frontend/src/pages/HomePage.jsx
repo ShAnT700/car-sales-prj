@@ -80,14 +80,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-slate-50" data-testid="home-page">
-      {/* Hero Section - Compact */}
-      <section className="relative bg-white border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-          <h1 className="font-manrope font-bold text-xl sm:text-2xl lg:text-3xl text-slate-900 tracking-tight text-center">
-            Good cars are selling here!
-          </h1>
-        </div>
-      </section>
 
       {/* Listings Section */}
       <section ref={resultsRef} className="py-6 sm:py-10">
