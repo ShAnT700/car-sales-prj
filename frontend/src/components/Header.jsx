@@ -87,18 +87,23 @@ export default function Header({ onOpenSearch }) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
-            {/* Logo */}
-            <Link 
-              to="/" 
-              data-testid="logo-link"
-              className="flex items-center gap-2"
-            >
-              <div className="border-2 border-slate-900 rounded-[50%] px-3 sm:px-4 py-0.5 sm:py-1">
-                <span className="font-manrope font-black text-base sm:text-xl tracking-tighter italic text-slate-900">
-                  NextRides
-                </span>
-              </div>
-            </Link>
+            {/* Logo + Tagline */}
+            <div className="flex items-center gap-3 sm:gap-4">
+              <Link 
+                to="/" 
+                data-testid="logo-link"
+                className="flex items-center gap-2"
+              >
+                <div className="border-2 border-slate-900 rounded-[50%] px-3 sm:px-4 py-0.5 sm:py-1">
+                  <span className="font-manrope font-black text-base sm:text-xl tracking-tighter italic text-slate-900">
+                    NextRides
+                  </span>
+                </div>
+              </Link>
+              <span className="hidden sm:block font-manrope font-semibold text-slate-600 text-sm lg:text-base">
+                Good cars are here!
+              </span>
+            </div>
 
             {/* Right side buttons */}
             <div className="flex items-center gap-1.5 sm:gap-2">
