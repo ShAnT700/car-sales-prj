@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import { useAuth, API } from "../App";
 import { Button } from "../components/ui/button";
-import { Mail, Loader2, User, Send } from "lucide-react";
+import { Mail, Loader2, User, Send, ArrowLeft } from "lucide-react";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
@@ -17,6 +17,7 @@ export default function MessagesPage() {
   const [conversationMessages, setConversationMessages] = useState([]);
   const [conversationLoading, setConversationLoading] = useState(false);
   const [replyText, setReplyText] = useState("");
+  const [showChatList, setShowChatList] = useState(true); // For mobile toggle
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -42,10 +43,6 @@ export default function MessagesPage() {
         headers: { Authorization: `Bearer ${token}` }
       });
       setThreads(res.data);
-      // Auto-select first thread if exists
-      if (res.data.length > 0 && !activeConversation) {
-        openConversation(res.data[0]);
-      }
     } catch (err) {
       toast.error("Failed to load messages");
     } finally {
@@ -62,6 +59,9 @@ export default function MessagesPage() {
       other_user_avatar: thread.other_user_avatar,
     });
 
+    // On mobile, hide chat list when opening conversation
+    setShowChatList(false);
+
     setConversationLoading(true);
     try {
       const res = await axios.get(`${API}/messages/conversation`, {
@@ -75,6 +75,11 @@ export default function MessagesPage() {
     } finally {
       setConversationLoading(false);
     }
+  };
+
+  const handleBackToList = () => {
+    setShowChatList(true);
+    setActiveConversation(null);
   };
 
   const sendReply = async () => {
@@ -120,9 +125,9 @@ export default function MessagesPage() {
 
   return (
     <div className="min-h-screen bg-slate-50" data-testid="messages-page">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        {/* Header */}
-        <div className="flex items-center gap-3 mb-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+        {/* Header - hidden on mobile when in chat */}
+        <div className={`flex items-center gap-3 mb-4 ${!showChatList && activeConversation ? 'hidden sm:flex' : ''}`}>
           <Mail className="w-5 h-5 text-blue-500" />
           <h1 className="font-manrope font-bold text-xl text-slate-900">
             Messages
@@ -144,11 +149,11 @@ export default function MessagesPage() {
             </p>
           </div>
         ) : (
-          <div className="flex bg-white rounded-2xl border border-slate-100 overflow-hidden h-[calc(100vh-180px)] min-h-[500px]">
+          <div className="flex bg-white rounded-2xl border border-slate-100 overflow-hidden h-[calc(100vh-140px)] sm:h-[calc(100vh-180px)] min-h-[400px]">
             {/* Left sidebar - Chat list */}
-            <div className="w-20 sm:w-72 border-r border-slate-100 flex flex-col">
+            <div className={`w-full sm:w-72 border-r border-slate-100 flex flex-col ${!showChatList ? 'hidden sm:flex' : ''}`}>
               {/* Sidebar header */}
-              <div className="p-3 border-b border-slate-100 hidden sm:block">
+              <div className="p-3 border-b border-slate-100">
                 <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Chats</p>
               </div>
               
@@ -169,12 +174,12 @@ export default function MessagesPage() {
                       className={`w-full text-left p-3 flex items-center gap-3 transition-colors border-b border-slate-50 ${
                         isSelected 
                           ? 'bg-emerald-50 border-l-2 border-l-emerald-500' 
-                          : 'hover:bg-slate-50'
+                          : 'hover:bg-slate-50 active:bg-slate-100'
                       }`}
                     >
                       {/* Avatar */}
                       <div className="relative flex-shrink-0">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-slate-200 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full overflow-hidden bg-slate-200 flex items-center justify-center">
                           {thread.other_user_avatar ? (
                             <img
                               src={getAvatarUrl(thread.other_user_avatar)}
@@ -193,8 +198,8 @@ export default function MessagesPage() {
                         )}
                       </div>
 
-                      {/* Name and preview - hidden on mobile */}
-                      <div className="hidden sm:block flex-1 min-w-0">
+                      {/* Name and preview */}
+                      <div className="flex-1 min-w-0">
                         <p className={`font-medium text-sm truncate ${isSelected ? 'text-emerald-700' : 'text-slate-900'}`}>
                           {thread.other_user_name}
                         </p>
@@ -209,12 +214,20 @@ export default function MessagesPage() {
             </div>
 
             {/* Right side - Chat window */}
-            <div className="flex-1 flex flex-col">
+            <div className={`flex-1 flex flex-col ${showChatList ? 'hidden sm:flex' : ''}`}>
               {activeConversation ? (
                 <>
                   {/* Chat header */}
-                  <div className="p-4 border-b border-slate-100 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full overflow-hidden bg-slate-200 flex items-center justify-center">
+                  <div className="p-3 sm:p-4 border-b border-slate-100 flex items-center gap-3">
+                    {/* Back button - mobile only */}
+                    <button
+                      onClick={handleBackToList}
+                      className="sm:hidden p-1 -ml-1 text-slate-600 hover:text-slate-900"
+                    >
+                      <ArrowLeft className="w-5 h-5" />
+                    </button>
+                    
+                    <div className="w-10 h-10 rounded-full overflow-hidden bg-slate-200 flex items-center justify-center flex-shrink-0">
                       {activeConversation.other_user_avatar ? (
                         <img
                           src={getAvatarUrl(activeConversation.other_user_avatar)}
@@ -225,18 +238,18 @@ export default function MessagesPage() {
                         <User className="w-5 h-5 text-slate-400" />
                       )}
                     </div>
-                    <div>
-                      <p className="font-semibold text-slate-900">
+                    <div className="min-w-0 flex-1">
+                      <p className="font-semibold text-slate-900 truncate">
                         {activeConversation.other_user_name}
                       </p>
-                      <p className="text-xs text-slate-500">
+                      <p className="text-xs text-slate-500 truncate">
                         {activeConversation.listing_title}
                       </p>
                     </div>
                   </div>
 
                   {/* Messages */}
-                  <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50/50">
+                  <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 bg-slate-50/50">
                     {conversationLoading ? (
                       <div className="flex items-center justify-center h-full">
                         <Loader2 className="w-6 h-6 animate-spin text-slate-400" />
@@ -255,7 +268,7 @@ export default function MessagesPage() {
                               className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}
                             >
                               <div
-                                className={`max-w-[75%] rounded-2xl px-4 py-2.5 shadow-sm ${
+                                className={`max-w-[80%] sm:max-w-[75%] rounded-2xl px-3 sm:px-4 py-2 sm:py-2.5 shadow-sm ${
                                   isMe
                                     ? 'bg-emerald-600 text-white rounded-br-md'
                                     : 'bg-white text-slate-900 rounded-bl-md border border-slate-100'
@@ -275,7 +288,7 @@ export default function MessagesPage() {
                   </div>
 
                   {/* Input */}
-                  <div className="p-4 border-t border-slate-100 bg-white">
+                  <div className="p-3 sm:p-4 border-t border-slate-100 bg-white">
                     <div className="flex items-end gap-2">
                       <textarea
                         value={replyText}
@@ -288,14 +301,14 @@ export default function MessagesPage() {
                         }}
                         placeholder="Type your message..."
                         data-testid="message-input"
-                        className="flex-1 text-sm border border-slate-200 rounded-xl px-4 py-3 resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        className="flex-1 text-sm border border-slate-200 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                         rows={1}
                       />
                       <Button
                         onClick={sendReply}
                         disabled={!replyText.trim()}
                         data-testid="send-btn"
-                        className="h-11 w-11 rounded-full bg-emerald-600 hover:bg-emerald-700 p-0"
+                        className="h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-emerald-600 hover:bg-emerald-700 p-0 flex-shrink-0"
                       >
                         <Send className="w-4 h-4" />
                       </Button>
