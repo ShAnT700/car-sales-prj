@@ -152,7 +152,7 @@ export default function MessagesPage() {
             </p>
           </div>
         ) : (
-          <div className="flex bg-white rounded-2xl border border-slate-100 overflow-hidden h-[calc(100vh-140px)] sm:h-[calc(100vh-180px)] min-h-[400px]">
+          <div className={`flex bg-white ${isMobileChatOpen ? 'rounded-none sm:rounded-2xl' : 'rounded-2xl'} border border-slate-100 overflow-hidden ${isMobileChatOpen ? 'h-[calc(100vh-56px)] sm:h-[calc(100vh-180px)]' : 'h-[calc(100vh-140px)] sm:h-[calc(100vh-180px)]'} min-h-[400px]`}>
             {/* Left sidebar - Chat list */}
             <div className={`w-full sm:w-72 border-r border-slate-100 flex flex-col ${!showChatList ? 'hidden sm:flex' : ''}`}>
               {/* Sidebar header */}
