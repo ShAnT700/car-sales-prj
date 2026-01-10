@@ -123,11 +123,14 @@ export default function MessagesPage() {
 
   if (!user) return null;
 
+  // On mobile when chat is open, use full height
+  const isMobileChatOpen = !showChatList && activeConversation;
+
   return (
     <div className="min-h-screen bg-slate-50" data-testid="messages-page">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+      <div className={`max-w-6xl mx-auto ${isMobileChatOpen ? 'px-0 py-0 sm:px-6 sm:py-6' : 'px-4 py-4 sm:px-6 sm:py-6'}`}>
         {/* Header - hidden on mobile when in chat */}
-        <div className={`flex items-center gap-3 mb-4 ${!showChatList && activeConversation ? 'hidden sm:flex' : ''}`}>
+        <div className={`flex items-center gap-3 mb-4 ${isMobileChatOpen ? 'hidden sm:flex' : ''} ${isMobileChatOpen ? '' : 'px-0'}`}>
           <Mail className="w-5 h-5 text-blue-500" />
           <h1 className="font-manrope font-bold text-xl text-slate-900">
             Messages
