@@ -125,9 +125,9 @@ export default function MessagesPage() {
     <div className="min-h-screen bg-slate-50" data-testid="messages-page">
       {/* Mobile Chat View */}
       {showMobileChat && (
-        <div className="sm:hidden fixed inset-0 z-40 bg-white flex flex-col">
+        <div className="sm:hidden fixed inset-0 z-[60] bg-white flex flex-col">
           {/* Mobile Chat Header */}
-          <div className="flex items-center gap-3 p-3 border-b border-slate-100 bg-white">
+          <div className="flex items-center gap-3 p-3 border-b border-slate-100 bg-white shadow-sm">
             <button
               onClick={handleBackToList}
               className="p-1 text-slate-600 hover:text-slate-900"
