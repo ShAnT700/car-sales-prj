@@ -1,0 +1,12 @@
+services:
+  # Static site configuration for the frontend
+  - type: static
+    name: nextride-frontend
+    env: static
+    buildCommand: cd frontend && yarn install && yarn build
+    staticPublishPath: frontend/build
+    routes:
+      # Rewrites all untracked routes to index.html for React Router
+      - source: /*
+        destination: /index.html
+        type: rewrite
