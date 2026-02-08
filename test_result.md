@@ -1,5 +1,10 @@
 # Test Fix Report — NextRides.com
 
+## Current Task (Session Persistence Fix - In Progress)
+- Updated frontend auth state to persist user and token in localStorage and rehydrate on reload.
+- Added safer auth check to only clear storage on 401/403 responses.
+- Pending: run backend tests via deep_testing_backend_v2.
+
 ## Problem
 Playwright Tests CI/CD pipeline failing on every run:
 - **API Tests**: ❌ Failed (1m 32s)
