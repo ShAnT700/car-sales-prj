@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 // API Base URL (will be set from env or default)
-const API_URL = process.env.E2E_API_URL || 'https://session-test-debug.preview.emergentagent.com/api';
+const API_URL = process.env.E2E_API_URL || 'https://nextrides-backend.onrender.com/api';
 
 // Test credentials
 const TEST_EMAIL = 'test@test.com';
@@ -74,12 +74,12 @@ async function getAuthToken(request) {
 // API Tests: Authentication
 // ===========================================
 test.describe('API - Authentication', () => {
-  
+
   test('API-AUTH-01: login returns token', async ({ request }) => {
     const response = await request.post(`${API_URL}/auth/login`, {
       data: { email: TEST_EMAIL, password: TEST_PASSWORD }
     });
-    
+
     expect(response.status()).toBe(200);
     const data = await response.json();
     expect(data.access_token).toBeDefined();
@@ -90,7 +90,7 @@ test.describe('API - Authentication', () => {
     const response = await request.post(`${API_URL}/auth/login`, {
       data: { email: TEST_EMAIL, password: 'wrongpassword' }
     });
-    
+
     expect(response.status()).toBe(401);
   });
 
@@ -98,7 +98,7 @@ test.describe('API - Authentication', () => {
     const response = await request.post(`${API_URL}/auth/register`, {
       data: { email: TEST_EMAIL, password: 'newpass123', name: 'Test' }
     });
-    
+
     expect(response.status()).toBe(400);
     const data = await response.json();
     expect(data.detail).toContain('already');
@@ -111,11 +111,11 @@ test.describe('API - Authentication', () => {
 
   test('API-AUTH-05: /auth/me returns user with valid token', async ({ request }) => {
     const access_token = await getAuthToken(request);
-    
+
     const response = await request.get(`${API_URL}/auth/me`, {
       headers: { Authorization: `Bearer ${access_token}` }
     });
-    
+
     expect(response.status()).toBe(200);
     const user = await response.json();
     expect(user.email).toBe(TEST_EMAIL);
@@ -126,10 +126,10 @@ test.describe('API - Authentication', () => {
 // API Tests: Listings
 // ===========================================
 test.describe('API - Listings', () => {
-  
+
   test('API-LIST-01: get listings returns array', async ({ request }) => {
     const response = await request.get(`${API_URL}/listings`);
-    
+
     expect(response.status()).toBe(200);
     const listings = await response.json();
     expect(Array.isArray(listings)).toBeTruthy();
@@ -138,7 +138,7 @@ test.describe('API - Listings', () => {
   test('API-LIST-02: listings have required fields', async ({ request }) => {
     const response = await request.get(`${API_URL}/listings?limit=1`);
     const listings = await response.json();
-    
+
     if (listings.length > 0) {
       const listing = listings[0];
       expect(listing.id).toBeDefined();
@@ -154,7 +154,7 @@ test.describe('API - Listings', () => {
   test('API-LIST-03: filter by make works', async ({ request }) => {
     const response = await request.get(`${API_URL}/listings?make=Tesla`);
     const listings = await response.json();
-    
+
     // All returned listings should be Tesla (if any exist)
     for (const listing of listings) {
       expect(listing.make.toLowerCase()).toContain('tesla');
@@ -164,7 +164,7 @@ test.describe('API - Listings', () => {
   test('API-LIST-04: filter by clean_title works', async ({ request }) => {
     const response = await request.get(`${API_URL}/listings?clean_title=true`);
     const listings = await response.json();
-    
+
     // All returned listings should have clean_title=true
     for (const listing of listings) {
       expect(listing.clean_title).toBe(true);
@@ -175,13 +175,13 @@ test.describe('API - Listings', () => {
     // First get a listing id
     const listResponse = await request.get(`${API_URL}/listings?limit=1`);
     const listings = await listResponse.json();
-    
+
     if (listings.length > 0) {
       const listingId = listings[0].id;
-      
+
       const response = await request.get(`${API_URL}/listings/${listingId}`);
       expect(response.status()).toBe(200);
-      
+
       const listing = await response.json();
       expect(listing.id).toBe(listingId);
     }
@@ -211,7 +211,7 @@ test.describe('API - Listings', () => {
         authorization: 'invalid-token'
       }
     });
-    
+
     // Should not return 200 (success) - either 401 (unauthorized) or 422 (validation error due to invalid auth)
     expect(response.status()).not.toBe(200);
     expect([401, 422]).toContain(response.status());
@@ -222,7 +222,7 @@ test.describe('API - Listings', () => {
 // API Tests: Favorites
 // ===========================================
 test.describe('API - Favorites', () => {
-  
+
   test('API-FAV-01: get favorites requires auth', async ({ request }) => {
     const response = await request.get(`${API_URL}/favorites`);
     expect(response.status()).toBe(401);
@@ -230,11 +230,11 @@ test.describe('API - Favorites', () => {
 
   test('API-FAV-02: get favorites with auth returns array', async ({ request }) => {
     const access_token = await getAuthToken(request);
-    
+
     const response = await request.get(`${API_URL}/favorites`, {
       headers: { Authorization: `Bearer ${access_token}` }
     });
-    
+
     expect(response.status()).toBe(200);
     const favorites = await response.json();
     expect(Array.isArray(favorites)).toBeTruthy();
@@ -242,11 +242,11 @@ test.describe('API - Favorites', () => {
 
   test('API-FAV-03: favorite ids endpoint works', async ({ request }) => {
     const access_token = await getAuthToken(request);
-    
+
     const response = await request.get(`${API_URL}/favorites/ids`, {
       headers: { Authorization: `Bearer ${access_token}` }
     });
-    
+
     expect(response.status()).toBe(200);
     const ids = await response.json();
     expect(Array.isArray(ids)).toBeTruthy();
@@ -257,7 +257,7 @@ test.describe('API - Favorites', () => {
 // API Tests: Messages
 // ===========================================
 test.describe('API - Messages', () => {
-  
+
   test('API-MSG-01: get threads requires auth', async ({ request }) => {
     const response = await request.get(`${API_URL}/messages/threads`);
     expect(response.status()).toBe(401);
@@ -265,11 +265,11 @@ test.describe('API - Messages', () => {
 
   test('API-MSG-02: get threads with auth returns array', async ({ request }) => {
     const access_token = await getAuthToken(request);
-    
+
     const response = await request.get(`${API_URL}/messages/threads`, {
       headers: { Authorization: `Bearer ${access_token}` }
     });
-    
+
     expect(response.status()).toBe(200);
     const threads = await response.json();
     expect(Array.isArray(threads)).toBeTruthy();
@@ -277,11 +277,11 @@ test.describe('API - Messages', () => {
 
   test('API-MSG-03: unread count endpoint works', async ({ request }) => {
     const access_token = await getAuthToken(request);
-    
+
     const response = await request.get(`${API_URL}/messages/unread-count`, {
       headers: { Authorization: `Bearer ${access_token}` }
     });
-    
+
     expect(response.status()).toBe(200);
     const data = await response.json();
     expect(data.count).toBeDefined();
@@ -293,7 +293,7 @@ test.describe('API - Messages', () => {
 // API Tests: Profile
 // ===========================================
 test.describe('API - Profile', () => {
-  
+
   test('API-PROF-01: get profile requires auth', async ({ request }) => {
     const response = await request.get(`${API_URL}/profile`);
     expect(response.status()).toBe(401);
@@ -301,11 +301,11 @@ test.describe('API - Profile', () => {
 
   test('API-PROF-02: get profile with auth returns user data', async ({ request }) => {
     const access_token = await getAuthToken(request);
-    
+
     const response = await request.get(`${API_URL}/profile`, {
       headers: { Authorization: `Bearer ${access_token}` }
     });
-    
+
     expect(response.status()).toBe(200);
     const profile = await response.json();
     expect(profile.email).toBe(TEST_EMAIL);
@@ -315,13 +315,13 @@ test.describe('API - Profile', () => {
     // First get a user id from a listing
     const listResponse = await request.get(`${API_URL}/listings?limit=1`);
     const listings = await listResponse.json();
-    
+
     if (listings.length > 0) {
       const userId = listings[0].user_id;
-      
+
       const response = await request.get(`${API_URL}/users/${userId}/public`);
       expect(response.status()).toBe(200);
-      
+
       const publicProfile = await response.json();
       expect(publicProfile.user).toBeDefined();
       expect(publicProfile.listings).toBeDefined();
@@ -333,7 +333,7 @@ test.describe('API - Profile', () => {
 // API Tests: Saved Searches
 // ===========================================
 test.describe('API - Saved Searches', () => {
-  
+
   test('API-SAVED-01: get saved searches requires auth', async ({ request }) => {
     const response = await request.get(`${API_URL}/saved-searches`);
     expect(response.status()).toBe(401);
@@ -341,11 +341,11 @@ test.describe('API - Saved Searches', () => {
 
   test('API-SAVED-02: get saved searches with auth', async ({ request }) => {
     const access_token = await getAuthToken(request);
-    
+
     const response = await request.get(`${API_URL}/saved-searches`, {
       headers: { Authorization: `Bearer ${access_token}` }
     });
-    
+
     expect(response.status()).toBe(200);
     const searches = await response.json();
     expect(Array.isArray(searches)).toBeTruthy();

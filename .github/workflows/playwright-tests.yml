@@ -11,7 +11,7 @@ on:
 
 env:
   E2E_BASE_URL: https://nextrides-frontend.onrender.com
-  E2E_API_URL: https://session-test-debug.preview.emergentagent.com/api
+  E2E_API_URL: https://nextrides-backend.onrender.com/api
 
 # Sets permissions of the GITHUB_TOKEN
 permissions:
