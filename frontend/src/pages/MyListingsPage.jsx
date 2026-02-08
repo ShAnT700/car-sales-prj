@@ -27,12 +27,17 @@ export default function MyListingsPage() {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    if (!user) {
+    if (!token) {
       navigate("/");
       return;
     }
+
+    if (!user) {
+      return;
+    }
+
     fetchListings();
-  }, [user, navigate]);
+  }, [user, token, navigate]);
 
   const fetchListings = async () => {
     try {
@@ -74,7 +79,15 @@ export default function MyListingsPage() {
     }).format(price);
   };
 
-  if (!user) return null;
+  if (!token) return null;
+
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+        <Loader2 className="w-8 h-8 animate-spin text-slate-400" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-50" data-testid="my-listings-page">

@@ -94,15 +94,19 @@ export default function CreateListingPage() {
   const isEditing = !!id;
 
   useEffect(() => {
-    if (!user) {
+    if (!token) {
       navigate("/");
+      return;
+    }
+
+    if (!user) {
       return;
     }
     
     if (isEditing) {
       fetchListing();
     }
-  }, [user, navigate, id]);
+  }, [user, token, navigate, id, isEditing]);
 
   const fetchListing = async () => {
     try {
@@ -268,7 +272,15 @@ export default function CreateListingPage() {
     }
   };
 
-  if (!user) return null;
+  if (!token) return null;
+
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+        <Loader2 className="w-8 h-8 animate-spin text-slate-400" />
+      </div>
+    );
+  }
 
   if (fetchingData) {
     return (
