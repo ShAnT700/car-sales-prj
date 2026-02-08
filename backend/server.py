@@ -732,6 +732,11 @@ async def mark_conversation_read(data: ReadConversationRequest, authorization: s
 async def root():
     return {"message": "NextRides API"}
 
+# Root level health check (without /api prefix)
+@app.get("/")
+async def health_check():
+    return {"message": "NextRides API", "status": "healthy"}
+
 # ========== PROFILE ==========
 class ProfileUpdate(BaseModel):
     name: Optional[str] = None
