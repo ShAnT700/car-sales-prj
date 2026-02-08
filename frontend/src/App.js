@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import "@/App.css";
-import { HashRouter, Routes, Route, useNavigate, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
 import Header from "./components/Header";
@@ -92,7 +92,7 @@ function App() {
     <AuthContext.Provider value={{ user, token, login, logout }}>
       <div className="App min-h-screen bg-white pb-20">
         <Toaster position="top-center" richColors />
-        <HashRouter>
+        <BrowserRouter>
           <Header />
           <GlobalSearchBar />
           <Routes>
@@ -107,7 +107,7 @@ function App() {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/user/:userId" element={<PublicProfilePage />} />
           </Routes>
-        </HashRouter>
+        </BrowserRouter>
       </div>
     </AuthContext.Provider>
   );
