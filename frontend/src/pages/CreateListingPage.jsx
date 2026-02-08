@@ -272,7 +272,15 @@ export default function CreateListingPage() {
     }
   };
 
-  if (!user) return null;
+  if (!token) return null;
+
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+        <Loader2 className="w-8 h-8 animate-spin text-slate-400" />
+      </div>
+    );
+  }
 
   if (fetchingData) {
     return (
