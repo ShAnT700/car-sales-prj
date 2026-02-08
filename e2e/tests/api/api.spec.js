@@ -6,14 +6,42 @@ const API_URL = process.env.E2E_API_URL || 'https://project-analyzer-111.preview
 // Test credentials
 const TEST_EMAIL = 'test@test.com';
 const TEST_PASSWORD = '123456';
+const TEST_NAME = 'Test User';
+
+// ============================================
+// Global Setup: Ensure test user exists
+// ============================================
+test.beforeAll(async ({ request }) => {
+  // Try to login first
+  const loginResponse = await request.post(`${API_URL}/auth/login`, {
+    data: { email: TEST_EMAIL, password: TEST_PASSWORD }
+  });
+
+  if (loginResponse.status() === 200) {
+    // User already exists, we're good
+    return;
+  }
+
+  // User doesn't exist — register the test user
+  const registerResponse = await request.post(`${API_URL}/auth/register`, {
+    data: {
+      email: TEST_EMAIL,
+      password: TEST_PASSWORD,
+      name: TEST_NAME
+    }
+  });
+
+  expect(registerResponse.status()).toBe(200);
+  const data = await registerResponse.json();
+  expect(data.access_token).toBeDefined();
+});
 
 // Helper: Get auth token
-async function getAuthToken() {
-  const response = await fetch(`${API_URL}/auth/login`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: TEST_EMAIL, password: TEST_PASSWORD })
+async function getAuthToken(request) {
+  const response = await request.post(`${API_URL}/auth/login`, {
+    data: { email: TEST_EMAIL, password: TEST_PASSWORD }
   });
+  expect(response.status()).toBe(200);
   const data = await response.json();
   return data.access_token;
 }
@@ -58,13 +86,8 @@ test.describe('API - Authentication', () => {
   });
 
   test('API-AUTH-05: /auth/me returns user with valid token', async ({ request }) => {
-    // First login
-    const loginResponse = await request.post(`${API_URL}/auth/login`, {
-      data: { email: TEST_EMAIL, password: TEST_PASSWORD }
-    });
-    const { access_token } = await loginResponse.json();
+    const access_token = await getAuthToken(request);
     
-    // Then get user info
     const response = await request.get(`${API_URL}/auth/me`, {
       headers: { Authorization: `Bearer ${access_token}` }
     });
@@ -146,10 +169,6 @@ test.describe('API - Listings', () => {
   });
 
   test('API-LIST-07: create listing requires auth', async ({ request }) => {
-    const formData = new FormData();
-    formData.append('make', 'Test');
-    formData.append('model', 'Car');
-    
     // This should fail without proper auth (401 or 422)
     const response = await request.post(`${API_URL}/listings`, {
       multipart: {
@@ -186,11 +205,7 @@ test.describe('API - Favorites', () => {
   });
 
   test('API-FAV-02: get favorites with auth returns array', async ({ request }) => {
-    // Login first
-    const loginResponse = await request.post(`${API_URL}/auth/login`, {
-      data: { email: TEST_EMAIL, password: TEST_PASSWORD }
-    });
-    const { access_token } = await loginResponse.json();
+    const access_token = await getAuthToken(request);
     
     const response = await request.get(`${API_URL}/favorites`, {
       headers: { Authorization: `Bearer ${access_token}` }
@@ -202,10 +217,7 @@ test.describe('API - Favorites', () => {
   });
 
   test('API-FAV-03: favorite ids endpoint works', async ({ request }) => {
-    const loginResponse = await request.post(`${API_URL}/auth/login`, {
-      data: { email: TEST_EMAIL, password: TEST_PASSWORD }
-    });
-    const { access_token } = await loginResponse.json();
+    const access_token = await getAuthToken(request);
     
     const response = await request.get(`${API_URL}/favorites/ids`, {
       headers: { Authorization: `Bearer ${access_token}` }
@@ -228,10 +240,7 @@ test.describe('API - Messages', () => {
   });
 
   test('API-MSG-02: get threads with auth returns array', async ({ request }) => {
-    const loginResponse = await request.post(`${API_URL}/auth/login`, {
-      data: { email: TEST_EMAIL, password: TEST_PASSWORD }
-    });
-    const { access_token } = await loginResponse.json();
+    const access_token = await getAuthToken(request);
     
     const response = await request.get(`${API_URL}/messages/threads`, {
       headers: { Authorization: `Bearer ${access_token}` }
@@ -243,10 +252,7 @@ test.describe('API - Messages', () => {
   });
 
   test('API-MSG-03: unread count endpoint works', async ({ request }) => {
-    const loginResponse = await request.post(`${API_URL}/auth/login`, {
-      data: { email: TEST_EMAIL, password: TEST_PASSWORD }
-    });
-    const { access_token } = await loginResponse.json();
+    const access_token = await getAuthToken(request);
     
     const response = await request.get(`${API_URL}/messages/unread-count`, {
       headers: { Authorization: `Bearer ${access_token}` }
@@ -270,10 +276,7 @@ test.describe('API - Profile', () => {
   });
 
   test('API-PROF-02: get profile with auth returns user data', async ({ request }) => {
-    const loginResponse = await request.post(`${API_URL}/auth/login`, {
-      data: { email: TEST_EMAIL, password: TEST_PASSWORD }
-    });
-    const { access_token } = await loginResponse.json();
+    const access_token = await getAuthToken(request);
     
     const response = await request.get(`${API_URL}/profile`, {
       headers: { Authorization: `Bearer ${access_token}` }
@@ -313,10 +316,7 @@ test.describe('API - Saved Searches', () => {
   });
 
   test('API-SAVED-02: get saved searches with auth', async ({ request }) => {
-    const loginResponse = await request.post(`${API_URL}/auth/login`, {
-      data: { email: TEST_EMAIL, password: TEST_PASSWORD }
-    });
-    const { access_token } = await loginResponse.json();
+    const access_token = await getAuthToken(request);
     
     const response = await request.get(`${API_URL}/saved-searches`, {
       headers: { Authorization: `Bearer ${access_token}` }
