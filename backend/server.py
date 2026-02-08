@@ -712,6 +712,22 @@ async def mark_as_read(message_id: str, authorization: str = Header(None)):
     await db.messages.update_one({"id": message_id, "receiver_id": user["id"]}, {"$set": {"read": True}})
     return {"message": "Marked as read"}
 
+class ReadConversationRequest(BaseModel):
+    listing_id: str
+    other_user_id: str
+
+@api_router.post("/messages/read-conversation")
+async def mark_conversation_read(data: ReadConversationRequest, authorization: str = Header(None)):
+    user = await require_auth(authorization)
+    # Mark all messages in this thread where current user is the receiver as read
+    await db.messages.update_many({
+        "listing_id": data.listing_id,
+        "receiver_id": user["id"],
+        "sender_id": data.other_user_id,
+        "read": False
+    }, {"$set": {"read": True}})
+    return {"message": "Conversation marked as read"}
+
 @api_router.get("/")
 async def root():
     return {"message": "NextRides API"}

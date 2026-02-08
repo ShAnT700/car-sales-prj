@@ -9,9 +9,9 @@ import axios from "axios";
 // Custom icons
 const SavedSearchIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M4 6h16M4 10h16M4 14h10" strokeLinecap="round"/>
-    <path d="M17 14l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" stroke="#ef4444"/>
-    <path d="M18 18l1 1 2-2" strokeLinecap="round" strokeLinejoin="round" stroke="#ef4444"/>
+    <path d="M4 6h16M4 10h16M4 14h10" strokeLinecap="round" />
+    <path d="M17 14l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" stroke="#ef4444" />
+    <path d="M18 18l1 1 2-2" strokeLinecap="round" strokeLinejoin="round" stroke="#ef4444" />
   </svg>
 );
 
@@ -28,7 +28,15 @@ export default function Header({ onOpenSearch }) {
     if (user && token) {
       fetchUnreadCount();
       const interval = setInterval(fetchUnreadCount, 30000);
-      return () => clearInterval(interval);
+
+      // Listen for manual read events from MessagesPage
+      const handleReadEvent = () => fetchUnreadCount();
+      window.addEventListener("messages-read", handleReadEvent);
+
+      return () => {
+        clearInterval(interval);
+        window.removeEventListener("messages-read", handleReadEvent);
+      };
     }
   }, [user, token]);
 
@@ -42,7 +50,7 @@ export default function Header({ onOpenSearch }) {
 
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('touchstart', handleClickOutside);
-    
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('touchstart', handleClickOutside);
@@ -68,7 +76,7 @@ export default function Header({ onOpenSearch }) {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUnreadCount(res.data.count);
-    } catch (e) {}
+    } catch (e) { }
   };
 
   const handleSellClick = () => {
@@ -81,7 +89,7 @@ export default function Header({ onOpenSearch }) {
 
   return (
     <>
-      <header 
+      <header
         data-testid="main-header"
         className="sticky top-0 z-50 w-full border-b border-slate-100 bg-white/80 header-blur"
       >
@@ -89,8 +97,8 @@ export default function Header({ onOpenSearch }) {
           <div className="flex items-center justify-between h-14 sm:h-16">
             {/* Logo + Tagline */}
             <div className="flex items-center gap-2 sm:gap-4">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 data-testid="logo-link"
                 className="flex items-center gap-2 flex-shrink-0"
               >
@@ -204,7 +212,7 @@ export default function Header({ onOpenSearch }) {
 
           {/* Mobile menu - with swipe and click outside to close */}
           {mobileMenuOpen && user && (
-            <div 
+            <div
               ref={menuRef}
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
@@ -214,7 +222,7 @@ export default function Header({ onOpenSearch }) {
               <div className="flex justify-center mb-2">
                 <div className="w-10 h-1 bg-slate-200 rounded-full"></div>
               </div>
-              
+
               <div className="flex flex-col gap-2">
                 <Link
                   to="/messages"

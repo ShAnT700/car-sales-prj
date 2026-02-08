@@ -66,6 +66,21 @@ export default function MessagesPage() {
       });
       setConversationMessages(res.data);
       setReplyText("");
+
+      // Mark as read on server
+      try {
+        await axios.post(`${API}/messages/read-conversation`, {
+          listing_id: thread.listing_id,
+          other_user_id: thread.other_user_id
+        }, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        // Dispatch event for Header to update badge
+        window.dispatchEvent(new CustomEvent("messages-read"));
+      } catch (e) {
+        console.error("Failed to mark messages as read", e);
+      }
+
     } catch (err) {
       toast.error("Failed to load conversation");
     } finally {
@@ -104,7 +119,7 @@ export default function MessagesPage() {
     const date = new Date(dateStr);
     const now = new Date();
     const diff = now - date;
-    
+
     if (diff < 60000) return "Just now";
     if (diff < 3600000) return `${Math.floor(diff / 60000)}m ago`;
     if (diff < 86400000) return `${Math.floor(diff / 3600000)}h ago`;
@@ -134,7 +149,7 @@ export default function MessagesPage() {
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
-            
+
             <div className="w-10 h-10 rounded-full overflow-hidden bg-slate-200 flex items-center justify-center flex-shrink-0">
               {activeConversation.other_user_avatar ? (
                 <img
@@ -176,11 +191,10 @@ export default function MessagesPage() {
                       className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}
                     >
                       <div
-                        className={`max-w-[80%] rounded-2xl px-3 py-2 shadow-sm ${
-                          isMe
+                        className={`max-w-[80%] rounded-2xl px-3 py-2 shadow-sm ${isMe
                             ? 'bg-emerald-600 text-white rounded-br-md'
                             : 'bg-white text-slate-900 rounded-bl-md border border-slate-100'
-                        }`}
+                          }`}
                       >
                         <p className="text-sm">{m.message}</p>
                         <p className={`mt-1 text-[10px] text-right ${isMe ? 'text-emerald-200' : 'text-slate-400'}`}>
@@ -257,7 +271,7 @@ export default function MessagesPage() {
               <div className="p-3 border-b border-slate-100">
                 <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Chats</p>
               </div>
-              
+
               {/* Chat list */}
               <div className="flex-1 overflow-y-auto" data-testid="thread-list">
                 {threads.map((thread) => {
@@ -272,11 +286,10 @@ export default function MessagesPage() {
                       type="button"
                       data-testid="thread-item"
                       onClick={() => openConversation(thread)}
-                      className={`w-full text-left p-3 flex items-center gap-3 transition-colors border-b border-slate-50 ${
-                        isSelected 
-                          ? 'bg-emerald-50 border-l-2 border-l-emerald-500' 
+                      className={`w-full text-left p-3 flex items-center gap-3 transition-colors border-b border-slate-50 ${isSelected
+                          ? 'bg-emerald-50 border-l-2 border-l-emerald-500'
                           : 'hover:bg-slate-50 active:bg-slate-100'
-                      }`}
+                        }`}
                     >
                       {/* Avatar */}
                       <div className="relative flex-shrink-0">
@@ -361,11 +374,10 @@ export default function MessagesPage() {
                               className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}
                             >
                               <div
-                                className={`max-w-[75%] rounded-2xl px-4 py-2.5 shadow-sm ${
-                                  isMe
+                                className={`max-w-[75%] rounded-2xl px-4 py-2.5 shadow-sm ${isMe
                                     ? 'bg-emerald-600 text-white rounded-br-md'
                                     : 'bg-white text-slate-900 rounded-bl-md border border-slate-100'
-                                }`}
+                                  }`}
                               >
                                 <p className="text-sm">{m.message}</p>
                                 <p className={`mt-1 text-[10px] text-right ${isMe ? 'text-emerald-200' : 'text-slate-400'}`}>
