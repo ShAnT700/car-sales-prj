@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 
 class NextRidesAPITester:
-    def __init__(self, base_url="https://project-analyzer-111.preview.emergentagent.com/api"):
+    def __init__(self, base_url="https://session-test-debug.preview.emergentagent.com/api"):
         self.base_url = base_url
         self.token = None
         self.user_id = None
