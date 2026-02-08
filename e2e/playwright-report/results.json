@@ -107,7 +107,7 @@
         {
           "title": "API - Authentication",
           "file": "api/api.spec.js",
-          "line": 24,
+          "line": 52,
           "column": 6,
           "specs": [
             {
@@ -126,37 +126,37 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 76,
+                      "duration": 0,
                       "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at /app/e2e/tests/api/api.spec.js:31:31",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m400\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n    at /app/e2e/tests/api/api.spec.js:34:37",
                         "location": {
                           "file": "/app/e2e/tests/api/api.spec.js",
-                          "column": 31,
-                          "line": 31
+                          "column": 37,
+                          "line": 34
                         },
-                        "snippet": "  29 |     });\n  30 |     \n> 31 |     expect(response.status()).toBe(200);\n     |                               ^\n  32 |     const data = await response.json();\n  33 |     expect(data.access_token).toBeDefined();\n  34 |     expect(data.user.email).toBe(TEST_EMAIL);"
+                        "snippet": "  32 |   });\n  33 |\n> 34 |   expect(registerResponse.status()).toBe(200);\n     |                                     ^\n  35 |   const data = await registerResponse.json();\n  36 |   expect(data.access_token).toBeDefined();\n  37 | });"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "/app/e2e/tests/api/api.spec.js",
-                            "column": 31,
-                            "line": 31
+                            "column": 37,
+                            "line": 34
                           },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n\n  29 |     });\n  30 |     \n> 31 |     expect(response.status()).toBe(200);\n     |                               ^\n  32 |     const data = await response.json();\n  33 |     expect(data.access_token).toBeDefined();\n  34 |     expect(data.user.email).toBe(TEST_EMAIL);\n    at /app/e2e/tests/api/api.spec.js:31:31"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n\n  32 |   });\n  33 |\n> 34 |   expect(registerResponse.status()).toBe(200);\n     |                                     ^\n  35 |   const data = await registerResponse.json();\n  36 |   expect(data.access_token).toBeDefined();\n  37 | });\n    at /app/e2e/tests/api/api.spec.js:34:37"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:18.506Z",
+                      "startTime": "2026-02-08T03:22:33.466Z",
                       "annotations": [],
                       "attachments": [],
                       "errorLocation": {
                         "file": "/app/e2e/tests/api/api.spec.js",
-                        "column": 31,
-                        "line": 31
+                        "column": 37,
+                        "line": 34
                       }
                     }
                   ],
@@ -165,7 +165,7 @@
               ],
               "id": "8747e39b871de0524be5-0bef5182f7050dc10973",
               "file": "api/api.spec.js",
-              "line": 26,
+              "line": 54,
               "column": 3
             },
             {
@@ -181,30 +181,30 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 29,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:19.107Z",
+                      "startTime": "2026-02-08T03:22:33.833Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-218fdcdd2d2c6e11b599",
               "file": "api/api.spec.js",
-              "line": 37,
+              "line": 65,
               "column": 3
             },
             {
               "title": "API-AUTH-03: register with existing email returns 400",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -215,49 +215,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 330,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at /app/e2e/tests/api/api.spec.js:50:31",
-                        "location": {
-                          "file": "/app/e2e/tests/api/api.spec.js",
-                          "column": 31,
-                          "line": 50
-                        },
-                        "snippet": "  48 |     });\n  49 |     \n> 50 |     expect(response.status()).toBe(400);\n     |                               ^\n  51 |     const data = await response.json();\n  52 |     expect(data.detail).toContain('already');\n  53 |   });"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/api/api.spec.js",
-                            "column": 31,
-                            "line": 50
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  48 |     });\n  49 |     \n> 50 |     expect(response.status()).toBe(400);\n     |                               ^\n  51 |     const data = await response.json();\n  52 |     expect(data.detail).toContain('already');\n  53 |   });\n    at /app/e2e/tests/api/api.spec.js:50:31"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:19.193Z",
+                      "startTime": "2026-02-08T03:22:33.833Z",
                       "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/api/api.spec.js",
-                        "column": 31,
-                        "line": 50
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-64554221a30d0396ed8e",
               "file": "api/api.spec.js",
-              "line": 45,
+              "line": 73,
               "column": 3
             },
             {
@@ -273,30 +249,30 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 26,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:20.021Z",
+                      "startTime": "2026-02-08T03:22:33.833Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-5ce4a8af902aa664267a",
               "file": "api/api.spec.js",
-              "line": 55,
+              "line": 83,
               "column": 3
             },
             {
               "title": "API-AUTH-05: /auth/me returns user with valid token",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -307,49 +283,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 355,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at /app/e2e/tests/api/api.spec.js:72:31",
-                        "location": {
-                          "file": "/app/e2e/tests/api/api.spec.js",
-                          "column": 31,
-                          "line": 72
-                        },
-                        "snippet": "  70 |     });\n  71 |     \n> 72 |     expect(response.status()).toBe(200);\n     |                               ^\n  73 |     const user = await response.json();\n  74 |     expect(user.email).toBe(TEST_EMAIL);\n  75 |   });"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/api/api.spec.js",
-                            "column": 31,
-                            "line": 72
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n\n  70 |     });\n  71 |     \n> 72 |     expect(response.status()).toBe(200);\n     |                               ^\n  73 |     const user = await response.json();\n  74 |     expect(user.email).toBe(TEST_EMAIL);\n  75 |   });\n    at /app/e2e/tests/api/api.spec.js:72:31"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:20.097Z",
+                      "startTime": "2026-02-08T03:22:33.833Z",
                       "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/api/api.spec.js",
-                        "column": 31,
-                        "line": 72
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-370a27966cbf22dc9c83",
               "file": "api/api.spec.js",
-              "line": 60,
+              "line": 88,
               "column": 3
             }
           ]
@@ -357,7 +309,7 @@
         {
           "title": "API - Listings",
           "file": "api/api.spec.js",
-          "line": 81,
+          "line": 104,
           "column": 6,
           "specs": [
             {
@@ -373,25 +325,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 30,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:20.966Z",
+                      "startTime": "2026-02-08T03:22:33.833Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-9c83cd86f76f7c5d2c24",
               "file": "api/api.spec.js",
-              "line": 83,
+              "line": 106,
               "column": 3
             },
             {
@@ -407,25 +359,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 7,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:21.013Z",
+                      "startTime": "2026-02-08T03:22:33.833Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-b7ede306e2cb81809a3e",
               "file": "api/api.spec.js",
-              "line": 91,
+              "line": 114,
               "column": 3
             },
             {
@@ -441,25 +393,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 49,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:21.077Z",
+                      "startTime": "2026-02-08T03:22:33.833Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-64eb267ffd2622000ba2",
               "file": "api/api.spec.js",
-              "line": 107,
+              "line": 130,
               "column": 3
             },
             {
@@ -475,25 +427,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 6,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:21.160Z",
+                      "startTime": "2026-02-08T03:22:33.833Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-fb9ecf163b6c5162443b",
               "file": "api/api.spec.js",
-              "line": 117,
+              "line": 140,
               "column": 3
             },
             {
@@ -509,25 +461,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 47,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:21.175Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-64a500561f1bc3e3ad36",
               "file": "api/api.spec.js",
-              "line": 127,
+              "line": 150,
               "column": 3
             },
             {
@@ -543,25 +495,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 46,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:21.228Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-fe0c52141d55a4a32ef7",
               "file": "api/api.spec.js",
-              "line": 143,
+              "line": 166,
               "column": 3
             },
             {
@@ -577,25 +529,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 56,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:21.280Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-80ec2fcc82f107ad434d",
               "file": "api/api.spec.js",
-              "line": 148,
+              "line": 171,
               "column": 3
             }
           ]
@@ -603,7 +555,7 @@
         {
           "title": "API - Favorites",
           "file": "api/api.spec.js",
-          "line": 181,
+          "line": 200,
           "column": 6,
           "specs": [
             {
@@ -619,30 +571,30 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 45,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:21.343Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-05c5bd8658bd315a0c40",
               "file": "api/api.spec.js",
-              "line": 183,
+              "line": 202,
               "column": 3
             },
             {
               "title": "API-FAV-02: get favorites with auth returns array",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -653,54 +605,30 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 314,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at /app/e2e/tests/api/api.spec.js:199:31",
-                        "location": {
-                          "file": "/app/e2e/tests/api/api.spec.js",
-                          "column": 31,
-                          "line": 199
-                        },
-                        "snippet": "  197 |     });\n  198 |     \n> 199 |     expect(response.status()).toBe(200);\n      |                               ^\n  200 |     const favorites = await response.json();\n  201 |     expect(Array.isArray(favorites)).toBeTruthy();\n  202 |   });"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/api/api.spec.js",
-                            "column": 31,
-                            "line": 199
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n\n  197 |     });\n  198 |     \n> 199 |     expect(response.status()).toBe(200);\n      |                               ^\n  200 |     const favorites = await response.json();\n  201 |     expect(Array.isArray(favorites)).toBeTruthy();\n  202 |   });\n    at /app/e2e/tests/api/api.spec.js:199:31"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:21.394Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/api/api.spec.js",
-                        "column": 31,
-                        "line": 199
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-3e2aac9b4d61b82f7e6e",
               "file": "api/api.spec.js",
-              "line": 188,
+              "line": 207,
               "column": 3
             },
             {
               "title": "API-FAV-03: favorite ids endpoint works",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -711,49 +639,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 335,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at /app/e2e/tests/api/api.spec.js:214:31",
-                        "location": {
-                          "file": "/app/e2e/tests/api/api.spec.js",
-                          "column": 31,
-                          "line": 214
-                        },
-                        "snippet": "  212 |     });\n  213 |     \n> 214 |     expect(response.status()).toBe(200);\n      |                               ^\n  215 |     const ids = await response.json();\n  216 |     expect(Array.isArray(ids)).toBeTruthy();\n  217 |   });"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/api/api.spec.js",
-                            "column": 31,
-                            "line": 214
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n\n  212 |     });\n  213 |     \n> 214 |     expect(response.status()).toBe(200);\n      |                               ^\n  215 |     const ids = await response.json();\n  216 |     expect(Array.isArray(ids)).toBeTruthy();\n  217 |   });\n    at /app/e2e/tests/api/api.spec.js:214:31"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:22.198Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/api/api.spec.js",
-                        "column": 31,
-                        "line": 214
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-75e8c93dbf929df8724c",
               "file": "api/api.spec.js",
-              "line": 204,
+              "line": 219,
               "column": 3
             }
           ]
@@ -761,7 +665,7 @@
         {
           "title": "API - Messages",
           "file": "api/api.spec.js",
-          "line": 223,
+          "line": 235,
           "column": 6,
           "specs": [
             {
@@ -777,30 +681,30 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 26,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:23.065Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-486972e670e5ed6f58a1",
               "file": "api/api.spec.js",
-              "line": 225,
+              "line": 237,
               "column": 3
             },
             {
               "title": "API-MSG-02: get threads with auth returns array",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -811,54 +715,30 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 360,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at /app/e2e/tests/api/api.spec.js:240:31",
-                        "location": {
-                          "file": "/app/e2e/tests/api/api.spec.js",
-                          "column": 31,
-                          "line": 240
-                        },
-                        "snippet": "  238 |     });\n  239 |     \n> 240 |     expect(response.status()).toBe(200);\n      |                               ^\n  241 |     const threads = await response.json();\n  242 |     expect(Array.isArray(threads)).toBeTruthy();\n  243 |   });"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/api/api.spec.js",
-                            "column": 31,
-                            "line": 240
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n\n  238 |     });\n  239 |     \n> 240 |     expect(response.status()).toBe(200);\n      |                               ^\n  241 |     const threads = await response.json();\n  242 |     expect(Array.isArray(threads)).toBeTruthy();\n  243 |   });\n    at /app/e2e/tests/api/api.spec.js:240:31"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:23.106Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/api/api.spec.js",
-                        "column": 31,
-                        "line": 240
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-337bc231e5aeac408353",
               "file": "api/api.spec.js",
-              "line": 230,
+              "line": 242,
               "column": 3
             },
             {
               "title": "API-MSG-03: unread count endpoint works",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -869,49 +749,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 337,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at /app/e2e/tests/api/api.spec.js:255:31",
-                        "location": {
-                          "file": "/app/e2e/tests/api/api.spec.js",
-                          "column": 31,
-                          "line": 255
-                        },
-                        "snippet": "  253 |     });\n  254 |     \n> 255 |     expect(response.status()).toBe(200);\n      |                               ^\n  256 |     const data = await response.json();\n  257 |     expect(data.count).toBeDefined();\n  258 |     expect(typeof data.count).toBe('number');"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/api/api.spec.js",
-                            "column": 31,
-                            "line": 255
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n\n  253 |     });\n  254 |     \n> 255 |     expect(response.status()).toBe(200);\n      |                               ^\n  256 |     const data = await response.json();\n  257 |     expect(data.count).toBeDefined();\n  258 |     expect(typeof data.count).toBe('number');\n    at /app/e2e/tests/api/api.spec.js:255:31"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:23.973Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/api/api.spec.js",
-                        "column": 31,
-                        "line": 255
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-e7425793081aba39eb53",
               "file": "api/api.spec.js",
-              "line": 245,
+              "line": 254,
               "column": 3
             }
           ]
@@ -919,7 +775,7 @@
         {
           "title": "API - Profile",
           "file": "api/api.spec.js",
-          "line": 265,
+          "line": 271,
           "column": 6,
           "specs": [
             {
@@ -935,30 +791,30 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 26,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:24.866Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-b93e3c9e17f5d26c7e43",
               "file": "api/api.spec.js",
-              "line": 267,
+              "line": 273,
               "column": 3
             },
             {
               "title": "API-PROF-02: get profile with auth returns user data",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -969,49 +825,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 327,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at /app/e2e/tests/api/api.spec.js:282:31",
-                        "location": {
-                          "file": "/app/e2e/tests/api/api.spec.js",
-                          "column": 31,
-                          "line": 282
-                        },
-                        "snippet": "  280 |     });\n  281 |     \n> 282 |     expect(response.status()).toBe(200);\n      |                               ^\n  283 |     const profile = await response.json();\n  284 |     expect(profile.email).toBe(TEST_EMAIL);\n  285 |   });"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/api/api.spec.js",
-                            "column": 31,
-                            "line": 282
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n\n  280 |     });\n  281 |     \n> 282 |     expect(response.status()).toBe(200);\n      |                               ^\n  283 |     const profile = await response.json();\n  284 |     expect(profile.email).toBe(TEST_EMAIL);\n  285 |   });\n    at /app/e2e/tests/api/api.spec.js:282:31"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:24.906Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/api/api.spec.js",
-                        "column": 31,
-                        "line": 282
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-589dd59b582e8289e16d",
               "file": "api/api.spec.js",
-              "line": 272,
+              "line": 278,
               "column": 3
             },
             {
@@ -1027,25 +859,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 8,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 25,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:25.767Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-bab652e646026b7f583f",
               "file": "api/api.spec.js",
-              "line": 287,
+              "line": 290,
               "column": 3
             }
           ]
@@ -1053,7 +885,7 @@
         {
           "title": "API - Saved Searches",
           "file": "api/api.spec.js",
-          "line": 308,
+          "line": 311,
           "column": 6,
           "specs": [
             {
@@ -1069,30 +901,30 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 8,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 8,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:25.808Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-21c0149b3ec8b8f9c94e",
               "file": "api/api.spec.js",
-              "line": 310,
+              "line": 313,
               "column": 3
             },
             {
               "title": "API-SAVED-02: get saved searches with auth",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -1103,49 +935,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 8,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 289,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at /app/e2e/tests/api/api.spec.js:325:31",
-                        "location": {
-                          "file": "/app/e2e/tests/api/api.spec.js",
-                          "column": 31,
-                          "line": 325
-                        },
-                        "snippet": "  323 |     });\n  324 |     \n> 325 |     expect(response.status()).toBe(200);\n      |                               ^\n  326 |     const searches = await response.json();\n  327 |     expect(Array.isArray(searches)).toBeTruthy();\n  328 |   });"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/api/api.spec.js",
-                            "column": 31,
-                            "line": 325
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n\n  323 |     });\n  324 |     \n> 325 |     expect(response.status()).toBe(200);\n      |                               ^\n  326 |     const searches = await response.json();\n  327 |     expect(Array.isArray(searches)).toBeTruthy();\n  328 |   });\n    at /app/e2e/tests/api/api.spec.js:325:31"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:21:25.880Z",
+                      "startTime": "2026-02-08T03:22:33.834Z",
                       "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/api/api.spec.js",
-                        "column": 31,
-                        "line": 325
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "8747e39b871de0524be5-a8adc954ca6ee537da3b",
               "file": "api/api.spec.js",
-              "line": 315,
+              "line": 318,
               "column": 3
             }
           ]
@@ -1155,11 +963,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-08T03:21:17.816Z",
-    "duration": 8447.073,
-    "expected": 14,
-    "skipped": 0,
-    "unexpected": 9,
+    "startTime": "2026-02-08T03:22:32.688Z",
+    "duration": 1158.3310000000001,
+    "expected": 0,
+    "skipped": 22,
+    "unexpected": 1,
     "flaky": 0
   }
 }
