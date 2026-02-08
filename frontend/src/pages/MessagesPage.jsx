@@ -25,7 +25,17 @@ export default function MessagesPage() {
       return;
     }
     fetchThreads();
-  }, [user, navigate]);
+
+    // Listen for read events to update sidebar unread counts
+    const handleReadEvent = () => {
+      // Fetch threads but don't show loading spinner to avoid flickering
+      axios.get(`${API}/messages/threads`, {
+        headers: { Authorization: `Bearer ${token}` }
+      }).then(res => setThreads(res.data)).catch(() => { });
+    };
+    window.addEventListener("messages-read", handleReadEvent);
+    return () => window.removeEventListener("messages-read", handleReadEvent);
+  }, [user, navigate, token]);
 
   useEffect(() => {
     scrollToBottom();
@@ -192,8 +202,8 @@ export default function MessagesPage() {
                     >
                       <div
                         className={`max-w-[80%] rounded-2xl px-3 py-2 shadow-sm ${isMe
-                            ? 'bg-emerald-600 text-white rounded-br-md'
-                            : 'bg-white text-slate-900 rounded-bl-md border border-slate-100'
+                          ? 'bg-emerald-600 text-white rounded-br-md'
+                          : 'bg-white text-slate-900 rounded-bl-md border border-slate-100'
                           }`}
                       >
                         <p className="text-sm">{m.message}</p>
@@ -287,8 +297,8 @@ export default function MessagesPage() {
                       data-testid="thread-item"
                       onClick={() => openConversation(thread)}
                       className={`w-full text-left p-3 flex items-center gap-3 transition-colors border-b border-slate-50 ${isSelected
-                          ? 'bg-emerald-50 border-l-2 border-l-emerald-500'
-                          : 'hover:bg-slate-50 active:bg-slate-100'
+                        ? 'bg-emerald-50 border-l-2 border-l-emerald-500'
+                        : 'hover:bg-slate-50 active:bg-slate-100'
                         }`}
                     >
                       {/* Avatar */}
@@ -375,8 +385,8 @@ export default function MessagesPage() {
                             >
                               <div
                                 className={`max-w-[75%] rounded-2xl px-4 py-2.5 shadow-sm ${isMe
-                                    ? 'bg-emerald-600 text-white rounded-br-md'
-                                    : 'bg-white text-slate-900 rounded-bl-md border border-slate-100'
+                                  ? 'bg-emerald-600 text-white rounded-br-md'
+                                  : 'bg-white text-slate-900 rounded-bl-md border border-slate-100'
                                   }`}
                               >
                                 <p className="text-sm">{m.message}</p>

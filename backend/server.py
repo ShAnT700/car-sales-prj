@@ -366,8 +366,8 @@ async def get_listings(
     
     # Attach user info and favorite counts
     for listing in listings:
-        user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1, "avatar": 1})
-        listing["user_name"] = user["name"] if user else "Unknown"
+        user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1, "nickname": 1, "avatar": 1})
+        listing["user_name"] = (user.get("nickname") or user["name"]) if user else "Unknown"
         listing["user_avatar"] = user.get("avatar") if user else None
         listing["favorite_count"] = await db.favorites.count_documents({"listing_id": listing["id"]})
     
@@ -379,8 +379,8 @@ async def get_listing(listing_id: str):
     if not listing:
         raise HTTPException(status_code=404, detail="Listing not found")
     
-    user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1, "avatar": 1})
-    listing["user_name"] = user["name"] if user else "Unknown"
+    user = await db.users.find_one({"id": listing["user_id"]}, {"_id": 0, "name": 1, "nickname": 1, "avatar": 1})
+    listing["user_name"] = (user.get("nickname") or user["name"]) if user else "Unknown"
     listing["user_avatar"] = user.get("avatar") if user else None
 
     # Favorite count for this listing
@@ -394,7 +394,7 @@ async def get_my_listings(authorization: str = Header(None)):
     user = await require_auth(authorization)
     listings = await db.listings.find({"user_id": user["id"]}, {"_id": 0}).sort("created_at", -1).to_list(100)
     for listing in listings:
-        listing["user_name"] = user["name"]
+        listing["user_name"] = user.get("nickname") or user["name"]
     return listings
 
 @api_router.put("/listings/{listing_id}", response_model=CarListingResponse)
@@ -639,7 +639,7 @@ async def get_threads(authorization: str = Header(None)):
         thread = threads.get(key)
         if not thread:
             # fetch user and listing once per thread
-            other_user = await db.users.find_one({"id": other_id}, {"_id": 0, "name": 1, "avatar": 1})
+            other_user = await db.users.find_one({"id": other_id}, {"_id": 0, "name": 1, "nickname": 1, "avatar": 1})
             listing = await db.listings.find_one({"id": msg["listing_id"]}, {"_id": 0, "make": 1, "model": 1, "year": 1, "images": 1})
             listing_title = f"{listing['year']} {listing['make']} {listing['model']}" if listing else "Deleted listing"
             listing_image = listing["images"][0] if listing and listing.get("images") else None
@@ -648,7 +648,7 @@ async def get_threads(authorization: str = Header(None)):
                 "id": key,
                 "listing_id": msg["listing_id"],
                 "other_user_id": other_id,
-                "other_user_name": other_user["name"] if other_user else "Unknown",
+                "other_user_name": (other_user.get("nickname") or other_user["name"]) if other_user else "Unknown",
                 "other_user_avatar": other_user.get("avatar") if other_user else None,
                 "listing_title": listing_title,
                 "listing_image": listing_image,
@@ -679,9 +679,9 @@ async def get_inbox(authorization: str = Header(None)):
     
     result = []
     for msg in messages:
-        sender = await db.users.find_one({"id": msg["sender_id"]}, {"_id": 0, "name": 1})
+        sender = await db.users.find_one({"id": msg["sender_id"]}, {"_id": 0, "name": 1, "nickname": 1})
         listing = await db.listings.find_one({"id": msg["listing_id"]}, {"_id": 0, "make": 1, "model": 1, "year": 1})
-        msg["sender_name"] = sender["name"] if sender else "Unknown"
+        msg["sender_name"] = (sender.get("nickname") or sender["name"]) if sender else "Unknown"
         msg["listing_title"] = f"{listing['year']} {listing['make']} {listing['model']}" if listing else "Deleted listing"
         result.append(msg)
     return result
@@ -693,9 +693,9 @@ async def get_sent_messages(authorization: str = Header(None)):
     
     result = []
     for msg in messages:
-        receiver = await db.users.find_one({"id": msg["receiver_id"]}, {"_id": 0, "name": 1})
+        receiver = await db.users.find_one({"id": msg["receiver_id"]}, {"_id": 0, "name": 1, "nickname": 1})
         listing = await db.listings.find_one({"id": msg["listing_id"]}, {"_id": 0, "make": 1, "model": 1, "year": 1})
-        msg["receiver_name"] = receiver["name"] if receiver else "Unknown"
+        msg["receiver_name"] = (receiver.get("nickname") or receiver["name"]) if receiver else "Unknown"
         msg["listing_title"] = f"{listing['year']} {listing['make']} {listing['model']}" if listing else "Deleted listing"
         result.append(msg)
     return result
