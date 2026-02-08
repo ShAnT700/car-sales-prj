@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "actualWorkers": 2
     },
     "preserveOutput": "always",
     "reporter": [
@@ -44,7 +44,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 2
         },
         "id": "e2e-chrome",
         "name": "e2e-chrome",
@@ -60,7 +60,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 2
         },
         "id": "e2e-mobile",
         "name": "e2e-mobile",
@@ -76,7 +76,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 2
         },
         "id": "api",
         "name": "api",
@@ -93,7 +93,7 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.57.0",
-    "workers": 4,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
@@ -126,12 +126,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7010,
+                      "duration": 1754,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:06:46.962Z",
+                      "startTime": "2026-02-08T03:26:34.075Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -160,12 +160,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1840,
+                      "duration": 1633,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:06:54.514Z",
+                      "startTime": "2026-02-08T03:26:36.120Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -194,12 +194,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2363,
+                      "duration": 991,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:06:56.461Z",
+                      "startTime": "2026-02-08T03:26:37.764Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -236,12 +236,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10318,
+                      "duration": 3403,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:06:58.865Z",
+                      "startTime": "2026-02-08T03:26:38.763Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -270,12 +270,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7048,
+                      "duration": 2494,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:09.362Z",
+                      "startTime": "2026-02-08T03:26:42.174Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -304,12 +304,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10138,
+                      "duration": 3416,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:16.419Z",
+                      "startTime": "2026-02-08T03:26:44.678Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -338,12 +338,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8513,
+                      "duration": 1525,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:26.666Z",
+                      "startTime": "2026-02-08T03:26:48.111Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -372,12 +372,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8345,
+                      "duration": 5324,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:35.213Z",
+                      "startTime": "2026-02-08T03:26:49.690Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -406,12 +406,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 14270,
+                      "duration": 9090,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:43.610Z",
+                      "startTime": "2026-02-08T03:26:55.089Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -448,12 +448,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 14041,
+                      "duration": 4866,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:57.967Z",
+                      "startTime": "2026-02-08T03:27:04.188Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -482,12 +482,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7932,
+                      "duration": 3999,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:12.161Z",
+                      "startTime": "2026-02-08T03:27:09.063Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -524,26 +524,46 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "No listings available in database",
+                      "location": {
+                        "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                        "line": 37,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "e2e-chrome",
                   "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 17098,
+                      "status": "skipped",
+                      "duration": 6103,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:06:46.968Z",
-                      "annotations": [],
+                      "startTime": "2026-02-08T03:26:33.986Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "No listings available in database",
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                            "line": 37,
+                            "column": 12
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "62cda71af6f80f24b489-038f03e30520e08e8fb1",
@@ -567,12 +587,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 11187,
+                      "duration": 5509,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:04.665Z",
+                      "startTime": "2026-02-08T03:26:40.463Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -592,26 +612,46 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "No listings available in database",
+                      "location": {
+                        "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                        "line": 71,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "e2e-chrome",
                   "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 14281,
+                      "status": "skipped",
+                      "duration": 4795,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:15.961Z",
-                      "annotations": [],
+                      "startTime": "2026-02-08T03:26:45.989Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "No listings available in database",
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                            "line": 71,
+                            "column": 12
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "62cda71af6f80f24b489-fa56cc6d4d2c95d7fa5c",
@@ -626,26 +666,46 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "No listings available in database",
+                      "location": {
+                        "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                        "line": 92,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "e2e-chrome",
                   "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 14551,
+                      "status": "skipped",
+                      "duration": 6084,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:30.361Z",
-                      "annotations": [],
+                      "startTime": "2026-02-08T03:26:50.870Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "No listings available in database",
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/favorites.spec.js",
+                            "line": 92,
+                            "column": 12
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "62cda71af6f80f24b489-d777676064a94c3edfe6",
@@ -677,12 +737,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 7925,
+                      "duration": 1692,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:45.066Z",
+                      "startTime": "2026-02-08T03:26:56.968Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -725,15 +785,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 16466,
+                      "duration": 4626,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:06:46.894Z",
+                      "startTime": "2026-02-08T03:26:58.677Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -759,15 +819,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 10357,
+                      "duration": 5055,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:04.006Z",
+                      "startTime": "2026-02-08T03:27:03.311Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -793,15 +853,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 15157,
+                      "duration": 5499,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:14.567Z",
+                      "startTime": "2026-02-08T03:27:08.375Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -827,15 +887,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 16050,
+                      "duration": 5999,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:29.765Z",
+                      "startTime": "2026-02-08T03:27:13.887Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -869,15 +929,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 8243,
+                      "duration": 1280,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:45.867Z",
+                      "startTime": "2026-02-08T03:27:19.963Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -897,26 +957,46 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "No listings available in database",
+                      "location": {
+                        "file": "/app/e2e/tests/e2e/listings.spec.js",
+                        "line": 140,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "e2e-chrome",
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 6330,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 1732,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:54.263Z",
-                      "annotations": [],
+                      "startTime": "2026-02-08T03:27:21.250Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "No listings available in database",
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/listings.spec.js",
+                            "line": 140,
+                            "column": 12
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "6e2297e726d63854e50c-24d2ee0ec2826e651809",
@@ -931,26 +1011,46 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "No listings available in database",
+                      "location": {
+                        "file": "/app/e2e/tests/e2e/listings.spec.js",
+                        "line": 157,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "e2e-chrome",
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 7833,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 1783,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:00.663Z",
-                      "annotations": [],
+                      "startTime": "2026-02-08T03:27:22.991Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "No listings available in database",
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/listings.spec.js",
+                            "line": 157,
+                            "column": 12
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "6e2297e726d63854e50c-bb84bb7c377ccb332dee",
@@ -979,15 +1079,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 8960,
+                      "duration": 3397,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:08.563Z",
+                      "startTime": "2026-02-08T03:27:24.782Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1021,15 +1121,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5673,
+                      "duration": 1222,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:17.610Z",
+                      "startTime": "2026-02-08T03:27:28.187Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1055,15 +1155,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 9799,
+                      "duration": 6206,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:23.376Z",
+                      "startTime": "2026-02-08T03:27:29.459Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1106,15 +1206,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11454,
+                      "duration": 4212,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:06:47.012Z",
+                      "startTime": "2026-02-08T03:27:13.080Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1140,15 +1240,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 16428,
+                      "duration": 4355,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:06:59.097Z",
+                      "startTime": "2026-02-08T03:27:17.301Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1174,15 +1274,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10514,
+                      "duration": 4402,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:15.697Z",
+                      "startTime": "2026-02-08T03:27:21.665Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1208,15 +1308,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10350,
+                      "duration": 3682,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:26.365Z",
+                      "startTime": "2026-02-08T03:27:26.075Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1242,15 +1342,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8534,
+                      "duration": 4347,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:36.901Z",
+                      "startTime": "2026-02-08T03:27:29.765Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1284,15 +1384,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8304,
+                      "duration": 3569,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:45.564Z",
+                      "startTime": "2026-02-08T03:27:34.122Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1338,12 +1438,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 9027,
+                      "duration": 3894,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:53.160Z",
+                      "startTime": "2026-02-08T03:27:35.680Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1372,12 +1472,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 8944,
+                      "duration": 3567,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:02.260Z",
+                      "startTime": "2026-02-08T03:27:39.588Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1406,12 +1506,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 10706,
+                      "duration": 4291,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:11.266Z",
+                      "startTime": "2026-02-08T03:27:43.167Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1440,12 +1540,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 7205,
+                      "duration": 3734,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:22.106Z",
+                      "startTime": "2026-02-08T03:27:47.472Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1474,12 +1574,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 6815,
+                      "duration": 3445,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:29.377Z",
+                      "startTime": "2026-02-08T03:27:51.216Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1507,26 +1607,46 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "No listings available in database",
+                      "location": {
+                        "file": "/app/e2e/tests/e2e/profile.spec.js",
+                        "line": 119,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "e2e-chrome",
                   "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 3228,
+                      "status": "skipped",
+                      "duration": 1666,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:36.217Z",
-                      "annotations": [],
+                      "startTime": "2026-02-08T03:27:54.672Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "No listings available in database",
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/profile.spec.js",
+                            "line": 119,
+                            "column": 12
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "d3b94327e94fcbd90a1b-e34b0deb8f3bb1297b9a",
@@ -1541,26 +1661,46 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "No listings available in database",
+                      "location": {
+                        "file": "/app/e2e/tests/e2e/profile.spec.js",
+                        "line": 147,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "e2e-chrome",
                   "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 2863,
+                      "status": "skipped",
+                      "duration": 1764,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:39.579Z",
-                      "annotations": [],
+                      "startTime": "2026-02-08T03:27:56.347Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "No listings available in database",
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/profile.spec.js",
+                            "line": 147,
+                            "column": 12
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "d3b94327e94fcbd90a1b-46aa3331a55fbce1e63b",
@@ -1575,26 +1715,46 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "No listings available in database",
+                      "location": {
+                        "file": "/app/e2e/tests/e2e/profile.spec.js",
+                        "line": 175,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "e2e-chrome",
                   "projectName": "e2e-chrome",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 3314,
+                      "status": "skipped",
+                      "duration": 1606,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:42.464Z",
-                      "annotations": [],
+                      "startTime": "2026-02-08T03:27:58.117Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "No listings available in database",
+                          "location": {
+                            "file": "/app/e2e/tests/e2e/profile.spec.js",
+                            "line": 175,
+                            "column": 12
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "d3b94327e94fcbd90a1b-07404711b118c516a289",
@@ -1632,15 +1792,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9605,
+                      "duration": 3099,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:07:53.965Z",
+                      "startTime": "2026-02-08T03:27:37.760Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1666,15 +1826,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 14993,
+                      "duration": 6159,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:03.606Z",
+                      "startTime": "2026-02-08T03:27:40.868Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1700,15 +1860,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10847,
+                      "duration": 5135,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:18.664Z",
+                      "startTime": "2026-02-08T03:27:47.037Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1734,15 +1894,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5355,
+                      "duration": 2821,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:29.661Z",
+                      "startTime": "2026-02-08T03:27:52.183Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1768,15 +1928,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6214,
+                      "duration": 5026,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:35.024Z",
+                      "startTime": "2026-02-08T03:27:55.087Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1802,15 +1962,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6213,
+                      "duration": 3429,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:41.283Z",
+                      "startTime": "2026-02-08T03:28:00.121Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1844,15 +2004,15 @@
                   "projectName": "e2e-chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2550,
+                      "duration": 2153,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:08:47.581Z",
+                      "startTime": "2026-02-08T03:28:03.558Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1872,10 +2032,10 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-08T02:06:44.612Z",
-    "duration": 125594.254,
-    "expected": 47,
-    "skipped": 0,
+    "startTime": "2026-02-08T03:26:32.669Z",
+    "duration": 93106.158,
+    "expected": 39,
+    "skipped": 8,
     "unexpected": 0,
     "flaky": 0
   }

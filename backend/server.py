@@ -597,13 +597,6 @@ async def get_conversation(listing_id: str, other_user_id: str, authorization: s
 
     return messages
 
-    sender_id: str
-    sender_name: str
-    receiver_id: str
-    message: str
-    created_at: str
-    listing_title: Optional[str] = None
-
 @api_router.post("/messages")
 async def send_message(data: MessageCreate, authorization: str = Header(None)):
     user = await require_auth(authorization)
@@ -813,6 +806,30 @@ async def get_avatar_image(filename: str):
     if not file_path.exists():
         raise HTTPException(status_code=404, detail="Avatar not found")
     return FileResponse(file_path, media_type="image/jpeg")
+
+# ========== TEST SEED (for CI/CD) ==========
+class TestSeedUser(BaseModel):
+    email: EmailStr
+    password: str
+    name: str
+
+@api_router.post("/test/seed")
+async def seed_test_user(data: TestSeedUser):
+    """Seed or reset a test user. Used by CI/CD test setup to ensure test user exists with correct credentials."""
+    # Delete existing user with this email (if any)
+    await db.users.delete_many({"email": data.email})
+    
+    user_id = str(uuid.uuid4())
+    user_doc = {
+        "id": user_id,
+        "email": data.email,
+        "password": hash_password(data.password),
+        "name": data.name,
+        "created_at": datetime.now(timezone.utc).isoformat()
+    }
+    await db.users.insert_one(user_doc)
+    
+    return {"message": "Test user seeded", "user_id": user_id}
 
 app.include_router(api_router)
 

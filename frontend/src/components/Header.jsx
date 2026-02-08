@@ -101,7 +101,7 @@ export default function Header({ onOpenSearch }) {
                 </div>
               </Link>
               <span className="font-manrope font-medium text-slate-500 text-[10px] sm:text-sm lg:text-base truncate">
-                Good cars are here!
+                Good cars are selling here!
               </span>
             </div>
 
@@ -157,7 +157,7 @@ export default function Header({ onOpenSearch }) {
 
                     {/* Profile */}
                     <Button
-                      data-testid="user-profile-btn"
+                      data-testid="profile-btn"
                       onClick={() => navigate("/profile")}
                       variant="outline"
                       className="h-10 w-10 p-0 rounded-full bg-slate-100 hover:bg-slate-200"
