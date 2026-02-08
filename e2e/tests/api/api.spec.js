@@ -12,17 +12,21 @@ const TEST_NAME = 'Test User';
 // Global Setup: Ensure test user exists
 // ============================================
 test.beforeAll(async ({ request }) => {
-  // Try to login first
+  // Step 1: Check if the API is reachable
+  const healthCheck = await request.get(`${API_URL}/`);
+  expect(healthCheck.ok(), `API not reachable at ${API_URL}`).toBeTruthy();
+
+  // Step 2: Try to login with test credentials
   const loginResponse = await request.post(`${API_URL}/auth/login`, {
     data: { email: TEST_EMAIL, password: TEST_PASSWORD }
   });
 
   if (loginResponse.status() === 200) {
-    // User already exists, we're good
+    // Test user already exists with correct password — we're good
     return;
   }
 
-  // User doesn't exist — register the test user
+  // Step 3: Try to register the test user
   const registerResponse = await request.post(`${API_URL}/auth/register`, {
     data: {
       email: TEST_EMAIL,
@@ -31,18 +35,38 @@ test.beforeAll(async ({ request }) => {
     }
   });
 
-  expect(registerResponse.status()).toBe(200);
-  const data = await registerResponse.json();
-  expect(data.access_token).toBeDefined();
+  if (registerResponse.status() === 200) {
+    // Successfully registered
+    return;
+  }
+
+  // Step 4: If both login and register failed, the user may exist with a different
+  // password (e.g. from a corrupted previous test run).
+  // Use the seed endpoint to reset the test user if available.
+  const seedResponse = await request.post(`${API_URL}/test/seed`, {
+    data: { email: TEST_EMAIL, password: TEST_PASSWORD, name: TEST_NAME }
+  });
+
+  if (seedResponse.ok()) {
+    return;
+  }
+
+  // If nothing works, fail with a clear message
+  throw new Error(
+    `Test setup failed: Could not login or register test user (${TEST_EMAIL}). ` +
+    `Login status: ${loginResponse.status()}, Register status: ${registerResponse.status()}. ` +
+    `The test user may exist with a different password. Please reset the database or add a /api/test/seed endpoint.`
+  );
 });
 
-// Helper: Get auth token
+// Helper: Get auth token (with proper error handling)
 async function getAuthToken(request) {
   const response = await request.post(`${API_URL}/auth/login`, {
     data: { email: TEST_EMAIL, password: TEST_PASSWORD }
   });
-  expect(response.status()).toBe(200);
+  expect(response.status(), 'Login should succeed for test user').toBe(200);
   const data = await response.json();
+  expect(data.access_token).toBeDefined();
   return data.access_token;
 }
 
