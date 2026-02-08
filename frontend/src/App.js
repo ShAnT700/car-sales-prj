@@ -24,8 +24,19 @@ export const AuthContext = createContext(null);
 export const useAuth = () => useContext(AuthContext);
 
 function App() {
-  const [user, setUser] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [user, setUser] = useState(() => {
+    const storedUser = localStorage.getItem("user");
+    if (!storedUser) {
+      return null;
+    }
+    try {
+      return JSON.parse(storedUser);
+    } catch (e) {
+      localStorage.removeItem("user");
+      return null;
+    }
+  });
+  const [token, setToken] = useState(() => localStorage.getItem("token"));
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
