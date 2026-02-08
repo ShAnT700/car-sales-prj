@@ -1,4 +1,19 @@
 services:
+  # Backend API service
+  - type: web
+    name: nextrides-backend
+    env: python
+    region: oregon
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && uvicorn server:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: MONGO_URL
+        sync: false
+      - key: DB_NAME
+        value: nextrides
+      - key: JWT_SECRET
+        generateValue: true
+
   # Static site configuration for the frontend
   - type: static
     name: nextride-frontend
@@ -10,3 +25,4 @@ services:
       - source: /*
         destination: /index.html
         type: rewrite
+
