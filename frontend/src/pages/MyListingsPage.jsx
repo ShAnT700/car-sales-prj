@@ -27,12 +27,17 @@ export default function MyListingsPage() {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    if (!user) {
+    if (!token) {
       navigate("/");
       return;
     }
+
+    if (!user) {
+      return;
+    }
+
     fetchListings();
-  }, [user, navigate]);
+  }, [user, token, navigate]);
 
   const fetchListings = async () => {
     try {
