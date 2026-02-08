@@ -94,15 +94,19 @@ export default function CreateListingPage() {
   const isEditing = !!id;
 
   useEffect(() => {
-    if (!user) {
+    if (!token) {
       navigate("/");
+      return;
+    }
+
+    if (!user) {
       return;
     }
     
     if (isEditing) {
       fetchListing();
     }
-  }, [user, navigate, id]);
+  }, [user, token, navigate, id, isEditing]);
 
   const fetchListing = async () => {
     try {
