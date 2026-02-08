@@ -597,13 +597,6 @@ async def get_conversation(listing_id: str, other_user_id: str, authorization: s
 
     return messages
 
-    sender_id: str
-    sender_name: str
-    receiver_id: str
-    message: str
-    created_at: str
-    listing_title: Optional[str] = None
-
 @api_router.post("/messages")
 async def send_message(data: MessageCreate, authorization: str = Header(None)):
     user = await require_auth(authorization)
