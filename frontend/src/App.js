@@ -47,10 +47,19 @@ function App() {
             headers: { Authorization: `Bearer ${token}` }
           });
           setUser(res.data);
+          localStorage.setItem("user", JSON.stringify(res.data));
         } catch (e) {
-          localStorage.removeItem("token");
-          setToken(null);
+          const status = e?.response?.status;
+          if (status === 401 || status === 403) {
+            localStorage.removeItem("token");
+            localStorage.removeItem("user");
+            setToken(null);
+            setUser(null);
+          }
         }
+      } else {
+        localStorage.removeItem("user");
+        setUser(null);
       }
       setLoading(false);
     };
