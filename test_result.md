@@ -3,6 +3,7 @@
 ## Current Task (Session Persistence Fix - In Progress)
 - Updated frontend auth state to persist user and token in localStorage and rehydrate on reload.
 - Added safer auth check to only clear storage on 401/403 responses.
+- Stabilized auth-gated listing pages to wait for token/user before redirect (MyListingsPage, CreateListingPage) to reduce E2E flakiness.
 - Backend tests (deep_testing_backend_v2): auth endpoints (login/me/register/test seed) ✅. Note: POST /api/listings failed due to PIL.UnidentifiedImageError when dummy text files were used as images.
 
 ## Problem
