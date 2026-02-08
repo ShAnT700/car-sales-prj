@@ -101,7 +101,7 @@ export default function Header({ onOpenSearch }) {
                 </div>
               </Link>
               <span className="font-manrope font-medium text-slate-500 text-[10px] sm:text-sm lg:text-base truncate">
-                Good cars are here!
+                Good cars are selling here!
               </span>
             </div>
 
