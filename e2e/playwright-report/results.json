@@ -107,12 +107,12 @@
         {
           "title": "API - Authentication",
           "file": "api/api.spec.js",
-          "line": 52,
+          "line": 76,
           "column": 6,
           "specs": [
             {
               "title": "API-AUTH-01: login returns token",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -125,47 +125,23 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 0,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m400\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n    at /app/e2e/tests/api/api.spec.js:34:37",
-                        "location": {
-                          "file": "/app/e2e/tests/api/api.spec.js",
-                          "column": 37,
-                          "line": 34
-                        },
-                        "snippet": "  32 |   });\n  33 |\n> 34 |   expect(registerResponse.status()).toBe(200);\n     |                                     ^\n  35 |   const data = await registerResponse.json();\n  36 |   expect(data.access_token).toBeDefined();\n  37 | });"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/app/e2e/tests/api/api.spec.js",
-                            "column": 37,
-                            "line": 34
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n\n  32 |   });\n  33 |\n> 34 |   expect(registerResponse.status()).toBe(200);\n     |                                     ^\n  35 |   const data = await registerResponse.json();\n  36 |   expect(data.access_token).toBeDefined();\n  37 | });\n    at /app/e2e/tests/api/api.spec.js:34:37"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 280,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.466Z",
+                      "startTime": "2026-02-08T03:24:23.707Z",
                       "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/app/e2e/tests/api/api.spec.js",
-                        "column": 37,
-                        "line": 34
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-0bef5182f7050dc10973",
               "file": "api/api.spec.js",
-              "line": 54,
+              "line": 78,
               "column": 3
             },
             {
@@ -181,25 +157,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 270,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.833Z",
+                      "startTime": "2026-02-08T03:24:24.413Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-218fdcdd2d2c6e11b599",
               "file": "api/api.spec.js",
-              "line": 65,
+              "line": 89,
               "column": 3
             },
             {
@@ -215,25 +191,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 49,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.833Z",
+                      "startTime": "2026-02-08T03:24:24.691Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-64554221a30d0396ed8e",
               "file": "api/api.spec.js",
-              "line": 73,
+              "line": 97,
               "column": 3
             },
             {
@@ -249,25 +225,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 50,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.833Z",
+                      "startTime": "2026-02-08T03:24:24.748Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-5ce4a8af902aa664267a",
               "file": "api/api.spec.js",
-              "line": 83,
+              "line": 107,
               "column": 3
             },
             {
@@ -283,25 +259,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 317,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.833Z",
+                      "startTime": "2026-02-08T03:24:24.811Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-370a27966cbf22dc9c83",
               "file": "api/api.spec.js",
-              "line": 88,
+              "line": 112,
               "column": 3
             }
           ]
@@ -309,7 +285,7 @@
         {
           "title": "API - Listings",
           "file": "api/api.spec.js",
-          "line": 104,
+          "line": 128,
           "column": 6,
           "specs": [
             {
@@ -325,25 +301,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 47,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.833Z",
+                      "startTime": "2026-02-08T03:24:25.135Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-9c83cd86f76f7c5d2c24",
               "file": "api/api.spec.js",
-              "line": 106,
+              "line": 130,
               "column": 3
             },
             {
@@ -359,25 +335,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 46,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.833Z",
+                      "startTime": "2026-02-08T03:24:25.189Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-b7ede306e2cb81809a3e",
               "file": "api/api.spec.js",
-              "line": 114,
+              "line": 138,
               "column": 3
             },
             {
@@ -393,25 +369,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 46,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.833Z",
+                      "startTime": "2026-02-08T03:24:25.242Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-64eb267ffd2622000ba2",
               "file": "api/api.spec.js",
-              "line": 130,
+              "line": 154,
               "column": 3
             },
             {
@@ -427,25 +403,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 46,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.833Z",
+                      "startTime": "2026-02-08T03:24:25.295Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-fb9ecf163b6c5162443b",
               "file": "api/api.spec.js",
-              "line": 140,
+              "line": 164,
               "column": 3
             },
             {
@@ -461,25 +437,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 45,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:25.348Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-64a500561f1bc3e3ad36",
               "file": "api/api.spec.js",
-              "line": 150,
+              "line": 174,
               "column": 3
             },
             {
@@ -495,25 +471,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 46,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:25.399Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-fe0c52141d55a4a32ef7",
               "file": "api/api.spec.js",
-              "line": 166,
+              "line": 190,
               "column": 3
             },
             {
@@ -529,25 +505,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 55,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:25.452Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-80ec2fcc82f107ad434d",
               "file": "api/api.spec.js",
-              "line": 171,
+              "line": 195,
               "column": 3
             }
           ]
@@ -555,7 +531,7 @@
         {
           "title": "API - Favorites",
           "file": "api/api.spec.js",
-          "line": 200,
+          "line": 224,
           "column": 6,
           "specs": [
             {
@@ -571,25 +547,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 46,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:25.514Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-05c5bd8658bd315a0c40",
               "file": "api/api.spec.js",
-              "line": 202,
+              "line": 226,
               "column": 3
             },
             {
@@ -605,25 +581,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 314,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:25.566Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-3e2aac9b4d61b82f7e6e",
               "file": "api/api.spec.js",
-              "line": 207,
+              "line": 231,
               "column": 3
             },
             {
@@ -639,25 +615,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 315,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:25.886Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-75e8c93dbf929df8724c",
               "file": "api/api.spec.js",
-              "line": 219,
+              "line": 243,
               "column": 3
             }
           ]
@@ -665,7 +641,7 @@
         {
           "title": "API - Messages",
           "file": "api/api.spec.js",
-          "line": 235,
+          "line": 259,
           "column": 6,
           "specs": [
             {
@@ -681,25 +657,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 45,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:26.207Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-486972e670e5ed6f58a1",
               "file": "api/api.spec.js",
-              "line": 237,
+              "line": 261,
               "column": 3
             },
             {
@@ -715,25 +691,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 315,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:26.258Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-337bc231e5aeac408353",
               "file": "api/api.spec.js",
-              "line": 242,
+              "line": 266,
               "column": 3
             },
             {
@@ -749,25 +725,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 315,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:26.579Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-e7425793081aba39eb53",
               "file": "api/api.spec.js",
-              "line": 254,
+              "line": 278,
               "column": 3
             }
           ]
@@ -775,7 +751,7 @@
         {
           "title": "API - Profile",
           "file": "api/api.spec.js",
-          "line": 271,
+          "line": 295,
           "column": 6,
           "specs": [
             {
@@ -791,25 +767,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 45,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:26.900Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-b93e3c9e17f5d26c7e43",
               "file": "api/api.spec.js",
-              "line": 273,
+              "line": 297,
               "column": 3
             },
             {
@@ -825,25 +801,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 313,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:26.950Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-589dd59b582e8289e16d",
               "file": "api/api.spec.js",
-              "line": 278,
+              "line": 302,
               "column": 3
             },
             {
@@ -859,25 +835,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 46,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:27.269Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-bab652e646026b7f583f",
               "file": "api/api.spec.js",
-              "line": 290,
+              "line": 314,
               "column": 3
             }
           ]
@@ -885,7 +861,7 @@
         {
           "title": "API - Saved Searches",
           "file": "api/api.spec.js",
-          "line": 311,
+          "line": 335,
           "column": 6,
           "specs": [
             {
@@ -901,25 +877,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 44,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:27.322Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-21c0149b3ec8b8f9c94e",
               "file": "api/api.spec.js",
-              "line": 313,
+              "line": 337,
               "column": 3
             },
             {
@@ -935,25 +911,25 @@
                   "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 319,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-08T03:22:33.834Z",
+                      "startTime": "2026-02-08T03:24:27.372Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8747e39b871de0524be5-a8adc954ca6ee537da3b",
               "file": "api/api.spec.js",
-              "line": 318,
+              "line": 342,
               "column": 3
             }
           ]
@@ -963,11 +939,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-08T03:22:32.688Z",
-    "duration": 1158.3310000000001,
-    "expected": 0,
-    "skipped": 22,
-    "unexpected": 1,
+    "startTime": "2026-02-08T03:24:22.973Z",
+    "duration": 4742.282,
+    "expected": 23,
+    "skipped": 0,
+    "unexpected": 0,
     "flaky": 0
   }
 }
