@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 // API Base URL (will be set from env or default)
-const API_URL = process.env.E2E_API_URL || 'https://nextrides-backend.onrender.com/api';
+const API_URL = process.env.E2E_API_URL || 'https://car-sales-prj.onrender.com/api';
 
 // Test credentials
 const TEST_EMAIL = 'test@test.com';
