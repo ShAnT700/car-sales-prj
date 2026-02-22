@@ -123,7 +123,7 @@ messages:   { id, listing_id, sender_id, receiver_id,
 | GET | `/api/messages/conversation` | Get messages in thread |
 | POST | `/api/messages` | Send message |
 
-📖 **Full API documentation**: [Swagger UI](https://nextrides-backend.onrender.com/api/docs)
+📖 **Full API documentation**: [Swagger UI](https://car-sales-prj.onrender.com/api/docs)
 
 ---
 
@@ -132,7 +132,7 @@ messages:   { id, listing_id, sender_id, receiver_id,
 | Component | Platform | URL |
 |-----------|----------|-----|
 | Frontend | Render.com (Static Site) | [nextrides-frontend.onrender.com](https://nextrides-frontend.onrender.com) |
-| Backend | Render.com (Web Service) | [nextrides-backend.onrender.com](https://nextrides-backend.onrender.com) |
+| Backend | Render.com (Web Service) | [car-sales-prj.onrender.com](https://car-sales-prj.onrender.com) |
 | Database | MongoDB Atlas | Cloud-hosted |
 
 ---
@@ -165,6 +165,6 @@ yarn start
 
 <div align="center">
 
-**[← Back to Main README](../README.md)** • **[🌐 Live App](https://nextrides-frontend.onrender.com)** • **[📖 API Docs](https://nextrides-backend.onrender.com/api/docs)**
+**[← Back to Main README](../README.md)** • **[🌐 Live App](https://nextrides-frontend.onrender.com)** • **[📖 API Docs](https://car-sales-prj.onrender.com/api/docs)**
 
 </div>

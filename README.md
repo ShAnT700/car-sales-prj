@@ -31,12 +31,6 @@ This repository demonstrates a **complete test automation lifecycle** for a web 
 │  │ API Tests│───▶│ E2E (Chrome) │───▶│ Deploy Test Report   │  │
 │  │  23 tests│    │   47 tests   │    │   to GitHub Pages    │  │
 │  └──────────┘    └──────────────┘    └──────────────────────┘  │
-│        │                │                                        │
-│        ▼                ▼                                        │
-│  ┌─────────────────────────────────────┐                        │
-│  │         E2E (Mobile) - Nightly      │                        │
-│  │            47 tests                 │                        │
-│  └─────────────────────────────────────┘                        │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -44,9 +38,8 @@ This repository demonstrates a **complete test automation lifecycle** for a web 
 
 | Decision | Reasoning |
 |----------|-----------|
-| **API tests run first** | Fast feedback (3-5 sec). If backend is broken, no point running E2E |
-| **E2E Chrome — main suite** | Covers 95% of users. Runs on every push |
-| **E2E Mobile — nightly run** | Saves CI minutes. WebKit is slower but important for full coverage |
+| **API tests run first** | Fast feedback (~40 sec). If backend is broken, no point running E2E |
+| **E2E Chrome — main suite** | Covers 95% of users. Runs on every PR and nightly |
 | **Report on GitHub Pages** | Instant access to results without downloading artifacts |
 
 ---
@@ -62,11 +55,11 @@ e2e/
 │   │   └── api.spec.js          # 23 API tests
 │   └── e2e/
 │       ├── auth.spec.js         # 11 authentication tests
-│       ├── listings.spec.js     # 12 listings tests
+│       ├── listings.spec.js     # 10 listings tests
 │       ├── search.spec.js       # 7 search & filter tests
 │       ├── favorites.spec.js    # 5 favorites tests
 │       ├── messages.spec.js     # 6 messaging tests
-│       └── profile.spec.js      # 6 profile tests
+│       └── profile.spec.js      # 8 profile tests
 ├── playwright.config.js         # Playwright configuration
 └── package.json                 # Run scripts
 ```
@@ -132,9 +125,8 @@ yarn test:headed     # With browser visible
 ### In CI/CD
 
 Tests automatically run:
-- 📌 On every **push** to main
-- 📌 On every **Pull Request**
-- 🌙 **Nightly at 00:00 UTC** (full suite including Mobile)
+- 📌 On every **Pull Request** to main
+- 🌙 **Nightly at 00:00 UTC** (full suite)
 - 🖱️ **Manually** via "Run workflow" button
 
 ---
