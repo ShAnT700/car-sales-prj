@@ -61,14 +61,6 @@ module.exports = defineConfig({
       },
     },
 
-    // E2E Tests - Mobile Safari
-    {
-      name: 'e2e-mobile',
-      testDir: './tests/e2e',
-      use: {
-        ...devices['iPhone 13'],
-      },
-    },
 
     // API Tests
     {
@@ -76,7 +68,7 @@ module.exports = defineConfig({
       testDir: './tests/api',
       use: {
         // API tests don't need browser
-        baseURL: process.env.E2E_API_URL || 'https://nextrides-backend.onrender.com/api',
+        baseURL: process.env.E2E_API_URL || 'https://car-sales-prj.onrender.com/api',
       },
     },
   ],

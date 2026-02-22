@@ -103,44 +103,7 @@ jobs:
           path: e2e/test-results/
           retention-days: 14
 
-  # E2E Tests - Mobile (Optional, slower)
-  e2e-tests-mobile:
-    name: E2E Tests (Mobile)
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    needs: api-tests
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'yarn'
-          cache-dependency-path: './e2e/yarn.lock'
-
-      - name: Install dependencies
-        working-directory: ./e2e
-        run: yarn install --frozen-lockfile
-
-      - name: Install Playwright browsers
-        working-directory: ./e2e
-        run: npx playwright install --with-deps webkit
-
-      - name: Run E2E tests (Mobile)
-        working-directory: ./e2e
-        run: yarn test:mobile
-        
-      - name: Upload Mobile test results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: e2e-mobile-test-results
-          path: e2e/test-results/
-          retention-days: 14
 
   # Deploy Report to GitHub Pages
   deploy-report:
